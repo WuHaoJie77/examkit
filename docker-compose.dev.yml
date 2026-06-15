@@ -1,0 +1,14 @@
+# 开发模式：前端文件修改后无需重建镜像
+# 使用: docker compose -f docker-compose.dev.yml up
+
+services:
+  exam-bank:
+    build: .
+    ports:
+      - "8898:8898"
+    volumes:
+      # 挂载本地目录，修改即时生效
+      - ./exam-bank:/var/www/exam-bank
+      - ./data/comments.db:/opt/exam-comments/comments.db
+      - ./data/pdf_cache:/opt/exam-comments/pdf_cache
+    restart: unless-stopped

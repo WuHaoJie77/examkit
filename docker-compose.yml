@@ -1,0 +1,13 @@
+# 小番茄题库浓缩版 - 一键部署
+# 使用: docker compose up -d
+
+services:
+  exam-bank:
+    build: .
+    ports:
+      - "8898:8898"
+    volumes:
+      # 持久化评论数据库和 PDF 缓存（重启不丢失）
+      - ./data/comments.db:/opt/exam-comments/comments.db
+      - ./data/pdf_cache:/opt/exam-comments/pdf_cache
+    restart: unless-stopped

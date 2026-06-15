@@ -11,6 +11,9 @@ pdf_cache/
 .DS_Store
 Thumbs.db
 
+# Docker data (comments database)
+data/
+
 # IDE
 .idea/
 .vscode/
