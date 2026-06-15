@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第七章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第七章 浓缩速记卡（程序结构 · 关系运算 · 逻辑运算）</h1>
+<hr />
+<h2>一、程序三种基本结构</h2>
+<pre><code>顺序结构 → 分支结构 → 循环结构
+(逐行执行)  (条件选择)  (重复执行)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>特点</th>
+<th>流程图形状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>顺序</strong></td>
+<td>按语句顺序逐条执行，每条都执行</td>
+<td>矩形框（处理）</td>
+</tr>
+<tr>
+<td><strong>分支</strong></td>
+<td>根据条件选择执行路径</td>
+<td>菱形框（判断）</td>
+</tr>
+<tr>
+<td><strong>循环</strong></td>
+<td>重复执行一组语句</td>
+<td>菱形+流向线组合</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>递归结构<strong>不是</strong>基本结构。任何程序都包含顺序结构。</p>
+</blockquote>
+<hr />
+<h2>二、流程图符号</h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>椭圆形/圆角矩形</td>
+<td>起止框</td>
+</tr>
+<tr>
+<td><strong>矩形</strong></td>
+<td><strong>处理框</strong></td>
+</tr>
+<tr>
+<td><strong>菱形</strong></td>
+<td><strong>判断框</strong></td>
+</tr>
+<tr>
+<td><strong>平行四边形</strong></td>
+<td><strong>输入/输出框</strong></td>
+</tr>
+<tr>
+<td>箭头线</td>
+<td>流向线</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>没有"循环框"这个基本元素。循环是判断+流向线组合实现的。</p>
+</blockquote>
+<hr />
+<h2>三、关系运算符（比较运算）</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>==</code></td>
+<td>等于</td>
+<td><code>3 == 3</code> → True</td>
+</tr>
+<tr>
+<td><code>!=</code></td>
+<td>不等于</td>
+<td><code>3 != 5</code> → True</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>大于</td>
+<td><code>5 &gt; 3</code> → True</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>小于</td>
+<td><code>3 &lt; 5</code> → True</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>大于等于</td>
+<td><code>5 &gt;= 5</code> → True</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>小于等于</td>
+<td><code>3 &lt;= 5</code> → True</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>包含</td>
+<td><code>'ab' in 'abc'</code> → True</td>
+</tr>
+</tbody>
+</table>
+<h3>3.1 字符串比较</h3>
+<p>按<strong>Unicode编码</strong>逐字符比较，短串是前缀时短串小：</p>
+<pre><code class="language-python">&quot;PYTHON&quot; &gt; &quot;python&quot;     # False (大写字母编码 &lt; 小写)
+&quot;apple&quot; &gt; &quot;banana&quot;      # False ('a'=97 &lt; 'b'=98)
+&quot;apple&quot; &gt; &quot;app&quot;         # True (前缀相同，长的更大)
+&quot;apple&quot; == &quot;Apple&quot;      # False ('a'≠'A')
+&quot;123&quot; &gt; &quot;23&quot;            # False ('1' &lt; '2'，逐字比较！)
+</code></pre>
+<h3>3.2 链式比较</h3>
+<pre><code class="language-python">1 &lt; 3 &lt; 5       # True (等价 1&lt;3 and 3&lt;5)
+2 &gt; 3 &gt; 1       # False (2&gt;3 is False，后面短路)
+3 &lt;= 5 &gt;= 4     # True (3&lt;=5 and 5&gt;=4)
+</code></pre>
+<h3>3.3 常见条件表达式</h3>
+<pre><code class="language-python"># 判断奇数
+x % 2 == 1                    # ✅ 正确
+x % 2 = 1                     # ❌ = 是赋值
+
+# 判断整除（能被3整除）
+x % 3 == 0                    # ✅ 正确
+x // 3 == 0                   # ❌ 只在 x&lt;3 时成立
+
+# 判断三位整数
+x &gt;= 100 and x &lt;= 999         # ✅
+len(str(x)) == 3              # ✅
+x // 100 != 0 and x // 1000 == 0  # ✅
+
+# 判断闰年
+(year % 4 == 0 and year % 100 != 0) or year % 400 == 0
+
+# 判断三角形（三边a,b,c）
+a + b &gt; c and a + c &gt; b and b + c &gt; a
+
+# 判断等腰三角形
+a == b or b == c or a == c    # ✅ 用 == 不是 =
+
+# 判断字符是否数字
+&quot;0&quot; &lt;= x &lt;= &quot;9&quot;               # ✅ 字符串比较
+</code></pre>
+<hr />
+<h2>四、逻辑运算符</h2>
+<blockquote>
+<p><strong>🧠 费曼：and=并且，or=或者，not=不是。</strong> 你妈说："做完作业并且洗完碗才能打游戏"——<code>and</code>：两个都完成才行。你爸说："扫完地或者倒完垃圾就可以看电视"——<code>or</code>：完成一个就行。<code>not</code>就是否定：<code>not 下雨</code>="没下雨"。短路规则：and遇到第一个False就懒得往后看了，or遇到第一个True就停了——计算机跟你一样懒。</p>
+</blockquote>
+<h3>4.1 优先级（从高到低）</h3>
+<pre><code>not → and → or
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>not</code></td>
+<td>非</td>
+<td>取反</td>
+</tr>
+<tr>
+<td><code>and</code></td>
+<td>与</td>
+<td>全True才True</td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>或</td>
+<td>有一个True就True</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 短路求值</h3>
+<pre><code class="language-python">False and anything    # False（and 遇 False 就停）
+True or anything      # True（or 遇 True 就停）
+3 &gt; 5 and a &gt; 3       # False（左边假，右边不执行）
+</code></pre>
+<h3>4.3 布尔值运算</h3>
+<pre><code class="language-python">True + 1        # 2 (True=1)
+False + 1       # 1 (False=0)
+True * 3        # 3
+False - 1       # -1
+
+True == 1       # True
+False == 0      # True
+</code></pre>
+<h3>4.4 逻辑运算求值步骤</h3>
+<pre><code class="language-python"># 优先级: not &gt; and &gt; or
+True and False or True          # False or True = True
+True and (False or True)        # True and True = True
+not True and False or True      # False and False or True = False or True = True
+
+# 算术 &gt; 比较 &gt; not &gt; and &gt; or
+5 + 3 &gt; 6 * 2 - 4               # 8 &gt; 8 = False
+5 + (3 &gt; 6) * 2 - 4             # 5 + 0*2 - 4 = 1
+</code></pre>
+<hr />
+<h2>五、input() 的类型陷阱</h2>
+<pre><code class="language-python">a = input()          # 用户输入 56
+a == 56              # False！ a是&quot;56&quot;(str)，56是int
+a == '56'            # True
+a != 56              # True
+
+# 正确比较数值
+int(a) == 56         # True
+eval(a) == 56        # True
+</code></pre>
+<hr />
+<h2>六、综合表达式速算</h2>
+<pre><code class="language-python"># 括号改变逻辑
+a=3, b=5, c=2
+a &lt; b or b &gt; c and a == c       # True or False and False → True or False = True
+(a &lt; b or b &gt; c) and a == c     # (True or False) and False → True and False = False
+
+# 算术 + 比较 + 逻辑混合
+3**2 + 4**2 == 5**2              # 9+16==25 → True
+3**2 + (4**2 == 5**2)            # 9 + False → 9 + 0 = 9
+(3**2 + 4**2) == 5**2            # 25 == 25 → True
+</code></pre>
+<hr />
+<h2>七、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code> 能用于条件表达式？</td>
+<td>❌ <code>=</code>是赋值，比较用 <code>==</code></td>
+</tr>
+<tr>
+<td>Python 不等于运算符？</td>
+<td><code>!=</code>（不是 <code>&lt;&gt;</code> 或 <code>=!</code>）</td>
+</tr>
+<tr>
+<td>递归是基本结构？</td>
+<td>❌ 顺序/分支/循环才是</td>
+</tr>
+<tr>
+<td>循环框是流程图基本元素？</td>
+<td>❌ 没有循环框</td>
+</tr>
+<tr>
+<td>平行四边形表示什么？</td>
+<td><strong>输入/输出</strong>（不是分支）</td>
+</tr>
+<tr>
+<td>菱形框表示什么？</td>
+<td><strong>判断/分支</strong></td>
+</tr>
+<tr>
+<td>伪代码是编程语言？</td>
+<td>❌ 是描述工具</td>
+</tr>
+<tr>
+<td>in 运算符优先级低于逻辑？</td>
+<td>❌ in 优先级<strong>高于</strong>逻辑运算符</td>
+</tr>
+<tr>
+<td><code>"PYTHON"&gt;"python"</code>？</td>
+<td><strong>False</strong>（大写编码 &lt; 小写）</td>
+</tr>
+<tr>
+<td><code>"apple"&gt;"app"</code>？</td>
+<td><strong>True</strong>（前缀相同，长的更大）</td>
+</tr>
+<tr>
+<td><code>2&gt;3&gt;1</code>？</td>
+<td><strong>False</strong>（2&gt;3假，短路）</td>
+</tr>
+<tr>
+<td>True/False 可以小写？</td>
+<td>❌ 必须首字母大写</td>
+</tr>
+<tr>
+<td><code>int(r)==r&gt;0</code> 判断正整数？</td>
+<td>✅ 链式比较</td>
+</tr>
+<tr>
+<td><code>x%3==0</code> 判断整除？</td>
+<td>✅ 正确写法</td>
+</tr>
+<tr>
+<td>&lt;｜end▁of▁thinking｜&gt;继续。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>&lt;｜｜DSML｜｜tool_calls&gt;
+&lt;｜｜DSML｜｜invoke name="write_file"&gt;
+&lt;｜｜DSML｜｜parameter name="content" string="true"&gt;</p>
+<hr />
+<h2>八、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖逻辑优先级和字符串比较。</p>
+</blockquote>
+<p><strong>1.</strong> 程序的三种基本结构是？</p>
+<p>A. 顺序、递归、循环　　B. 顺序、分支、循环<br />
+C. 分支、循环、递归　　D. 顺序、跳转、循环</p>
+<p><strong>2.</strong> 流程图中菱形框表示什么？</p>
+<p>A. 处理　　B. 判断　　C. 输入输出　　D. 起止</p>
+<p><strong>3.</strong> 流程图中平行四边形表示什么？</p>
+<p>A. 处理　　B. 判断　　C. 输入输出　　D. 起止</p>
+<p><strong>4.</strong> Python 中"不等于"运算符是？</p>
+<p>A. <code>&lt;&gt;</code>　　B. <code>=!</code>　　C. <code>!=</code>　　D. <code>&gt;&lt;</code></p>
+<p><strong>5.</strong> <code>"apple" &gt; "banana"</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. 不确定</p>
+<p><strong>6.</strong> <code>"apple" &gt; "app"</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. 不确定</p>
+<p><strong>7.</strong> <code>2 &gt; 3 &gt; 1</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. 1</p>
+<p><strong>8.</strong> <code>True + 1</code> 的结果是？</p>
+<p>A. 1　　B. 2　　C. True　　D. 报错</p>
+<p><strong>9.</strong> 判断 x 是奇数的正确写法是？</p>
+<p>A. <code>x%2=1</code>　　B. <code>x%2==1</code>　　C. <code>x//2==1</code>　　D. <code>x/2==1</code></p>
+<p><strong>10.</strong> 判断闰年的正确表达式是？（year为年份）</p>
+<p>A. <code>year%4==0 or year%400==0</code><br />
+B. <code>(year%4==0 and year%100!=0) or year%400==0</code><br />
+C. <code>year%4==0 and year%100==0</code><br />
+D. <code>year%100!=0 or year%400==0</code></p>
+<p><strong>11.</strong> <code>not</code> <code>and</code> <code>or</code> 的优先级从高到低是？</p>
+<p>A. <code>not &gt; and &gt; or</code>　　B. <code>and &gt; or &gt; not</code><br />
+C. <code>or &gt; and &gt; not</code>　　D. <code>and &gt; not &gt; or</code></p>
+<p><strong>12.</strong> <code>True and False or True</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. None</p>
+<p><strong>13.</strong> a=input()输入56后，<code>a==56</code>的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. 56</p>
+<p><strong>14.</strong> <code>not 3 &lt; 3</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. None</p>
+<p><strong>15.</strong> <code>3 &lt;= 5 &gt;= 4</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. 不确定</p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>顺序、分支、循环。递归不是基本结构。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td>菱形=判断框。矩形=处理框，平行四边形=I/O框。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>C</strong></td>
+<td>平行四边形=输入输出。分支用菱形，处理用矩形。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>C</strong></td>
+<td>Python3用<code>!=</code>。<code>&lt;&gt;</code>是Python2的写法。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>B</strong></td>
+<td>逐字符比较：'a'(97) &lt; 'b'(98)→"apple"&lt;"banana"→False。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>A</strong></td>
+<td>前缀相同，长的更大：'apple' &gt; 'app' → True。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>B</strong></td>
+<td>链式比较：先算2&gt;3=False，短路直接返回False。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>B</strong></td>
+<td>True=1，1+1=2。False=0。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>B</strong></td>
+<td>奇数=除以2余1→<code>x%2==1</code>。A用了赋值<code>=</code>，C/D逻辑错。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>B</strong></td>
+<td>闰年：(能被4整除且不能被100整除) 或 能被400整除。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>A</strong></td>
+<td><code>not</code>最高，<code>and</code>次之，<code>or</code>最低。死记。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>A</strong></td>
+<td>False or True → True。and优先于or。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>B</strong></td>
+<td>input返回str类型"56"，与int类型56比较→False。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>A</strong></td>
+<td>3&lt;3=Flase，not False=True。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>A</strong></td>
+<td>链式比较：3&lt;=5(True) and 5&gt;=4(True)→True。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：关系和逻辑运算过关　｜　错3-6题：重点回看第三节和第四节　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/七" download>📥 下载PDF</a>
+</div>
+</body></html>

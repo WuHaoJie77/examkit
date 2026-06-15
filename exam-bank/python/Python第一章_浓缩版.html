@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第一章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第一章 浓缩速记卡</h1>
+<hr />
+<h2>一、计算机语言发展史（三层）</h2>
+<blockquote>
+<p><strong>🧠 费曼：机器语言=哑语手势，汇编语言=单词缩写，高级语言=完整句子。</strong> 你想让一个外国人帮你做事。机器语言=你用手比划（二进制），他秒懂但你不能说人话。汇编语言=你用单词缩写比如"WTR=倒水"，比手划快但还是很累。高级语言=你直接说"请帮我倒杯水"，说完他找个翻译官（编译器/解释器）翻给他听。Python就是那个你说人话的语言。</p>
+</blockquote>
+<pre><code>机器语言 → 汇编语言 → 高级语言
+(二进制)   (助记符)   (接近自然语言)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th>特点</th>
+<th>执行方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机器语言</strong></td>
+<td>二进制代码，唯一能直接被CPU执行，依赖硬件，速度最快</td>
+<td>无需翻译</td>
+</tr>
+<tr>
+<td><strong>汇编语言</strong></td>
+<td>用助记符替代二进制，需汇编器转换，依赖硬件</td>
+<td>汇编</td>
+</tr>
+<tr>
+<td><strong>高级语言</strong></td>
+<td>可读性强、可移植好、抽象度高，接近自然语言</td>
+<td>编译或解释</td>
+</tr>
+</tbody>
+</table>
+<p><strong>易错点：</strong>
+- 自然语言（中文/英文）<strong>不属于</strong>程序设计语言
+- 机器语言可读性最差、编写效率最低
+- 高级语言运行速度 <strong>不是</strong> 最快的</p>
+<hr />
+<h2>二、编译型 vs 解释型</h2>
+<blockquote>
+<p><strong>🧠 费曼：编译=整本书翻译完再给人看，解释=找个翻译在旁边一句一句翻。</strong> 你要给一个外国人看一本中文小说。编译型：先把整本书翻译成英文印出来（生成.exe），他直接读英文，速度飞快。解释型：你一句一句念中文，翻译在旁边一句一句翻给他听（Python解释器），随时能打断问问题（调试方便），但整体看完整本书的速度慢。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>编译型 (C/C++)</th>
+<th>解释型 (Python/JS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>翻译方式</td>
+<td>一次性全部翻译为机器码</td>
+<td>逐行解释执行</td>
+</tr>
+<tr>
+<td>生成目标文件</td>
+<td><strong>有</strong> (.exe等)</td>
+<td><strong>无</strong></td>
+</tr>
+<tr>
+<td>执行速度</td>
+<td><strong>快</strong></td>
+<td>慢</td>
+</tr>
+<tr>
+<td>可移植性</td>
+<td>弱</td>
+<td><strong>强</strong></td>
+</tr>
+<tr>
+<td>调试</td>
+<td>编译时发现错误</td>
+<td>运行时暴露错误</td>
+</tr>
+<tr>
+<td>代码保护</td>
+<td>好(只分发机器码)</td>
+<td>差(源码暴露)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键判断题：</strong>
+- Python是<strong>解释型</strong>语言（不是编译型）✅
+- 编译型语言执行速度快 ✅
+- 解释型语言可移植性强 ✅
+- 解释型语言交互性好 ✅
+- "Python代码需先编译成机器码再执行" ❌</p>
+<p><strong>填空题标配答案：</strong> 高级语言执行方式 = <strong>编译</strong>执行 + <strong>解释</strong>执行</p>
+<hr />
+<h2>三、Python 前世今生</h2>
+<table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创始人</td>
+<td><strong>Guido van Rossum</strong></td>
+</tr>
+<tr>
+<td>首次发布</td>
+<td><strong>1991年</strong></td>
+</tr>
+<tr>
+<td>Python 3.0 发布</td>
+<td><strong>2008年</strong></td>
+</tr>
+<tr>
+<td>名字来源</td>
+<td><strong>Monty Python 喜剧团体</strong>（不是蟒蛇！）</td>
+</tr>
+<tr>
+<td>当前主流版本</td>
+<td><strong>3.X</strong></td>
+</tr>
+<tr>
+<td>Python 2 和 3 兼容？</td>
+<td><strong>不兼容</strong>，需修改才能运行</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、Python 核心特点</h2>
+<h3>✅ 是：</h3>
+<ul>
+<li>开源免费（GNU协议）</li>
+<li>完全面向对象（一切皆为对象）</li>
+<li>跨平台（解释器统一运行环境）</li>
+<li>语法简洁、强制缩进</li>
+<li>粘性扩展（可集成C/C++代码）</li>
+<li>类库丰富（pip安装第三方库）</li>
+<li>支持中文</li>
+<li>解释型脚本语言</li>
+</ul>
+<h3>❌ 不是：</h3>
+<ul>
+<li><strong>运行速度极快</strong>（Python慢，C/C++快）</li>
+<li><strong>编译型语言</strong></li>
+<li><strong>执行高效</strong></li>
+<li><strong>需要先声明变量类型</strong>（动态类型，直接赋值）</li>
+</ul>
+<h3>Python之禅</h3>
+<pre><code class="language-python">import this  # 查看完整准则
+</code></pre>
+<p>核心理念：<strong>优美优于丑陋、明确优于隐晦、简单优于复杂、可读性很重要</strong></p>
+<hr />
+<h2>五、开发环境</h2>
+<table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python自带IDE</td>
+<td><strong>IDLE</strong></td>
+</tr>
+<tr>
+<td>交互式环境提示符</td>
+<td><strong>&gt;&gt;&gt;</strong></td>
+</tr>
+<tr>
+<td>源文件扩展名</td>
+<td><strong>.py</strong></td>
+</tr>
+<tr>
+<td>运行快捷键</td>
+<td><strong>F5</strong></td>
+</tr>
+<tr>
+<td>新建文件快捷键</td>
+<td><strong>Ctrl+N</strong></td>
+</tr>
+<tr>
+<td>打开文件快捷键</td>
+<td><strong>Ctrl+O</strong></td>
+</tr>
+<tr>
+<td>安装第三方库命令</td>
+<td><strong>pip install xxx</strong></td>
+</tr>
+<tr>
+<td>退出IDLE命令</td>
+<td><strong>exit()</strong></td>
+</tr>
+<tr>
+<td>安装关键操作</td>
+<td><strong>勾选 "Add Python to PATH"</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>IDLE两种模式：</h3>
+<ul>
+<li><strong>交互式（Shell）</strong>：即时执行单行，适合调试验证，代码不会自动保存</li>
+<li><strong>文件式（Editor）</strong>：编写完整.py文件 → 保存 → F5运行，适合大型程序</li>
+</ul>
+<h3>其他工具：</h3>
+<ul>
+<li><strong>Anaconda</strong>：自带大量库，适合大型项目，跨平台开源</li>
+<li>PyCharm / VS Code：第三方IDE（非Python自带）</li>
+</ul>
+<h3>易错点：</h3>
+<ul>
+<li>不同操作系统（Windows/Mac）需要<strong>不同安装包</strong></li>
+<li>IDLE <strong>自带</strong>于Python安装包中</li>
+<li>IDLE <strong>不自带</strong>大量第三方库</li>
+</ul>
+<hr />
+<h2>六、高频易错题速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算机唯一能直接识别的语言</td>
+<td><strong>机器语言</strong></td>
+</tr>
+<tr>
+<td>汇编→机器码的过程叫</td>
+<td><strong>汇编</strong>（不是编译）</td>
+</tr>
+<tr>
+<td>机器语言指令由什么组成</td>
+<td><strong>二进制代码</strong></td>
+</tr>
+<tr>
+<td>Python是不是编译型</td>
+<td><strong>不是</strong>，是解释型</td>
+</tr>
+<tr>
+<td>Python运行速度比C++快？</td>
+<td><strong>错</strong>，Python更慢</td>
+</tr>
+<tr>
+<td>Python名字来自蟒蛇？</td>
+<td><strong>错</strong>，来自Monty Python</td>
+</tr>
+<tr>
+<td>Python 2代码能直接在Python 3跑？</td>
+<td><strong>不能</strong>，不兼容</td>
+</tr>
+<tr>
+<td>IDLE交互式代码会自动保存？</td>
+<td><strong>不会</strong></td>
+</tr>
+<tr>
+<td>不在PATH勾选能cmd用python？</td>
+<td><strong>不能</strong></td>
+</tr>
+<tr>
+<td>Python需先声明变量类型？</td>
+<td><strong>不需要</strong>，动态类型</td>
+</tr>
+<tr>
+<td>Python没有任何缺点？</td>
+<td><strong>错</strong></td>
+</tr>
+<tr>
+<td>Python是非开源语言？</td>
+<td><strong>错</strong>，Python开源</td>
+</tr>
+<tr>
+<td>编译型语言执行时逐行解释？</td>
+<td><strong>错</strong>，这是解释型的特点</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>七、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>先自己做，再对答案。每题5分，70分及格。</p>
+</blockquote>
+<p><strong>1.</strong> 计算机唯一能直接识别和执行的语言是？</p>
+<p>A. 汇编语言　　B. 机器语言　　C. 高级语言　　D. Python语言</p>
+<p><strong>2.</strong> 计算机语言的发展顺序是？</p>
+<p>A. 高级→汇编→机器　　B. 机器→汇编→高级　　C. 汇编→机器→高级　　D. 机器→高级→汇编</p>
+<p><strong>3.</strong> 将汇编语言源程序转换为机器语言目标程序的过程称为？</p>
+<p>A. 编译　　B. 解释　　C. 汇编　　D. 链接</p>
+<p><strong>4.</strong> 关于高级语言，以下说法<strong>错误</strong>的是？</p>
+<p>A. 可读性强　　B. 可移植性好　　C. 运行速度最快　　D. 接近自然语言</p>
+<p><strong>5.</strong> Python语言属于？</p>
+<p>A. 机器语言　　B. 汇编语言　　C. 高级语言　　D. 自然语言</p>
+<p><strong>6.</strong> 以下哪个<strong>不是</strong>解释型语言的特点？</p>
+<p>A. 逐行解释执行　　B. 可移植性强　　C. 执行效率高　　D. 交互性好</p>
+<p><strong>7.</strong> Python首次对外发布的年份是？</p>
+<p>A. 1991　　B. 1998　　C. 2008　　D. 2000</p>
+<p><strong>8.</strong> Python 3.0 正式发布是哪一年？</p>
+<p>A. 2005　　B. 2006　　C. 2008　　D. 2010</p>
+<p><strong>9.</strong> Python名字来源于？</p>
+<p>A. 一种蟒蛇　　B. 希腊神话人物　　C. Monty Python喜剧团体　　D. Python软件基金会</p>
+<p><strong>10.</strong> 以下哪个<strong>不是</strong>Python的特点？</p>
+<p>A. 开源免费　　B. 跨平台　　C. 执行高效　　D. 面向对象</p>
+<p><strong>11.</strong> Python的设计哲学中，<code>import this</code> 查看的是什么？</p>
+<p>A. 版本信息　　B. Python之禅　　C. 第三方库列表　　D. 语法帮助</p>
+<p><strong>12.</strong> Python自带集成开发环境(IDE)是？</p>
+<p>A. PyCharm　　B. VS Code　　C. Anaconda　　D. IDLE</p>
+<p><strong>13.</strong> 在IDLE中运行Python程序的快捷键是？</p>
+<p>A. F1　　B. F5　　C. F10　　D. Ctrl+R</p>
+<p><strong>14.</strong> Python源程序文件的扩展名是？</p>
+<p>A. .pd　　B. .pp　　C. .py　　D. .pt</p>
+<p><strong>15.</strong> 安装Python时，确保命令行能使用<code>python</code>命令的关键操作是？</p>
+<p>A. 选64位版本　　B. 安装路径用英文　　C. 勾选"Add Python to PATH"　　D. 不安装pip</p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>机器语言由二进制代码组成，是CPU唯一能直接执行的。A需要汇编器，C/D需要编译/解释器翻译。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td>机器语言(1940s)→汇编语言(1950s)→高级语言(1960s+)，抽象程度逐步提高。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>C</strong></td>
+<td>汇编→机器码叫"汇编"，高级语言→机器码才叫"编译"。这是常考题，别搞混。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>C</strong></td>
+<td>高级语言运行速度次于机器语言，机器语言直接执行最快。"运行速度最快"不是高级语言特点。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>C</strong></td>
+<td>Python属于高级语言，也是解释型脚本语言。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>C</strong></td>
+<td>解释型语言逐行翻译，执行效率比编译型<strong>低</strong>。A/B/D都是解释型优点。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>A</strong></td>
+<td>Guido van Rossum于1991年首次公开发布Python。2008年是Python 3.0发布年份，别搞混。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>C</strong></td>
+<td>Python 3.0 = 2008年。Python 3.x 不兼容 Python 2.x，这是重要考点。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>C</strong></td>
+<td>Python名字来自BBC喜剧《Monty Python's Flying Circus》，跟蟒蛇无关。选A必错。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>C</strong></td>
+<td>Python缺点就是运行速度相对慢、并行计算弱、源码难加密。"执行高效"是C/C++的特点。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>B</strong></td>
+<td><code>import this</code> 输出《Python之禅》(The Zen of Python)。核心：优美&gt;丑陋，简单&gt;复杂。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>D</strong></td>
+<td>IDLE是Python安装包自带的轻量级IDE。PyCharm/VS Code是第三方工具。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>B</strong></td>
+<td>F5 = 运行。Ctrl+N = 新建，Ctrl+O = 打开，Ctrl+S = 保存。四个快捷键都常考。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>C</strong></td>
+<td>Python源文件必须以 <code>.py</code> 结尾。这是基本常识。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>C</strong></td>
+<td>不勾PATH=cmd里输python没反应=第一节课最常见翻车现场。必须勾选。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：可以进第二章　｜　错3-6题：回头重看对应模块　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/一" download>📥 下载PDF</a>
+</div>
+</body></html>

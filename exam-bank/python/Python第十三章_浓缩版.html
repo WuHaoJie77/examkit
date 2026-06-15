@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第十三章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第十三章 浓缩速记卡（函数定义 · 调用 · 参数）</h1>
+<hr />
+<h2>一、函数定义与调用</h2>
+<blockquote>
+<p><strong>🧠 费曼：函数 = 榨汁机。</strong> 你把苹果（实参）从上面扔进去，机器（函数体）在里面一顿榨，最后从出口流出苹果汁（返回值）。<code>def</code>就是制造这个机器的图纸——你画好图纸（定义），要用的时候把水果扔进去（调用）。你可以造一台不榨汁只干活的机器（无return→返回None），也可以造一台榨完汁还附带果渣的（return多个值）。关键是：机器必须先造好（定义在前），才能用（调用在后）。</p>
+</blockquote>
+<h3>1.1 基本语法</h3>
+<pre><code class="language-python">def 函数名(形参列表):
+    &quot;&quot;&quot;文档字符串（可选）&quot;&quot;&quot;
+    函数体
+    return 返回值    # 可选
+</code></pre>
+<pre><code class="language-python">def add(a, b):
+    return a + b
+
+result = add(3, 5)    # 调用，result=8
+</code></pre>
+<h3>1.2 语法铁律</h3>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>正确</th>
+<th>错误</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关键字</td>
+<td><code>def</code></td>
+<td><code>define</code> <code>del</code> <code>function</code></td>
+</tr>
+<tr>
+<td>函数名后</td>
+<td>必须有 <code>()</code></td>
+<td>不能省略</td>
+</tr>
+<tr>
+<td>冒号</td>
+<td>英文 <code>:</code></td>
+<td>中文 <code>：</code> ❌</td>
+</tr>
+<tr>
+<td>定义在前调用在后</td>
+<td>✅</td>
+<td>❌ 不能先调用后定义</td>
+</tr>
+<tr>
+<td>return 可选</td>
+<td>可以没有</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、形参与实参</h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>在哪出现</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>形参</strong></td>
+<td>函数<strong>定义</strong>时</td>
+<td>占位变量名</td>
+</tr>
+<tr>
+<td><strong>实参</strong></td>
+<td>函数<strong>调用</strong>时</td>
+<td>实际传递的值</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">def add(a, b):        # a, b 是形参
+    return a + b
+
+result = add(3, 5)    # 3, 5 是实参（按位置传递）
+</code></pre>
+<h3>2.1 实参的灵活性</h3>
+<pre><code class="language-python">add(3, 5)              # 常量
+add(x, y)              # 变量
+add(3+2, len(&quot;hi&quot;))   # 表达式
+add(f(1), g(2))       # 函数返回值
+</code></pre>
+<p><strong>实参不限于常量，可以是任何表达式。</strong></p>
+<hr />
+<h2>三、返回值</h2>
+<h3>3.1 return 规则</h3>
+<pre><code class="language-python">def f1():
+    return 5          # 返回5
+
+def f2():
+    pass              # 无return → 返回None
+
+def f3():
+    print(&quot;hi&quot;)       # 无return → 返回None
+
+def f4():
+    return            # 返回None
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>return 表达式</code></td>
+<td>表达式的值</td>
+</tr>
+<tr>
+<td><code>return</code> 或 无return</td>
+<td><strong>None</strong></td>
+</tr>
+<tr>
+<td>函数体只有 <code>pass</code></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 函数间调用</h3>
+<pre><code class="language-python">def f1(a):
+    return a * 2
+
+def f2(b):
+    return f1(b) + 3    # 函数内调用另一个函数
+
+print(f2(4))            # f1(4)+3 = 8+3 = 11
+</code></pre>
+<hr />
+<h2>四、函数参数个数</h2>
+<pre><code class="language-python">def f1():           # 0个参数 ✅
+    return 1
+
+def f2(a, b):       # 多个参数 ✅
+    return a + b
+
+f1()                # 调用也必须加()
+</code></pre>
+<p><strong>无论定义还是调用，圆括号必不可少。</strong></p>
+<hr />
+<h2>五、常见内置函数调用模式</h2>
+<pre><code class="language-python"># 字符串方法
+s.upper()              # 转大写
+s.startswith(&quot;pre&quot;)    # 检查前缀 → True/False
+s.count(&quot;c&quot;)           # 统计出现次数
+
+# 列表方法
+lst.append(x)          # 追加
+lst1 + lst2            # 拼接
+
+# 数学计算
+max(a, b)
+sum(lst)
+len(s)
+</code></pre>
+<hr />
+<h2>六、经典函数模板</h2>
+<pre><code class="language-python"># 阶乘
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    t = 1
+    for i in range(1, n+1):
+        t *= i
+    return t
+
+# 组合数 C(n,m) = n!/(m!(n-m)!)
+def fact(x):
+    t = 1
+    for i in range(1, x+1):
+        t *= i
+    return t
+# 调用: fact(n) / fact(m) / fact(n-m)
+
+# 判断质数
+def is_prime(n):
+    if n &lt;= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# 三角形面积
+def triangle_area(base, height):
+    return 0.5 * base * height
+
+# 偶数判断
+def is_even(n):
+    return n % 2 == 0
+
+# 最大公约数（欧几里得）
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+</code></pre>
+<hr />
+<h2>七、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义函数用 <code>define</code>？</td>
+<td>❌ 是 <code>def</code></td>
+</tr>
+<tr>
+<td>函数可以先调用后定义？</td>
+<td>❌ 必须先定义</td>
+</tr>
+<tr>
+<td>函数名后可以省略 <code>()</code>？</td>
+<td>❌ 定义和调用都必须有</td>
+</tr>
+<tr>
+<td>冒号用中文 <code>：</code>？</td>
+<td>❌ 必须英文 <code>:</code></td>
+</tr>
+<tr>
+<td>无 return 返回什么？</td>
+<td><strong>None</strong></td>
+</tr>
+<tr>
+<td>形参是调用时传入的？</td>
+<td>❌ 形参在定义时，实参在调用时</td>
+</tr>
+<tr>
+<td>实参只能是常量？</td>
+<td>❌ 可以是任何表达式</td>
+</tr>
+<tr>
+<td>函数内不能调用其他函数？</td>
+<td>❌ 可以调用</td>
+</tr>
+<tr>
+<td>Python 函数最多返回一个值？</td>
+<td>❌ 可返回多个值（元组）</td>
+</tr>
+<tr>
+<td>函数名能以数字开头？</td>
+<td>❌ 不能</td>
+</tr>
+<tr>
+<td><code>return</code> 和 <code>print</code> 一样？</td>
+<td>❌ return 返回值，print 仅显示</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖 def 语法和 return 行为。</p>
+</blockquote>
+<p><strong>1.</strong> Python定义函数的关键字是？</p>
+<p>A. <code>define</code>　　B. <code>def</code>　　C. <code>function</code>　　D. <code>del</code></p>
+<p><strong>2.</strong> 以下函数定义语法正确的是？</p>
+<p>A. <code>def f(x): return x+1</code>　　B. <code>def f(x) return x+1</code><br />
+C. <code>function f(x): return x+1</code>　　D. <code>def f(x)：return x+1</code></p>
+<p><strong>3.</strong> 函数无return语句时，返回值是？</p>
+<p>A. 0　　B. False　　C. None　　D. 报错</p>
+<p><strong>4.</strong> 以下代码输出？</p>
+<pre><code class="language-python">def f():
+    pass
+print(f())
+</code></pre>
+<p>A. None　　B. 0　　C. pass　　D. 报错</p>
+<p><strong>5.</strong> 定义时的参数叫<strong><em>_，调用时传入的叫</em></strong>_？</p>
+<p>A. 实参，形参　　B. 形参，实参　　C. 都是形参　　D. 都是实参</p>
+<p><strong>6.</strong> 调用函数时，函数名后面的 <code>()</code> 可以省略吗？</p>
+<p>A. 可以　　B. 不可以　　C. 无参数时可以　　D. 定义时可以</p>
+<p><strong>7.</strong> 函数可以先调用再定义吗？</p>
+<p>A. 可以　　B. 不可以　　C. 内置函数可以　　D. 无参数时可以</p>
+<p><strong>8.</strong> 以下代码输出？</p>
+<pre><code class="language-python">def add(a, b): return a + b
+print(add(10, 20))
+</code></pre>
+<p>A. 10　　B. 20　　C. 30　　D. None</p>
+<p><strong>9.</strong> 以下哪个<strong>不能</strong>作为函数调用的实参？</p>
+<p>A. 常量 <code>5</code>　　B. 变量 <code>x</code>　　C. 表达式 <code>3+2</code>　　D. 以上都可以</p>
+<p><strong>10.</strong> 函数定义中，形参个数可以是？</p>
+<p>A. 至少1个　　B. 0个、1个或多个　　C. 最多5个　　D. 只能2个</p>
+<p><strong>11.</strong> <code>def</code>语句后面的冒号必须用？</p>
+<p>A. 中文<code>：</code>　　B. 英文<code>:</code>　　C. 都可以　　D. 不需要</p>
+<p><strong>12.</strong> 以下代码输出？</p>
+<pre><code class="language-python">def f1(a): return a * 2
+def f2(b): return f1(b) + 3
+print(f2(4))
+</code></pre>
+<p>A. 8　　B. 11　　C. 7　　D. 报错</p>
+<p><strong>13.</strong> 函数体内可以调用其他自定义函数吗？</p>
+<p>A. 可以　　B. 不可以　　C. 只能调用内置函数　　D. 只能调用一个</p>
+<p><strong>14.</strong> 以下函数调用写法正确的是？</p>
+<p>A. <code>add 3, 5</code>　　B. <code>add(3, 5)</code>　　C. <code>add[3, 5]</code>　　D. <code>add{3, 5}</code></p>
+<p><strong>15.</strong> 一个函数可以有多个 return 语句吗？</p>
+<p>A. 不可以　　B. 可以，但只能执行一个　　C. 可以，全部执行　　D. 最多2个</p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>Python用<code>def</code>。<code>define</code>/<code>function</code>是其他语言，<code>del</code>是删除。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>A</strong></td>
+<td>必须有冒号且缩进。B缺冒号，C关键字错，D用了中文冒号。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>C</strong></td>
+<td>无return→隐式返回None。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>A</strong></td>
+<td>f()只有pass无return→返回None→print输出None。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>B</strong></td>
+<td>定义时=形参(占位)，调用时=实参(实际值)。别记反。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>B</strong></td>
+<td>定义和调用时圆括号都不可省略。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>B</strong></td>
+<td>Python是解释型语言，必须先定义再调用。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>C</strong></td>
+<td>10+20=30。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>D</strong></td>
+<td>实参可以是常量、变量、表达式、函数返回值，全部合法。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>B</strong></td>
+<td>0个到多个都可以。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>B</strong></td>
+<td>必须英文冒号。if/while/for/def都一样。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>B</strong></td>
+<td>f1(4)=8, f2(4)=8+3=11。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>A</strong></td>
+<td>函数内可以调用任何已定义的函数。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>B</strong></td>
+<td>函数调用必须用圆括号。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>B</strong></td>
+<td>可以有多个return（如if/else分支中各一个），但实际只执行一个。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：函数基础过关　｜　错3-6题：重点回看第一节和第三节　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/十三" download>📥 下载PDF</a>
+</div>
+</body></html>

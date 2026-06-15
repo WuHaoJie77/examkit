@@ -1,0 +1,16 @@
+# Sensitive files
+app_updated.py
+app.py.bak
+*.env
+*.db
+
+# PDF cache
+pdf_cache/
+
+# Mac/Windows junk
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/

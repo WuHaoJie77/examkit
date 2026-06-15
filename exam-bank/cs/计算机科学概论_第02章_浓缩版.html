@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>计算机科学概论_第02章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>计算机科学概论 第02章 浓缩速记卡</h1>
+<blockquote>
+<p><strong>章节：计算机体系结构 — 冯·诺依曼、处理器与并行</strong>
+<strong>题量：44题 → 浓缩为8个知识模块</strong>
+<strong>预计用时：30分钟</strong></p>
+</blockquote>
+<hr />
+<h2>一、冯·诺依曼原理与哈佛结构</h2>
+<blockquote>
+<p>🍳 <strong>费曼：冯·诺依曼结构像「开放式厨房」——菜谱(程序)和食材(数据)都放在同一个台面上(内存)，厨师(CPU)照着菜谱一步步做。哈佛结构像「隔断厨房」——菜谱放左台面，食材放右台面，厨师两手同时取，效率更高但装修(硬件)更贵。</strong></p>
+</blockquote>
+<h3>1.1 冯·诺依曼核心原理</h3>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>核心原理</strong></td>
+<td><strong>程序存储</strong>（程序和数据以二进制形式存入内存）</td>
+</tr>
+<tr>
+<td><strong>执行方式</strong></td>
+<td>自动取指→执行，由指令计数器控制顺序</td>
+</tr>
+<tr>
+<td><strong>指令组成</strong></td>
+<td>操作码 + 地址码</td>
+</tr>
+<tr>
+<td><strong>五大部件</strong></td>
+<td>运算器、控制器、存储器、输入设备、输出设备</td>
+</tr>
+<tr>
+<td><strong>传统中心</strong></td>
+<td><strong>运算器</strong>（数据流动都经过它）</td>
+</tr>
+<tr>
+<td><strong>现代中心</strong></td>
+<td><strong>存储器</strong>（非"主存储器"！存储器包含Cache+主存+外存）</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 冯·诺依曼 vs 哈佛结构</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>冯·诺依曼</th>
+<th>哈佛结构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储方式</td>
+<td>程序和数据<strong>混合存储</strong>在同一内存</td>
+<td>程序和数据<strong>分开存储</strong>（本质区别）</td>
+</tr>
+<tr>
+<td>总线</td>
+<td>共享总线</td>
+<td>独立总线（可同时取指令+取数据）</td>
+</tr>
+<tr>
+<td>效率</td>
+<td>总线瓶颈（冯·诺依曼瓶颈）</td>
+<td>更高，适合DSP/嵌入式</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 对编程的影响</h3>
+<table>
+<thead>
+<tr>
+<th>影响</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>程序存储</td>
+<td>催生「可加载程序」→ C编译为.exe → 存入内存执行</td>
+</tr>
+<tr>
+<td>顺序执行</td>
+<td>引入跳转指令 → 分支(if-else)、循环(for/while) → 结构化编程基础</td>
+</tr>
+<tr>
+<td>二进制指令</td>
+<td>编程语言需编译/汇编 → 机器语言</td>
+</tr>
+<tr>
+<td>数据/代码分离</td>
+<td>C中int a=5(数据区) vs printf(代码区)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、体系结构 → 组成 → 实现</h2>
+<blockquote>
+<p>🍳 <strong>费曼：体系结构像「房子的户型图」——几室几厅、门开在哪(指令集、寻址方式)。组成像「施工方案」——用什么砖、梁怎么搭(译码逻辑、存储组联)。实现像「实际盖房」——用哪个牌子的水泥、5nm还是7nm工艺。</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>定义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>体系结构</strong></td>
+<td>程序员看到的硬件属性（软硬件接口）</td>
+<td>指令集、寻址方式、数据格式</td>
+</tr>
+<tr>
+<td><strong>组成</strong></td>
+<td>体系结构的<strong>逻辑实现</strong></td>
+<td>指令译码电路、存储器组联方式</td>
+</tr>
+<tr>
+<td><strong>实现</strong></td>
+<td>组成的<strong>物理实现</strong></td>
+<td>芯片制程(7nm/5nm)、电源设计</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔗 <strong>关系：一个体系结构→多种组成→多种实现</strong>（如同一个x86指令集，不同厂商用不同硬件实现）</p>
+</blockquote>
+<h3>兼容机与系列机</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>兼容机</strong></td>
+<td>不同厂家、相同体系结构、可运行相同软件</td>
+<td>联想/戴尔的x86 PC兼容IBM PC</td>
+</tr>
+<tr>
+<td><strong>系列机</strong></td>
+<td>同一厂家、相同体系结构、不同档次</td>
+<td>Intel Core i3/i5/i7/i9</td>
+</tr>
+<tr>
+<td><strong>向上兼容</strong></td>
+<td>低档机程序<strong>不加修改地</strong>运行于高档机</td>
+<td>i3上的软件能在i9上跑</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>三、CISC vs RISC</h2>
+<blockquote>
+<p>🍳 <strong>费曼：CISC像「瑞士军刀」——功能多，一把刀能干各种活，但笨重、大部分功能用不上(20%指令占80%时间)。RISC像「专业厨刀套装」——每把刀只干一件事，轻便高效，但做复杂菜需要多把刀配合(多条简单指令组合)。</strong></p>
+</blockquote>
+<h3>3.1 全面对比</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CISC (复杂指令集)</th>
+<th>RISC (精简指令集)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>指令系统</strong></td>
+<td>庞大、丰富</td>
+<td><strong>精简</strong>，仅保留高频简单指令</td>
+</tr>
+<tr>
+<td><strong>指令长度</strong></td>
+<td><strong>不统一</strong></td>
+<td><strong>等长</strong>（如32位）</td>
+</tr>
+<tr>
+<td><strong>寻址方式</strong></td>
+<td>多样</td>
+<td>少（2-3种）</td>
+</tr>
+<tr>
+<td><strong>执行周期</strong></td>
+<td>多周期</td>
+<td><strong>单周期</strong>（大多数指令）</td>
+</tr>
+<tr>
+<td><strong>控制器</strong></td>
+<td><strong>微程序控制器</strong>为中心</td>
+<td><strong>硬布线控制器</strong></td>
+</tr>
+<tr>
+<td><strong>寄存器</strong></td>
+<td>较少</td>
+<td><strong>大规模通用寄存器堆</strong></td>
+</tr>
+<tr>
+<td><strong>编译</strong></td>
+<td>简单（不用拆分复杂操作）</td>
+<td>依赖高性能编译器优化</td>
+</tr>
+<tr>
+<td><strong>兼容性</strong></td>
+<td><strong>强</strong>（支持旧程序）</td>
+<td>弱（需翻译层支持旧CISC程序）</td>
+</tr>
+<tr>
+<td><strong>流水线</strong></td>
+<td>难以适配</td>
+<td><strong>天然适配</strong></td>
+</tr>
+<tr>
+<td><strong>功耗</strong></td>
+<td>高</td>
+<td><strong>低</strong></td>
+</tr>
+<tr>
+<td><strong>代表</strong></td>
+<td>Intel x86 (Pentium)</td>
+<td>ARM Cortex</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 RISC 七大特征</h3>
+<ol>
+<li>指令集精简（仅保留高频简单指令）</li>
+<li>寻址方式少（2-3种）</li>
+<li>指令长度统一</li>
+<li>大多数单周期执行</li>
+<li>硬布线控制器（非微程序）</li>
+<li>大规模寄存器堆（减少访存）</li>
+<li>支持流水线/超标量并行</li>
+</ol>
+<h3>3.3 RISC 会不会全面替代 CISC？❌</h3>
+<ul>
+<li>CISC优势：<strong>兼容性强</strong>，适合桌面/服务器（x86生态庞大）</li>
+<li>RISC优势：<strong>效率高/低功耗</strong>，主导移动端/嵌入式（ARM手机芯片）</li>
+<li><strong>融合趋势</strong>：CRIP架构（CISC-RISC混合），如Intel Pentium Pro → 内核RISC + 接收分解CISC指令为微操作</li>
+<li>结论：<strong>两者共存</strong>，按场景分化，无全面替代</li>
+</ul>
+<hr />
+<h2>四、流水线技术</h2>
+<blockquote>
+<p>🍳 <strong>费曼：流水线像「洗车流水线」——不是一辆车洗得更快，而是冲水、打泡沫、擦干三个工位同时工作。第一辆车在擦干时，第二辆在打泡沫，第三辆在冲水 → 同一时刻三辆车都在洗，单位时间洗完的车数(吞吐量)翻倍。</strong></p>
+</blockquote>
+<h3>4.1 核心概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>定义</strong></td>
+<td>将指令执行分解为多个子任务（取指IF→译码ID→执行EX→写回WB），不同指令的子任务<strong>时间重叠</strong>执行</td>
+</tr>
+<tr>
+<td><strong>本质</strong></td>
+<td><strong>操作重叠</strong></td>
+</tr>
+<tr>
+<td><strong>目的</strong></td>
+<td>不提高单条指令速度，提高<strong>指令吞吐量</strong>（单位时间执行指令数）</td>
+</tr>
+<tr>
+<td><strong>效率</strong></td>
+<td>串行n条指令=n×m周期，流水线=m+(n-1)周期</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 流水线前提条件</h3>
+<ul>
+<li>指令规整（长度统一，如RISC的32位）</li>
+<li>硬件并行（独立取指/译码/执行单元）</li>
+</ul>
+<hr />
+<h2>五、并行处理体系</h2>
+<blockquote>
+<p>🍳 <strong>费曼：三种并行就像三种做饭方式——流水线=一条流水线上不同工序同时做不同菜(时间重叠)；阵列处理机=一个厨师同时操作一排同样的锅做同样的菜(SIMD)；多处理器=多个厨师各做各的菜，共享厨房(MIMD)。</strong></p>
+</blockquote>
+<h3>5.1 并行处理两大特征</h3>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>英文</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>同时性</strong></td>
+<td>Simultaneity</td>
+<td>同一<strong>时刻</strong>多个事件发生</td>
+</tr>
+<tr>
+<td><strong>并发性</strong></td>
+<td>Concurrency</td>
+<td>同一<strong>时间间隔</strong>内多个事件发生</td>
+</tr>
+</tbody>
+</table>
+<h3>5.2 三种并行结构</h3>
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>实现方式</th>
+<th>适合任务</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>流水线计算机</strong></td>
+<td><strong>时间重叠</strong></td>
+<td>顺序程序</td>
+<td>Intel Core i7超标量流水线</td>
+</tr>
+<tr>
+<td><strong>阵列处理机(SIMD)</strong></td>
+<td><strong>资源重复</strong>（大量ALU同一控制器）</td>
+<td>数据并行（矩阵运算）</td>
+<td>向量处理器（早期）</td>
+</tr>
+<tr>
+<td><strong>多处理器系统(MIMD)</strong></td>
+<td><strong>资源共享</strong>（多CPU共享内存）</td>
+<td>多任务/分布式</td>
+<td>服务器集群、多核CPU</td>
+</tr>
+</tbody>
+</table>
+<h3>5.3 Flynn分类模型（按指令流×数据流）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>全称</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SISD</strong></td>
+<td>单指令流单数据流</td>
+<td>每个周期最多执行一条指令</td>
+<td>传统冯·诺依曼机</td>
+</tr>
+<tr>
+<td><strong>SIMD</strong></td>
+<td>单指令流多数据流</td>
+<td>一条指令同时操作多个数据</td>
+<td>阵列处理机、向量处理器</td>
+</tr>
+<tr>
+<td><strong>MISD</strong></td>
+<td>多指令流单数据流</td>
+<td>多条指令操作同一数据</td>
+<td>理论上存在，实际罕见</td>
+</tr>
+<tr>
+<td><strong>MIMD</strong></td>
+<td>多指令流多数据流</td>
+<td>多处理器各自执行不同指令</td>
+<td>多核CPU、服务器集群</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>向量处理机 = SIMD（阵列处理机），不是MIMD（多处理机系统）！</strong></p>
+</blockquote>
+<h3>5.4 并行计算机组成</h3>
+<pre><code>并行计算机 = 计算节点 + 节点间通信与协作机制
+</code></pre>
+<hr />
+<h2>六、多级层次结构与虚拟机</h2>
+<blockquote>
+<p>🍳 <strong>费曼：计算机像「俄罗斯套娃」——裸机(最内层)→操作系统→汇编→高级语言→应用(最外层)。每层套娃对外层隐藏内部细节，你用Python写print("hello")不需要知道CPU的电路怎么走。</strong></p>
+</blockquote>
+<h3>6.1 语言三级跳</h3>
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th>定义</th>
+<th>特点</th>
+<th>翻译方式</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机器语言</strong></td>
+<td>二进制指令集（操作码+地址码）</td>
+<td>硬件直接执行，与CPU强相关</td>
+<td>无需翻译</td>
+<td><code>00000001 00000001</code></td>
+</tr>
+<tr>
+<td><strong>汇编语言</strong></td>
+<td>助记符表示机器指令</td>
+<td>与机器指令一一对应</td>
+<td><strong>汇编程序</strong>翻译</td>
+<td><code>ADD AX,BX</code></td>
+</tr>
+<tr>
+<td><strong>高级语言</strong></td>
+<td>接近自然语言/数学语言</td>
+<td>与硬件无关，编写效率高</td>
+<td><strong>编译程序</strong>或<strong>解释程序</strong></td>
+<td><code>int a=1+2;</code> <code>print(1+2)</code></td>
+</tr>
+</tbody>
+</table>
+<h3>6.2 虚拟机概念</h3>
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>通过软件实现的虚拟机器界面，无实际硬件</td>
+</tr>
+<tr>
+<td>本质</td>
+<td>下层封装→上层接口</td>
+</tr>
+<tr>
+<td>作用</td>
+<td>①隔离复杂性 ②简化开发（各层独立） ③功能扩展（每加一层=新功能） ④兼容性（Java/JVM跨平台）</td>
+</tr>
+</tbody>
+</table>
+<h3>6.3 多级层次结构的必要性</h3>
+<ul>
+<li>简化问题复杂度（用户写Python不用懂CPU）</li>
+<li>隔离硬件细节（通过OS/虚拟机隐藏底层）</li>
+<li>适配不同需求（硬件工程师→裸机，普通用户→应用软件）</li>
+</ul>
+<hr />
+<h2>七、软件系统分类</h2>
+<table>
+<thead>
+<tr>
+<th>大类</th>
+<th>子类</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>系统软件</strong></td>
+<td>操作系统</td>
+<td><strong>Windows</strong>、Linux、macOS</td>
+</tr>
+<tr>
+<td></td>
+<td>语言处理程序</td>
+<td>编译器、汇编程序</td>
+</tr>
+<tr>
+<td></td>
+<td>数据库管理系统</td>
+<td>Oracle、MySQL、Access</td>
+</tr>
+<tr>
+<td></td>
+<td>网络管理软件</td>
+<td>TCP/IP协议栈</td>
+</tr>
+<tr>
+<td><strong>应用软件</strong></td>
+<td>办公软件</td>
+<td><strong>Office</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>工具软件</td>
+<td>杀毒软件、视频播放器、解压缩</td>
+</tr>
+<tr>
+<td></td>
+<td>行业软件</td>
+<td>财务软件、CAD</td>
+</tr>
+<tr>
+<td></td>
+<td>用户自定义</td>
+<td>自己写的程序</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Windows = 系统软件（操作系统），Office/杀毒软件/视频播放器 = 应用软件</strong></p>
+</blockquote>
+<hr />
+<h2>八、指令系统与性能公式</h2>
+<h3>8.1 完善指令系统的四大特性</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>完备性</strong></td>
+<td>指令足够完成所有必要操作</td>
+</tr>
+<tr>
+<td><strong>有效性</strong></td>
+<td>指令能高效实现功能</td>
+</tr>
+<tr>
+<td><strong>规整性</strong></td>
+<td>指令格式统一，便于流水线</td>
+</tr>
+<tr>
+<td><strong>兼容性</strong></td>
+<td>向后兼容旧程序</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 CPU性能公式</h3>
+<pre><code>CPU执行时间 = IC × CPI × CC
+
+IC  = 指令条数（Instruction Count）
+CPI = 平均每条指令的时钟周期数（Cycles Per Instruction）
+CC  = 时钟周期（Clock Cycle）
+
+缩短执行时间 → 减小IC 或 CPI 或 CC
+</code></pre>
+<blockquote>
+<p>🔑 <strong>RISC对CISC最大优势：精简CPI</strong>（不是精简指令系统本身，而是降低每条指令的时钟消耗）</p>
+</blockquote>
+<h3>8.3 指令格式（20位字长示例）</h3>
+<table>
+<thead>
+<tr>
+<th>指令类型</th>
+<th>格式</th>
+<th>操作码位数</th>
+<th>最大条数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>双操作数</td>
+<td>操作码+地址1(6位)+地址2(6位)</td>
+<td>8位</td>
+<td>2⁸=256</td>
+</tr>
+<tr>
+<td>单操作数</td>
+<td>操作码+地址(6位)</td>
+<td>14位</td>
+<td>2¹⁴-已占用</td>
+</tr>
+<tr>
+<td>无操作数</td>
+<td>操作码</td>
+<td>20位</td>
+<td>2²⁰-已占用</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>原则：操作码不可重叠，短操作码的高位不能与已有长操作码的高位相同</p>
+</blockquote>
+<hr />
+<h2>九、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冯·诺依曼传统结构以存储器为中心？</td>
+<td>❌ 传统以<strong>运算器</strong>为中心，现代以存储器为中心</td>
+</tr>
+<tr>
+<td>现代计算机以"主存储器"为中心？</td>
+<td>❌ 以<strong>存储器</strong>（包含Cache+主存+外存）为中心，不是主存储器</td>
+</tr>
+<tr>
+<td>哈佛结构与冯·诺依曼结构的本质区别？</td>
+<td>✅ 程序指令存储和数据存储<strong>分开</strong> vs 混合</td>
+</tr>
+<tr>
+<td>CISC以硬连线控制器为中心？</td>
+<td>❌ CISC以<strong>微程序控制器</strong>为中心，RISC才是硬布线</td>
+</tr>
+<tr>
+<td>RISC在各方面优越于CISC？</td>
+<td>❌ 各有优势：CISC兼容性好，RISC效率高。现代融合（CRIP架构）</td>
+</tr>
+<tr>
+<td>向量处理机是多处理机系统？</td>
+<td>❌ 向量处理机是<strong>SIMD（阵列处理机）</strong>，不是MIMD</td>
+</tr>
+<tr>
+<td>流水线提高了单条指令的执行速度？</td>
+<td>❌ 流水线提高的是<strong>指令吞吐量</strong>（单位时间指令数），单条速度不变</td>
+</tr>
+<tr>
+<td>按什么划分CISC和RISC？</td>
+<td>✅ 按<strong>指令系统结构</strong>划分</td>
+</tr>
+<tr>
+<td>完善指令系统的四大特性？</td>
+<td>完备性+有效性+<strong>规整性</strong>+兼容性</td>
+</tr>
+<tr>
+<td>并行处理两大特征？</td>
+<td><strong>同时性</strong>(Simultaneity)+<strong>并发性</strong>(Concurrency)</td>
+</tr>
+<tr>
+<td>向上兼容是什么意思？</td>
+<td>低档机程序<strong>不加修改地</strong>运行于高档机</td>
+</tr>
+<tr>
+<td>SISD每个周期最多执行几条指令？</td>
+<td><strong>最多一条</strong></td>
+</tr>
+<tr>
+<td>软件分哪两大类？</td>
+<td><strong>系统软件 + 应用软件</strong></td>
+</tr>
+<tr>
+<td>应用软件不包括以下哪项：Office/视频播放器/杀毒软件/Windows？</td>
+<td>Windows是<strong>系统软件</strong></td>
+</tr>
+<tr>
+<td>RISC精简的是指令系统本身？</td>
+<td>❌ 最大优势是精简<strong>CPI</strong>（每条指令时钟周期数）</td>
+</tr>
+<tr>
+<td>CPU性能公式的三个因子？</td>
+<td>IC(指令条数) × <strong>CPI</strong> × CC(时钟周期)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、自测20题</h2>
+<h3>选择题（15题）</h3>
+<p><strong>1.</strong> 冯·诺依曼计算机的核心原理是什么？
+A、数据内置
+B、程序外接
+C、程序存储
+D、逻辑连接</p>
+<p><strong>2.</strong> 哈佛结构与冯·诺依曼结构的本质区别是什么？
+A、哈佛结构没有控制器
+B、哈佛结构将程序指令存储和数据存储分开
+C、哈佛结构不使用二进制
+D、哈佛结构没有存储器</p>
+<p><strong>3.</strong> 计算机体系结构、组成、实现三者的关系是？
+A、互相独立，没有关联
+B、体系结构→组成→实现，呈抽象→逻辑→物理递进
+C、实现→组成→体系结构
+D、三者是同一概念的不同名称</p>
+<p><strong>4.</strong> CISC处理器结构的核心是什么？
+A、运算器
+B、存储器
+C、微程序控制器
+D、硬连线控制器</p>
+<p><strong>5.</strong> 以下哪项不是RISC技术的特征？
+A、指令长度统一
+B、大多数指令单周期执行
+C、以微程序控制器为中心
+D、大规模通用寄存器堆</p>
+<p><strong>6.</strong> 流水线技术的核心本质是什么？
+A、提高单条指令的执行速度
+B、操作重叠
+C、增加CPU核心数
+D、增大内存容量</p>
+<p><strong>7.</strong> 根据Flynn分类，传统冯·诺依曼机属于什么类型？
+A、SIMD
+B、MIMD
+C、SISD
+D、MISD</p>
+<p><strong>8.</strong> 向量处理机属于哪种并行结构？
+A、流水线计算机
+B、阵列处理机（SIMD）
+C、多处理器系统（MIMD）
+D、SISD</p>
+<p><strong>9.</strong> 以下哪个不属于系统软件？
+A、Windows
+B、Linux
+C、视频播放器
+D、编译程序</p>
+<p><strong>10.</strong> 并行处理的两个核心特征是什么？
+A、串行性和并行性
+B、同时性和并发性
+C、同步性和异步性
+D、集中式和分布式</p>
+<p><strong>11.</strong> CPU性能公式中，RISC相对于CISC最大的优势是对哪个因子的精简？
+A、IC（指令条数）
+B、CPI（平均每条指令时钟周期数）
+C、CC（时钟周期）
+D、以上都是</p>
+<p><strong>12.</strong> 以下关于CISC和RISC的说法正确的是？
+A、RISC将全面替代CISC
+B、CISC指令长度统一，适合流水线
+C、现代处理器常采用CISC-RISC融合架构
+D、RISC的兼容性比CISC强</p>
+<p><strong>13.</strong> 向上兼容的含义是？
+A、高档机程序能不加修改地运行于低档机
+B、低档机程序能不加修改地运行于高档机
+C、不同品牌计算机之间程序互通
+D、操作系统向上兼容应用软件</p>
+<p><strong>14.</strong> 单指令流单数据流（SISD）计算机每个机器周期最多执行几条指令？
+A、零条
+B、一条
+C、两条
+D、不确定</p>
+<p><strong>15.</strong> Flynn分类模型将计算机分为几类？
+A、2类
+B、3类
+C、4类
+D、5类</p>
+<hr />
+<h3>大题（5题）</h3>
+<p><strong>16.</strong> 简述冯·诺依曼原理的核心内容，画出五大部件并说明传统结构以何部件为中心，现代结构以何部件为中心。</p>
+<p><strong>17.</strong> 对比CISC和RISC的优缺点，并说明为什么"RISC将全面替代CISC"是错误的。</p>
+<p><strong>18.</strong> 什么是流水线技术？它如何提高计算机性能？为什么RISC比CISC更适合流水线？</p>
+<p><strong>19.</strong> 解释计算机体系结构、组成、实现三者的定义和关系，并举例说明为什么同一体系结构可以有多种不同的实现。</p>
+<p><strong>20.</strong> 并行处理计算机有哪三种主要结构？分别说明各自的并行实现方式和适用场景。按照Flynn分类模型，计算机分为哪四类？</p>
+<hr />
+<h2>十一、答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C</td>
+<td>冯·诺依曼核心=<strong>程序存储</strong>。程序外接是ENIAC早期方式，存储程序才是革命性突破</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>哈佛结构核心特征：<strong>程序和数据分开存储</strong>（两条独立总线）。冯·诺依曼是混合存储</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>三层递进：体系结构(抽象接口)→组成(逻辑实现)→实现(物理制造)。一个体系结构可对应多种组成和实现</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C</td>
+<td>CISC以<strong>微程序控制器</strong>为核心（复杂指令靠微程序解释执行）。RISC才是硬布线。运算器是传统冯·诺依曼中心，非CISC独有</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C</td>
+<td>RISC以<strong>硬布线控制器</strong>为中心。微程序控制器是CISC的特征。其余ABD都是RISC特征</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>流水线本质=<strong>操作重叠</strong>（同一时刻多条指令处于不同阶段）。不提高单条速度，提高吞吐量</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C</td>
+<td>传统冯·诺依曼机每个周期处理一条指令一个数据=SISD。SIMD是阵列处理机，MIMD是多处理器</td>
+</tr>
+<tr>
+<td>8</td>
+<td>B</td>
+<td>向量处理器=<strong>SIMD</strong>（单指令多数据流），属于阵列处理机。不是MIMD多处理器系统</td>
+</tr>
+<tr>
+<td>9</td>
+<td>C</td>
+<td><strong>视频播放器=应用软件</strong>。Windows/Linux/编译程序都是系统软件</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td>并行处理两大特征：<strong>同时性</strong>(Simultaneity，同一时刻)+<strong>并发性</strong>(Concurrency，同一时间间隔)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td>RISC最大优势：精简<strong>CPI</strong>（每条指令时钟周期数），不是精简IC（RISC程序指令条数反而更多）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td>现代如Intel Pentium Pro采用<strong>CISC-RISC融合(CRIP)</strong>架构。A错(不全面替代)、B错(CISC指令长度不统一)、D错(CISC兼容性更强)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>B</td>
+<td>向上兼容=<strong>低档→高档</strong>不加修改运行。向下兼容=高档→低档。不同品牌之间叫兼容机，不是向上兼容</td>
+</tr>
+<tr>
+<td>14</td>
+<td>B</td>
+<td>SISD每个周期最多一条指令。这是其定义核心：单指令流</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C</td>
+<td>Flynn分类=4类：SISD、SIMD、MISD、MIMD</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>大题参考答案</h3>
+<p><strong>16. 冯·诺依曼原理</strong></p>
+<p><strong>核心原理</strong>：程序存储——程序和数据以二进制形式存入内存，计算机自动取指执行。</p>
+<p><strong>五大部件</strong>：运算器、控制器、存储器、输入设备、输出设备。</p>
+<p><strong>传统结构</strong>：以<strong>运算器</strong>为中心，所有数据流动经过运算器。</p>
+<p><strong>现代结构</strong>：以<strong>存储器</strong>为中心（含Cache+主存+外存，非仅"主存储器"），数据直接在存储器和各部件间交互，运算器不再是必经之路。</p>
+<p><strong>17. CISC vs RISC对比</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CISC</th>
+<th>RISC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>兼容性强、编译简单</td>
+<td>执行效率高、低功耗、适合流水线</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>硬件复杂、不利于流水线、功耗高</td>
+<td>程序指令条数多、依赖编译器、不兼容旧程序</td>
+</tr>
+</tbody>
+</table>
+<p>"RISC全面替代CISC"错误原因：
+- CISC在桌面/服务器领域仍占主导（x86生态庞大，兼容海量旧软件）
+- RISC在移动/嵌入式领域普及（ARM低功耗优势）
+- 现代趋势是<strong>融合</strong>（CRIP架构：CISC外壳+RISC内核），如Intel Pentium Pro</p>
+<p><strong>18. 流水线技术</strong></p>
+<p><strong>定义</strong>：将指令执行分解为取指→译码→执行→写回等子任务，不同指令的子任务在时间上重叠执行（本质=操作重叠）。</p>
+<p><strong>如何提高性能</strong>：不提高单条速度，而是提高<strong>吞吐量</strong>。串行n条指令=n×m周期，流水线=m+(n-1)周期（n越大优势越明显）。</p>
+<p><strong>RISC更适合流水线的原因</strong>：RISC指令等长、格式规整、寻址方式少→各子任务耗时一致→流水线不会"堵车"。CISC指令长度不统一→各阶段耗时不等→流水线经常停顿。</p>
+<p><strong>19. 体系结构→组成→实现</strong></p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>定义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>体系结构</td>
+<td>程序员看到的硬件属性（软硬件接口）</td>
+<td>x86指令集</td>
+</tr>
+<tr>
+<td>组成</td>
+<td>体系结构的逻辑实现</td>
+<td>译码电路设计</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>组成的物理制造</td>
+<td>7nm/5nm制程</td>
+</tr>
+</tbody>
+</table>
+<p><strong>同一体系结构多种实现的原因</strong>：x86指令集（体系结构）不变，但Intel和AMD可以用不同的微架构（组成）和不同的制程工艺（实现）来制造CPU，只要最终执行结果符合x86规范即可。这就是兼容机存在的基础。</p>
+<p><strong>20. 并行处理结构与Flynn分类</strong></p>
+<p><strong>三种并行结构</strong>：
+- 流水线计算机：<strong>时间重叠</strong>，适合顺序程序（Intel Core超标量流水线）
+- 阵列处理机(SIMD)：<strong>资源重复</strong>，一个控制器+多个ALU，适合矩阵运算（向量处理器）
+- 多处理器系统(MIMD)：<strong>资源共享</strong>，多CPU共享内存，适合多任务/分布式（服务器集群）</p>
+<p><strong>Flynn四分类</strong>：SISD（传统冯机）、SIMD（阵列处理机）、MISD（理论存在）、MIMD（多核CPU/服务器集群）</p>
+<hr />
+<h2>十二、评分线</h2>
+<table>
+<thead>
+<tr>
+<th>错题数</th>
+<th>评价</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤3题</td>
+<td>🟢 掌握扎实</td>
+<td>可直接进入下一章</td>
+</tr>
+<tr>
+<td>3-6题</td>
+<td>🟡 部分薄弱</td>
+<td>重点回看CISC/RISC对比和Flynn分类两个模块</td>
+</tr>
+<tr>
+<td>&gt;6题</td>
+<td>🔴 需重学</td>
+<td>完整重读本章全部8个模块，重点梳理冯·诺依曼→CISC/RISC→流水线→并行这条线</td>
+</tr>
+</tbody>
+</table>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/cs/02" download>📥 下载PDF</a>
+</div>
+</body></html>

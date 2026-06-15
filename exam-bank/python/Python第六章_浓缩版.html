@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第六章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第六章 浓缩速记卡（字符串方法大全）</h1>
+<hr />
+<h2>一、查找与统计</h2>
+<blockquote>
+<p><strong>🧠 费曼：find = Ctrl+F 搜索，count = 数数有几个。</strong> 你打开一个Word文档，按Ctrl+F搜"Python"，<code>find()</code>告诉你它第一次出现在第几个字。<code>count()</code>数全文出现了几次。搜不到的时候<code>find</code>返回-1（礼貌地说"没找到"），不像<code>index</code>那样直接甩脸报错。判断在不在直接用<code>in</code>，跟说人话一样：'"Python"在不在这个句子里？'</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.find(sub)</code></td>
+<td>找子串位置，找不到返-1</td>
+<td><code>'Python'.find('th')</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>s.count(sub)</code></td>
+<td>计数字串出现次数</td>
+<td><code>'ababa'.count('aba')</code></td>
+<td><code>1</code>（不重叠）</td>
+</tr>
+<tr>
+<td><code>sub in s</code></td>
+<td>判断是否包含</td>
+<td><code>'Py' in 'Python'</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>s.index(sub)</code></td>
+<td>同find，找不到<strong>报错</strong></td>
+<td><code>'ab'.index('c')</code></td>
+<td>ValueError</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">'PythonPython'.count('Py')        # 2
+'hello Python'.find('Python')     # 6
+'Python'.find('z')                # -1 (不存在)
+'x' in 'Python'                   # False
+
+# find带起始位置
+s = 'abcabcabc'
+s.find('ab', 5)                   # 6 (从索引5开始找)
+s.count('abc', 2)                 # 2 (从索引2开始数)
+
+# count不重叠计数
+'aaaaa'.count('aa')               # 2 (位置0-1, 2-3)
+</code></pre>
+<hr />
+<h2>二、拆分与拼接</h2>
+<blockquote>
+<p><strong>🧠 费曼：split = 拆积木，join = 拼积木。</strong> 你有一串用逗号连起来的单词 <code>"苹果,香蕉,橘子"</code>，<code>split(",")</code> 就是按逗号拆开，变成三个独立的积木 <code>["苹果","香蕉","橘子"]</code>。反过来 <code>join</code> 是把积木拼回去：<code>"-".join(["苹果","香蕉","橘子"])</code> 用横杠把它们串成 <code>"苹果-香蕉-橘子"</code>。拆和拼是反向操作。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>方向</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.split(sep)</code></td>
+<td>字符串→列表</td>
+<td><code>'a,b,c'.split(',')</code></td>
+<td><code>['a','b','c']</code></td>
+</tr>
+<tr>
+<td><code>sep.join(list)</code></td>
+<td>列表→字符串</td>
+<td><code>'-'.join(['a','b'])</code></td>
+<td><code>'a-b'</code></td>
+</tr>
+<tr>
+<td><code>s.split()</code></td>
+<td>按空白分割</td>
+<td><code>'a b c'.split()</code></td>
+<td><code>['a','b','c']</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># split + join 经典组合
+s = 'a-b-c-d'
+'-'.join(s.split('-')[1:3])       # 'b-c'
+
+s = 'a:b:c:d'
+''.join(s.split(':')[::2])        # 'ac'
+
+# 实战：去掉逗号再统计
+'apple,banana,orange'.replace(',',' ').split()  # ['apple','banana','orange']
+
+# join + upper 链式
+'-'.join(['hello','world']).upper()  # 'HELLO-WORLD'
+</code></pre>
+<hr />
+<h2>三、大小写转换</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.upper()</code></td>
+<td>全大写</td>
+<td><code>'Python'.upper()</code> → <code>'PYTHON'</code></td>
+</tr>
+<tr>
+<td><code>s.lower()</code></td>
+<td>全小写</td>
+<td><code>'Python'.lower()</code> → <code>'python'</code></td>
+</tr>
+<tr>
+<td><code>s.capitalize()</code></td>
+<td>首字母大写</td>
+<td>不常考</td>
+</tr>
+<tr>
+<td><code>s.title()</code></td>
+<td>每词首字母大写</td>
+<td>不常考</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># 首字母大写 + 其余小写
+st = 'python'
+st[0].upper() + st[1:]            # 'Python'
+
+# 忽略大小写比较
+x.upper() == y.upper()            # 判断相等
+
+# 链式调用
+'Hello World'.upper().count('O')  # 2
+'PyThOn'.upper().find('THON')     # 2
+</code></pre>
+<hr />
+<h2>四、替换与去空白</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.replace(old, new, count)</code></td>
+<td>替换，count可选限制次数</td>
+<td><code>'aaaa'.replace('a','b',3)</code> → <code>'bbba'</code></td>
+</tr>
+<tr>
+<td><code>s.strip(chars)</code></td>
+<td>去首尾字符</td>
+<td><code>'**py**'.strip('*')</code> → <code>'py'</code></td>
+</tr>
+<tr>
+<td><code>s.lstrip(chars)</code></td>
+<td>去左侧字符</td>
+<td><code>'##hi##'.lstrip('#')</code> → <code>'hi##'</code></td>
+</tr>
+<tr>
+<td><code>s.rstrip(chars)</code></td>
+<td>去右侧字符</td>
+<td><code>'##hi##'.rstrip('#')</code> → <code>'##hi'</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># strip无参 = 去首尾空白
+'  hello  '.strip()              # 'hello'
+
+# strip指定字符集
+'eeehelloeeeeeee'.strip('eo')    # 'hell' (去掉首尾的e和o)
+'abbdebac'.strip('abc')          # 'de'
+'aaaaaaabc'.strip('a')           # 'bc'
+
+# replace限制次数
+'aaaaa'.replace('a','b',3)       # 'bbbaa'
+'aaaaa'.replace('a','b',3).count('a')  # 2
+
+# strip + replace 组合
+' abc123abc '.strip().replace('a','x',1)  # 'xbc123abc'
+</code></pre>
+<hr />
+<h2>五、对齐填充</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+<th>示例(s='hi')</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.center(w, fill)</code></td>
+<td>居中</td>
+<td><code>'hi'.center(6,'*')</code> → <code>'**hi**'</code></td>
+</tr>
+<tr>
+<td><code>s.ljust(w, fill)</code></td>
+<td>左对齐</td>
+<td><code>'hi'.ljust(6,'-')</code> → <code>'hi----'</code></td>
+</tr>
+<tr>
+<td><code>s.rjust(w, fill)</code></td>
+<td>右对齐</td>
+<td><code>'hi'.rjust(6,'0')</code> → <code>'0000hi'</code></td>
+</tr>
+<tr>
+<td><code>s.zfill(w)</code></td>
+<td>右对齐补0</td>
+<td><code>'42'.zfill(6)</code> → <code>'000042'</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">'123'.center(7, '*')    # '**123**'
+'123'.rjust(5, '-')     # '--123'
+'123'.zfill(4)          # '0123'
+'789'.zfill(5)          # '00789'
+</code></pre>
+<p><strong>注意：</strong> center/rjust/ljust <strong>返回新字符串</strong>，不修改原变量。</p>
+<hr />
+<h2>六、判断方法（is 系列）</h2>
+<blockquote>
+<p><strong>🧠 费曼：is系列 = 安检门。</strong> 你过安检，工作人员看一眼就知道：你是男是女（islower/isupper）、包里有没有液体（isdigit查数字）、是不是空手（isspace查空白）。每个<code>is</code>方法就是一个安检门，符合条件→放行（True），不符合→拦下（False）。数字穿字母衣服？<code>isdigit</code>直接拦。空手过isspace？也不行，必须手里有空白才算。</p>
+</blockquote>
+<h3>6.1 快速参考表</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>判断内容</th>
+<th>True 示例</th>
+<th>False 示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s.islower()</code></td>
+<td>全小写</td>
+<td><code>'abc'</code> <code>'123abc'</code></td>
+<td><code>'Abc'</code></td>
+</tr>
+<tr>
+<td><code>s.isupper()</code></td>
+<td>全大写</td>
+<td><code>'ABC'</code></td>
+<td><code>'Abc'</code></td>
+</tr>
+<tr>
+<td><code>s.isdigit()</code></td>
+<td>全数字</td>
+<td><code>'123'</code></td>
+<td><code>'123a'</code> <code>'12.3'</code></td>
+</tr>
+<tr>
+<td><code>s.isnumeric()</code></td>
+<td>全数字（含中文）</td>
+<td><code>'123'</code> <code>'壹贰叁'</code></td>
+<td><code>'123a'</code></td>
+</tr>
+<tr>
+<td><code>s.isalpha()</code></td>
+<td>全字母（含中文）</td>
+<td><code>'abc'</code> <code>'你好'</code></td>
+<td><code>'a1'</code></td>
+</tr>
+<tr>
+<td><code>s.isalnum()</code></td>
+<td>全字母或数字</td>
+<td><code>'a1'</code> <code>'你好123'</code></td>
+<td><code>'a-1'</code></td>
+</tr>
+<tr>
+<td><code>s.isspace()</code></td>
+<td>全空白</td>
+<td><code>' '</code> <code>'\t'</code> <code>'\n'</code></td>
+<td><code>''</code> <code>'a b'</code></td>
+</tr>
+<tr>
+<td><code>s.isprintable()</code></td>
+<td>可打印</td>
+<td><code>'hello'</code> <code>'123'</code></td>
+<td><code>'\n'</code> <code>'\t'</code></td>
+</tr>
+<tr>
+<td><code>s.startswith(pre)</code></td>
+<td>以...开头</td>
+<td><code>'hi'.startswith('h')</code></td>
+<td><code>'hi'.startswith('x')</code></td>
+</tr>
+<tr>
+<td><code>s.endswith(suf)</code></td>
+<td>以...结尾</td>
+<td><code>'hi'.endswith('i')</code></td>
+<td><code>'hi'.endswith('h')</code></td>
+</tr>
+</tbody>
+</table>
+<h3>6.2 关键细节</h3>
+<pre><code class="language-python"># 数字混字母：isdigit=False, isnumeric=False
+'123abc'.isdigit()               # False
+'123abc'.isnumeric()             # False
+
+# 中文数字：isnumeric=True
+'壹贰叁'.isnumeric()             # True
+
+# islower/isupper：忽略非字母字符
+'123abc'.islower()               # True (只看字母部分)
+'123ABC'.isupper()               # True
+'hello WORLD'.islower()          # False (含大写字母)
+'hello WORLD'.isupper()          # False (含小写字母)
+
+# 空字符串陷阱
+''.isspace()                     # False (空串不是空白)
+' '.isspace()                    # True
+'\t\n '.isspace()                # True
+
+# 不可打印字符
+'\n'.isprintable()               # False
+'\t'.isprintable()               # False
+'hello'.isprintable()            # True
+</code></pre>
+<hr />
+<h2>七、len/ord/chr/str 四个基础函数</h2>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len(s)</code></td>
+<td>字符数（含空格、转义）</td>
+<td><code>len('py\n好')</code> → <code>5</code></td>
+</tr>
+<tr>
+<td><code>ord(c)</code></td>
+<td>字符→Unicode</td>
+<td><code>ord('A')</code> → <code>65</code></td>
+</tr>
+<tr>
+<td><code>chr(n)</code></td>
+<td>Unicode→字符</td>
+<td><code>chr(97)</code> → <code>'a'</code></td>
+</tr>
+<tr>
+<td><code>str(x)</code></td>
+<td>转字符串</td>
+<td><code>str(123)</code> → <code>'123'</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">len('Python语言')                # 8 (6+2)
+len('I\'m a student')            # 13 (\' 算1个字符)
+len('Python 语言')               # 9 (6+1+2)
+
+# ord+chr 经典题
+chr(ord('a') + len('123'))       # chr(97+3) = chr(100) = 'd'
+chr(len('Hello') + ord('A'))     # chr(5+65) = chr(70) = 'F'
+chr(ord('z') - 25) == 'a'        # True
+
+# len不能直接用于数字
+len(123)                         # ❌ TypeError
+</code></pre>
+<hr />
+<h2>八、综合链式调用</h2>
+<pre><code class="language-python"># 统计某字母出现次数（忽略大小写）
+'Hello World'.upper().count('O')   # 2
+
+# 替换逗号后统计单词数
+len('a,b,c'.replace(',',' ').split())  # 3
+
+# strip后改首字母
+'  test  '.strip().replace('t','T')    # 'TesT'
+
+# 切分重组
+'-'.join('a:b:c'.split(':')[::2])      # 'a-c'
+
+# 判断是否全是数字词
+all(x.isnumeric() for x in '123 456'.split())  # True
+</code></pre>
+<hr />
+<h2>九、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str.len()</code> 获取长度？</td>
+<td>❌ 是 <code>len(str)</code></td>
+</tr>
+<tr>
+<td><code>find</code> 找不到返回什么？</td>
+<td><strong>-1</strong>，不报错</td>
+</tr>
+<tr>
+<td><code>index</code> 找不到返回什么？</td>
+<td><strong>报错</strong> ValueError</td>
+</tr>
+<tr>
+<td><code>count</code> 计数是否重叠？</td>
+<td><strong>不重叠</strong></td>
+</tr>
+<tr>
+<td><code>upper()</code> 变小写？</td>
+<td>❌ upper=大写，lower=小写</td>
+</tr>
+<tr>
+<td><code>center/rjust</code> 修改原字符串？</td>
+<td>❌ 返回新字符串，原串不变</td>
+</tr>
+<tr>
+<td><code>isnumeric</code> 和 <code>isdigit</code> 区别？</td>
+<td>isnumeric 认中文数字，isdigit不认</td>
+</tr>
+<tr>
+<td>空串 <code>''.isspace()</code> ？</td>
+<td><strong>False</strong></td>
+</tr>
+<tr>
+<td><code>'123abc'.isalpha()</code> ？</td>
+<td><strong>False</strong>（含数字）</td>
+</tr>
+<tr>
+<td><code>'123abc'.islower()</code> ？</td>
+<td><strong>True</strong>（只看字母）</td>
+</tr>
+<tr>
+<td><code>strip('eo')</code> 去什么？</td>
+<td>首尾出现的 <strong>e或o</strong> 任一字符</td>
+</tr>
+<tr>
+<td><code>strip()</code> 无参？</td>
+<td>去首尾<strong>空白字符</strong></td>
+</tr>
+<tr>
+<td><code>'upper'</code> 是字符串方法？</td>
+<td>✅ <code>s.upper()</code></td>
+</tr>
+<tr>
+<td><code>ord('0')+8 == ord('9')</code>？</td>
+<td>❌ 48+8=56 ≠ 57</td>
+</tr>
+<tr>
+<td>len 计算转义字符？</td>
+<td><code>\n</code> <code>\t</code> <code>\'</code> 各算 <strong>1个字符</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖 is 系列判断和 find/count 陷阱。</p>
+</blockquote>
+<p><strong>1.</strong> <code>'Python'.find('z')</code> 的结果是？</p>
+<p>A. 0　　B. -1　　C. 报错　　D. None</p>
+<p><strong>2.</strong> <code>'aaaaa'.count('aa')</code> 的结果是？</p>
+<p>A. 4　　B. 2　　C. 3　　D. 1</p>
+<p><strong>3.</strong> <code>'123abc'.isdigit()</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. None</p>
+<p><strong>4.</strong> <code>''.isspace()</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. None</p>
+<p><strong>5.</strong> <code>'hello WORLD'.islower()</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. None</p>
+<p><strong>6.</strong> <code>'python'.upper()</code> 的结果是？</p>
+<p>A. <code>'python'</code>　　B. <code>'PYTHON'</code>　　C. <code>'Python'</code>　　D. 报错</p>
+<p><strong>7.</strong> <code>'  hi  '.strip()</code> 的结果是？</p>
+<p>A. <code>'hi'</code>　　B. <code>'  hi'</code>　　C. <code>'hi  '</code>　　D. <code>'  hi  '</code></p>
+<p><strong>8.</strong> <code>'壹贰叁'.isnumeric()</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. None</p>
+<p><strong>9.</strong> <code>'-'.join(['a','b','c'])</code> 的结果是？</p>
+<p>A. <code>'abc'</code>　　B. <code>'a-b-c'</code>　　C. <code>['a-b-c']</code>　　D. <code>'-abc-'</code></p>
+<p><strong>10.</strong> <code>'HelloWorld'.endswith('ld')</code> 的结果是？</p>
+<p>A. <code>'ld'</code>　　B. True　　C. False　　D. 2</p>
+<p><strong>11.</strong> <code>'aaaaa'.replace('a','b',3)</code> 的结果是？</p>
+<p>A. <code>'bbbbb'</code>　　B. <code>'bbbaa'</code>　　C. <code>'aaabb'</code>　　D. <code>'ababa'</code></p>
+<p><strong>12.</strong> 获取字符串 s 长度的正确写法是？</p>
+<p>A. <code>s.len()</code>　　B. <code>len(s)</code>　　C. <code>s.length()</code>　　D. <code>length(s)</code></p>
+<p><strong>13.</strong> <code>'\t\n '.isspace()</code> 的结果是？</p>
+<p>A. True　　B. False　　C. <code>'\t\n '</code>　　D. 报错</p>
+<p><strong>14.</strong> <code>'abcabcabc'.find('ab', 5)</code> 的结果是？</p>
+<p>A. 0　　B. 3　　C. 6　　D. -1</p>
+<p><strong>15.</strong> <code>'\n'.isprintable()</code> 的结果是？</p>
+<p>A. True　　B. False　　C. <code>'\n'</code>　　D. 报错</p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>find找不到返回 <code>-1</code>，不报错。index找不到才报错。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td>count不重叠计数：位置0-1的'aa'和位置2-3的'aa'，第4个a单独→2次。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>B</strong></td>
+<td>isdigit()要求全部字符是数字，含字母'a'→False。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>B</strong></td>
+<td>空串不是空白串。必须至少含一个空白字符才返回True。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>B</strong></td>
+<td>含大写字母'W''O''R''L''D'→islower()=False。只看字母字符。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>B</strong></td>
+<td>upper()全转大写。lower()才是转小写，别记反。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>A</strong></td>
+<td>strip()无参=去首尾空白。<code>'  hi  '</code>→<code>'hi'</code>。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>A</strong></td>
+<td>中文数字<code>壹贰叁</code>被isnumeric()识别为数字。isdigit()不识别。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>B</strong></td>
+<td>join用分隔符拼接列表元素→<code>'a-b-c'</code>。分隔符只插在元素之间。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>B</strong></td>
+<td>'HelloWorld'以'ld'结尾→True。endswith返回布尔值。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>B</strong></td>
+<td>replace第三参数=限制3次→前3个a变b，后2个a不变→<code>'bbbaa'</code>。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>B</strong></td>
+<td>字符串长度用<code>len(s)</code>函数，不是方法。<code>s.len()</code>不存在。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>A</strong></td>
+<td><code>\t</code>(tab)和<code>\n</code>(换行)和空格都是空白字符→isspace()=True。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>C</strong></td>
+<td>从索引5开始找'ab'，在位置6找到→6。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>B</strong></td>
+<td><code>\n</code>是不可打印字符→isprintable()=False。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：字符串方法基本通关　｜　错3-6题：重点回看第六节(is判断表)　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/六" download>📥 下载PDF</a>
+</div>
+</body></html>

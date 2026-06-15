@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>计算机科学概论_第04章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>计算机科学概论 第04章 浓缩速记卡</h1>
+<blockquote>
+<p><strong>章节：数据结构与算法 — 组织数据、求解问题</strong>
+<strong>题量：43题 → 浓缩为8个知识模块</strong>
+<strong>预计用时：30分钟</strong></p>
+</blockquote>
+<hr />
+<h2>一、数据结构基础</h2>
+<blockquote>
+<p>🍳 <strong>费曼：数据像「食材」——生菜、肉、调料；数据结构像「摆盘方式」——火锅是一层层叠(线性)，圣诞树是分叉挂(树形)，朋友圈是互相@(图)。同样一堆食材，摆法不同，吃的效率完全不同。</strong></p>
+</blockquote>
+<h3>1.1 数据层级</h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>定义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>数据项</strong></td>
+<td><strong>最小单位</strong>，不可再分</td>
+<td>一个字符、一个数字</td>
+</tr>
+<tr>
+<td><strong>数据元素</strong></td>
+<td>数据的基本单位</td>
+<td>一条学生记录（学号+姓名+成绩）</td>
+</tr>
+<tr>
+<td><strong>数据</strong></td>
+<td>计算机可识别、存储、加工的对象</td>
+<td>所有数值和非数值信息</td>
+</tr>
+<tr>
+<td><strong>数据结构</strong></td>
+<td>数据元素间存在一种或多种关系的集合</td>
+<td>线性表、树、图</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 四类基本数据结构</h3>
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>关系</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>集合</strong></td>
+<td>松散（元素同属一个集合）</td>
+<td>{1, 2, 3}</td>
+</tr>
+<tr>
+<td><strong>线性结构</strong></td>
+<td>一对一</td>
+<td>线性表、栈、队列、串、数组</td>
+</tr>
+<tr>
+<td><strong>树形结构</strong></td>
+<td>一对多（层次）</td>
+<td>二叉树、文件目录</td>
+</tr>
+<tr>
+<td><strong>图形结构</strong></td>
+<td>多对多</td>
+<td>社交网络、地图</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 线性 vs 非线性</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>线性结构</th>
+<th>非线性结构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关系</td>
+<td><strong>一对一</strong></td>
+<td>一对多（树）或多对多（图）</td>
+</tr>
+<tr>
+<td>前驱/后继</td>
+<td>每元素最多一个前驱一个后继</td>
+<td>至少一个元素≥2个前驱/后继</td>
+</tr>
+<tr>
+<td>包含</td>
+<td>线性表、串、栈、队列、数组</td>
+<td><strong>树、图、网</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>串是线性结构（特殊的线性表）！二叉树是非线性结构！线性链表也是线性结构（链式存储仍是线性逻辑）</strong></p>
+</blockquote>
+<hr />
+<h2>二、算法基础</h2>
+<blockquote>
+<p>🍳 <strong>费曼：算法像「菜谱」——必须能做完(有穷性)，每一步写清楚不能含糊(确切性)，可以没有原料自带配方(0输入)，必须做出菜(至少1个输出)，每一步正常人都能做到(可行性)。</strong></p>
+</blockquote>
+<h3>2.1 五大特征</h3>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>有穷性</strong></td>
+<td>有限步骤后必须终止（❌无穷性不是特征！）</td>
+</tr>
+<tr>
+<td><strong>确切性</strong></td>
+<td>每步定义明确无歧义</td>
+</tr>
+<tr>
+<td><strong>输入</strong></td>
+<td>0个或多个</td>
+</tr>
+<tr>
+<td><strong>输出</strong></td>
+<td><strong>至少1个</strong>（无输出=无意义）</td>
+</tr>
+<tr>
+<td><strong>可行性</strong></td>
+<td>每步可通过基本运算实现</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 三大控制结构</h3>
+<pre><code>顺序结构 + 选择(分支)结构 + 循环结构
+</code></pre>
+<blockquote>
+<p>⚠️ 递归不是基本控制结构！嵌套也不是！</p>
+</blockquote>
+<h3>2.3 算法度量</h3>
+<table>
+<thead>
+<tr>
+<th>度量</th>
+<th>定义</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>时间复杂度</strong></td>
+<td>执行所需<strong>基本运算次数</strong>（不是执行时间！）</td>
+<td>O(n)、O(n²)、O(logn)</td>
+</tr>
+<tr>
+<td><strong>空间复杂度</strong></td>
+<td>执行所需<strong>存储空间</strong>（不是程序长度！）</td>
+<td>O(1)、O(n)、O(logn)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔑 <strong>算法分析的目的：分析效率以求改进</strong></p>
+</blockquote>
+<h3>2.4 算法实现方式</h3>
+<p>子程序、函数、模块、过程 — 四种均可</p>
+<hr />
+<h2>三、线性结构</h2>
+<blockquote>
+<p>🍳 <strong>费曼：顺序表像「电影院座位」——每人固定位置，找5号座直接走过去(随机存取)，但中间插一个人全场往后挪。链表像「寻宝游戏」——每人手里一张纸条写下一个人的位置，插入新人只需改两张纸条，但找第100个人要顺着99张纸条一路找。</strong></p>
+</blockquote>
+<h3>3.1 顺序表 vs 链表</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>顺序表（数组）</th>
+<th>链表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储方式</td>
+<td>连续内存</td>
+<td>不连续，通过指针链接</td>
+</tr>
+<tr>
+<td>节点结构</td>
+<td>只存数据</td>
+<td><strong>数据域 + 指针域</strong></td>
+</tr>
+<tr>
+<td>存取</td>
+<td><strong>随机存取</strong>（下标直达）</td>
+<td>顺序存取（从头遍历）</td>
+</tr>
+<tr>
+<td>插入/删除</td>
+<td>需移动大量元素</td>
+<td><strong>只需修改指针</strong>（最大优势）</td>
+</tr>
+<tr>
+<td>物理vs逻辑</td>
+<td><strong>物理顺序=逻辑顺序</strong></td>
+<td>物理顺序≠逻辑顺序</td>
+</tr>
+<tr>
+<td>存储空间</td>
+<td>只存数据</td>
+<td>需额外存储指针</td>
+</tr>
+<tr>
+<td>搜索</td>
+<td>更简单（可折半查找）</td>
+<td>只能顺序查找</td>
+</tr>
+<tr>
+<td>排序</td>
+<td>更简单（下标交换）</td>
+<td>需修改指针，复杂</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 顺序表插入/删除（等概率）</h3>
+<pre><code>n个元素：
+插入平均移动 = n/2
+删除平均移动 = (n-1)/2
+
+例：127个元素，插入平均移动 = 127/2 = 63.5
+                删除平均移动 = 126/2 = 63
+</code></pre>
+<h3>3.3 栈 vs 队列</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>栈</th>
+<th>队列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原则</td>
+<td>LIFO（后进先出）</td>
+<td>FIFO（先进先出）</td>
+</tr>
+<tr>
+<td>操作端</td>
+<td>仅栈顶</td>
+<td>队头删除、队尾插入</td>
+</tr>
+<tr>
+<td><strong>共同点</strong></td>
+<td><strong>都只允许在端点处插入和删除</strong></td>
+<td>← 这是考点！</td>
+</tr>
+</tbody>
+</table>
+<h3>3.4 数组存储方式</h3>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>顺序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>行序优先</strong></td>
+<td>先一行行→一行完再下一行</td>
+</tr>
+<tr>
+<td>列序优先</td>
+<td>先一列列→一列完再下一列</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、非线性结构</h2>
+<blockquote>
+<p>🍳 <strong>费曼：树像「公司组织架构」——CEO(根)管几个VP，每个VP再管几个经理(一对多)，不能出现"经理同时向两个VP汇报"(无环)。图像「朋友圈」——A认识B、B认识C、C也认识A，可以互相@，可以有环。</strong></p>
+</blockquote>
+<h3>4.1 树的基本概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>树的度</strong></td>
+<td>树内<strong>节点度的最大值</strong>（下级节点最多的那个节点的下级个数）</td>
+</tr>
+<tr>
+<td>节点度</td>
+<td>该节点的子树个数</td>
+</tr>
+<tr>
+<td>叶子节点</td>
+<td>度为0的节点</td>
+</tr>
+<tr>
+<td>二叉树</td>
+<td>每个节点<strong>最多2个子树</strong>，<strong>有序</strong>（左右子树不能互换）</td>
+</tr>
+</tbody>
+</table>
+<h3>4.2 树 vs 二叉树 vs 图</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>树</th>
+<th>二叉树</th>
+<th>图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>节点度</td>
+<td>无限制（可&gt;2）</td>
+<td><strong>最大为2</strong></td>
+<td>无限制</td>
+</tr>
+<tr>
+<td>有序性</td>
+<td>无序（子树无左右）</td>
+<td><strong>有序</strong>（左右不可互换）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>双亲</td>
+<td>除根外<strong>唯一</strong></td>
+<td>除根外唯一</td>
+<td>可有<strong>多个</strong></td>
+</tr>
+<tr>
+<td>环</td>
+<td><strong>无环</strong></td>
+<td>无环</td>
+<td>允许环</td>
+</tr>
+<tr>
+<td>模型</td>
+<td><strong>层次模型</strong></td>
+<td>—</td>
+<td>网状模型</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🌲 <strong>树 = 连通无环图</strong>（特殊的图）</p>
+</blockquote>
+<h3>4.3 完全二叉树叶子节点公式</h3>
+<pre><code>n为奇数 → 叶子数 = (n+1)/2
+例：699个节点(奇数) → 叶子 = (699+1)/2 = 350
+</code></pre>
+<h3>4.4 二叉树遍历（线性化操作）</h3>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>顺序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>先序</strong></td>
+<td>根 → 左子树 → 右子树</td>
+</tr>
+<tr>
+<td><strong>中序</strong></td>
+<td>左子树 → 根 → 右子树</td>
+</tr>
+<tr>
+<td><strong>后序</strong></td>
+<td>左子树 → 右子树 → 根</td>
+</tr>
+</tbody>
+</table>
+<p>遍历的应用：文件系统遍历(先序)、XML/HTML解析、数据库B+树索引、地图路径查找</p>
+<hr />
+<h2>五、查找算法</h2>
+<blockquote>
+<p>🍳 <strong>费曼：顺序查找像「翻字典逐页找」——从第一页翻到最后一页，找到就停。折半查找像「猜数字游戏」——每次都猜中间，比大小后砍掉一半，log₂n次必中。前提是字典已经排好序。</strong></p>
+</blockquote>
+<h3>5.1 顺序查找（有序表 vs 无序表）</h3>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>平均查找长度</th>
+<th>有序 vs 无序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查找失败</td>
+<td>n+1</td>
+<td><strong>相同</strong>（都需遍历全部）</td>
+</tr>
+<tr>
+<td>查找成功（唯一k）</td>
+<td>(n+1)/2</td>
+<td><strong>相同</strong>（都从表头遍历，找到停止）</td>
+</tr>
+<tr>
+<td>查找成功（多个k，全找出）</td>
+<td>n</td>
+<td><strong>相同</strong>（都需完整遍历）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔑 <strong>顺序查找时，有序表和无序表查找长度完全相同！有序性在顺序查找中没有优势。</strong></p>
+</blockquote>
+<h3>5.2 折半查找 vs 二叉排序树</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>折半查找</th>
+<th>二叉排序树(BST)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前提</td>
+<td>有序顺序表</td>
+<td>构建BST</td>
+</tr>
+<tr>
+<td>平均</td>
+<td>O(logn)</td>
+<td>O(logn)（平衡时）</td>
+</tr>
+<tr>
+<td>最坏</td>
+<td>O(logn) ✅</td>
+<td>O(n) ❌（退化成链表）</td>
+</tr>
+<tr>
+<td>结论</td>
+<td><strong>折半查找更优</strong>（性能稳定）</td>
+<td>取决于平衡性</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、排序算法</h2>
+<blockquote>
+<p>🍳 <strong>费曼：冒泡像「水中气泡」——最大的泡泡自己浮到水面。选择像「挑苹果」——每次从筐里挑最小的放篮子里。快速排序像「分班」——选一个标准分(枢轴)，矮的站左边高的站右边，左右再各自分班。</strong></p>
+</blockquote>
+<h3>6.1 四大排序对比</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>冒泡排序</th>
+<th>选择排序</th>
+<th>插入排序</th>
+<th>快速排序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>思想</td>
+<td>相邻比较交换，大者<strong>冒泡</strong>到末尾</td>
+<td>每次选最小放入结果</td>
+<td>将元素插入已排序部分</td>
+<td>选枢轴<strong>分治</strong>，递归排序</td>
+</tr>
+<tr>
+<td>最好</td>
+<td>O(n)</td>
+<td>O(n²)</td>
+<td>O(n)</td>
+<td>O(nlogn)</td>
+</tr>
+<tr>
+<td>平均</td>
+<td>O(n²)</td>
+<td><strong>O(n²)</strong></td>
+<td>O(n²)</td>
+<td><strong>O(nlogn)</strong></td>
+</tr>
+<tr>
+<td>最坏</td>
+<td>O(n²)</td>
+<td><strong>O(n²)</strong></td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+</tr>
+<tr>
+<td>空间</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(logn)~O(n)</td>
+</tr>
+<tr>
+<td>稳定</td>
+<td>✅ 稳定</td>
+<td>❌ 不稳定</td>
+<td>✅ 稳定</td>
+<td>❌ 不稳定</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔑 <strong>选择排序：最佳=最坏=O(n²)</strong> —— 无论顺序如何，每次都要遍历剩余全部元素找最小</p>
+</blockquote>
+<h3>6.2 冒泡排序关键特征</h3>
+<ul>
+<li>通过比较<strong>相邻元素</strong>，逆序则交换</li>
+<li>每次遍历后最大元素"冒泡"到末尾</li>
+<li>❌ 不选择最小元素放正确位置（那是选择排序）</li>
+<li>❌ 不用分治策略（那是快速/归并排序）</li>
+<li>❌ 时间复杂度不是O(nlogn)（是O(n²)）</li>
+</ul>
+<hr />
+<h2>七、递归</h2>
+<blockquote>
+<p>🍳 <strong>费曼：递归像「俄罗斯套娃」——打开一个娃，里面还有个小一号的娃，一直开到最小的那个(边界条件)，然后一层层合回去(回归)。</strong></p>
+</blockquote>
+<h3>7.1 递归三要素</h3>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>边界条件</strong></td>
+<td>最小规模可直接求解（递归出口）</td>
+</tr>
+<tr>
+<td><strong>递归关系</strong></td>
+<td>大问题分解为同类小问题</td>
+</tr>
+<tr>
+<td>执行过程</td>
+<td><strong>递推</strong>（大→小，直到边界） → <strong>回归</strong>（小→大，逐层返回）</td>
+</tr>
+</tbody>
+</table>
+<h3>7.2 递归适用场景</h3>
+<ul>
+<li>✅ 数据定义是递归的（如斐波那契数列）</li>
+<li>✅ 问题解法是递归的（如梵天塔）</li>
+<li>✅ 数据结构是递归的（如二叉树遍历）</li>
+</ul>
+<h3>7.3 递归优缺点</h3>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码简洁易懂</td>
+<td><strong>效率低</strong>（保存栈帧开销+可能重复计算）</td>
+</tr>
+<tr>
+<td>符合人类思维（分治直观）</td>
+<td><strong>栈溢出风险</strong>（深度过大→崩溃）</td>
+</tr>
+<tr>
+<td>便于维护</td>
+<td>调试困难（调用链长难跟踪）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、综合应用题模板</h2>
+<h3>8.1 字符频度统计</h3>
+<pre><code class="language-python">def count_freq(s):
+    freq = {}
+    for char in s:
+        freq[char] = freq.get(char, 0) + 1
+    return freq
+</code></pre>
+<h3>8.2 输油管道最优位置（中位数问题）</h3>
+<ul>
+<li>水平主管道 → 只关心y坐标</li>
+<li>目标：min Σ|yᵢ - k|</li>
+<li><strong>最优k = y坐标的中位数</strong></li>
+<li>奇数个 → 中位数；偶数个 → 中间两个任意值均可</li>
+</ul>
+<h3>8.3 顺序表平均移动</h3>
+<pre><code>n元素顺序表，等概率：
+插入 n/2 个元素移动
+删除 (n-1)/2 个元素移动
+</code></pre>
+<hr />
+<h2>九、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法五大特征包含"无穷性"？</td>
+<td>❌ 包含<strong>有穷性</strong>（有限步终止），不是无穷性</td>
+</tr>
+<tr>
+<td>递归是算法的基本控制结构？</td>
+<td>❌ 基本结构=<strong>顺序+选择(分支)+循环</strong>，递归不是</td>
+</tr>
+<tr>
+<td>算法时间复杂度=执行时间？</td>
+<td>❌ =执行所需<strong>基本运算次数</strong></td>
+</tr>
+<tr>
+<td>算法空间复杂度=程序长度？</td>
+<td>❌ =执行所需<strong>存储空间</strong></td>
+</tr>
+<tr>
+<td>数据处理最小单位=数据元素？</td>
+<td>❌ 最小单位=<strong>数据项</strong>（不可再分），数据元素是基本单位</td>
+</tr>
+<tr>
+<td>二叉排序树查找一定O(logn)？</td>
+<td>❌ 最坏退化成链表=<strong>O(n)</strong>，折半查找始终O(logn)更优</td>
+</tr>
+<tr>
+<td>有序表顺序查找比无序表快？</td>
+<td>❌ 顺序查找时<strong>完全相同</strong>（都从表头遍历）</td>
+</tr>
+<tr>
+<td>二叉树是线性结构？</td>
+<td>❌ 二叉树=<strong>非线性</strong>结构</td>
+</tr>
+<tr>
+<td>线性链表是非线性结构？</td>
+<td>❌ 逻辑上仍是<strong>线性</strong>结构（链式只是存储方式）</td>
+</tr>
+<tr>
+<td>栈和队列没有共同点？</td>
+<td>❌ 共同点：<strong>只允许在端点处插入和删除</strong></td>
+</tr>
+<tr>
+<td>冒泡排序时间复杂度O(nlogn)？</td>
+<td>❌ 平均/最坏=<strong>O(n²)</strong></td>
+</tr>
+<tr>
+<td>选择排序最佳情况比最坏好？</td>
+<td>❌ 选择排序最佳=最坏=<strong>O(n²)</strong>，与初始顺序无关</td>
+</tr>
+<tr>
+<td>链表优点是随机存取？</td>
+<td>❌ 链表只能顺序存取，优点是<strong>插入删除方便（改指针）</strong></td>
+</tr>
+<tr>
+<td>串是非线性结构？</td>
+<td>❌ 串=特殊的线性表=<strong>线性</strong>结构</td>
+</tr>
+<tr>
+<td>存储结构=数据在计算机中的顺序存储方式？</td>
+<td>❌ =<strong>逻辑结构在计算机中的表示（映像）</strong></td>
+</tr>
+<tr>
+<td>树的度=节点的子树个数？</td>
+<td>❌ 节点的子树个数=<strong>节点度</strong>，树的度=<strong>所有节点度的最大值</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、自测20题</h2>
+<h3>选择题（15题）</h3>
+<p><strong>1.</strong> 数据处理的最小单位是什么？
+A、数据
+B、数据元素
+C、数据项
+D、数据结构</p>
+<p><strong>2.</strong> 算法的时间复杂度是指什么？
+A、执行算法程序所需要的时间
+B、算法程序的长度
+C、算法执行过程中所需要的基本运算次数
+D、算法程序中的指令条数</p>
+<p><strong>3.</strong> 以下哪个不属于算法的基本控制结构？
+A、顺序结构
+B、分支结构
+C、循环结构
+D、递归结构</p>
+<p><strong>4.</strong> 下列哪个不属于线性结构？
+A、队列
+B、线性表
+C、二叉树
+D、栈</p>
+<p><strong>5.</strong> 以下关于顺序查找的说法，正确的是？
+A、有序表的顺序查找比无序表快
+B、查找失败时，有序表和无序表的平均查找长度相同
+C、顺序查找必须是针对有序表的
+D、顺序查找的时间复杂度为O(logn)</p>
+<p><strong>6.</strong> 链表的最大优点是什么？
+A、便于随机存取
+B、存储空间比顺序表少
+C、便于插入和删除操作
+D、数据元素的物理顺序与逻辑顺序相同</p>
+<p><strong>7.</strong> 栈和队列的共同点是什么？
+A、都是先进后出
+B、都是先进先出
+C、只允许在端点处插入和删除元素
+D、没有共同点</p>
+<p><strong>8.</strong> 折半查找与二叉排序树的性能对比，正确的是？
+A、时间复杂度完全相同
+B、折半查找更优（最坏情况保持O(logn)）
+C、二叉排序树更优
+D、无法比较</p>
+<p><strong>9.</strong> 冒泡排序算法的正确描述是？
+A、通过选择最小元素并将其放在正确位置来工作
+B、通过比较相邻元素，逆序交换，使大元素"冒泡"到末尾
+C、使用分治策略
+D、时间复杂度总是O(nlogn)</p>
+<p><strong>10.</strong> 完全二叉树共有699个节点，叶子节点数是多少？
+A、349
+B、350
+C、255
+D、351</p>
+<p><strong>11.</strong> 关于算法的特征，错误的是？
+A、算法必须具有有穷性
+B、算法可以有0个输入
+C、算法可以没有输出
+D、算法必须具有确切性</p>
+<p><strong>12.</strong> 选择排序在最佳情况下的时间复杂度是？
+A、O(n)
+B、O(nlogn)
+C、O(n²)
+D、O(1)</p>
+<p><strong>13.</strong> 数据的存储结构是指什么？
+A、数据所占的存储空间量
+B、数据的逻辑结构在计算机中的表示
+C、数据在计算机中的顺序存储方式
+D、存储在外存中的数据</p>
+<p><strong>14.</strong> 下列属于非线性结构的有？
+A、树
+B、图
+C、网
+D、以上都是</p>
+<p><strong>15.</strong> 递归方法一般用来解决哪类问题？
+A、数据定义是递归的
+B、问题解法是递归的
+C、数据结构是递归的
+D、以上都是</p>
+<hr />
+<h3>大题（5题）</h3>
+<p><strong>16.</strong> 简述算法的五大特征，并说明时间复杂度和空间复杂度的含义及其衡量的是什么。</p>
+<p><strong>17.</strong> 对比顺序表和链表的优缺点。为什么说链表便于插入和删除？有127个元素的顺序表，等概率下插入和删除各平均需要移动多少个元素？</p>
+<p><strong>18.</strong> 对比冒泡排序、选择排序和快速排序的核心思想、时间复杂度和稳定性。选择排序的最佳和最坏情况时间复杂度相同吗？为什么？</p>
+<p><strong>19.</strong> 什么是递归？递归需要满足什么条件？递归有哪些优缺点？</p>
+<p><strong>20.</strong> 对比树、二叉树和图三者的区别（节点度、有序性、双亲关系、是否允许环）。什么是完全二叉树？699个节点的完全二叉树有多少叶子节点？请写出计算过程。</p>
+<hr />
+<h2>十一、答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C</td>
+<td><strong>数据项</strong>是数据处理最小单位（不可再分）。数据元素是基本单位，数据是总称</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>时间复杂度=<strong>基本运算次数</strong>（不是实际时间）。A是绝对时间，B是程序长度，D是指令条数</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>三大基本结构：<strong>顺序+选择(分支)+循环</strong>。递归是算法设计方法，不是控制结构</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C</td>
+<td><strong>二叉树</strong>=非线性结构。队列、线性表、栈都是线性结构（一对一关系）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>顺序查找：有序vs无序<strong>完全相同</strong>（都从表头遍历，查找失败都需n+1次比较）。A错，C错（无序也可），D错（O(n)）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C</td>
+<td>链表最大优势：插入删除<strong>只需改指针</strong>，不移动元素。A错（不能随机存取），B错（多存指针），D错（物理顺序≠逻辑顺序）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C</td>
+<td>栈和队列共同点：<strong>都只在端点操作</strong>（栈=栈顶，队列=两端）。A是栈独有，B是队列独有</td>
+</tr>
+<tr>
+<td>8</td>
+<td>B</td>
+<td>折半查找最坏保持O(logn)，BST最坏退化O(n)→<strong>折半更优</strong></td>
+</tr>
+<tr>
+<td>9</td>
+<td>B</td>
+<td>冒泡=相邻比较交换，大元素冒泡。A是选择排序，C是快速/归并，D错(O(n²))</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td>699为奇数 → 叶子=(n+1)/2=700/2=<strong>350</strong></td>
+</tr>
+<tr>
+<td>11</td>
+<td>C</td>
+<td>算法<strong>必须至少1个输出</strong>。无输出的算法无实际意义。其余ABD都是正确特征</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td>选择排序最佳=最坏=<strong>O(n²)</strong>，因为无论初始顺序如何，每次都要遍历剩余元素找最小</td>
+</tr>
+<tr>
+<td>13</td>
+<td>B</td>
+<td>存储结构=<strong>逻辑结构在计算机中的表示（映像）</strong>。不是存储空间量，不是仅顺序存储</td>
+</tr>
+<tr>
+<td>14</td>
+<td>D</td>
+<td><strong>树、图、网</strong>都是非线性结构。网是带权图，也属非线性</td>
+</tr>
+<tr>
+<td>15</td>
+<td>D</td>
+<td>递归适用三类：数据定义递归+问题解法递归+数据结构递归。ABC全对</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>大题参考答案</h3>
+<p><strong>16. 算法五大特征与复杂度</strong></p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有穷性</td>
+<td>有限步后必须终止</td>
+</tr>
+<tr>
+<td>确切性</td>
+<td>每步无歧义</td>
+</tr>
+<tr>
+<td>输入</td>
+<td>0个或多个</td>
+</tr>
+<tr>
+<td>输出</td>
+<td>至少1个</td>
+</tr>
+<tr>
+<td>可行性</td>
+<td>每步可通过基本运算实现</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>时间复杂度</strong>：执行所需基本运算次数，衡量算法运行效率（不是实际秒数）</li>
+<li><strong>空间复杂度</strong>：执行所需存储空间，衡量算法内存消耗（不是程序长度）</li>
+</ul>
+<p><strong>17. 顺序表 vs 链表</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>顺序表</th>
+<th>链表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>随机存取(O(1))、排序简单</td>
+<td><strong>插入删除方便</strong>（改指针，不移动元素）</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>插入删除需大量移动元素</td>
+<td>只能顺序存取、多存指针</td>
+</tr>
+</tbody>
+</table>
+<p>127个元素，等概率：
+- 插入平均移动 = 127/2 = <strong>63.5</strong>个
+- 删除平均移动 = 126/2 = <strong>63</strong>个</p>
+<p><strong>18. 三大排序对比</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>冒泡</th>
+<th>选择</th>
+<th>快速</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>思想</td>
+<td>相邻比较交换，大者冒泡</td>
+<td>每轮选最小放前面</td>
+<td>选枢轴分治，递归</td>
+</tr>
+<tr>
+<td>最佳</td>
+<td>O(n)</td>
+<td><strong>O(n²)</strong></td>
+<td>O(nlogn)</td>
+</tr>
+<tr>
+<td>最坏</td>
+<td>O(n²)</td>
+<td><strong>O(n²)</strong></td>
+<td>O(n²)</td>
+</tr>
+<tr>
+<td>稳定性</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<p>选择排序最佳=最坏=O(n²)：因为每轮都必须遍历剩余全部元素找最小，比较次数恒为n(n-1)/2，与输入顺序无关。</p>
+<p><strong>19. 递归</strong></p>
+<p>定义：算法在执行过程中直接或间接调用自身。核心：将大问题分解为同类小问题。</p>
+<p>两个条件：
+- <strong>边界条件（递归出口）</strong>：最小规模可直接求解
+- <strong>递归关系</strong>：大问题→小问题的分解规则</p>
+<p>优缺点：
+- ✅ 代码简洁、符合思维、便于维护
+- ❌ 效率低(栈帧+重复计算)、栈溢出风险、调试困难</p>
+<p><strong>20. 树 vs 二叉树 vs 图</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>树</th>
+<th>二叉树</th>
+<th>图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>节点度</td>
+<td>≤n</td>
+<td><strong>≤2</strong></td>
+<td>≤n</td>
+</tr>
+<tr>
+<td>有序性</td>
+<td>无序</td>
+<td><strong>有序</strong>（左右不可换）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>双亲</td>
+<td>唯一</td>
+<td>唯一</td>
+<td>可多个</td>
+</tr>
+<tr>
+<td>环</td>
+<td>无</td>
+<td>无</td>
+<td>允许</td>
+</tr>
+</tbody>
+</table>
+<p>完全二叉树：除最后一层外每层全满，最后一层节点靠左排列。</p>
+<p>699节点(奇数) → 叶子数 = (n+1)/2 = 700/2 = <strong>350</strong></p>
+<hr />
+<h2>十二、评分线</h2>
+<table>
+<thead>
+<tr>
+<th>错题数</th>
+<th>评价</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤3题</td>
+<td>🟢 掌握扎实</td>
+<td>可直接进入下一章</td>
+</tr>
+<tr>
+<td>3-6题</td>
+<td>🟡 部分薄弱</td>
+<td>重点回看算法特征/复杂度和排序算法对比</td>
+</tr>
+<tr>
+<td>&gt;6题</td>
+<td>🔴 需重学</td>
+<td>完整重读本章，重点梳理：数据结构分类→算法特征→线性/非线性→排序对比→递归</td>
+</tr>
+</tbody>
+</table>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/cs/04" download>📥 下载PDF</a>
+</div>
+</body></html>

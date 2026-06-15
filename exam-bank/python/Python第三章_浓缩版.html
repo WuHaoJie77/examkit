@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第三章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第三章 浓缩速记卡（print · input · eval · 缩进注释 · IPO）</h1>
+<hr />
+<h2>一、print() 输出函数</h2>
+<blockquote>
+<p><strong>🧠 费曼：print = 电脑张嘴说话。</strong> 你让电脑说"你好"，<code>print("你好")</code>。让电脑算个数再说出来，<code>print(100+200)</code>，它先算300再说。你说多个东西用逗号隔开，<code>print("结果", 300)</code>，它自动在中间加空格。<code>sep</code>控制怎么隔，<code>end</code>控制说完后加什么尾巴——默认是换行，改成<code>end=""</code>就不换行，下一句print的话可以接在后面。</p>
+</blockquote>
+<h3>1.1 核心用法</h3>
+<pre><code class="language-python">print(&quot;Hello&quot;)                    # 基本输出
+print(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)              # 多对象输出，默认空格分隔  → a b c
+print(100 + 200)                  # 输出表达式结果  → 300
+print(&quot;结果=&quot;, 1+2)               # 混合输出  → 结果= 3
+</code></pre>
+<h3>1.2 关键参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>默认值</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sep</code></td>
+<td>多个对象之间的分隔符</td>
+<td>空格 <code></code></td>
+<td><code>print(1,2,3,sep="-")</code> → <code>1-2-3</code></td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>输出结尾字符</td>
+<td>换行 <code>\n</code></td>
+<td><code>print("Hi", end="")</code> → 不换行</td>
+</tr>
+</tbody>
+</table>
+<h3>1.3 易错判断题</h3>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print只能输出字符串</td>
+<td style="text-align: center;">❌</td>
+<td>可以输出任何类型，自动转str</td>
+</tr>
+<tr>
+<td>print(100+200) 输出 "100+200=300"</td>
+<td style="text-align: center;">❌</td>
+<td>输出 <code>300</code>，没有引号和等号</td>
+</tr>
+<tr>
+<td>多对象间默认用制表符分隔</td>
+<td style="text-align: center;">❌</td>
+<td>默认用<strong>空格</strong>，不是tab</td>
+</tr>
+<tr>
+<td>print('a') 输出带引号的 'a'</td>
+<td style="text-align: center;">❌</td>
+<td>输出 <code>a</code>，print自动去引号</td>
+</tr>
+<tr>
+<td><code>print "hello"</code> 在Python3合法</td>
+<td style="text-align: center;">❌</td>
+<td>Python3必须加括号</td>
+</tr>
+<tr>
+<td><code>print(Hello World)</code> 正确</td>
+<td style="text-align: center;">❌</td>
+<td>字符串必须加引号</td>
+</tr>
+</tbody>
+</table>
+<h3>1.4 链式print不换行</h3>
+<pre><code class="language-python">print(&quot;1&quot;, end=&quot;&quot;)       # 输出1，不换行
+print(&quot;1&quot;, end=&quot;,&quot;)      # 输出1,，不换行
+print(&quot;1&quot;)               # 输出1，换行
+# 最终：11,1
+</code></pre>
+<hr />
+<h2>二、input() 输入函数</h2>
+<blockquote>
+<p><strong>🧠 费曼：input = 电脑竖起耳朵听你说话。</strong> 你对着电脑说了一个数字86，<code>input()</code>听到的是"86"这两个字符——它不是数字，是穿了数字衣服的字符串！想让86变成真正的数字能拿来算，得叫<code>eval()</code>来翻译：<code>eval(input())</code>。"eval"就是翻译官，把"人话的86"变成"电脑能算的86"。</p>
+</blockquote>
+<h3>2.1 铁律：input() 永远返回字符串</h3>
+<pre><code class="language-python">x = input(&quot;请输入：&quot;)    # 用户输入什么都行
+# x 的类型永远是 str，不管用户输入的是数字还是字母
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>用户输入</th>
+<th>input()返回</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>123</td>
+<td><code>"123"</code></td>
+<td><strong>str</strong></td>
+</tr>
+<tr>
+<td>3.14</td>
+<td><code>"3.14"</code></td>
+<td><strong>str</strong></td>
+</tr>
+<tr>
+<td>张三</td>
+<td><code>"张三"</code></td>
+<td><strong>str</strong></td>
+</tr>
+<tr>
+<td>空（直接回车）</td>
+<td><code>""</code></td>
+<td><strong>str</strong></td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 input 参数</h3>
+<ul>
+<li>参数是<strong>提示字符串</strong>（可选，最多一个）</li>
+<li>参数只能是字符串，不能是数值/列表</li>
+<li>返回值是用户输入的内容，不是提示字符串</li>
+</ul>
+<pre><code class="language-python">a = input(&quot;请输入你的名字：&quot;)   # &quot;请输入你的名字：&quot;是提示
+# 用户输入：张三
+# a = &quot;张三&quot;，不是&quot;请输入你的名字：&quot;
+
+name = input()                  # 不带参数也行
+</code></pre>
+<h3>2.3 input vs eval(input)</h3>
+<pre><code class="language-python"># 用户输入 86
+a = input(&quot;输入：&quot;)        # a = &quot;86&quot; (字符串)
+b = eval(input(&quot;输入：&quot;))  # b = 86 (整数)
+</code></pre>
+<hr />
+<h2>三、eval() 评估函数（重点！）</h2>
+<h3>3.1 功能</h3>
+<p><strong>把字符串当成 Python 表达式执行，返回结果。</strong></p>
+<pre><code class="language-python">eval(&quot;123&quot;)          # 123 (int)
+eval(&quot;3+5&quot;)          # 8
+eval(&quot;100+200&quot;)      # 300
+eval(&quot;2**3&quot;)         # 8
+eval(&quot;'hello'&quot;)      # 'hello' (str)
+eval(&quot;print('Hi')&quot;)  # 输出Hi，返回None
+eval(&quot;len('abc')&quot;)   # 3
+</code></pre>
+<h3>3.2 eval 经典陷阱</h3>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>结果</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>eval("123")</code></td>
+<td><code>123</code> (int)</td>
+<td>数字字符串→整数</td>
+</tr>
+<tr>
+<td><code>eval("'123'")</code></td>
+<td><code>'123'</code> (str)</td>
+<td>引号内的引号→字符串</td>
+</tr>
+<tr>
+<td><code>eval("hello")</code></td>
+<td><strong>报错</strong></td>
+<td>hello视为变量名，未定义→NameError</td>
+</tr>
+<tr>
+<td><code>eval(89)</code></td>
+<td><strong>报错</strong></td>
+<td>eval参数必须是字符串</td>
+</tr>
+<tr>
+<td><code>eval("a+5")</code> 且a未定义</td>
+<td><strong>报错</strong></td>
+<td>NameError</td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 eval + input 黄金组合</h3>
+<pre><code class="language-python"># 获取数值输入的标准套路
+x = eval(input(&quot;请输入数字：&quot;))    # 用户输入 86 → x = 86 (int)
+
+# 获取表达式结果
+x = eval(input(&quot;请输入表达式：&quot;))  # 用户输入 100+200 → x = 300
+
+# 获取列表
+lst = eval(input(&quot;输入列表：&quot;))    # 用户输入 [1,2,3] → lst = [1,2,3]
+</code></pre>
+<h3>3.4 安全警告</h3>
+<p>eval() 会执行<strong>任意</strong>代码，不要用在不可信的用户输入上。<code>eval("__import__('os').system('rm -rf /')")</code> 能删系统文件。</p>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eval可以安全处理所有用户输入</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>eval只能处理数字</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>eval的功能是把字符串转成数字</td>
+<td style="text-align: center;">❌（不限于数字）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、代码格式：缩进与注释</h2>
+<h3>4.1 缩进（Indentation）</h3>
+<p><strong>Python 用缩进表示代码块的层次关系，是语法强制要求，不是美化。</strong></p>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同一层次的语句缩进量必须相同</td>
+<td>混用报 <code>IndentationError</code></td>
+</tr>
+<tr>
+<td>Tab 和空格都能缩进</td>
+<td>但<strong>绝不能混用</strong>！</td>
+</tr>
+<tr>
+<td>常见缩进量</td>
+<td>4个空格</td>
+</tr>
+<tr>
+<td>不需要缩进的代码</td>
+<td>顶格写，前面不能有空白</td>
+</tr>
+<tr>
+<td><code>unexpected indent</code> 错误</td>
+<td>缩进不匹配导致的</td>
+</tr>
+<tr>
+<td>分支/循环/函数下</td>
+<td>必须有缩进（冒号后面缩进）</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">if x &gt; 0:          # 冒号
+    print(&quot;正数&quot;)   # 缩进（属于if）
+    x += 1          # 同一层次，缩进量相同
+print(&quot;结束&quot;)       # 顶格（不属于if）
+</code></pre>
+<h3>4.2 注释</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>语法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单行注释</td>
+<td><code>#</code></td>
+<td><code># 这是注释</code></td>
+</tr>
+<tr>
+<td>多行注释</td>
+<td><code>''' ... '''</code> 或 <code>""" ... """</code></td>
+<td>三个单引号或双引号包裹</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># 单行注释：以井号开头
+
+'''
+多行注释
+可以跨越多行
+'''
+
+&quot;&quot;&quot;
+这也是多行注释
+功能一样
+&quot;&quot;&quot;
+</code></pre>
+<h3>4.3 注释判断题</h3>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单行注释以 <code>//</code> 开头</td>
+<td style="text-align: center;">❌ （Python用 <code>#</code>，<code>//</code> 是整除）</td>
+</tr>
+<tr>
+<td>单行注释以 <code>'</code> 开头</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>注释会被解释器执行</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>注释可以辅助调试（注释掉代码）</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>注释内容可包含中文和特殊符号</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>注释可以嵌套</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>Python有两种注释：单行和多行</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>多行注释三引号必须成对出现</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<h3>4.4 缩进判断题</h3>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>缩进仅用于美化代码</td>
+<td style="text-align: center;">❌（是语法要求）</td>
+</tr>
+<tr>
+<td>Tab和空格可以混用</td>
+<td style="text-align: center;">❌（会导致错误）</td>
+</tr>
+<tr>
+<td>可以随意缩进</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>缩进是强制的、长度统一的</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>缩进不能通过Tab实现</td>
+<td style="text-align: center;">❌（可以，但不推荐混用）</td>
+</tr>
+<tr>
+<td>同一项目中缩进风格应一致</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>if分支缩进量须与冒号对齐</td>
+<td style="text-align: center;">❌（应比if多一层缩进）</td>
+</tr>
+<tr>
+<td>缩进错误只影响逻辑，不报语法错误</td>
+<td style="text-align: center;">❌（会报 IndentationError）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>五、IPO 编程方法</h2>
+<h3>5.1 概念</h3>
+<pre><code>IPO = Input（输入） → Process（处理） → Output（输出）
+</code></pre>
+<p>这是每个程序都遵循的统一运算模式。</p>
+<h3>5.2 三个环节</h3>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>含义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I</strong> - Input</td>
+<td>获取数据</td>
+<td>input()、读文件、读数据库</td>
+</tr>
+<tr>
+<td><strong>P</strong> - Process</td>
+<td>处理数据</td>
+<td>计算、判断、转换</td>
+</tr>
+<tr>
+<td><strong>O</strong> - Output</td>
+<td>输出结果</td>
+<td>print()、写文件、显示</td>
+</tr>
+</tbody>
+</table>
+<h3>5.3 解决问题六步骤</h3>
+<pre><code>① 分析问题 → ② 划分边界(IPO描述) → ③ 设计算法 → ④ 编写程序 → ⑤ 调试测试 → ⑥ 升级维护
+</code></pre>
+<p><strong>易错：</strong> 第三步是<strong>设计算法</strong>，不是编写程序！</p>
+<h3>5.4 IPO 判断题</h3>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P 代表 Program</td>
+<td style="text-align: center;">❌（P = Process 处理）</td>
+</tr>
+<tr>
+<td>O 代表 Object</td>
+<td style="text-align: center;">❌（O = Output 输出）</td>
+</tr>
+<tr>
+<td>Program 是 IPO 组成部分</td>
+<td style="text-align: center;">❌（I/P/O三个）</td>
+</tr>
+<tr>
+<td>输出必须显示在屏幕上</td>
+<td style="text-align: center;">❌（可写文件、发网络等）</td>
+</tr>
+<tr>
+<td>对输入数值求和 → 属于 I</td>
+<td style="text-align: center;">❌（求和是 P，读取才是 I）</td>
+</tr>
+<tr>
+<td>输出统计结果 → 属于 P</td>
+<td style="text-align: center;">❌（输出属于 O）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、三大函数综合对比</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>input()</th>
+<th>print()</th>
+<th>eval()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方向</td>
+<td>输入</td>
+<td>输出</td>
+<td>计算</td>
+</tr>
+<tr>
+<td>参数</td>
+<td>0或1个提示字符串</td>
+<td>任意多个对象</td>
+<td>1个字符串</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>用户输入(str)</td>
+<td>None</td>
+<td>表达式结果</td>
+</tr>
+<tr>
+<td>参数类型</td>
+<td>只能是字符串</td>
+<td>任何类型</td>
+<td>必须是字符串</td>
+</tr>
+<tr>
+<td>关键参数</td>
+<td>无</td>
+<td>sep, end</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>七、程序运行结果速算</h2>
+<pre><code class="language-python">a = 1; b = [1,2,3]; c = &quot;1&quot;
+print(a, b, c, &quot;2&quot;)             # 1 [1, 2, 3] 1 2
+
+print(&quot;Hello&quot;, &quot;World&quot;, sep=&quot;-&quot;) # Hello-World
+
+print(1, 2, 3, sep=&quot;-&quot;, end=&quot;*&quot;) # 1-2-3*
+
+print(&quot;1&quot;, end=&quot;&quot;)
+print(&quot;1&quot;, end=&quot;,&quot;)
+print(&quot;1&quot;)                       # 11,1
+
+print(&quot;100 + 200 =&quot;, 100+200)    # 100 + 200 = 300
+
+# eval(input()) 用户输入 100+200
+eval(&quot;100+200&quot;)                   # 300
+
+# input() 用户输入 5.8
+a = input()                       # &quot;5.8&quot; (str!)
+</code></pre>
+<hr />
+<h2>八、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input()返回值类型</td>
+<td>永远是 <strong>str</strong></td>
+</tr>
+<tr>
+<td>print()默认分隔符</td>
+<td><strong>空格</strong>，不是tab</td>
+</tr>
+<tr>
+<td>Python3中 <code>print "hi"</code> 合法？</td>
+<td>❌ 必须加括号</td>
+</tr>
+<tr>
+<td>eval("hello") 会怎样？</td>
+<td><strong>报错</strong>（hello未定义）</td>
+</tr>
+<tr>
+<td>eval("'hello'") 会怎样？</td>
+<td>返回字符串 <code>hello</code></td>
+</tr>
+<tr>
+<td>eval(89) 合法？</td>
+<td>❌ 参数必须是字符串</td>
+</tr>
+<tr>
+<td>Python单行注释符号</td>
+<td><code>#</code>，不是 <code>//</code> 不是 <code>'</code></td>
+</tr>
+<tr>
+<td>缩进是语法还是美化？</td>
+<td><strong>语法强制要求</strong></td>
+</tr>
+<tr>
+<td>Tab和空格能混用缩进？</td>
+<td>❌ 不能混用</td>
+</tr>
+<tr>
+<td>IPO的P代表什么？</td>
+<td><strong>Process（处理）</strong></td>
+</tr>
+<tr>
+<td>解决问题第三步是什么？</td>
+<td><strong>设计算法</strong>（不是写代码）</td>
+</tr>
+<tr>
+<td>unexpected indent什么原因？</td>
+<td><strong>缩进不匹配</strong></td>
+</tr>
+<tr>
+<td>Python有几种注释方式？</td>
+<td>两种：单行(#)和多行(''' ''')</td>
+</tr>
+<tr>
+<td><code>print(100+200)</code> 输出什么？</td>
+<td><code>300</code>（不是加了引号或等号的）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>九、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖 eval 陷阱和 print 参数。</p>
+</blockquote>
+<p><strong>1.</strong> <code>input()</code> 函数的返回值类型永远是？</p>
+<p>A. int　　B. str　　C. float　　D. 取决于用户输入</p>
+<p><strong>2.</strong> 执行 <code>a = input("请输入:")</code>，用户输入 <code>123</code>，a的类型是？</p>
+<p>A. int　　B. str　　C. float　　D. None</p>
+<p><strong>3.</strong> 执行 <code>a = eval(input("请输入:"))</code>，用户输入 <code>123</code>，a的类型是？</p>
+<p>A. int　　B. str　　C. float　　D. None</p>
+<p><strong>4.</strong> <code>print(1, 2, 3, sep="-", end="*")</code> 的输出是？</p>
+<p>A. <code>1 2 3*</code>　　B. <code>1-2-3</code>　　C. <code>1-2-3*</code>　　D. <code>1-2-3\n*</code></p>
+<p><strong>5.</strong> 以下关于 <code>print()</code> 的说法，<strong>错误</strong>的是？</p>
+<p>A. 可以输出多个对象，用逗号分隔　　B. 默认输出后换行<br />
+C. 只能输出字符串类型　　D. 可通过 <code>end</code> 参数控制结尾字符</p>
+<p><strong>6.</strong> <code>eval("3+5")</code> 的结果是？</p>
+<p>A. <code>"3+5"</code>　　B. <code>8</code>　　C. <code>"8"</code>　　D. 报错</p>
+<p><strong>7.</strong> 以下哪个 <code>eval()</code> 调用会<strong>报错</strong>？</p>
+<p>A. <code>eval("123")</code>　　B. <code>eval("2+3")</code>　　C. <code>eval("hello")</code>　　D. <code>eval("'hi'")</code></p>
+<p><strong>8.</strong> <code>print("Hello", "World", sep="_")</code> 的输出是？</p>
+<p>A. <code>Hello World</code>　　B. <code>Hello_World</code>　　C. <code>Hello-World</code>　　D. <code>HelloWorld</code></p>
+<p><strong>9.</strong> Python 单行注释的符号是？</p>
+<p>A. <code>//</code>　　B. <code>--</code>　　C. <code>#</code>　　D. <code>/*</code></p>
+<p><strong>10.</strong> 关于 Python 缩进，以下说法<strong>正确</strong>的是？</p>
+<p>A. 缩进仅为了好看　　B. Tab和空格可以混用<br />
+C. 缩进是语法强制要求　　D. 不需要缩进的代码前面也可以留空白</p>
+<p><strong>11.</strong> IPO 编程方法中，P 代表什么？</p>
+<p>A. Program　　B. Process　　C. Print　　D. Python</p>
+<p><strong>12.</strong> 解决问题的正确步骤中，第三步是什么？</p>
+<p>A. 编写程序　　B. 分析问题　　C. 设计算法　　D. 调试测试</p>
+<p><strong>13.</strong> 以下不属于 IPO 组成部分的是？</p>
+<p>A. Input　　B. Process　　C. Output　　D. Program</p>
+<p><strong>14.</strong> 代码 <code>print("1", end=""); print("2"); print("3")</code> 的输出是？</p>
+<p>A. <code>123</code> 分三行　　B. <code>12</code> 换行后 <code>3</code>　　C. <code>1</code> 换行 <code>2</code> 换行 <code>3</code>　　D. <code>123</code> 一行</p>
+<p><strong>15.</strong> <code>print(100 + 200)</code> 的输出是？</p>
+<p>A. <code>100+200</code>　　B. <code>100+200=300</code>　　C. <code>300</code>　　D. <code>"300"</code></p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>input() 永远返回 str。哪怕用户输入数字123，返回的也是 <code>"123"</code>。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td>没用 eval 包裹，input 直接返回字符串 <code>"123"</code>。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>A</strong></td>
+<td>eval 把 <code>"123"</code> 当成 Python 表达式执行，结果是整数 <code>123</code>。两者的区别是核心考点。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>C</strong></td>
+<td><code>sep="-"</code> 把三个数字用-连起来→<code>1-2-3</code>，<code>end="*"</code> 结尾加*不换行→<code>1-2-3*</code>。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>C</strong></td>
+<td>print 可以输出任何类型，不限于字符串。自动调用 str() 转换。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>B</strong></td>
+<td>eval 把字符串 <code>"3+5"</code> 当 Python 表达式算：3+5=8。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>C</strong></td>
+<td>eval("hello") 把 hello 当变量名，未定义→NameError。eval("'hi'") 可以，返回字符串 <code>hi</code>。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>B</strong></td>
+<td>sep="_" 把 Hello 和 World 用下划线连接→<code>Hello_World</code>。别跟 end 参数搞混。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>C</strong></td>
+<td>Python 用 <code>#</code>。<code>//</code> 是整除运算符，<code>/*</code> 是 C 语言多行注释开头。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>C</strong></td>
+<td>缩进是 Python 的语法强制要求，决定代码块的层次结构。Tab和空格绝不能混用。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>B</strong></td>
+<td>I=Input(输入), P=Process(处理), O=Output(输出)。不是 Program。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>C</strong></td>
+<td>步骤：分析问题→划分边界→<strong>设计算法</strong>→编写程序→调试→维护。千万别记成第三步就写代码。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>D</strong></td>
+<td>IPO 三个字母 = Input / Process / Output。Program 不在里面。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>B</strong></td>
+<td><code>print("1",end="")</code> 输出1不换行→<code>print("2")</code> 输出2换行→<code>print("3")</code> 输出3。结果：<code>12</code> (第一行) + <code>3</code> (第二行)。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>C</strong></td>
+<td>print(expression) 先算表达式再输出。100+200=300，直接输出 <code>300</code>，没有引号没有等号。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：input/eval/print三件套拿捏了　｜　错3-6题：重点回看eval()第三节　｜　错6题以上：全文重读，尤其三大函数对比表</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/三" download>📥 下载PDF</a>
+</div>
+</body></html>

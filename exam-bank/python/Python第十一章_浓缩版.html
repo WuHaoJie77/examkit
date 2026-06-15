@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第十一章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第十一章 浓缩速记卡（列表 · 切片 · 排序）</h1>
+<hr />
+<h2>一、列表基础</h2>
+<blockquote>
+<p><strong>🧠 费曼：列表 = 购物车。</strong> 超市购物车什么都能往里扔：苹果（字符串"apple"）、账单（数字89）、另外一个袋子（嵌套列表[1,2]）。每个东西放进去就有个编号（索引），从0开始——第1个是0号位，第2个是1号位。你可以从后面倒数：最后一个是-1号。购物车里的东西可以换（列表可变），不像刻在石头上的字（字符串不可变）。</p>
+</blockquote>
+<h3>1.1 列表 vs 字符串</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>字符串</th>
+<th>列表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>界定符</td>
+<td><code>""</code> 或 <code>''</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>元素分隔</td>
+<td>无</td>
+<td>逗号 <code>,</code></td>
+</tr>
+<tr>
+<td>元素类型</td>
+<td>单个字符</td>
+<td>任意类型</td>
+</tr>
+<tr>
+<td>可变性</td>
+<td><strong>不可变</strong></td>
+<td><strong>可变</strong></td>
+</tr>
+<tr>
+<td>索引体系</td>
+<td>正向+反向</td>
+<td>正向+反向</td>
+</tr>
+<tr>
+<td>是否有序</td>
+<td>有序</td>
+<td>有序</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">lst = ['hello', 89, '你好', 101, [1,2], {}]
+# 元素可以是 字符串/数字/列表/字典/布尔 任意类型
+</code></pre>
+<p><strong>铁律：界定符和分隔符必须用英文符号！中文的【】和，不合法。</strong></p>
+<h3>1.2 索引</h3>
+<pre><code class="language-python">lst = ['a', 'b', 'c', 'd']
+lst[0]   # 'a'（第一个）
+lst[-1]  # 'd'（最后一个）
+lst[3]   # 'd'
+lst[4]   # IndexError! 索引范围: -4 ≤ i ≤ 3
+</code></pre>
+<hr />
+<h2>二、列表操作速查</h2>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长度</td>
+<td><code>len(lst)</code></td>
+<td>返回元素个数</td>
+</tr>
+<tr>
+<td>求和</td>
+<td><code>sum(lst)</code></td>
+<td>元素必须全为数字</td>
+</tr>
+<tr>
+<td>最大值</td>
+<td><code>max(lst)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>最小值</td>
+<td><code>min(lst)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>计数</td>
+<td><code>lst.count(x)</code></td>
+<td>x出现次数</td>
+</tr>
+<tr>
+<td>查找索引</td>
+<td><code>lst.index(x)</code></td>
+<td>x第一次出现的位置，<strong>找不到报ValueError</strong></td>
+</tr>
+<tr>
+<td>包含判断</td>
+<td><code>x in lst</code></td>
+<td>返回True/False</td>
+</tr>
+<tr>
+<td>不包含</td>
+<td><code>x not in lst</code></td>
+<td></td>
+</tr>
+<tr>
+<td>拼接</td>
+<td><code>lst1 + lst2</code></td>
+<td>首尾相连成新列表</td>
+</tr>
+<tr>
+<td>重复</td>
+<td><code>lst * 3</code></td>
+<td><code>[1,2]*3</code> → <code>[1,2,1,2,1,2]</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">lst = [5, 10, 15, 20]
+sum(lst)         # 50
+max(lst)         # 20
+lst.count(10)    # 1
+lst.index(15)    # 2
+lst.index(7)     # ❌ ValueError（找不到！不是返回-1！）
+10 in lst        # True
+</code></pre>
+<h3>2.1 遍历嵌套列表</h3>
+<pre><code class="language-python">inf = [[&quot;001&quot;,&quot;女&quot;,78], [&quot;002&quot;,&quot;女&quot;,98], [&quot;003&quot;,&quot;男&quot;,87]]
+for stu in inf:
+    print(&quot;学号:&quot;, stu[0])
+    print(&quot;性别:&quot;, stu[1])
+    print(&quot;成绩:&quot;, stu[2])
+</code></pre>
+<hr />
+<h2>三、列表切片（和字符串完全一样）</h2>
+<pre><code class="language-python">lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+lst[2:]       # [2,3,4,5,6,7,8,9]（从索引2到末尾）
+lst[:3]       # [0,1,2]
+lst[1:4]      # [1,2,3]
+lst[::2]      # [0,2,4,6,8]（隔一取一）
+lst[::-1]     # [9,8,7,6,5,4,3,2,1,0]（反转）
+lst[1:9:2]    # [1,3,5,7]
+lst[::-2]     # [9,7,5,3,1]
+lst[-3:]      # [7,8,9]（最后3个）
+</code></pre>
+<hr />
+<h2>四、list() 转换函数</h2>
+<pre><code class="language-python">list(&quot;abc&quot;)           # ['a', 'b', 'c']
+list(range(5))        # [0, 1, 2, 3, 4]
+list(range(1, 10, 2)) # [1, 3, 5, 7, 9]
+list(range(5, 0, -1)) # [5, 4, 3, 2, 1]
+list([1,2,3])         # [1, 2, 3]（不报错！返回副本）
+list()                # []（空列表）
+</code></pre>
+<h3>4.1 列表推导式</h3>
+<pre><code class="language-python">[x**2 for x in range(5)]                    # [0,1,4,9,16]
+[x for x in range(1,21) if x%2==0]         # [2,4,6,...,20]（偶数列表）
+[&quot;A&quot;+str(i) for i in range(1,6)]           # ['A1','A2','A3','A4','A5']
+[c for c in &quot;hello&quot; if c in 'aeiou']       # ['e','o']
+</code></pre>
+<hr />
+<h2>五、排序与逆序（头号考点）</h2>
+<blockquote>
+<p><strong>🧠 费曼：sort=自己排队，sorted=拍张排队照片，reverse=全体向后转。</strong> 你让一队人按身高排：<code>sort()</code>直接把他们原地排好（改原列表）。<code>sorted()</code>是你站在旁边拍了张他们排好队的照片（返回新列表，原队形不变）。<code>reverse()</code>不是按身高排，是全体向后转——原来第一变最后。<code>sort(reverse=True)</code>是按身高从高到矮排，不是向后转！这是考场头号掉坑点。</p>
+</blockquote>
+<h3>5.1 sort() vs sorted()</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>lst.sort()</code></th>
+<th><code>sorted(lst)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修改原列表？</td>
+<td>✅ 原地修改</td>
+<td>❌ 返回新列表</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td><strong>None</strong></td>
+<td>排序后的新列表</td>
+</tr>
+<tr>
+<td>默认顺序</td>
+<td>升序</td>
+<td>升序</td>
+</tr>
+<tr>
+<td>降序</td>
+<td><code>sort(reverse=True)</code></td>
+<td><code>sorted(lst, reverse=True)</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">a = [3, 1, 2]
+a.sort()              # a变成[1,2,3]，返回None
+b = sorted(a)         # b=[1,2,3]，a不变
+
+# 降序
+a.sort(reverse=True)  # a=[3,2,1]
+sorted(a, reverse=True) # [3,2,1]
+</code></pre>
+<h3>5.2 逆序 reverse() vs [::-1]</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>lst.reverse()</code></th>
+<th><code>lst[::-1]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>修改原列表？</td>
+<td>✅ 原地反转</td>
+<td>❌ 返回新列表</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td><strong>None</strong></td>
+<td>反转后的新列表</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">a = [1, 2, 3]
+a.reverse()     # a=[3,2,1]，返回None
+b = a[::-1]     # b=[1,2,3]，a不变
+</code></pre>
+<h3>5.3 关键区别</h3>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>含义</th>
+<th>示例([3,1,2])</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sort()</code></td>
+<td>升序排序</td>
+<td>[1,2,3]</td>
+</tr>
+<tr>
+<td><code>sort(reverse=True)</code></td>
+<td><strong>降序排序</strong></td>
+<td>[3,2,1]</td>
+</tr>
+<tr>
+<td><code>reverse()</code></td>
+<td>反转（反序）</td>
+<td>[2,1,3]</td>
+</tr>
+<tr>
+<td><code>[::-1]</code></td>
+<td>反转切片</td>
+<td>[2,1,3]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>sort(reverse=True) ≠ reverse()！前者按大小降序，后者纯粹颠倒顺序。</strong></p>
+<pre><code class="language-python">a = [3, 1, 2]
+a.sort(reverse=True)   # [3,2,1]（按大小排）
+a = [3, 1, 2]
+a.reverse()            # [2,1,3]（纯颠倒）
+</code></pre>
+<h3>5.4 字符串排序</h3>
+<p>按<strong>Unicode编码</strong>，大写字母 &lt; 小写字母：</p>
+<pre><code class="language-python">sorted(['apple','Banana','cherry'])
+# → ['Banana','apple','cherry']（B的编码65 &lt; a的97）
+</code></pre>
+<h3>5.5 列表比较</h3>
+<p>逐元素比较，类似字符串：</p>
+<pre><code class="language-python">[3, 5] &gt; [3, 4, 9]    # True（3==3, 5&gt;4）
+</code></pre>
+<hr />
+<h2>六、修改列表元素</h2>
+<pre><code class="language-python">lst = [10, 20, 30, 40]
+lst[3] = 99           # [10, 20, 30, 99]
+lst[-1] = 99          # 同上
+
+# 切片赋值
+lst = list(&quot;Python&quot;)   # ['P','y','t','h','o','n']
+lst[2:4] = [0, 1]      # ['P','y',0,1,'o','n']
+</code></pre>
+<hr />
+<h2>七、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符串是无序组合？</td>
+<td>❌ 字符串<strong>有序</strong></td>
+</tr>
+<tr>
+<td><code>lst.index(x)</code> 找不到返回-1？</td>
+<td>❌ <strong>报错 ValueError</strong></td>
+</tr>
+<tr>
+<td><code>sum(1,2,3)</code> 合法？</td>
+<td>❌ sum()接受可迭代对象，不是多个参数</td>
+</tr>
+<tr>
+<td><code>sort()</code> 返回排序后的列表？</td>
+<td>❌ 返回<strong>None</strong>，原地修改</td>
+</tr>
+<tr>
+<td><code>sorted()</code> 修改原列表？</td>
+<td>❌ 不修改，返回新列表</td>
+</tr>
+<tr>
+<td><code>sort(reverse=True)</code> = <code>reverse()</code>？</td>
+<td>❌ 前者降序排列，后者纯颠倒</td>
+</tr>
+<tr>
+<td><code>list([1,2,3])</code> 报错？</td>
+<td>❌ 返回副本 <code>[1,2,3]</code></td>
+</tr>
+<tr>
+<td>列表元素必须同类型？</td>
+<td>❌ 可以混类型</td>
+</tr>
+<tr>
+<td>列表不可变？</td>
+<td>❌ 列表<strong>可变</strong></td>
+</tr>
+<tr>
+<td><code>len(lst)</code> 用于列表？</td>
+<td>✅ 支持</td>
+</tr>
+<tr>
+<td>中文中括号【】能界定列表？</td>
+<td>❌ 只能用英文 <code>[]</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖 sort/sorted/reverse 区别和 index 陷阱。</p>
+</blockquote>
+<p><strong>1.</strong> 列表的界定符是什么？</p>
+<p>A. <code>()</code>　　B. <code>{}</code>　　C. <code>[]</code>　　D. <code>【】</code></p>
+<p><strong>2.</strong> <code>lst.index(7)</code> 在列表中找不到7时会怎样？</p>
+<p>A. 返回-1　　B. 返回None　　C. 报ValueError　　D. 返回0</p>
+<p><strong>3.</strong> <code>[3, 5] &gt; [3, 4, 9]</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. None</p>
+<p><strong>4.</strong> <code>a = [3,1,2]; a.sort()</code> 后，a的内容是？</p>
+<p>A. <code>[3,1,2]</code>　　B. <code>[1,2,3]</code>　　C. <code>[3,2,1]</code>　　D. <code>None</code></p>
+<p><strong>5.</strong> <code>sorted([3,1,2])</code> 会修改原列表吗？</p>
+<p>A. 会　　B. 不会　　C. 取决于参数　　D. 报错</p>
+<p><strong>6.</strong> <code>a = [3,1,2]; a.sort(reverse=True)</code> 后，a是？</p>
+<p>A. <code>[1,2,3]</code>　　B. <code>[2,1,3]</code>　　C. <code>[3,2,1]</code>　　D. <code>[3,1,2]</code></p>
+<p><strong>7.</strong> <code>a = [3,1,2]; a.reverse()</code> 后，a是？</p>
+<p>A. <code>[1,2,3]</code>　　B. <code>[2,1,3]</code>　　C. <code>[3,2,1]</code>　　D. <code>[3,1,2]</code></p>
+<p><strong>8.</strong> <code>list(range(2, 10, 2))</code> 的结果是？</p>
+<p>A. <code>[2,3,4,5,6,7,8,9]</code>　　B. <code>[2,4,6,8]</code>　　C. <code>[2,4,6,8,10]</code>　　D. <code>(2,4,6,8)</code></p>
+<p><strong>9.</strong> <code>list("abc")</code> 的结果是？</p>
+<p>A. <code>'abc'</code>　　B. <code>['abc']</code>　　C. <code>['a','b','c']</code>　　D. <code>('a','b','c')</code></p>
+<p><strong>10.</strong> <code>lst = [10,20,30]; lst[-1] = 99</code> 后 lst 是？</p>
+<p>A. <code>[99,20,30]</code>　　B. <code>[10,20,99]</code>　　C. <code>[10,99,30]</code>　　D. 报错</p>
+<p><strong>11.</strong> <code>sum([1,2,3])</code> 的结果是？</p>
+<p>A. <code>[6]</code>　　B. <code>6</code>　　C. <code>[1,2,3]</code>　　D. 报错</p>
+<p><strong>12.</strong> <code>[1,2] + [3,4]</code> 的结果是？</p>
+<p>A. <code>[4,6]</code>　　B. <code>[1,2,3,4]</code>　　C. <code>[1,2,[3,4]]</code>　　D. 报错</p>
+<p><strong>13.</strong> <code>sort(reverse=True)</code> 和 <code>reverse()</code> 的关系是？</p>
+<p>A. 完全相同　　B. 完全不同　　C. 前者降序排序，后者纯颠倒　　D. 前者纯颠倒，后者降序排序</p>
+<p><strong>14.</strong> <code>lst = [1,2,3]; b = lst[::-1]</code> 后，lst是？</p>
+<p>A. <code>[1,2,3]</code>　　B. <code>[3,2,1]</code>　　C. <code>None</code>　　D. 报错</p>
+<p><strong>15.</strong> <code>a.sort()</code> 的返回值是？</p>
+<p>A. 排序后的列表　　B. 原列表　　C. None　　D. True</p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>C</strong></td>
+<td>列表用英文方括号<code>[]</code>。中文【】不合法。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>C</strong></td>
+<td>index()找不到→ValueError。find()返回-1是字符串的方法，列表没有find。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>A</strong></td>
+<td>逐元素比较：3==3，5&gt;4→True。后面元素不再比较。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>B</strong></td>
+<td>sort()原地升序排列→[1,2,3]。返回None但不影响a本身的变化。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>B</strong></td>
+<td>sorted()返回新列表，原列表不变。sort()才修改原列表。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>C</strong></td>
+<td>sort(reverse=True)=降序→[3,2,1]。这不是纯颠倒！</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>B</strong></td>
+<td>reverse()=纯颠倒→[2,1,3]。注意和sort(reverse=True)的区别！</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>B</strong></td>
+<td>range(2,10,2)=2,4,6,8。不包含10。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>C</strong></td>
+<td>list(str)把字符串拆成字符列表。<code>'abc'</code>→<code>['a','b','c']</code>。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>B</strong></td>
+<td>列表可变！lst[-1]=99把最后一个元素改为99→[10,20,99]。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>B</strong></td>
+<td>sum()返回所有元素之和→6。参数是可迭代对象。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>B</strong></td>
+<td>列表+列表=拼接→[1,2,3,4]。不是元素相加。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>C</strong></td>
+<td>sort(reverse=True)按大小降序；reverse()是纯颠倒顺序。这是本章头号考点。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>A</strong></td>
+<td>[::-1]返回新列表不修改原列表。lst仍是[1,2,3]。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>C</strong></td>
+<td>sort()原地修改，返回None。这是高频陷阱。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：列表操作过关　｜　错3-6题：重点回看第五节(排序与逆序)　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/十一" download>📥 下载PDF</a>
+</div>
+</body></html>

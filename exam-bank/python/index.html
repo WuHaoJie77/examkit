@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python题库浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.chapter-list{list-style:none;padding:0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+/* Tips carousel */
+.tips-carousel{max-width:900px;margin:20px auto;position:relative;overflow:hidden;border-radius:8px}
+.tips-track{display:flex;transition:transform .4s ease}
+.tips-slide{min-width:100%;padding:14px 50px;background:#fff3cd;border:1px solid #ffc107;color:#856404;font-size:14px;line-height:1.6;box-sizing:border-box}
+.tips-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.08);border:none;color:#856404;font-size:20px;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.tips-arrow.prev{left:8px}.tips-arrow.next{right:8px}
+.tips-dots{text-align:center;padding:6px 0;background:#fff3cd;border-radius:0 0 8px 8px;margin-top:-1px;border:1px solid #ffc107;border-top:none}
+.tips-dots span{display:inline-block;width:8px;height:8px;margin:0 4px;border-radius:50%;background:#ccc;cursor:pointer}
+.tips-dots span.active{background:#856404}
+/* Comment */
+.comment-section{max-width:900px;margin:40px auto;background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.comment-section h3{margin-bottom:15px;color:#1a5276}
+.comment-input{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;min-height:80px;resize:vertical;margin-bottom:10px;font-family:inherit;box-sizing:border-box}
+.comment-name{width:200px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;margin-bottom:10px}
+.comment-password{width:200px;padding:8px 12px;border:1px solid #e74c3c;border-radius:8px;font-size:14px;margin-bottom:10px;display:none}
+.comment-password.visible{display:inline-block}
+.comment-submit{background:#1a5276;color:#fff;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:14px}
+.comment-submit:hover{background:#0d3b54}
+.comment-item{background:#f8f9fa;border-radius:8px;padding:15px;margin:10px 0}
+.comment-item .author{font-weight:600;margin-right:10px}
+.comment-item .author.admin{color:#e74c3c}
+.comment-item .time{color:#999;font-size:0.85em}
+.comment-item .text{margin-top:8px;line-height:1.6}
+.comment-status{margin-top:8px;font-size:13px;color:#e74c3c;display:none}
+.comment-status.show{display:block}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>🐍 Python期末题库浓缩版</h1>
+<p style="color:#666">13张速记卡覆盖超星题库1300+道题。费曼例子+知识表格+高频坑+自测+解析+评分线。</p>
+<div class="tips-carousel">
+<button class="tips-arrow prev" onclick="slideTips(-1)">‹</button>
+<div class="tips-track" id="tipsTrack"><div class="tips-slide">💡 <b>番茄大王建议：</b>先看费曼例子再看知识表格，理解速度提升3倍。类比是记忆的捷径。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>自测错3题以内直接跳下一章，别在已经会的内容上浪费时间。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>高频陷阱表格是考试提分最快的部分——这些坑老师最爱考。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>每章控制在30分钟内完成，番茄钟工作法：学25分钟+休息5分钟。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>大题答案不用死记硬背，理解答题框架（定义→对比→举例）就能拿分。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>睡前花5分钟过一遍当天学的陷阱表格，记忆巩固率提升60%。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>评论区可以提问或分享你的复习心得，番茄大王会亲自回复！</div></div>
+<button class="tips-arrow next" onclick="slideTips(1)">›</button>
+</div>
+<div class="tips-dots" id="tipsDots"><span class="active" onclick="goToTip(0)"></span><span class="" onclick="goToTip(1)"></span><span class="" onclick="goToTip(2)"></span><span class="" onclick="goToTip(3)"></span><span class="" onclick="goToTip(4)"></span><span class="" onclick="goToTip(5)"></span><span class="" onclick="goToTip(6)"></span></div>
+<script>
+let tipIdx=0;const tipTotal=7;
+function slideTips(d){tipIdx=(tipIdx+d+tipTotal)%tipTotal;updateTips()}
+function goToTip(i){tipIdx=i;updateTips()}
+function updateTips(){document.getElementById('tipsTrack').style.transform='translateX(-'+tipIdx+'00%)';let dots=document.querySelectorAll('.tips-dots span');dots.forEach((d,i)=>d.className=i==tipIdx?'active':'')}
+setInterval(()=>slideTips(1),6000);
+</script>
+<div class="card"><ul class="chapter-list"><li><a href="Python第一章_浓缩版.html">📖 <strong>第1章</strong><span style="color:#888;margin-left:8px">语言基础</span></a></li>
+<li><a href="Python第二章_浓缩版.html">📖 <strong>第2章</strong><span style="color:#888;margin-left:8px">变量+切片+赋值</span></a></li>
+<li><a href="Python第三章_浓缩版.html">📖 <strong>第3章</strong><span style="color:#888;margin-left:8px">输入输出</span></a></li>
+<li><a href="Python第四章_浓缩版.html">📖 <strong>第4章</strong><span style="color:#888;margin-left:8px">数字类型</span></a></li>
+<li><a href="Python第五章_浓缩版.html">📖 <strong>第5章</strong><span style="color:#888;margin-left:8px">字符串深入</span></a></li>
+<li><a href="Python第六章_浓缩版.html">📖 <strong>第6章</strong><span style="color:#888;margin-left:8px">字符串方法</span></a></li>
+<li><a href="Python第七章_浓缩版.html">📖 <strong>第7章</strong><span style="color:#888;margin-left:8px">关系逻辑</span></a></li>
+<li><a href="Python第八章_浓缩版.html">📖 <strong>第8章</strong><span style="color:#888;margin-left:8px">分支结构</span></a></li>
+<li><a href="Python第九章_浓缩版.html">📖 <strong>第9章</strong><span style="color:#888;margin-left:8px">for循环</span></a></li>
+<li><a href="Python第十章_浓缩版.html">📖 <strong>第10章</strong><span style="color:#888;margin-left:8px">while循环</span></a></li>
+<li><a href="Python第十一章_浓缩版.html">📖 <strong>第11章</strong><span style="color:#888;margin-left:8px">列表基础</span></a></li>
+<li><a href="Python第十二章_浓缩版.html">📖 <strong>第12章</strong><span style="color:#888;margin-left:8px">列表增删改</span></a></li>
+<li><a href="Python第十三章_浓缩版.html">📖 <strong>第13章</strong><span style="color:#888;margin-left:8px">函数基础</span></a></li>
+</ul></div>
+<div style="background:#f0f4f8;border-radius:12px;padding:20px;margin:20px 0">
+<strong style="font-size:1.1em">📥 PDF下载：</strong>
+<a href="/api/pdf-all" download style="display:inline-block;background:#1a5276;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;margin:8px 8px 8px 0">📦 下载全部13章</a>
+<span style="color:#888;font-size:0.85em">或单独下载每章（在章节页面右下角）</span>
+</div>
+<div class="comment-section">
+<h3>💬 评论区</h3>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+<input class="comment-name" id="commentName" placeholder="昵称（选填）" maxlength="20" oninput="checkName()">
+<input class="comment-password" id="commentPassword" type="password" placeholder="🔒 站长密码" onkeydown="if(event.key==='Enter')postComment()">
+</div>
+<textarea class="comment-input" id="commentContent" placeholder="写下你的疑问或心得..." maxlength="500"></textarea>
+<button class="comment-submit" onclick="postComment()">发布评论</button>
+<span class="comment-status" id="commentStatus"></span>
+<div id="commentList" style="margin-top:20px"></div>
+<div style="text-align:center;margin-top:15px"><button onclick="loadComments(1)" style="background:none;border:1px solid #ddd;padding:8px 20px;border-radius:6px;cursor:pointer;color:#666">刷新评论</button></div>
+</div>
+<script>
+let cP=1;
+function checkName(){var n=document.getElementById("commentName").value.trim();var p=document.getElementById("commentPassword");if(n==="番茄大王"){p.style.display="inline-block";p.focus()}else{p.style.display="none";p.value=""}}
+async function loadComments(p){cP=p;try{var r=await fetch("/api/comments?page="+p+"&size=10");var d=await r.json();var h=d.comments.map(function(c){return '<div class="comment-item"><span class="author'+(c.name==="番茄大王"?" admin":"")+'">'+c.name+'</span><span class="time">'+c.created_at+'</span><div class="text">'+c.content+'</div></div>'}).join("");document.getElementById("commentList").innerHTML=h+(d.total>p*10?'<p style="color:#999;text-align:center;cursor:pointer;margin-top:10px" onclick="loadComments('+(p+1)+')">— 点击加载更多 —</p>':'<p style="color:#999;text-align:center">— 已加载全部评论 —</p>')}catch(e){}}
+async function postComment(){var c=document.getElementById("commentContent").value.trim();if(!c)return;var n=document.getElementById("commentName").value.trim()||"匿名";var pw=document.getElementById("commentPassword").value;var s=document.getElementById("commentStatus");try{var r=await fetch("/api/comment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:c,name:n,password:pw})});if(r.ok){document.getElementById("commentContent").value="";loadComments(1);s.style.display="none";s.className="comment-status"}else{var e=await r.json();s.textContent=e.detail;s.style.display="block";s.className="comment-status show"}}catch(e){s.textContent="发送失败，请重试";s.style.display="block";s.className="comment-status show"}}
+loadComments(1);
+</script>
+<div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p></div>
+</body></html>

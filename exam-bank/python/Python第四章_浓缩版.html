@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第四章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第四章 浓缩速记卡（数字类型 · 运算符 · 内置函数）</h1>
+<hr />
+<h2>一、数字类型三大类</h2>
+<blockquote>
+<p><strong>🧠 费曼：数字三分天下——整数、小数、复数。</strong> 整数=你数手指头（1,2,3...），怎么数都没小数点。浮点数=你量身高（1.75米），有小数点。复数=数学课本里的虚数，日常用不到但Python有它。记住口诀：<code>int</code>是整数，<code>float</code>带小数点，<code>complex</code>有个j。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>关键字</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>整数</td>
+<td><code>int</code></td>
+<td><code>123</code>, <code>0b101</code>, <code>0o77</code>, <code>0xFF</code></td>
+</tr>
+<tr>
+<td>浮点数</td>
+<td><code>float</code></td>
+<td><code>3.14</code>, <code>1.23e-4</code>, <code>0.0</code></td>
+</tr>
+<tr>
+<td>复数</td>
+<td><code>complex</code></td>
+<td><code>3+4j</code>, <code>complex(1,2)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、整数的四种进制</h2>
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>前缀</th>
+<th>数码范围</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>十进制</td>
+<td>无</td>
+<td>0-9</td>
+<td><code>123</code></td>
+</tr>
+<tr>
+<td>二进制</td>
+<td><code>0b</code> / <code>0B</code></td>
+<td>0,1</td>
+<td><code>0b1010</code> = 10</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td><code>0o</code> / <code>0O</code></td>
+<td>0-7</td>
+<td><code>0o77</code> = 63</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td><code>0x</code> / <code>0X</code></td>
+<td>0-9, a-f/A-F</td>
+<td><code>0xFF</code> = 255</td>
+</tr>
+</tbody>
+</table>
+<h3>关键规则</h3>
+<pre><code class="language-python">0b1010      # ✅ 合法
+0B1010      # ✅ 大写B也行
+0b12        # ❌ 二进制只有0和1
+0o89        # ❌ 八进制没有8和9
+0x9g        # ❌ 十六进制没有g
+08          # ❌ Python3不允许十进制以0开头
+</code></pre>
+<h3>转换函数</h3>
+<pre><code class="language-python">bin(100)    # '0b1100100'  十进制→二进制字符串
+oct(100)    # '0o144'      十进制→八进制字符串
+hex(100)    # '0x64'       十进制→十六进制字符串
+</code></pre>
+<h3>十六进制转十进制速算</h3>
+<pre><code>0x0101 = 1×256 + 0×16 + 1×1 = 257
+0o1010 = 1×512 + 0×64 + 1×8 + 0×1 = 520
+</code></pre>
+<h3>易错判断题</h3>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二进制以0c开头</td>
+<td style="text-align: center;">❌</td>
+<td>以 <strong>0b</strong> 开头</td>
+</tr>
+<tr>
+<td>八进制以0x开头</td>
+<td style="text-align: center;">❌</td>
+<td>八进制 <strong>0o</strong>，十六进制才是 <strong>0x</strong></td>
+</tr>
+<tr>
+<td>Python有十二进制</td>
+<td style="text-align: center;">❌</td>
+<td>只有十/二/八/十六进制</td>
+</tr>
+<tr>
+<td>某些十进制不能转十六进制</td>
+<td style="text-align: center;">❌</td>
+<td><strong>所有十进制整数都能转</strong></td>
+</tr>
+<tr>
+<td>0bC3F是合法二进制</td>
+<td style="text-align: center;">❌</td>
+<td>二进制只能0和1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>三、浮点数</h2>
+<h3>3.1 科学计数法</h3>
+<pre><code class="language-python">1.23e4   = 12300.0       # e = ×10^
+1.23e-4  = 0.000123      # e-4 = ×10⁻⁴
+2.5e3    = 2500.0
+123e+5   = 12300000.0    # ✅ 合法
+123e     # ❌ 缺少指数
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e</code> 或 <code>E</code> 都可以</td>
+<td>大小写不敏感</td>
+</tr>
+<tr>
+<td>指数必须是整数</td>
+<td><code>1.2e3.5</code> ❌</td>
+</tr>
+<tr>
+<td>不限定系数格式</td>
+<td><code>123e4</code> / <code>1.23e6</code> / <code>0.123e7</code> 都合法</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 浮点数不确定尾数（头号考点）</h3>
+<blockquote>
+<p><strong>🧠 费曼：0.1+0.2≠0.3，就像1/3在十进制里永远写不完。</strong> 你用计算器算1÷3=0.33333...，写到纸上永远写不完。计算机用二进制存小数，0.1在二进制里也是个无限循环小数，存不下就截断，截断就有误差。所以0.1+0.2=0.30000000000000004。这跟Python没关系，是所有语言用IEEE 754的结果。</p>
+</blockquote>
+<pre><code class="language-python">0.1 + 0.2              # 0.30000000000000004 （不是0.3！）
+0.1 + 0.2 == 0.3       # False！
+</code></pre>
+<p><strong>原因：</strong> 某些十进制小数无法精确转换为二进制（如0.1在二进制中是无限循环小数），IEEE 754存储产生误差。</p>
+<p><strong>应对：</strong>
+- <code>round(0.1+0.2, 2)</code> → <code>0.3</code>
+- 使用 <code>decimal</code> 模块
+- 不直接 <code>==</code> 比较浮点数</p>
+<table>
+<thead>
+<tr>
+<th>值的大小比较</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1.23e4</code> = 12300</td>
+<td><code>12.3e3</code> = 12300</td>
+</tr>
+<tr>
+<td><code>0.123e5</code> = 12300</td>
+<td><code>123e3</code> = <strong>123000</strong> ← 最大</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、复数</h2>
+<pre><code class="language-python">3 + 4j          # 复数，虚部用 j 或 J（不是 i！）
+complex(10.99)  # (10.99+0j)
+complex(45, 6)  # (45+6j)
+
+# 属性
+z = 3 + 4j
+z.real          # 3.0 (float类型)
+z.imag          # 4.0 (float类型)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>虚部用 i 表示</td>
+<td style="text-align: center;">❌ Python用 <strong>j</strong> 或 <strong>J</strong></td>
+</tr>
+<tr>
+<td>虚部用 C/c 表示</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>实部和虚部都是整数类型</td>
+<td style="text-align: center;">❌ 都是 <strong>float</strong> 类型</td>
+</tr>
+<tr>
+<td><code>3+4j</code> 合法</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>五、算术运算符</h2>
+<h3>5.1 七大运算符</h3>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>加</td>
+<td><code>3 + 2</code></td>
+<td><code>5</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>减</td>
+<td><code>3 - 2</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>乘</td>
+<td><code>3 * 2</code></td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>真除（返回float）</td>
+<td><code>5 / 2</code></td>
+<td><code>2.5</code></td>
+</tr>
+<tr>
+<td><code>//</code></td>
+<td>整除（向下取整）</td>
+<td><code>5 // 2</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>%</code></td>
+<td>取余（模）</td>
+<td><code>5 % 2</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>幂</td>
+<td><code>2 ** 3</code></td>
+<td><code>8</code></td>
+</tr>
+</tbody>
+</table>
+<h3>5.2 优先级（从高到低）</h3>
+<pre><code>** → * / // % → + -
+</code></pre>
+<pre><code class="language-python">3 + 2 * 3 ** 2    # **先算: 3**2=9 → 2*9=18 → 3+18=21
+2 ** 3 * 4 % 5    # = 8*4%5 = 32%5 = 2
+</code></pre>
+<h3>5.3 两个高频应用</h3>
+<pre><code class="language-python"># 判断偶数
+x % 2 == 0        # ✅ 正确
+x // 2 == 0       # ❌ 错误（整除判偶不对）
+
+# 取千位数字（四位数）
+a // 1000         # ✅ 千位
+
+# 取前两位+后两位（如9517 → 95+17）
+a // 100 + a % 100                 # ✅ 95 + 17 = 112
+b, c = divmod(a, 100); b + c       # ✅
+int(a / 100) + a % 100             # ✅（a/100=95.17 → int→95）
+a / 100 + a % 100                  # ❌（95.17 + 17 = 112.17）
+</code></pre>
+<h3>5.4 常见应用题</h3>
+<pre><code class="language-python"># 200张百元钞票均分给3人
+200 // 3      # 66 每人几张
+200 % 3       # 2  还剩几张
+
+# 70万小时 = 多少周岁
+70 * 10000 // 24 // 365
+
+# 平均寿命78.9岁 = 多少小时
+78.9 * 365 * 24
+</code></pre>
+<h3>5.5 右结合性（**是特例）</h3>
+<pre><code class="language-python">2 ** 3 ** 0    # 右结合：先算 3**0=1，再算 2**1=2
+               # NOT (2**3)**0=1！
+</code></pre>
+<h3>5.6 运算符判断题</h3>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>//</code> 是整除，<code>/</code> 是浮点除</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td><code>**</code> 的 y 必须是整数</td>
+<td style="text-align: center;">❌ （<code>4**0.5</code>=2.0 合法）</td>
+</tr>
+<tr>
+<td><code>a**b</code> 只能用 <code>**</code> 算</td>
+<td style="text-align: center;">❌ 也可用 <code>pow(a,b)</code></td>
+</tr>
+<tr>
+<td>整除只能用 <code>a//b</code> 和 <code>a%b</code></td>
+<td style="text-align: center;">❌ 也可用 <code>divmod(a,b)</code></td>
+</tr>
+<tr>
+<td><code>&amp;</code> 是算术运算符</td>
+<td style="text-align: center;">❌ 是位运算符</td>
+</tr>
+<tr>
+<td><code>9 / 3</code> 结果是 int</td>
+<td style="text-align: center;">❌ Python3 中 <code>/</code> 总是返回 <strong>float</strong>（3.0）</td>
+</tr>
+<tr>
+<td>整数与浮点数运算结果是整数</td>
+<td style="text-align: center;">❌ 结果是 <strong>float</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、内置数值函数速查</h2>
+<h3>6.1 类型转换</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int(x)</code></td>
+<td>转整数（截断）</td>
+<td><code>int(3.9)</code> → <code>3</code>, <code>int("123")</code> → <code>123</code></td>
+</tr>
+<tr>
+<td><code>float(x)</code></td>
+<td>转浮点数</td>
+<td><code>float(5)</code> → <code>5.0</code>, <code>float("3.14")</code> → <code>3.14</code></td>
+</tr>
+<tr>
+<td><code>complex(a,b)</code></td>
+<td>创建复数</td>
+<td><code>complex(3,4)</code> → <code>(3+4j)</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">int(&quot;123&quot;)       # 123 ✅
+int(&quot;123.45&quot;)    # ❌ ValueError（不能直接转带小数的字符串）
+float(&quot;123.45&quot;)  # 123.45 ✅
+int(True) = 1, int(False) = 0
+float(True) = 1.0
+</code></pre>
+<h3>6.2 数学运算</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abs(x)</code></td>
+<td>绝对值</td>
+<td><code>abs(-3.14)</code> → <code>3.14</code></td>
+</tr>
+<tr>
+<td><code>pow(x, y)</code></td>
+<td>x的y次方</td>
+<td><code>pow(2,3)</code> → <code>8</code></td>
+</tr>
+<tr>
+<td><code>pow(x, y, z)</code></td>
+<td>x**y % z（高效）</td>
+<td><code>pow(3,3,2)</code> → <code>1</code></td>
+</tr>
+<tr>
+<td><code>round(x, n)</code></td>
+<td>四舍五入保留n位</td>
+<td><code>round(3.14159,2)</code> → <code>3.14</code></td>
+</tr>
+<tr>
+<td><code>divmod(a,b)</code></td>
+<td>返回(商, 余数)</td>
+<td><code>divmod(20,3)</code> → <code>(6,2)</code></td>
+</tr>
+<tr>
+<td><code>max(...)</code></td>
+<td>最大值</td>
+<td><code>max(10,20,5)</code> → <code>20</code></td>
+</tr>
+<tr>
+<td><code>min(...)</code></td>
+<td>最小值</td>
+<td><code>min(5,3,-10)</code> → <code>-10</code></td>
+</tr>
+<tr>
+<td><code>sum(iterable)</code></td>
+<td>求和</td>
+<td><code>sum([1,2,3])</code> → <code>6</code></td>
+</tr>
+</tbody>
+</table>
+<h3>6.3 字符编码</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ord(c)</code></td>
+<td>字符→Unicode编码</td>
+<td><code>ord('A')</code>→<code>65</code>, <code>ord('a')</code>→<code>97</code>, <code>ord('z')</code>→<code>122</code></td>
+</tr>
+<tr>
+<td><code>chr(n)</code></td>
+<td>编码→字符</td>
+<td><code>chr(65)</code>→<code>'A'</code>, <code>chr(97)</code>→<code>'a'</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">ord('A') + 2 = 67    chr(67) = 'C'
+ord('z') = 122       chr(65+32) = chr(97) = 'a'
+</code></pre>
+<h3>6.4 函数陷阱</h3>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>round()</code> 能解决所有浮点误差？</td>
+<td>❌ 不能全解决，decimal模块才行</td>
+</tr>
+<tr>
+<td><code>max()</code>只能接受两个参数？</td>
+<td>❌ 可以多个参数或可迭代对象</td>
+</tr>
+<tr>
+<td><code>divmod(10,3)</code> 返回 <code>(3,1)</code></td>
+<td>✅ 商3余1</td>
+</tr>
+<tr>
+<td>Python3默认编码是ASCII？</td>
+<td>❌ 是 <strong>Unicode(UTF-8)</strong></td>
+</tr>
+<tr>
+<td><code>int(2.6)</code> = 3？</td>
+<td>❌ = <strong>2</strong>（截断，不四舍五入）</td>
+</tr>
+<tr>
+<td><code>pow(3,2) == 3**2</code>？</td>
+<td>✅ True</td>
+</tr>
+<tr>
+<td><code>9999**9999</code> 会报错？</td>
+<td>❌ Python支持大整数</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>七、综合填空题速算表</h2>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>19%5</code></td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td><code>19//5</code></td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>3/3</code></td>
+<td><code>1.0</code></td>
+</tr>
+<tr>
+<td><code>2**3**0</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>18%5 + 18//5*5</code></td>
+<td><code>18</code></td>
+</tr>
+<tr>
+<td><code>x=3; x*=2+3**2</code></td>
+<td><code>33</code>（先算3²+2=11，再×3）</td>
+</tr>
+<tr>
+<td><code>(10**2 + 3*5)//(4-1)</code></td>
+<td><code>38</code></td>
+</tr>
+<tr>
+<td><code>(5*2**3) - (16/4)</code></td>
+<td><code>36.0</code></td>
+</tr>
+<tr>
+<td><code>sum(range(5))</code></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>pow(2,-1)</code></td>
+<td><code>0.5</code></td>
+</tr>
+<tr>
+<td><code>max("hello")</code></td>
+<td><code>'o'</code></td>
+</tr>
+<tr>
+<td><code>min("Python")</code></td>
+<td><code>'P'</code>（大写字母ASCII值小于小写）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1+0.2 == 0.3？</td>
+<td><strong>False</strong></td>
+</tr>
+<tr>
+<td>0.1+0.2 的结果？</td>
+<td><strong>0.30000000000000004</strong></td>
+</tr>
+<tr>
+<td><code>9/3</code> 的类型？</td>
+<td><strong>float</strong>（Python3中/总返回float）</td>
+</tr>
+<tr>
+<td>二进制前缀？</td>
+<td><strong>0b</strong> 不是 0c</td>
+</tr>
+<tr>
+<td>八进制前缀？</td>
+<td><strong>0o</strong> 不是 0x</td>
+</tr>
+<tr>
+<td><code>0x0101</code> 的值？</td>
+<td><strong>257</strong></td>
+</tr>
+<tr>
+<td><code>0o1010</code> 的值？</td>
+<td><strong>520</strong></td>
+</tr>
+<tr>
+<td>复数虚部用什么字母？</td>
+<td><strong>j</strong> 或 <strong>J</strong>，不是 i</td>
+</tr>
+<tr>
+<td>判断偶数怎么写？</td>
+<td><code>x%2==0</code> 不是 <code>x//2==0</code></td>
+</tr>
+<tr>
+<td><code>**</code> 的结合性？</td>
+<td><strong>右结合</strong></td>
+</tr>
+<tr>
+<td>Python3默认字符编码？</td>
+<td><strong>Unicode</strong> 不是 ASCII</td>
+</tr>
+<tr>
+<td><code>int(2.6)</code> 结果？</td>
+<td><strong>2</strong>（截断不是四舍五入）</td>
+</tr>
+<tr>
+<td><code>int("123.45")</code> 结果？</td>
+<td><strong>报错</strong> ValueError</td>
+</tr>
+<tr>
+<td><code>eval('500/10')</code> 结果？</td>
+<td><strong>50.0</strong>（float）</td>
+</tr>
+<tr>
+<td><code>123e</code> 合法？</td>
+<td><strong>❌</strong> 缺少指数</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>九、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖浮点误差、进制、运算符优先级。</p>
+</blockquote>
+<p><strong>1.</strong> <code>0.1 + 0.2 == 0.3</code> 的结果是？</p>
+<p>A. True　　B. False　　C. 报错　　D. 0.3</p>
+<p><strong>2.</strong> Python中合法的二进制整数是？</p>
+<p>A. <code>0b12</code>　　B. <code>0b1010</code>　　C. <code>0x1010</code>　　D. <code>0o1010</code></p>
+<p><strong>3.</strong> <code>int(3.9)</code> 的结果是？</p>
+<p>A. 4　　B. 3.9　　C. 3　　D. 4.0</p>
+<p><strong>4.</strong> <code>9 / 3</code> 的结果类型是？</p>
+<p>A. int　　B. float　　C. str　　D. bool</p>
+<p><strong>5.</strong> 以下哪个<strong>不是</strong> Python 整数表示方式？</p>
+<p>A. 十进制　　B. 二进制　　C. 十二进制　　D. 十六进制</p>
+<p><strong>6.</strong> <code>0x0101</code> 的十进制值是？</p>
+<p>A. 101　　B. 257　　C. 65　　D. 17</p>
+<p><strong>7.</strong> <code>3 + 2 * 3 ** 2</code> 的结果是？</p>
+<p>A. 45　　B. 21　　C. 15　　D. 75</p>
+<p><strong>8.</strong> 判断 x 是偶数，正确的是？</p>
+<p>A. <code>x // 2 == 0</code>　　B. <code>x % 2 == 0</code>　　C. <code>x / 2 == 0</code>　　D. <code>x % 2 == 1</code></p>
+<p><strong>9.</strong> <code>ord('A')</code> 的值是？</p>
+<p>A. 97　　B. 66　　C. 65　　D. 98</p>
+<p><strong>10.</strong> <code>pow(3, 3, 2)</code> 的结果是？</p>
+<p>A. 27　　B. 9　　C. 1　　D. 0</p>
+<p><strong>11.</strong> Python中复数的虚部用什么字母？</p>
+<p>A. i　　B. j　　C. c　　D. v</p>
+<p><strong>12.</strong> <code>round(3.14159, 2)</code> 的结果是？</p>
+<p>A. 3.14　　B. 3.15　　C. 3.1　　D. 3</p>
+<p><strong>13.</strong> <code>divmod(20, 3)</code> 的结果是？</p>
+<p>A. <code>(6, 2)</code>　　B. <code>6.66</code>　　C. <code>6</code>　　D. <code>2</code></p>
+<p><strong>14.</strong> <code>bin(100)</code> 的返回值是？</p>
+<p>A. <code>'1100100'</code>　　B. <code>'0b1100100'</code>　　C. <code>'0o144'</code>　　D. <code>'0x64'</code></p>
+<p><strong>15.</strong> <code>a=10; x=3; a*=2+3**2</code> 后 a 的值是？</p>
+<p>A. 50　　B. 23　　C. 110　　D. 33</p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>IEEE 754 浮点误差→0.1+0.2=0.30000000000000004，不等于0.3。判断浮点数相等是经典坑。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td><code>0b1010</code>=10。A含非法数字2，C是十六进制，D是八进制。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>C</strong></td>
+<td>int() 向零截断，不四舍五入。3.9→3，-3.9→-3。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>B</strong></td>
+<td>Python3 中 <code>/</code> 永远返回 float，即使整除也是 3.0。<code>//</code> 才返回 int。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>C</strong></td>
+<td>Python 整数四大进制：十(无前缀)、二(<code>0b</code>)、八(<code>0o</code>)、十六(<code>0x</code>)。没有十二进制。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>B</strong></td>
+<td><code>0x0101</code> = 1×16² + 0×16¹ + 1×16⁰ = 256+0+1 = 257。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>B</strong></td>
+<td>优先级：<code>**</code> &gt; <code>*</code> &gt; <code>+</code>。3²=9, 2×9=18, 3+18=21。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>B</strong></td>
+<td>偶数÷2余0→<code>x%2==0</code>。A是错的（x//2==0 只在 x=0或1时成立）。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>C</strong></td>
+<td>A的Unicode码=65。a=97，z=122。务必记住A=65、a=97。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>C</strong></td>
+<td><code>pow(3,3,2)</code> = 3³%2 = 27%2 = 1。第三个参数是取模。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>B</strong></td>
+<td>Python 用 <code>j</code> 或 <code>J</code>。数学课本用 i，Python 用 j。别搞混。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>A</strong></td>
+<td>round(3.14159, 2) = 3.14（保留两位小数，四舍五入）。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>A</strong></td>
+<td>divmod(被除数, 除数) 返回元组 <code>(商, 余数)</code>。20÷3=6余2→<code>(6,2)</code>。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>B</strong></td>
+<td>bin() 返回带 <code>0b</code> 前缀的字符串。不带前缀的是数字本身。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>C</strong></td>
+<td><code>a*=2+3**2</code> → 先算右边：3²=9，2+9=11，然后 a=10×11=110。增强赋值的右操作数先整算。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：进制和运算符过关了　｜　错3-6题：重点回看第二节(进制)和第五节(运算符)　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/四" download>📥 下载PDF</a>
+</div>
+</body></html>

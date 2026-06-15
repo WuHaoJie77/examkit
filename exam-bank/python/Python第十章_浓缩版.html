@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第十章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第十章 浓缩速记卡（while循环 · 嵌套混用）</h1>
+<hr />
+<h2>一、while 循环基础</h2>
+<blockquote>
+<p><strong>🧠 费曼：while = 哨兵站岗。</strong> 一个士兵在门口站岗，每隔一段时间问自己："时间到了吗？"没到→继续站（循环），到了→换岗（退出）。<code>while True</code>就是永不换岗的哨兵，必须有人发"break"命令才能把他拉下来。如果忘了发命令（忘写break），这个兵就站到天荒地老——死循环。</p>
+</blockquote>
+<h3>1.1 语法</h3>
+<pre><code class="language-python">while 条件:
+    循环体         # 条件为True时反复执行
+else:             # 可选：正常结束（未break）时执行
+    语句
+</code></pre>
+<h3>1.2 while vs for 对比</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>for</th>
+<th>while</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>适用场景</td>
+<td>已知循环次数</td>
+<td>未知循环次数</td>
+</tr>
+<tr>
+<td>遍历对象</td>
+<td>可迭代对象（列表/字符串/range）</td>
+<td>条件表达式</td>
+</tr>
+<tr>
+<td>典型写法</td>
+<td><code>for i in range(n):</code></td>
+<td><code>while x &lt; n:</code></td>
+</tr>
+<tr>
+<td>可互转？</td>
+<td>while 能替代所有 for ✅</td>
+<td>for 不能替代所有 while ❌</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># for → while（总是可以）
+for i in range(5):
+    print(i)
+
+i = 0
+while i &lt; 5:
+    print(i)
+    i += 1
+
+# while True → for（不行！次数不确定）
+</code></pre>
+<h3>1.3 条件表达式可用任意类型</h3>
+<pre><code class="language-python">while 1:        # 非0→True
+while &quot;hello&quot;:  # 非空字符串→True
+while [1,2]:    # 非空列表→True
+while 0:        # 0→False，不执行
+while &quot;&quot;:       # 空字符串→False，不执行
+while []:       # 空列表→False，不执行
+</code></pre>
+<hr />
+<h2>二、while True + break 模式</h2>
+<pre><code class="language-python"># 标准写法：无限循环 + 条件跳出
+while True:
+    操作
+    if 退出条件:
+        break         # ← 没有break就是死循环！
+
+# 经典场景：输入验证
+while True:
+    a = eval(input(&quot;输入[0,100]范围的分数：&quot;))
+    if a &lt; 0 or a &gt; 100:
+        break
+    s += a
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>while True 一定是死循环</td>
+<td style="text-align: center;">❌ 加break可退出</td>
+</tr>
+<tr>
+<td>while True 必须有break</td>
+<td style="text-align: center;">✅ 否则死循环</td>
+</tr>
+<tr>
+<td>while True 语法不通过</td>
+<td style="text-align: center;">❌ 完全合法</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>三、while-else 结构</h2>
+<pre><code class="language-python">while 条件:
+    if 某条件:
+        break        # break → else 不执行
+    语句
+else:
+    语句             # 正常结束（条件变False）→ else 执行
+</code></pre>
+<p><strong>规则和 for-else 完全一样：break 跳过 else，正常结束触发 else。</strong></p>
+<hr />
+<h2>四、break / continue 在 while 中</h2>
+<pre><code class="language-python"># break：终止整个循环
+while True:
+    s += 1
+    if s &gt; 100:
+        break         # 跳出，执行循环后面的代码
+
+# continue：跳过本次，回到条件判断
+while x &lt; 10:
+    x += 1
+    if x % 2 == 0:
+        continue      # 跳过print
+    print(x)          # 只输出奇数
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th style="text-align: center;">对错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>break 跳出所有嵌套层</td>
+<td style="text-align: center;">❌ 只跳出最内层</td>
+</tr>
+<tr>
+<td>continue 跳出当前循环</td>
+<td style="text-align: center;">❌ 只跳过本次迭代</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>五、while + for 嵌套混用</h2>
+<h3>5.1 基本规则</h3>
+<pre><code class="language-python">while 外层条件:
+    for 变量 in 序列:    # 内层是for
+        语句
+    更新外层变量
+</code></pre>
+<p><strong>外层执行1次，内层for完整跑一轮。</strong></p>
+<h3>5.2 典型用例</h3>
+<pre><code class="language-python"># 打印九九乘法表前5行
+row = 1
+while row &lt;= 5:
+    for col in range(1, row + 1):
+        print(f&quot;{col}×{row}={col*row}&quot;, end='\t')
+    print()
+    row += 1
+
+# while + for 混合计数
+count = 0
+x = 1
+while x &lt;= 2:
+    for y in range(3):
+        count += 1
+    x += 1
+# count = 6（2轮×3次）
+
+# while嵌套while
+i = 1
+while i &lt;= 2:
+    j = 1
+    while j &lt;= 3:
+        print(j, end='')
+        j += 1
+    i += 1
+# 输出: 123123（外层2次×内层3次）
+</code></pre>
+<h3>5.3 break 在嵌套中</h3>
+<pre><code class="language-python">while x &lt; 10:
+    for y in range(5):
+        if 条件:
+            break       # 只跳出内层for！外层while继续
+</code></pre>
+<hr />
+<h2>六、经典陷阱</h2>
+<h3>6.1 忘记更新循环变量 → 死循环</h3>
+<pre><code class="language-python">i = 0
+while i &lt; 5:
+    print(i)
+    # 忘了 i += 1  → 死循环输出 0 0 0 ...
+</code></pre>
+<h3>6.2 continue 前忘记更新变量</h3>
+<pre><code class="language-python">i = 0
+while i &lt; 5:
+    if i == 2:
+        continue      # 跳过 i+=1 → 死循环！
+    print(i)
+    i += 1
+</code></pre>
+<h3>6.3 累加位置不同结果不同</h3>
+<pre><code class="language-python"># 先加后判断 → 超出范围的值被计入
+s = 0
+while True:
+    a = eval(input())
+    s += a            # 先加
+    if a &lt; 0 or a &gt; 100:
+        break         # 后判断 → 非法值已计入！
+
+# 先判断后加 → 超出范围的值不计入
+while True:
+    a = eval(input())
+    if a &lt; 0 or a &gt; 100:
+        break         # 先判断
+    s += a            # 合法才加
+</code></pre>
+<hr />
+<h2>七、经典程序模板</h2>
+<pre><code class="language-python"># 输入-循环累加（遇非法值退出）
+s = 0
+while True:
+    a = eval(input(&quot;输入：&quot;))
+    if a &lt; 0 or a &gt; 100:
+        break
+    s += a
+
+# 找最小满足条件的数
+a = 11
+while a &lt; 100:
+    if a % (a//10 + a%10) == 0:
+        print(a)
+        break
+    a += 1
+else:
+    print('不存在')
+
+# 斐波那契数列
+a, b = 1, 1
+count = 1
+while count &lt;= 10:
+    print(a)
+    a, b = b, a + b
+    count += 1
+
+# 猜数字
+target = 67
+guess = int(input(&quot;猜：&quot;))
+while guess != target:
+    if guess &lt; target: print(&quot;太小&quot;)
+    else: print(&quot;太大&quot;)
+    guess = int(input(&quot;再猜：&quot;))
+print(&quot;猜对了&quot;)
+</code></pre>
+<hr />
+<h2>八、循环关键字集合</h2>
+<table>
+<thead>
+<tr>
+<th>属于循环结构</th>
+<th>不属于</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>for</code> <code>while</code></td>
+<td><code>if</code> <code>elif</code> <code>else</code> <code>def</code></td>
+</tr>
+<tr>
+<td><code>break</code> <code>continue</code></td>
+<td><code>import</code> <code>except</code> <code>try</code></td>
+</tr>
+<tr>
+<td><code>else</code>(可搭配for/while)</td>
+<td><code>in</code>(运算符)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>九、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>while True 必死循环？</td>
+<td>❌ break可退出</td>
+</tr>
+<tr>
+<td>while 条件必须布尔？</td>
+<td>❌ 任何类型都行(truthiness)</td>
+</tr>
+<tr>
+<td>while 0 会执行吗？</td>
+<td>❌ 0是False，不执行</td>
+</tr>
+<tr>
+<td>for 能替代所有while？</td>
+<td>❌ 不确定次数的while不行</td>
+</tr>
+<tr>
+<td>break 跳出所有层？</td>
+<td>❌ 只跳出最内层</td>
+</tr>
+<tr>
+<td>for 循环次数不确定？</td>
+<td>❌ 由遍历结构确定</td>
+</tr>
+<tr>
+<td>while 必须提供循环次数？</td>
+<td>❌ 不需要</td>
+</tr>
+<tr>
+<td>else 只和if搭配？</td>
+<td>❌ 也可搭配for/while</td>
+</tr>
+<tr>
+<td>while 条件为空列表？</td>
+<td>不执行(空列表=False)</td>
+</tr>
+<tr>
+<td>break后的代码会执行？</td>
+<td>❌ 不会</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖 while True+break 和 while/for 嵌套。</p>
+</blockquote>
+<p><strong>1.</strong> <code>while 0:</code> 的循环体会执行吗？</p>
+<p>A. 执行1次　　B. 死循环　　C. 不执行　　D. 报错</p>
+<p><strong>2.</strong> while True 循环中防止死循环的关键字是？</p>
+<p>A. continue　　B. break　　C. else　　D. pass</p>
+<p><strong>3.</strong> 执行后输出？</p>
+<pre><code class="language-python">i = 0
+while i &lt; 5:
+    i += 2
+print(i)
+</code></pre>
+<p>A. 4　　B. 5　　C. 6　　D. 0</p>
+<p><strong>4.</strong> while 循环的 else 什么时候执行？</p>
+<p>A. 每次循环后　　B. break后　　C. 正常结束(条件变False)后　　D. 永远不执行</p>
+<p><strong>5.</strong> <code>while "":</code> 循环体会执行吗？</p>
+<p>A. 执行　　B. 不执行　　C. 报错　　D. 死循环</p>
+<p><strong>6.</strong> 嵌套循环中内层 break 会？</p>
+<p>A. 跳出所有层　　B. 只跳出内层　　C. 跳到外层else　　D. 终止程序</p>
+<p><strong>7.</strong> 执行后 count 的值？</p>
+<pre><code class="language-python">count = 0
+x = 1
+while x &lt;= 2:
+    for y in range(3):
+        count += 1
+    x += 1
+</code></pre>
+<p>A. 3　　B. 6　　C. 2　　D. 5</p>
+<p><strong>8.</strong> 以下哪个不能和 else 搭配？</p>
+<p>A. if　　B. for　　C. while　　D. import</p>
+<p><strong>9.</strong> 所有 for 循环都能用 while 重写吗？</p>
+<p>A. 能　　B. 不能　　C. 部分能　　D. 反过来才行</p>
+<p><strong>10.</strong> while 循环的条件表达式必须是什么类型？</p>
+<p>A. bool　　B. int　　C. 任何类型都可以(truthiness)　　D. str</p>
+<p><strong>11.</strong> 执行后 s 的值？</p>
+<pre><code class="language-python">s = 0
+i = 0
+while i &lt; 5:
+    s += i
+    i += 2
+print(s)
+</code></pre>
+<p>A. 6　　B. 10　　C. 15　　D. 5</p>
+<p><strong>12.</strong> 以下关于 for 和 while 说法<strong>错误</strong>的是？</p>
+<p>A. for遍历循环次数由遍历结构决定　　B. while适合不确定次数的循环<br />
+C. for循环次数不确定　　D. while可用break跳出</p>
+<p><strong>13.</strong> 执行后输出？</p>
+<pre><code class="language-python">k = 5
+while k &lt; 50:
+    if k % 7 == 0: break
+    k += 5
+    print(k, end=';')
+</code></pre>
+<p>A. <code>10;15;20;25;30;35;</code>　　B. <code>10;15;20;25;30;</code><br />
+C. <code>10;</code>　　D. <code>10;15;20;25;30;35;40;45;</code></p>
+<p><strong>14.</strong> while 循环中 continue 的作用是？</p>
+<p>A. 跳出循环　　B. 跳过本次剩余代码，回到条件判断<br />
+C. 和 break 相同　　D. 终止程序</p>
+<p><strong>15.</strong> 执行后输出？</p>
+<pre><code class="language-python">a = 5
+while a &lt; 50:
+    if a % 11 == 0: break
+    a += 5
+    print(a, end=';')
+else:
+    print('没找到')
+</code></pre>
+<p>A. <code>10;15;...45;50;没找到</code>　　B. <code>10;15;...45;50;</code><br />
+C. <code>10;15;...50;没找到</code>　　D. <code>没找到</code></p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>C</strong></td>
+<td>0是False→循环体一次都不执行。任何falsy值(0/""/[])都不执行。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td>break是while True中唯一的合法出口。continue跳不过条件判断。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>C</strong></td>
+<td>i:0→2→4→6(循环条件i&lt;5为False)。最后i=6。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>C</strong></td>
+<td>while-else只在条件变为False正常结束时执行。break跳过else。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>B</strong></td>
+<td>空字符串是falsy→循环体不执行。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>B</strong></td>
+<td>break只跳出最内层循环，外层不受影响。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>B</strong></td>
+<td>外层2次×内层3次=6。x=1时3次，x=2时3次，然后x=3退出。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>D</strong></td>
+<td>else可搭配if、for、while。import不行。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>A</strong></td>
+<td>所有for都能改写为while（用变量模拟遍历）。反过来while True无法直接写成for。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>C</strong></td>
+<td>Python用truthiness：0/空串/空列表=False，其他=True。不限定bool。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>A</strong></td>
+<td>i:0→s=0,i=2→s=2,i=4→s=6,i=6(退出)。s=6。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>C</strong></td>
+<td>for循环次数由遍历结构元素个数确定，是<strong>确定的</strong>。说"不确定"是错的。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>A</strong></td>
+<td>a:5→10→15→20→25→30→35(35%7=0)→break。输出到35。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>B</strong></td>
+<td>continue=跳过本轮剩余代码，回到while条件判断。不是跳出循环。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>C</strong></td>
+<td>a从5递增到50(55%11=0? No→55≥50退出)，没有数%11=0→未break→else执行。输出包含50和"没找到"。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：while循环过关　｜　错3-6题：重点回看第二节(while True+break)和第三节(while-else)　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/十" download>📥 下载PDF</a>
+</div>
+</body></html>

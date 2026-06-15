@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📚 小番茄题库浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+.chapter-list a .badge{float:right;background:#1a5276;color:#fff;border-radius:12px;padding:2px 10px;font-size:0.75em;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+.notice{background:linear-gradient(135deg,#eaf2f8,#f0f4f8);border:1px solid #bdd7ee;border-radius:12px;padding:25px 30px;margin:30px 0;line-height:1.9}
+.notice h3{color:#1a5276;margin-bottom:12px;font-size:1.1em}
+.notice p{color:#555;font-size:0.95em;margin:6px 0}
+.notice .highlight{color:#e74c3c;font-weight:600}
+.notice .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
+.notice .btn{display:inline-block;padding:8px 18px;border-radius:8px;text-decoration:none;font-size:0.9em;font-weight:600;transition:all .15s}
+.notice .btn-primary{background:#1a5276;color:#fff}
+.notice .btn-primary:hover{background:#0d3b54}
+.notice .btn-outline{background:#fff;color:#1a5276;border:1px solid #1a5276}
+.notice .btn-outline:hover{background:#eaf2f8}
+.qr-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center}
+.qr-modal.show{display:flex}
+.qr-modal .box{background:#fff;border-radius:16px;padding:30px;text-align:center;max-width:360px;box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.qr-modal .box img{width:280px;height:auto;border-radius:8px}
+.qr-modal .box h3{margin-bottom:10px;color:#1a5276}
+.qr-modal .box p{color:#999;font-size:0.8em;margin-top:12px}
+.qr-modal .close{position:absolute;top:15px;right:20px;font-size:28px;cursor:pointer;color:#fff}
+</style>
+</head><body>
+<h1>📚 小番茄题库浓缩版</h1>
+<p style="color:#666;margin-bottom:10px">费曼类比 + 知识表格 + 高频陷阱 + 自测题 + 解析 + 评分线 → 每章30分钟搞定</p>
+<div class="subject-grid">
+<a class="subject-card" href="python/">
+  <div class="subject-icon">🐍</div>
+  <h2>Python程序设计</h2>
+  <p>13章速记卡 · 覆盖超星1300+题</p>
+</a>
+<a class="subject-card" href="cs/">
+  <div class="subject-icon">💻</div>
+  <h2>计算机科学概论</h2>
+  <p>8章速记卡 · 绪论→体系结构→硬件→算法→语言→OS→网络</p>
+</a>
+</div>
+<div class="notice">
+<h3>👋 新入站小伙伴看过来</h3>
+<p>本站由 <span class="highlight">番茄</span> 免费开源建立，因为云服务器配置不高，一次性太多人同时用会导致崩掉 😅</p>
+<p>👉 知道 <b>GitHub</b> 的同学可以直接去仓库看源码、提建议，顺手点个 ⭐ 就是最大的支持！</p>
+<p>👉 不知道 GitHub 的同学，可以在本站直接下载 <b>PDF 版本</b>，存到本地随时学，不依赖服务器。</p>
+<p>谢谢大家的支持！想了解更多可以加 <span class="highlight">交流群</span> 一起讨论～</p>
+<div class="btn-row">
+<a class="btn btn-primary" href="https://github.com/WuHaoJie77" target="_blank">🔗 GitHub 仓库</a>
+<a class="btn btn-outline" href="javascript:void(0)" onclick="document.getElementById('qrModal').classList.add('show')">💬 加交流群</a>
+</div>
+</div>
+<div class="qr-modal" id="qrModal" onclick="if(event.target===this)this.classList.remove('show')">
+<span class="close" onclick="document.getElementById('qrModal').classList.remove('show')">&times;</span>
+<div class="box">
+<h3>🍅 西红柿番茄 交流群</h3>
+<img src="/qrcode.png" alt="微信群二维码">
+<p>微信扫码加入 · 7天内有效</p>
+<p style="margin-top:8px;color:#555">QQ群：<b>949808620</b></p>
+</div>
+</div>
+<div class="footer">
+<p>📧 微信 OceanOfInfinity ｜ QQ 949808620</p>
+<p>致力于帮助财大学子节省复习时间！</p>
+</div>
+</body></html>

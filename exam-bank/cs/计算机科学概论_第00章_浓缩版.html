@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>计算机科学概论_第00章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>计算机科学概论 第00章 浓缩速记卡</h1>
+<blockquote>
+<p><strong>章节：绪论 — 计算、计算机与学科概览</strong>
+<strong>题量：53题 → 浓缩为8个知识模块</strong>
+<strong>预计用时：30分钟</strong></p>
+</blockquote>
+<hr />
+<h2>一、计算基础：可计算性 + 复杂性 + 计算思维</h2>
+<blockquote>
+<p>🍳 <strong>费曼：「计算」就像做饭——有些菜有菜谱能做（可计算），有些菜菜谱写得太长做到饿死也做不完（计算复杂性太高，实际不可行），而计算思维就是学会「抽象出菜谱模板」+「让机器自动炒菜」的思维方式。</strong></p>
+</blockquote>
+<h3>1.1 可计算性 vs 计算复杂性</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>核心问题</th>
+<th>关键点</th>
+<th>经典例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>可计算性</strong></td>
+<td>问题能不能用计算方法求解？</td>
+<td>有限步骤 + 合理时间 → 可计算</td>
+<td>累加和：可以</td>
+</tr>
+<tr>
+<td><strong>计算复杂性</strong></td>
+<td>可计算问题有多难求解？</td>
+<td>不同方法资源消耗不同</td>
+<td>累加和：直接加 n-1 次 vs 高斯公式 3 次</td>
+</tr>
+<tr>
+<td><strong>不可计算</strong></td>
+<td>两种情况</td>
+<td>①无已知方法 ②步骤太多（梵天塔 n=64）</td>
+<td>梵天塔 2⁶⁴-1 次 → 超级计算机也要算很久</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>一句话：可计算性问「能不能」，复杂性问「费不费劲」</strong></p>
+</blockquote>
+<h3>1.2 计算思维（周以真，2006）</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>定义</strong></td>
+<td>用计算机科学基础概念求解问题、设计系统、理解人类行为的思维方式</td>
+</tr>
+<tr>
+<td><strong>核心</strong></td>
+<td><strong>抽象</strong> + <strong>自动化</strong></td>
+</tr>
+<tr>
+<td><strong>四大特性</strong></td>
+<td>①概念化非程序化 ②人的思维非计算机的 ③数学+工程融合 ④面向所有领域</td>
+</tr>
+<tr>
+<td><strong>8类表达体系</strong></td>
+<td>计算、抽象、自动化、设计、评估、<strong>通信</strong>、<strong>协调</strong>、<strong>记忆</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、计算模型：图灵机 + 冯·诺依曼</h2>
+<blockquote>
+<p>🍳 <strong>费曼：图灵机像「理论菜谱」——只存在于纸上，描述做菜的逻辑；冯·诺依曼模型像「实际厨房」——灶台(CPU)、冰箱(内存)、菜筐(I/O)，真的把菜做出来。</strong></p>
+</blockquote>
+<h3>2.1 两大模型对比</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>图灵机</th>
+<th>冯·诺依曼模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>提出者</strong></td>
+<td>阿兰·图灵 (1937)</td>
+<td>冯·诺依曼</td>
+</tr>
+<tr>
+<td><strong>性质</strong></td>
+<td>抽象数学设想</td>
+<td>实际硬件架构</td>
+</tr>
+<tr>
+<td><strong>核心</strong></td>
+<td>通用计算设备理论</td>
+<td><strong>存储程序</strong>思想</td>
+</tr>
+<tr>
+<td><strong>4个子系统</strong></td>
+<td>—</td>
+<td>存储器、算术/逻辑单元、控制单元、I/O单元</td>
+</tr>
+<tr>
+<td><strong>存储方式</strong></td>
+<td>—</td>
+<td>程序和数据都以 <strong>0/1 位模式</strong> 存在内存中</td>
+</tr>
+</tbody>
+</table>
+<h3>2.2 计算模型 vs 计算机</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>联系</th>
+<th>区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算模型</td>
+<td>是计算机的<strong>理论基础</strong></td>
+<td>抽象数学框架，聚焦「能算什么」</td>
+</tr>
+<tr>
+<td>计算机</td>
+<td>是计算模型的<strong>物理实现</strong></td>
+<td>具体物理设备，聚焦「如何高效算」</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🧠 <strong>Dijkstra 名言：计算机科学关注计算机，不亚于天文学关注望远镜。</strong>（计算机只是工具，研究的是信息处理规律）</p>
+<p>🧠 <strong>计算机最主要特点：存储程序与自动控制</strong>（为什么能自动连续运算？因为有存储程序原理）</p>
+</blockquote>
+<hr />
+<h2>三、计算机发展史：四代变迁</h2>
+<blockquote>
+<p>🍳 <strong>费曼：四代计算机就像四次厨房革命——第一代烧柴(电子管)，第二代用煤气(晶体管)，第三代集成灶(集成电路)，第四代智能厨房(大规模IC)。核心就是「做饭的炉子」越变越小、越变越快。</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>代</th>
+<th>时间</th>
+<th>核心元件</th>
+<th>代表产品</th>
+<th>技术突破</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>第一代</strong></td>
+<td>1946-1957</td>
+<td><strong>电子管</strong></td>
+<td>ENIAC (1946)、EDVAC</td>
+<td>穿孔卡存储，汇编语言，FORTRAN雏形</td>
+</tr>
+<tr>
+<td><strong>第二代</strong></td>
+<td>1958-1964</td>
+<td><strong>晶体管</strong></td>
+<td>—</td>
+<td>磁芯内存、磁盘外存，<strong>高级语言出现</strong>(FORTRAN/COBOL/ALGOL)</td>
+</tr>
+<tr>
+<td><strong>第三代</strong></td>
+<td>1964-1971</td>
+<td><strong>集成电路</strong></td>
+<td>IBM 360</td>
+<td>系列化/通用化，微程序技术，OS功能完善</td>
+</tr>
+<tr>
+<td><strong>第四代</strong></td>
+<td>1972至今</td>
+<td><strong>大规模/超大规模集成电路</strong></td>
+<td>微处理器 → PC、平板</td>
+<td>软件体系完善，向智能化/网络化发展</td>
+</tr>
+</tbody>
+</table>
+<h3>关键里程碑</h3>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENIAC</td>
+<td>1946年美国第一台电子数字计算机，占地170㎡重30t，每秒5000次加法</td>
+</tr>
+<tr>
+<td>存储程序提出者</td>
+<td><strong>冯·诺依曼</strong>（非图灵！图灵提出的是图灵机设想）</td>
+</tr>
+<tr>
+<td>高级语言从哪代开始</td>
+<td><strong>第二代（晶体管时代）</strong></td>
+</tr>
+<tr>
+<td>首个多媒体PC</td>
+<td>1983年<strong>苹果 Macintosh（麦金塔）</strong></td>
+</tr>
+<tr>
+<td>微处理器属哪代</td>
+<td><strong>第四代</strong></td>
+</tr>
+<tr>
+<td>第五代存在吗</td>
+<td>❌ 尚未形成统一标准，仍处于研究阶段</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、计算机科学研究领域（8大方向）</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>领域</th>
+<th>核心内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>数值和符号计算</td>
+<td>方程求解、符号运算、数学软件包</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>算法和数据结构</strong></td>
+<td>最优算法、空间/时间折中</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>体系结构</strong></td>
+<td>硬件/软件组织方式、性能测度</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>操作系统</strong></td>
+<td>资源调度、并发控制、分布式</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>程序设计语言</strong></td>
+<td>语法、虚拟机、编译翻译</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>软件工程</strong></td>
+<td>可靠软件设计、验证、安全性</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>数据库和信息检索</strong></td>
+<td>数据建模、高效查询、安全保护</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>人工智能和计算理论</strong></td>
+<td>智能行为模型、感知数据编码</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🏛️ <strong>ACM = Association for Computing Machinery（国际计算机协会/美国计算机协会）</strong></p>
+</blockquote>
+<hr />
+<h2>五、计算机与社会</h2>
+<blockquote>
+<p>🍳 <strong>费曼：计算机对社会就像自来水——没水时觉得离不开，一旦水管爆了整栋楼淹掉。工具越强大，责任越大。</strong></p>
+</blockquote>
+<h3>5.1 多维度影响</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>正面</th>
+<th>负面</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>生活</strong></td>
+<td>联网同步、在线办公/娱乐、提升效率</td>
+<td>依赖问题（故障→银行/医疗/交通瘫痪）、社会分化</td>
+</tr>
+<tr>
+<td><strong>伦理</strong></td>
+<td>美国计算机伦理协会「十诫」</td>
+<td>黑客、病毒、隐私侵犯</td>
+</tr>
+<tr>
+<td><strong>犯罪</strong></td>
+<td>—</td>
+<td>破坏(病毒/蠕虫)、盗窃(硬件/软件/数据)、操控(黑客入侵)</td>
+</tr>
+<tr>
+<td><strong>科研</strong></td>
+<td>模拟化学反应、航天研究→解放机械劳动</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>5.2 计算机犯罪关键点</h3>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定罪核心</td>
+<td><strong>主观故意</strong>是犯罪关键；过失=民事/行政责任</td>
+</tr>
+<tr>
+<td>病毒特征</td>
+<td><strong>潜伏性</strong> + <strong>激发性</strong> + <strong>传染性</strong>（无「免疫性」！）</td>
+</tr>
+<tr>
+<td>病毒本质</td>
+<td>是一种<strong>程序</strong></td>
+</tr>
+<tr>
+<td>防感染</td>
+<td>使用<strong>正版软件</strong>是有效方法</td>
+</tr>
+<tr>
+<td>传播主要途径</td>
+<td>网络普及后→<strong>电子邮件</strong>（非软盘！）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、计算机应用分类</h2>
+<table>
+<thead>
+<tr>
+<th>应用类型</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>科学计算</strong></td>
+<td>早期主要用途</td>
+<td>ENIAC弹道计算、天气预报、航天模拟</td>
+</tr>
+<tr>
+<td><strong>数据处理</strong></td>
+<td>存储/查询/统计</td>
+<td>人事档案管理、财务管理、社保税务</td>
+</tr>
+<tr>
+<td><strong>实时控制</strong></td>
+<td>自动化控制</td>
+<td>生产线自动化、红绿灯/列车调度</td>
+</tr>
+<tr>
+<td><strong>人工智能</strong></td>
+<td>模拟智能行为</td>
+<td>人脸识别、机器翻译、电商推荐</td>
+</tr>
+<tr>
+<td><strong>多媒体应用</strong></td>
+<td>信息呈现</td>
+<td>影视特效、3D游戏、在线教育</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>早期计算机主要用来科学计算，不是数据处理！人事/财务软件属于数据处理，不是实时控制！</strong></p>
+</blockquote>
+<hr />
+<h2>七、相关学科与计算机分类</h2>
+<h3>7.1 支撑学科</h3>
+<table>
+<thead>
+<tr>
+<th>学科</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数学</td>
+<td>算法、逻辑基础</td>
+</tr>
+<tr>
+<td>电子学</td>
+<td>硬件电路设计</td>
+</tr>
+<tr>
+<td>磁学</td>
+<td>存储器技术</td>
+</tr>
+<tr>
+<td>光学</td>
+<td>光存储、光通信</td>
+</tr>
+<tr>
+<td>精密机械</td>
+<td>早期机械计算机、现代设备结构</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>❌ <strong>心理学</strong>不在计算机科学支撑学科之列！</p>
+</blockquote>
+<h3>7.2 计算机分类要点</h3>
+<table>
+<thead>
+<tr>
+<th>分类维度</th>
+<th>关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>数字 vs 模拟</strong></td>
+<td>数字计算机处理<strong>数字量</strong>，模拟计算机处理<strong>物理量</strong></td>
+</tr>
+<tr>
+<td><strong>性能指标</strong></td>
+<td>字长、内存容量、<strong>时钟脉冲</strong>（重量❌不是性能指标！）</td>
+</tr>
+<tr>
+<td><strong>核心部件</strong></td>
+<td><strong>中央处理器(CPU)</strong>，非存储器</td>
+</tr>
+<tr>
+<td><strong>信息化社会核心基础</strong></td>
+<td><strong>计算机</strong>（非通信/控制/Internet）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、中国计算技术 + 经典问题</h2>
+<h3>8.1 中国贡献</h3>
+<table>
+<thead>
+<tr>
+<th>成就</th>
+<th>细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>祖冲之</td>
+<td>用算筹算出圆周率 3.1415926~3.1415927</td>
+</tr>
+<tr>
+<td>龙芯一号</td>
+<td>神州龙芯公司，<strong>32位</strong>CPU，通用+嵌入式</td>
+</tr>
+</tbody>
+</table>
+<h3>8.2 三大经典问题</h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>关键词</th>
+<th>核心</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哥尼斯堡七桥</td>
+<td>欧拉、图论</td>
+<td>抽象为图论问题，证明无欧拉回路</td>
+</tr>
+<tr>
+<td>梵天塔</td>
+<td>递归、2ⁿ-1</td>
+<td>64层→超级计算机也需极长时间</td>
+</tr>
+<tr>
+<td>哲学家共餐</td>
+<td>死锁、并发控制</td>
+<td>多进程共享资源的同步问题</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>九、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算机科学研究「如何制造计算机」？</td>
+<td>❌ 错。研究计算机及周围现象规律，非制造</td>
+</tr>
+<tr>
+<td>图灵造出了世界上第一台计算机？</td>
+<td>❌ 错。图灵只提出设想，第一台是ENIAC(1946)</td>
+</tr>
+<tr>
+<td>现代计算机已发展到第五代？</td>
+<td>❌ 错。仍在第四代，第五代尚未统一标准</td>
+</tr>
+<tr>
+<td>计算机能完全取代人的脑力劳动？</td>
+<td>❌ 错。当前AI仍有限</td>
+</tr>
+<tr>
+<td>计算机比人类有更强的思维能力？</td>
+<td>❌ 错。仍属弱人工智能</td>
+</tr>
+<tr>
+<td>计算机病毒不会危害硬件？</td>
+<td>❌ 错。部分病毒可破坏硬件</td>
+</tr>
+<tr>
+<td>计算机病毒有「免疫性」？</td>
+<td>❌ 错。特征只有潜伏性+激发性+传染性</td>
+</tr>
+<tr>
+<td>性能指标包括「重量」？</td>
+<td>❌ 错。性能指标：字长+内存+时钟脉冲</td>
+</tr>
+<tr>
+<td>第一台电子计算机逻辑部件是集成电路？</td>
+<td>❌ 错。是<strong>电子管</strong></td>
+</tr>
+<tr>
+<td>计算机核心是存储器？</td>
+<td>❌ 错。核心是<strong>中央处理器(CPU)</strong></td>
+</tr>
+<tr>
+<td>计算机最主要特点是高速度？</td>
+<td>❌ 错。最主要特点是<strong>存储程序与自动控制</strong></td>
+</tr>
+<tr>
+<td>早期计算机主要做数据处理？</td>
+<td>❌ 错。早期主要做<strong>科学计算</strong></td>
+</tr>
+<tr>
+<td>高级语言从第一代开始？</td>
+<td>❌ 错。从<strong>第二代(晶体管时代)</strong>开始</td>
+</tr>
+<tr>
+<td>人事/财务软件属于实时控制？</td>
+<td>❌ 错。属于<strong>数据处理</strong></td>
+</tr>
+<tr>
+<td>信息化社会核心基础是Internet？</td>
+<td>❌ 错。核心基础是<strong>计算机</strong></td>
+</tr>
+<tr>
+<td>心理学是计算机科学支撑学科？</td>
+<td>❌ 错。支撑学科：数学+电子学+磁学+光学+精密机械</td>
+</tr>
+<tr>
+<td>数字计算机处理物理量？</td>
+<td>❌ 错。模拟计算机处理物理量，数字计算机处理<strong>数字量</strong></td>
+</tr>
+<tr>
+<td>软盘是当前病毒传播主要途径？</td>
+<td>❌ 错。网络普及后→<strong>电子邮件</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>十、自测20题</h2>
+<h3>选择题（15题）</h3>
+<p><strong>1.</strong> 计算思维的核心是什么？
+A、抽象和自动化
+B、编程和调试
+C、数学和逻辑
+D、硬件和软件</p>
+<p><strong>2.</strong> 计算思维的8类表达体系中不包括以下哪一项？
+A、计算
+B、通信
+C、编程
+D、记忆</p>
+<p><strong>3.</strong> 冯·诺依曼模型中不包括以下哪个子系统？
+A、存储器
+B、算术/逻辑单元
+C、操作系统
+D、控制单元</p>
+<p><strong>4.</strong> 计算机之所以能自动连续运算，是因为采用了什么原理？
+A、布尔逻辑
+B、存储程序
+C、数字电路
+D、集成电路</p>
+<p><strong>5.</strong> 划分电子计算机发展阶段的主要依据是什么？
+A、集成电路
+B、电子元件
+C、运算速度
+D、内存容量</p>
+<p><strong>6.</strong> 第一代电子计算机使用的主存储器不包括以下哪种？
+A、水银延迟线存储器
+B、阴极射线示波管存储器
+C、半导体存储器
+D、磁鼓存储器</p>
+<p><strong>7.</strong> 高级程序设计语言最早出现在哪个时代？
+A、电子管时代
+B、晶体管时代
+C、集成电路时代
+D、机械计算机时代</p>
+<p><strong>8.</strong> 关于计算机病毒，以下哪项说法是错误的？
+A、计算机病毒具有传染性
+B、计算机病毒具有免疫性
+C、计算机病毒具有潜伏性
+D、计算机病毒是一种程序</p>
+<p><strong>9.</strong> 人事档案管理和财务管理软件按计算机应用分类属于什么？
+A、实时控制
+B、科学计算
+C、计算机辅助工程
+D、数据处理</p>
+<p><strong>10.</strong> 以下哪项不是计算机的主要性能指标？
+A、字长
+B、内存容量
+C、重量
+D、时钟脉冲</p>
+<p><strong>11.</strong> 信息化社会的核心基础是什么？
+A、通信
+B、控制
+C、Internet
+D、计算机</p>
+<p><strong>12.</strong> 第一台电子计算机ENIAC使用的逻辑部件是什么？
+A、集成电路
+B、晶体管
+C、电子管
+D、大规模集成电路</p>
+<p><strong>13.</strong> 计算机科学研究建立在多个学科之上，但不包括以下哪项？
+A、电子学
+B、磁学
+C、精密机械
+D、心理学</p>
+<p><strong>14.</strong> 目前广泛认为病毒传播最主要的途径是什么？
+A、Web页面
+B、电子邮件
+C、BBS
+D、软盘</p>
+<p><strong>15.</strong> 下列关于计算机的说法正确的是？
+A、计算机已发展到第五代
+B、计算机能完全取代人的脑力劳动
+C、计算机具有比人类更强的思维能力
+D、计算机具有存储程序与逻辑判断能力</p>
+<hr />
+<h3>大题（5题）</h3>
+<p><strong>16.</strong> 简述可计算性与计算复杂性的区别与联系。</p>
+<p><strong>17.</strong> 简述现代计算机四代发展历程，说明每代的核心元件和标志性突破。</p>
+<p><strong>18.</strong> 计算机对人类社会产生了哪些影响？试从生活、伦理、犯罪三个维度分析。</p>
+<p><strong>19.</strong> 什么是计算思维？列出其8类表达体系，并举例说明「抽象」和「自动化」在实际问题中的应用。</p>
+<p><strong>20.</strong> 什么是存储程序原理？为什么说它是现代计算机最重要的设计思想？结合冯·诺依曼模型说明。</p>
+<hr />
+<h2>十一、答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>计算思维核心=抽象+自动化（周以真2006定义），编程和调试只是实现手段</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>8类表达体系：计算、抽象、自动化、设计、评估、通信、协调、记忆——无「编程」</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td>冯·诺依曼4子系统：存储器+ALU+控制单元+I/O单元。操作系统是<strong>软件</strong>，不在硬件模型中</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>存储程序原理让计算机自动从内存取指令连续执行，是自动运算的根本原因</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>四代分别以电子管→晶体管→集成电路→大规模IC划分，核心是<strong>电子元件</strong>迭代</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C</td>
+<td>第一代用：水银延迟线+阴极射线示波管+<strong>磁鼓/磁芯</strong>。半导体存储器是后来才出现的</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>FORTRAN、COBOL等高级语言在第二代晶体管时代出现。第一代只有汇编+FORTRAN雏形</td>
+</tr>
+<tr>
+<td>8</td>
+<td>B</td>
+<td>病毒特征：潜伏性+激发性+传染性。<strong>免疫性是错的</strong>，病毒恰恰无法自我免疫</td>
+</tr>
+<tr>
+<td>9</td>
+<td>D</td>
+<td>人事/财务管理=数据存储查询统计=数据处理。实时控制是生产线/红绿灯那类</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C</td>
+<td>性能指标：字长+内存容量+时钟脉冲。重量是物理属性，与计算性能无关</td>
+</tr>
+<tr>
+<td>11</td>
+<td>D</td>
+<td>计算机是信息化社会核心基础，通信/控制/Internet都是建立在其上的组成部分</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td>ENIAC(1946)用电子管。晶体管是第二代，集成电路是第三代，大规模IC是第四代</td>
+</tr>
+<tr>
+<td>13</td>
+<td>D</td>
+<td>支撑学科：数学+电子学+磁学+光学+精密机械。心理学不在其中</td>
+</tr>
+<tr>
+<td>14</td>
+<td>B</td>
+<td>网络普及后电子邮件成为病毒传播主要途径；软盘是早期途径，现已非主要</td>
+</tr>
+<tr>
+<td>15</td>
+<td>D</td>
+<td>A错(仍在第四代)、B错(不能完全取代)、C错(弱AI)、D对(存储程序+逻辑判断是核心特点)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>大题参考答案</h3>
+<p><strong>16. 可计算性与计算复杂性的区别与联系</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>可计算性</th>
+<th>计算复杂性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>问题</td>
+<td>能不能算？</td>
+<td>算起来有多费劲？</td>
+</tr>
+<tr>
+<td>判断标准</td>
+<td>是否有已知方法+有限步骤+合理时间</td>
+<td>不同方法的资源消耗差异</td>
+</tr>
+<tr>
+<td>关系</td>
+<td>可计算性是前提（不能算就谈不上复杂性）</td>
+<td>复杂性过高会导致「理论可算，实际不可行」</td>
+</tr>
+<tr>
+<td>例子</td>
+<td>累加和：可计算</td>
+<td>累加和：直接加→n-1次，高斯公式→3次，复杂性差异巨大</td>
+</tr>
+<tr>
+<td>不可行计算</td>
+<td>—</td>
+<td>梵天塔n=64需2⁶⁴-1次操作，超级计算机也无法在合理时间内完成</td>
+</tr>
+</tbody>
+</table>
+<p><strong>17. 四代计算机发展历程</strong></p>
+<table>
+<thead>
+<tr>
+<th>代</th>
+<th>时间</th>
+<th>核心元件</th>
+<th>标志性突破</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一代</td>
+<td>1946-1957</td>
+<td>电子管</td>
+<td>ENIAC诞生、穿孔卡存储、汇编语言</td>
+</tr>
+<tr>
+<td>第二代</td>
+<td>1958-1964</td>
+<td>晶体管</td>
+<td>磁芯内存+磁盘外存、高级语言(FORTRAN/COBOL/ALGOL)、OS雏形</td>
+</tr>
+<tr>
+<td>第三代</td>
+<td>1964-1971</td>
+<td>集成电路</td>
+<td>IBM360系列化/通用化、微程序技术、OS功能完善</td>
+</tr>
+<tr>
+<td>第四代</td>
+<td>1972至今</td>
+<td>大规模/超大规模IC</td>
+<td>微处理器→PC/平板、软件体系完善、向智能化网络化发展</td>
+</tr>
+</tbody>
+</table>
+<p><strong>18. 计算机对社会的影响（三个维度）</strong></p>
+<ul>
+<li><strong>生活层面</strong>：正面——联网同步信息、在线办公/娱乐、提升效率；负面——过度依赖（故障导致银行/医疗/交通瘫痪）、造成社会分化</li>
+<li><strong>伦理层面</strong>：出现黑客、病毒、隐私侵犯问题，需遵守计算机伦理规范（如美国计算机伦理协会「十诫」），核心在于平衡技术发展与用户权利</li>
+<li><strong>犯罪层面</strong>：破坏（病毒/蠕虫）、盗窃（硬件/软件/数据）、操控（黑客入侵）。定罪关键看<strong>主观故意</strong>——故意→刑事责任，过失→民事/行政责任</li>
+</ul>
+<p><strong>19. 计算思维</strong></p>
+<ul>
+<li><strong>定义</strong>：周以真2006年提出，用计算机科学基础概念求解问题、设计系统、理解人类行为的思维方式</li>
+<li><strong>核心</strong>：抽象 + 自动化</li>
+<li><strong>8类表达体系</strong>：计算、抽象、自动化、设计、评估、通信、协调、记忆</li>
+<li><strong>抽象例子</strong>：把「从家到学校」抽象为起点、终点、路径选择，忽略路况细节</li>
+<li><strong>自动化例子</strong>：写好排序算法后让计算机自动对百万条数据排序，人不需要手动排</li>
+</ul>
+<p><strong>20. 存储程序原理与冯·诺依曼模型</strong></p>
+<ul>
+<li><strong>存储程序原理</strong>：程序和数据都以二进制（0/1位模式）形式存储在内存中，计算机运行时自动从内存逐条取出指令执行</li>
+<li><strong>为什么是最重要的设计思想</strong>：它是计算机「自动连续运算」的根本原因——程序已在内存中，无需人工逐条输入指令。ENIAC初期需要手动插拔线缆编程，冯·诺依曼的存储程序思想让计算机真正「自动化」</li>
+<li><strong>冯·诺依曼模型4个子系统</strong>：①存储器（存放程序和数据）②算术/逻辑单元（执行运算）③控制单元（取指令、译码、控制执行）④输入/输出单元（与外界交互）</li>
+<li><strong>总结</strong>：存储程序 = 把「菜谱」放进厨房，让机器自己照着做，而不是人手把手炒每一步</li>
+</ul>
+<hr />
+<h2>十二、评分线</h2>
+<table>
+<thead>
+<tr>
+<th>错题数</th>
+<th>评价</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤3题</td>
+<td>🟢 掌握扎实</td>
+<td>可直接进入下一章</td>
+</tr>
+<tr>
+<td>3-6题</td>
+<td>🟡 部分薄弱</td>
+<td>回看对应模块的费曼例子和知识表格</td>
+</tr>
+<tr>
+<td>&gt;6题</td>
+<td>🔴 需重学</td>
+<td>完整重读本章全部8个模块，重点做错题对应的陷阱速查</td>
+</tr>
+</tbody>
+</table>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/cs/00" download>📥 下载PDF</a>
+</div>
+</body></html>

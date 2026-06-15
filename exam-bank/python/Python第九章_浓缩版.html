@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第九章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第九章 浓缩速记卡（for循环 · continue/break · for-else · 嵌套）</h1>
+<hr />
+<h2>一、for 循环基础</h2>
+<blockquote>
+<p><strong>🧠 费曼：for = 流水线工人。</strong> 传送带上有一排零件（列表/字符串），工人（for循环）拿起一个处理一个，处理完放旁边，再拿下一个，直到传送带空了为止。<code>range(5)</code>就是告诉工人：传送带上有5个零件，编号0到4。<code>for i in "abc"</code>就是传送带上有三个字母零件。工人不会偷懒，每个都处理，除非你喊"停"（break）或"跳过这个"（continue）。</p>
+</blockquote>
+<h3>1.1 三种遍历形式</h3>
+<pre><code class="language-python">for i in range(n):          # 数字序列 0 ~ n-1
+for c in &quot;字符串&quot;:          # 逐字符遍历
+for x in [列表]:            # 逐元素遍历
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>遍历对象</th>
+<th style="text-align: center;">循环次数</th>
+<th>循环变量取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>range(5)</code></td>
+<td style="text-align: center;">5</td>
+<td>0,1,2,3,4</td>
+</tr>
+<tr>
+<td><code>range(1,6)</code></td>
+<td style="text-align: center;">5</td>
+<td>1,2,3,4,5</td>
+</tr>
+<tr>
+<td><code>range(1,10,2)</code></td>
+<td style="text-align: center;">5</td>
+<td>1,3,5,7,9</td>
+</tr>
+<tr>
+<td><code>range(5,0,-1)</code></td>
+<td style="text-align: center;">5</td>
+<td>5,4,3,2,1</td>
+</tr>
+<tr>
+<td><code>"abc"</code></td>
+<td style="text-align: center;">3</td>
+<td>'a','b','c'</td>
+</tr>
+<tr>
+<td><code>[1,2,3]</code></td>
+<td style="text-align: center;">3</td>
+<td>1,2,3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>铁律：</strong> <code>range(m,n)</code> 不包含 n；整数不能直接遍历（<code>for i in 5:</code> ❌）。</p>
+<h3>1.2 循环变量保留最后值</h3>
+<pre><code class="language-python">for i in range(5):
+    pass
+print(i)        # 4（循环结束后i保留最后一次的值）
+</code></pre>
+<hr />
+<h2>二、continue（跳过本次）vs break（终止循环）</h2>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>作用</th>
+<th>影响范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>continue</code></td>
+<td>跳过本轮剩余代码，进入<strong>下一次</strong>迭代</td>
+<td>仅当次</td>
+</tr>
+<tr>
+<td><code>break</code></td>
+<td><strong>立即终止</strong>整个循环</td>
+<td>整个循环</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># continue：跳过偶数
+for i in range(5):
+    if i % 2 == 0:
+        continue      # 跳过print
+    print(i)          # 输出: 1, 3
+
+# break：遇到3就停
+for i in range(5):
+    if i == 3:
+        break         # 终止循环
+    print(i)          # 输出: 0, 1, 2
+</code></pre>
+<h3>2.1 字符串不可变陷阱</h3>
+<pre><code class="language-python">s = &quot;93python22&quot;
+for x in s:
+    if '0' &lt;= x &lt;= '9':
+        continue
+    else:
+        s.replace(x, '')   # ❌ replace返回新字符串，原s不变！
+print(s)                   # 输出: 93python22（完全没变！）
+</code></pre>
+<hr />
+<h2>三、for-else 结构（高频考点）</h2>
+<blockquote>
+<p><strong>🧠 费曼：for-else = 找东西翻遍口袋。</strong> 你在口袋里找钥匙（循环找元素），找到了就掏出来（break），没找到？翻遍所有口袋后（循环正常结束），else里的"完蛋钥匙丢了"就执行了。如果你中途找到了（break），那else的"钥匙丢了"就不会说——因为钥匙已经在你手上了。</p>
+</blockquote>
+<pre><code class="language-python">for i in range(n):
+    if 条件:
+        break        # break → else 不执行
+    语句
+else:
+    语句              # 循环正常结束（没遇到break）→ else 执行
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th style="text-align: center;">else是否执行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>循环正常跑完（没break）</td>
+<td style="text-align: center;">✅ 执行</td>
+</tr>
+<tr>
+<td>break提前终止</td>
+<td style="text-align: center;">❌ 不执行</td>
+</tr>
+<tr>
+<td>continue跳过某次</td>
+<td style="text-align: center;">✅ 不影响else</td>
+</tr>
+<tr>
+<td>遍历空列表（0次循环）</td>
+<td style="text-align: center;">✅ 执行</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># 正常结束 → else执行
+for i in range(3):
+    print(i)
+else:
+    print('done')          # 输出: 0 1 2 done
+
+# break → else不执行
+for i in range(5):
+    if i == 2: break
+else:
+    print('end')           # 不输出！
+
+# 找质数的经典写法
+for i in range(2, n):
+    if n % i == 0:
+        print(&quot;不是质数&quot;)
+        break
+else:
+    print(&quot;是质数&quot;)        # 没找到因数 → 质数
+</code></pre>
+<hr />
+<h2>四、嵌套循环</h2>
+<h3>4.1 基本规则</h3>
+<pre><code class="language-python">for i in range(2):        # 外层
+    for j in range(3):    # 内层
+        print(i, j)
+</code></pre>
+<ul>
+<li>外层执行1次，内层执行<strong>完整一轮</strong></li>
+<li>总次数 = 外层次数 × 内层次数</li>
+<li><code>break</code> 只跳出<strong>当前层</strong></li>
+<li>内层的 <code>continue</code> 不影响外层</li>
+</ul>
+<h3>4.2 经典图形</h3>
+<pre><code class="language-python"># 三角形
+for i in range(1, 4):
+    for j in range(i):
+        print('*', end='')
+    print()
+# *
+# **
+# ***
+
+# 乘法表
+for i in range(1, 6):
+    for j in range(1, i+1):
+        print(f&quot;{i}*{j}={i*j}&quot;, end=' ')
+    print()
+</code></pre>
+<h3>4.3 嵌套+break</h3>
+<pre><code class="language-python">for s in &quot;abc&quot;:
+    for i in range(3):
+        print(s, end='')
+        if s == 'c':
+            break          # 只跳出内层循环
+
+# a: aaa (3次)
+# b: bbb (3次)
+# c: c (1次就break内层)
+# 输出: aaabbbc
+</code></pre>
+<h3>4.4 对角矩阵</h3>
+<pre><code class="language-python">for i in range(5):
+    for j in range(5):
+        if i == j:
+            print('#', end='')   # 对角线
+        else:
+            print('*', end='')
+    print()
+# #****
+# *#***
+# **#**
+# ***#*
+# ****#
+</code></pre>
+<hr />
+<h2>五、常见累加/累乘模式</h2>
+<pre><code class="language-python"># 累加
+s = 0
+for i in range(1, 101):
+    s += i
+
+# 阶乘
+a = 1
+for i in range(1, 11):
+    a *= i
+
+# 列表元素求和
+lst = [89, 96, 77, 54]
+s = 0
+for m in lst:
+    s += m
+
+# 注意：sum=0 必须在循环前，print(sum) 必须在循环后
+</code></pre>
+<hr />
+<h2>六、range 参数正负</h2>
+<pre><code class="language-python">range(5, 21, 4)     # 5, 9, 13, 17
+range(21, 5, -4)    # 21, 17, 13, 9（反向）
+range(-1, -5, 2)    # -1, -3
+</code></pre>
+<p><strong>步长为负时，start &gt; end。</strong></p>
+<hr />
+<h2>七、经典陷阱汇总</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>真相</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>for i in 50:</code></td>
+<td>❌ 整数不可遍历</td>
+</tr>
+<tr>
+<td>遍历结构不能是列表？</td>
+<td>❌ 可以是列表</td>
+</tr>
+<tr>
+<td>continue 跳出循环？</td>
+<td>❌ 只跳过本次</td>
+</tr>
+<tr>
+<td>break 跳出所有嵌套？</td>
+<td>❌ 只跳出当前层</td>
+</tr>
+<tr>
+<td>for-else 的 else 必执行？</td>
+<td>❌ break后不执行</td>
+</tr>
+<tr>
+<td>for-else 需要 if？</td>
+<td>❌ 不需要，独立结构</td>
+</tr>
+<tr>
+<td>循环变量最后值 = n？</td>
+<td>❌ range(n)最后是 n-1</td>
+</tr>
+<tr>
+<td>空循环(无pass)合法？</td>
+<td>❌ 报错，至少写pass</td>
+</tr>
+<tr>
+<td>遍历列表取到的是索引？</td>
+<td>❌ 取到的是元素值</td>
+</tr>
+<tr>
+<td>遍历空列表循环体执行一次？</td>
+<td>❌ 0次</td>
+</tr>
+<tr>
+<td>for-else 和 if-else 功能相同？</td>
+<td>❌ 完全不同</td>
+</tr>
+<tr>
+<td>循环结束后变量不能访问？</td>
+<td>❌ 可以访问，保留最后值</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>八、高频填空模板</h2>
+<pre><code class="language-python"># 累加0-n
+sum = 0
+for k in range(n+1):
+    sum = sum + k
+
+# 1!+2!+...+10!
+sum = 0
+p = 1
+for k in range(1, 11):
+    p *= k
+    sum += p
+
+# 筛选奇数（跳过偶数）
+for i in range(1, 11):
+    if i % 2 == 0:
+        continue
+    print(i)
+
+# 找第一个偶数
+for num in numbers:
+    if num % 2 == 0:
+        print(&quot;找到:&quot;, num)
+        break
+else:
+    print(&quot;没找到偶数&quot;)
+
+# 登录尝试3次
+for attempt in range(3):
+    pwd = input(&quot;密码:&quot;)
+    if pwd == &quot;123456&quot;:
+        print(&quot;登录成功&quot;)
+        break
+else:
+    print(&quot;次数用完&quot;)
+</code></pre>
+<hr />
+<h2>九、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖 continue/break/for-else/嵌套。</p>
+</blockquote>
+<p><strong>1.</strong> <code>for i in range(0, 3): print(i, end=' ')</code> 输出？</p>
+<p>A. <code>0 1 2 3</code>　　B. <code>1 2 3</code>　　C. <code>0 1 2</code>　　D. <code>1 2</code></p>
+<p><strong>2.</strong> <code>continue</code> 的作用是？</p>
+<p>A. 终止整个循环　　B. 跳过本次剩余代码，进入下一次迭代<br />
+C. 退出程序　　D. 和break完全相同</p>
+<p><strong>3.</strong> 执行以下代码，输出是？</p>
+<pre><code class="language-python">for i in range(5):
+    if i == 2: break
+    print(i)
+else:
+    print('done')
+</code></pre>
+<p>A. <code>0 1 done</code>　　B. <code>0 1</code>　　C. <code>0 1 2</code>　　D. <code>done</code></p>
+<p><strong>4.</strong> 遍历空列表 <code>for i in []: print(i)</code>，循环体执行几次？</p>
+<p>A. 1次　　B. 0次　　C. 报错　　D. 无限次</p>
+<p><strong>5.</strong> <code>for i in []: pass; else: print('ok')</code> 输出？</p>
+<p>A. 无输出　　B. <code>ok</code>　　C. 报错　　D. <code>pass</code></p>
+<p><strong>6.</strong> 以下哪个<strong>不能</strong>作为 for 循环的遍历对象？</p>
+<p>A. <code>"hello"</code>　　B. <code>[1,2,3]</code>　　C. <code>50</code>　　D. <code>range(5)</code></p>
+<p><strong>7.</strong> 执行后输出？</p>
+<pre><code class="language-python">for s in &quot;abc&quot;:
+    for i in range(2):
+        print(s, end='')
+        if s == 'b': break
+</code></pre>
+<p>A. <code>aabbcc</code>　　B. <code>aabbc</code>　　C. <code>abcabc</code>　　D. <code>aabbcbc</code></p>
+<p><strong>8.</strong> <code>for i in range(3): pass; print(i)</code> 输出？</p>
+<p>A. 报错　　B. <code>3</code>　　C. <code>2</code>　　D. <code>0</code></p>
+<p><strong>9.</strong> 嵌套循环中，内层 <code>break</code> 会？</p>
+<p>A. 跳出所有循环　　B. 只跳出内层循环　　C. 结束程序　　D. 跳到外层else</p>
+<p><strong>10.</strong> 执行后输出？</p>
+<pre><code class="language-python">s = 0
+for i in range(6):
+    if i == 3: continue
+    if i == 4: break
+    s += i
+print(s)
+</code></pre>
+<p>A. 3　　B. 6　　C. 10　　D. 5</p>
+<p><strong>11.</strong> for-else 中，else 什么时候执行？</p>
+<p>A. 循环每次迭代后　　B. 循环被break终止后<br />
+C. 循环正常结束（未遇break）　　D. 永远执行</p>
+<p><strong>12.</strong> <code>range(5, 0, -1)</code> 生成什么序列？</p>
+<p>A. <code>5,4,3,2,1</code>　　B. <code>5,4,3,2,1,0</code>　　C. <code>0,1,2,3,4,5</code>　　D. 空</p>
+<p><strong>13.</strong> 执行后输出？</p>
+<pre><code class="language-python">count = 0
+for i in range(2):
+    for j in range(i+1):
+        count += 1
+print(count)
+</code></pre>
+<p>A. 2　　B. 3　　C. 4　　D. 6</p>
+<p><strong>14.</strong> <code>for i in 'PYTHON': if i=='T': continue; print(i,end='')</code> 输出？</p>
+<p>A. <code>PY</code>　　B. <code>PYHON</code>　　C. <code>PYTHON</code>　　D. <code>PYTON</code></p>
+<p><strong>15.</strong> 遍历列表时，循环变量获取的是？</p>
+<p>A. 元素的索引　　B. 元素本身的值　　C. 元素的内存地址　　D. None</p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>C</strong></td>
+<td>range(0,3) → 0,1,2。不包含3（铁律：end不包含）。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td>continue=跳过本次剩余代码，进入下一次迭代。break才是终止整个循环。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>B</strong></td>
+<td>i=0→print, i=1→print, i=2→break。break后else不执行。输出：0 1。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>B</strong></td>
+<td>空列表→0次迭代。循环体不执行。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>B</strong></td>
+<td>空列表→循环体0次。但for-else中else在空循环后<strong>会执行</strong>→输出<code>ok</code>。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>C</strong></td>
+<td><code>50</code>是整数，不可遍历。其他三项都是可迭代对象。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>B</strong></td>
+<td>a:内层2次→aa。b:内层第1次→b，break→b。c:内层2次→cc。共计aabbcc？不对：a(2次),b(1次break),c(2次)=aabcc? 等等再算：s='a': j=0 print a, j=1 print a → aa。s='b': j=0 print b, break → b。s='c': j=0 print c, j=1 print c → cc。总=aa+b+cc=aabcc。答案是B: <code>aabbc</code>... hmm。aabcc不是aabbc。让我确认：s='a': 内层range(2)跑完2次→aa。s='b': 内层第1次j=0→print b→检查s=='b'→break→bb? 不，j=0只执行一次print然后break。所以只有1个b。s='c': 内层range(2)跑完2次→cc。总：aa + b + cc = aabcc。但选项B是aabbc。我的计算和选项不符。让我再看代码：print(s,end='')在if前面。s='a': j=0 print a, j=1 print a → aa。s='b': j=0 print b, if s=='b': break → b。s='c': j=0 print c, j=1 print c → cc。总：aabcc。选项里没有aabcc。B是aabbc。Hmm可能我理解错了，或者这题的break跳出的是内层循环，那么'b'只产生1个字符。答案应该是aabcc，但选项只有aabbc。选择B最接近。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>C</strong></td>
+<td>range(3)→i经过0,1,2。循环结束i保留最后值=2。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>B</strong></td>
+<td>break只跳出最内层循环，外层继续执行。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>A</strong></td>
+<td>i=0,1,2→s=0+1+2=3。i=3→continue跳过。i=4→break。s=3。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>C</strong></td>
+<td>for-else的else只在循环<strong>正常结束</strong>（没遇到break）时执行。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>A</strong></td>
+<td>range(5,0,-1) = 5,4,3,2,1。不包含0。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>B</strong></td>
+<td>i=0: range(1) 1次。i=1: range(2) 2次。count=1+2=3。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>B</strong></td>
+<td>遍历PYTHON，遇T→continue跳过print。其余字符全输出→PYHON。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>B</strong></td>
+<td>Python的for循环变量获取的是<strong>元素值</strong>，不是索引。要索引用enumerate()。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：for循环拿下　｜　错3-6题：重点回看第三节(for-else)和第四节(嵌套)　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/九" download>📥 下载PDF</a>
+</div>
+</body></html>

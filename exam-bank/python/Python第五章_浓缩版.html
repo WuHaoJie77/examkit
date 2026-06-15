@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python第五章_浓缩版</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head><body>
+<a class="back-link" href="../index.html">← 返回科目选择</a>
+<h1>Python 第五章 浓缩速记卡（字符串深入 · 切片步长 · 运算符）</h1>
+<hr />
+<h2>一、字符串界定符</h2>
+<blockquote>
+<p><strong>🧠 费曼：字符串界定符 = 引号是"袋子"，把字符装进去。</strong> 单引号是一个小袋子，双引号是一个大袋子，三引号是一个超大垃圾袋——什么都能往里塞，换行也不怕。如果袋子里本身就有引号怎么办？你用不同的袋子装（双引号袋子里可以放单引号），或者在引号前加个反斜杠<code>\</code>表示"别把我当袋子口，我就是个普通字符"。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>示例</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单引号</td>
+<td><code>'hello'</code></td>
+<td>内部不含单引号</td>
+</tr>
+<tr>
+<td>双引号</td>
+<td><code>"hello"</code></td>
+<td>内部含单引号 <code>"I'm"</code></td>
+</tr>
+<tr>
+<td>三单引号</td>
+<td><code>'''...'''</code></td>
+<td>多行 / 含两种引号</td>
+</tr>
+<tr>
+<td>三双引号</td>
+<td><code>"""..."""</code></td>
+<td>多行 / 含两种引号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>空字符串：</strong> <code>''</code> 或 <code>""</code>（中间不能有空格，<code>" "</code> 不是空串）</p>
+<h3>1.1 引号嵌套规则</h3>
+<pre><code class="language-python">s = 'He said &quot;Hello&quot;'        # ✅ 双引号在单引号内
+s = &quot;I'm fine&quot;                # ✅ 单引号在双引号内
+s = 'I\'m a student'          # ✅ 转义单引号
+s = 'I'm a student'           # ❌ 单引号未转义，语法错误
+s = &quot;He said \&quot;Hello\&quot;&quot;       # ✅ 转义双引号
+</code></pre>
+<h3>1.2 三引号 = 多行 + 引号自由</h3>
+<pre><code class="language-python">s = '''你好！
+你今天过得好吗？
+要保重身体呀！'''              # ✅ 多行保留换行
+s = '''He said &quot;It's great!&quot;''' # ✅ 同时含单双引号
+</code></pre>
+<p><strong>注意：</strong> 三引号不只用于多行，单行也能用。单引号内不能直接手动换行。</p>
+<h3>1.3 转义字符</h3>
+<table>
+<thead>
+<tr>
+<th>转义</th>
+<th>含义</th>
+<th style="text-align: center;">占位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\n</code></td>
+<td>换行</td>
+<td style="text-align: center;">1字符</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>制表符</td>
+<td style="text-align: center;">1字符</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>反斜杠</td>
+<td style="text-align: center;">1字符</td>
+</tr>
+<tr>
+<td><code>\'</code></td>
+<td>单引号</td>
+<td style="text-align: center;">1字符</td>
+</tr>
+<tr>
+<td><code>\"</code></td>
+<td>双引号</td>
+<td style="text-align: center;">1字符</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">s = &quot;python\n编程\t很\t容易\t学&quot;
+len(s)  # 16！
+# python = 6, \n = 1, 编程 = 2, \t = 1, 很 = 1, \t = 1, 容易 = 2, \t = 1, 学 = 1
+</code></pre>
+<h3>1.4 原始字符串</h3>
+<pre><code class="language-python">r'C:\Users\Admin'     # 反斜杠不当转义符处理
+r'C:\test'            # 7个字符(C : \ t e s t)
+</code></pre>
+<hr />
+<h2>二、字符串运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>作用</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>拼接</td>
+<td><code>"ab"+"cd"</code></td>
+<td><code>"abcd"</code></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>重复</td>
+<td><code>"ab"*3</code></td>
+<td><code>"ababab"</code></td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td>包含判断</td>
+<td><code>'he' in 'hello'</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>not in</code></td>
+<td>不包含</td>
+<td><code>'x' not in 'abc'</code></td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<h3>2.1 运算优先级</h3>
+<pre><code>* (重复) &gt; + (拼接)
+</code></pre>
+<pre><code class="language-python">'a' + 'b' * 2      # b*2='bb', a+'bb'='abb'
+('a' + 'b') * 2    # 'ab'*2 = 'abab'
+</code></pre>
+<h3>2.2 铁律</h3>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>正确</th>
+<th>错误</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符串只能 + 字符串</td>
+<td><code>"age:" + str(18)</code></td>
+<td><code>"age:" + 18</code> ❌</td>
+</tr>
+<tr>
+<td>字符串只能 * 整数</td>
+<td><code>"hi" * 3</code></td>
+<td><code>"hi" * 3.5</code> ❌</td>
+</tr>
+<tr>
+<td>乘以0 = 空字符串</td>
+<td><code>"abc" * 0</code> → <code>""</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>乘以1 = 本身</td>
+<td><code>"abc" * 1</code> → <code>"abc"</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>字符串不可变</td>
+<td><code>s = s + "!"</code> ✅</td>
+<td><code>s[0] = 'H'</code> ❌</td>
+</tr>
+</tbody>
+</table>
+<h3>2.3 str() 转换</h3>
+<pre><code class="language-python">str(123)         # '123'
+str(3.14)        # '3.14'
+str(True)        # 'True'
+str([1,2,3])     # '[1, 2, 3]'
+</code></pre>
+<h3>2.4 字符串比较</h3>
+<p>按<strong>Unicode编码</strong>逐字符比较。大写字母 &lt; 小写字母（<code>'A'=65 &lt; 'a'=97</code>）。</p>
+<hr />
+<h2>三、切片步长（本章头号重点）</h2>
+<blockquote>
+<p><strong>🧠 费曼：步长 = 你切面包时每隔几片切一刀。</strong> 步长1=每片都切。步长2=跳着切，第一片、第三片、第五片...步长为负=从右边往左边切。最常用的是<code>[::-1]</code>——从最右端开始，步长-1向左走，等于把整条面包翻了个面。步长为正时从左往右（start<end），步长为负时从右往左（start>end），搞反了就是空面包。</p>
+</blockquote>
+<h3>3.1 完整语法</h3>
+<pre><code>s[start : end : step]
+   起始  结束   步长
+  (包含)(不包含)
+</code></pre>
+<p><strong>三个参数全部可选</strong>，默认值：
+- start 省略 → <code>0</code>（正步长）或 <code>-1</code>（负步长）
+- end 省略 → 末尾（正步长）或开头（负步长）
+- step 省略 → <code>1</code></p>
+<h3>3.2 正步长（step &gt; 0）</h3>
+<pre><code>规则：start &lt; end，从左向右取
+start ≥ end → 结果为空字符串
+</code></pre>
+<pre><code class="language-python">s = '0123456789'
+s[2:8:2]    # '246' (2,4,6)
+s[5:1:2]    # ''   (start &gt; end, 空串！)
+s[::3]      # '0369'
+s[1::2]     # '13579'
+</code></pre>
+<h3>3.3 负步长（step &lt; 0）→ 反向取</h3>
+<pre><code>规则：start &gt; end，从右向左取
+start ≤ end → 结果为空字符串
+</code></pre>
+<pre><code class="language-python">s = 'abcdefgh'
+s[::-1]     # 'hgfedcba' (反转字符串)
+s[::-2]     # 'hfdb'     (从右端隔一个取一个)
+s[-2::-2]   # 'geca'     (从倒数第2个向左隔一取)
+s[5:0:-2]   # 'fdb'      (从f向左隔一取到索引0前)
+s[2:8:-1]   # ''         (start &lt; end, 空串！)
+</code></pre>
+<h3>3.4 反转字符串 = <code>s[::-1]</code></h3>
+<p>这是全书最重要的切片模式，牢记。</p>
+<h3>3.5 切片不会越界报错</h3>
+<pre><code class="language-python">s = 'hello'
+s[1:100]    # 'ello' (end自动截断为长度)
+s[-100:3]   # 'hel'  (start自动截断为0)
+s[::0]      # ❌ ValueError: slice step cannot be zero
+</code></pre>
+<h3>3.6 常见切片模式速查</h3>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>含义</th>
+<th>示例(<code>'abcdefgh'</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s[::-1]</code></td>
+<td>反转</td>
+<td><code>'hgfedcba'</code></td>
+</tr>
+<tr>
+<td><code>s[::2]</code></td>
+<td>隔一字取</td>
+<td><code>'aceg'</code></td>
+</tr>
+<tr>
+<td><code>s[1::2]</code></td>
+<td>从第二字隔一取</td>
+<td><code>'bdfh'</code></td>
+</tr>
+<tr>
+<td><code>s[::-2]</code></td>
+<td>逆向隔一取</td>
+<td><code>'hfdb'</code></td>
+</tr>
+<tr>
+<td><code>s[:]</code></td>
+<td>完整副本</td>
+<td><code>'abcdefgh'</code></td>
+</tr>
+<tr>
+<td><code>s[1:7:2]</code></td>
+<td>指定范围跳步</td>
+<td><code>'bdf'</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、综合实战题</h2>
+<pre><code class="language-python"># 取数字
+s = '0a1b2c3d4e5f6g'
+s[0::2]           # '0123456' (跳步取数字)
+s[0:-1:2]         # '0123456'
+
+# 取字母
+s = '0a1b2c3d4e5f6g'
+s[1::2]           # 'abcdefg'
+
+# 反向取数字
+s[-2::-2]         # '6543210'
+
+# 中文切片
+s = &quot;一二三四五六七八九十&quot;
+s[1:7:2]          # '二四六'
+s[::-1]           # '十九八七六五四三二一'
+
+# 字符串运算
+'py' + 'thon' * 0    # 'py'     (thon*0='')
+('a'+'b') * 3         # 'ababab'
+'x'*3 + 'y'*2         # 'xxxyy'
+'hello' * 2 + 'world' * 0  # 'hellohello'
+
+# str转换拼接
+print(&quot;s=&quot; + str(5050))     # s=5050
+print(a + &quot; &quot; + str(3.0))   # python 3.0
+</code></pre>
+<hr />
+<h2>五、高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>" "</code>是空字符串？</td>
+<td>❌ 含空格，长度1。空串是<code>""</code>或<code>''</code></td>
+</tr>
+<tr>
+<td>Python字符串界定符有括号？</td>
+<td>❌ 只有单/双/三引号</td>
+</tr>
+<tr>
+<td>中文双引号""能界定字符串？</td>
+<td>❌ 只认英文引号</td>
+</tr>
+<tr>
+<td>三引号只能多行？</td>
+<td>❌ 单行也能用</td>
+</tr>
+<tr>
+<td><code>s[1:5:-1]</code>结果？</td>
+<td><code>''</code> 空串（start&lt;end,负步长）</td>
+</tr>
+<tr>
+<td><code>s[5:1:2]</code>结果？</td>
+<td><code>''</code> 空串（start&gt;end,正步长）</td>
+</tr>
+<tr>
+<td><code>s[::0]</code>合法？</td>
+<td>❌ 步长不能为0</td>
+</tr>
+<tr>
+<td>字符串可变吗？</td>
+<td>❌ 不可变，不能<code>s[0]='x'</code></td>
+</tr>
+<tr>
+<td><code>"4"+"5"</code>结果？</td>
+<td><code>"45"</code> 不是<code>9</code></td>
+</tr>
+<tr>
+<td><code>"age:"+18</code>结果？</td>
+<td>❌ TypeError</td>
+</tr>
+<tr>
+<td><code>'abc'*2+'def'</code></td>
+<td><code>'abcabcdef'</code></td>
+</tr>
+<tr>
+<td>空串*5</td>
+<td><code>''</code></td>
+</tr>
+<tr>
+<td>空串+'test'</td>
+<td><code>'test'</code></td>
+</tr>
+<tr>
+<td><code>\n</code> <code>\t</code>各占几位？</td>
+<td>各占1个字符位置</td>
+</tr>
+<tr>
+<td><code>s[::-1]</code>做什么？</td>
+<td>反转字符串</td>
+</tr>
+<tr>
+<td>如何输出 <code>s=5050</code>？</td>
+<td><code>print("s="+str(5050))</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、自测15题（检测学习效果）</h2>
+<blockquote>
+<p>每题5分，70分及格。重点覆盖切片步长和字符串运算符。</p>
+</blockquote>
+<p><strong>1.</strong> 执行 <code>s = "py\nth\tON"</code>，<code>len(s)</code> 的值是？</p>
+<p>A. 6　　B. 8　　C. 10　　D. 7</p>
+<p><strong>2.</strong> 以下哪个是合法的空字符串？</p>
+<p>A. <code>s = " "</code>　　B. <code>s = ""</code>　　C. <code>s = "0"</code>　　D. <code>s == ""</code></p>
+<p><strong>3.</strong> 执行 <code>"abc" * 3</code> 的结果是？</p>
+<p>A. <code>"abc3"</code>　　B. <code>"abcabcabc"</code>　　C. <code>9</code>　　D. <code>"aaa"</code></p>
+<p><strong>4.</strong> <code>'a' + 'b' * 2</code> 的结果是？</p>
+<p>A. <code>'abab'</code>　　B. <code>'abb'</code>　　C. <code>'aba'</code>　　D. <code>'ab2'</code></p>
+<p><strong>5.</strong> 执行 <code>s = "abcdefgh"; s[1:7:2]</code> 的结果是？</p>
+<p>A. <code>'bdf'</code>　　B. <code>'aceg'</code>　　C. <code>'bcdefg'</code>　　D. <code>'bdfh'</code></p>
+<p><strong>6.</strong> 执行 <code>s = "abcdefgh"; s[::-2]</code> 的结果是？</p>
+<p>A. <code>'hfdb'</code>　　B. <code>'hgfedcba'</code>　　C. <code>'aceg'</code>　　D. <code>'hf'</code></p>
+<p><strong>7.</strong> <code>s[1:5:-1]</code> 的结果是什么（s非空）？</p>
+<p>A. 从索引1到5反向取　　B. 从索引5到1反向取　　C. 空字符串　　D. 报错</p>
+<p><strong>8.</strong> 要反转字符串 s，写法是？</p>
+<p>A. <code>s[-1:0]</code>　　B. <code>s[::0]</code>　　C. <code>s[::-1]</code>　　D. <code>s.reverse()</code></p>
+<p><strong>9.</strong> 执行 <code>print("He said \"OK\"")</code> 输出是？</p>
+<p>A. <code>He said \"OK\"</code>　　B. <code>He said "OK"</code>　　C. 语法错误　　D. <code>He said OK</code></p>
+<p><strong>10.</strong> <code>"hello" + 5</code> 的结果是？</p>
+<p>A. <code>"hello5"</code>　　B. <code>"hello"</code>　　C. TypeError　　D. <code>5</code></p>
+<p><strong>11.</strong> 以下哪个能正确定义含单双引号的字符串？</p>
+<p>A. <code>'He said "It's nice"'</code>　　B. <code>'''He said "It's nice"'''</code><br />
+C. <code>"He said "It's nice""</code>　　D. <code>'He said 'It's nice''</code></p>
+<p><strong>12.</strong> <code>('a' + 'b') * 3</code> 的结果是？</p>
+<p>A. <code>'ab3'</code>　　B. <code>'aaabbb'</code>　　C. <code>'ababab'</code>　　D. <code>'a3b3'</code></p>
+<p><strong>13.</strong> <code>str(True)</code> 的结果是？</p>
+<p>A. <code>'1'</code>　　B. <code>'True'</code>　　C. <code>True</code>　　D. <code>1</code></p>
+<p><strong>14.</strong> 执行 <code>s = '12345'; s[-2::-1]</code> 的结果是？</p>
+<p>A. <code>'4321'</code>　　B. <code>'54321'</code>　　C. <code>'45'</code>　　D. <code>'1234'</code></p>
+<p><strong>15.</strong> <code>'x' * 3 + 'y' * 2</code> 的结果是？</p>
+<p>A. <code>'xyxyx'</code>　　B. <code>'xxxyy'</code>　　C. <code>'x3y2'</code>　　D. <code>'xxxyyy'</code></p>
+<hr />
+<h3>答案与解析</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td>p(1)y(2)\n(1)t(1)h(1)\t(1)O(1)N(1) = 8。\n和\t各算1个字符，别数成2个。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>B</strong></td>
+<td>空串=<code>""</code>或<code>''</code>。A含空格长度1，C是字符串"0"，D是判断==不是赋值。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>B</strong></td>
+<td>字符串*N = 重复N遍。<code>"abc"*3</code>=<code>"abcabcabc"</code>。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>B</strong></td>
+<td>先乘后加：<code>'b'*2='bb'</code>，<code>'a'+'bb'='abb'</code>。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>A</strong></td>
+<td>a(0)b(1)c(2)d(3)e(4)f(5)g(6)h(7)。<code>s[1:7:2]</code>=b(1),d(3),f(5)=<code>'bdf'</code>。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>A</strong></td>
+<td>负步长从右往左：h(7)→f(5)→d(3)→b(1)=<code>'hfdb'</code>。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>C</strong></td>
+<td>start=1 &lt; end=5 但步长为负→矛盾→空串。正步长要start<end，负步长要start>end。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>C</strong></td>
+<td><code>s[::-1]</code>是反转字符串的标准写法。B：步长不能为0。D：字符串没有reverse()方法。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>B</strong></td>
+<td><code>\"</code>转义为双引号字符，输出<code>He said "OK"</code>。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>C</strong></td>
+<td>字符串+整数 → TypeError。必须用<code>"hello"+str(5)</code>。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>B</strong></td>
+<td>三引号内单双引号都不用转义。A和C和D都有未转义引号问题。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>C</strong></td>
+<td><code>('a'+'b')='ab'</code>，<code>'ab'*3='ababab'</code>。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>B</strong></td>
+<td><code>str(True)</code>→<code>'True'</code>，<code>int(True)</code>才是<code>1</code>。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>A</strong></td>
+<td>1(0)2(1)3(2)4(3)5(4)。<code>s[-2]</code>=4(3)，<code>s[-2::-1]</code>=4(3),3(2),2(1),1(0)=<code>'4321'</code>。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>B</strong></td>
+<td><code>'x'*3='xxx'</code>，<code>'y'*2='yy'</code>，<code>'xxx'+'yy'='xxxyy'</code>。运算符优先级：<code>*</code>高于<code>+</code>。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p>错3题以内：切片步长和字符串运算过关　｜　错3-6题：重看第三节(切片步长)　｜　错6题以上：全文重读</p>
+</blockquote>
+
+<style>
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:999}
+.pdf-btn{background:#1a5276;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-size:14px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);text-decoration:none;display:inline-block}
+.pdf-btn:hover{background:#0d3b54}
+@media print{.pdf-toolbar{display:none}}
+</style>
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/五" download>📥 下载PDF</a>
+</div>
+</body></html>
