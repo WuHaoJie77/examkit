@@ -29,7 +29,7 @@ from urllib.parse import quote
 from weasyprint import HTML
 
 app = FastAPI()
-app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_methods=['*'], allow_headers=['*'])
+# CORS 中间件已移除 (2026-08-09 安全加固: 同源部署不需要跨域)
 
 # ==== CONFIG: 修改为你的实际路径和密码 ====
 DB = '/opt/exam-comments/comments.db'
