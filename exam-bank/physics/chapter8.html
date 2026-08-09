@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>大学物理 第8章 稳恒磁场 浓缩速记卡 · 小番茄题库</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8;color:#555}
+a{color:#1a5276}strong{color:#1a5276}
+hr{border:none;border-top:1px solid #e0e0e0;margin:30px 0}
+</style><script>MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]]}};</script><script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script></head><body><a class="back-link" href="index.html">← 返回物理章节列表</a><h1>大学物理 第8章 稳恒磁场 浓缩速记卡</h1><div class="card"><blockquote>
+<p>课后原题：约46题（13选择 + 12填空 + 21解答） | 预计用时：45分钟</p>
+</blockquote>
+<hr />
+<h2>一、毕奥-萨伐尔定律——各种形状电流的磁场</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：电流元像小磁力喷头，向周围喷洒磁场。距离越远越弱（$\propto 1/r^2$）。每小段贡献叠加得总磁场。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>电流形状</th>
+<th>磁场公式</th>
+<th>方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无限长直导线</td>
+<td>$B=\dfrac{\mu_0 I}{2\pi r}$</td>
+<td>右手：拇指沿I，四指为B</td>
+</tr>
+<tr>
+<td>半无限长端点垂线</td>
+<td>$B=\dfrac{\mu_0 I}{4\pi r}$</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>圆形电流圆心</td>
+<td>$B=\dfrac{\mu_0 I}{2R}$</td>
+<td>右手：四指沿I，拇指为轴线</td>
+</tr>
+<tr>
+<td>半圆圆心</td>
+<td>$B=\dfrac{\mu_0 I}{4R}$</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>$\frac{1}{4}$圆弧圆心</td>
+<td>$B=\dfrac{\mu_0 I}{8R}$</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>圆心在直导线延长线上</td>
+<td>$B=0$</td>
+<td>$Id\mathbf{l}\times\mathbf{r}=0$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「弯折导线，求某点 $B$」：</p>
+<blockquote>
+<p>① 把导线拆成几段（直导线段+圆弧段）
+② 每段分别算：直导线→延长线上 $B=0$，否则用有限长公式；圆弧→圆心 $B$ 与弧长成正比
+③ 方向用右手定则判断，各段矢量叠加</p>
+</blockquote>
+<h3>📝 例题8-A：弯折导线在O点的磁场</h3>
+<p><strong>题目</strong>：长直导线弯成：半无限长→$\frac{1}{4}$圆弧（半径R，圆心O）→半无限长。两直导线延长线过O。求O点B。</p>
+<p><strong>解</strong>：</p>
+<p>① 两段直导线：O在延长线上 → $B_1=B_2=0$
+<em>（$\mathbf{r}$ 平行于 $d\mathbf{l}$，叉积为零）</em></p>
+<p>② $\frac{1}{4}$圆弧：完整圆 $B=\dfrac{\mu_0 I}{2R}$，$\frac{1}{4}$贡献 $B_3=\dfrac{\mu_0 I}{8R}$，方向 $\otimes$</p>
+<p>$B_O=\dfrac{\mu_0 I}{8R}$，垂直纸面向里</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>半圆圆心 $B=\mu_0I/(4R)$，不是 $\mu_0I/(2R)$！</strong> 完整圆是 $\mu_0I/(2R)$，半圆是一半。</p>
+<hr />
+<h2>二、安培环路定理 ⭐</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：安培环路定理是磁场的"高斯定理"。沿闭合回路走一圈，B的环流只取决于围住的电流和，但回路上各点的B受所有电流影响。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>核心公式</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\displaystyle\oint_L\mathbf{B}\cdot d\mathbf{l}=\mu_0\sum I_{\text{内}}$</td>
+<td>仅适用稳恒闭合电流！</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>载流导体</th>
+<th>$B(r)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无限长圆柱（R）</td>
+<td>$r\lt R$：$B=\dfrac{\mu_0 Ir}{2\pi R^2}$；$r\gt R$：$B=\dfrac{\mu_0 I}{2\pi r}$</td>
+</tr>
+<tr>
+<td>空心圆筒（内a外b）</td>
+<td>$r\lt a$：$B=0$；$r\gt b$：$B=\dfrac{\mu_0 I}{2\pi r}$</td>
+</tr>
+<tr>
+<td>螺线管内部</td>
+<td>$B=\mu_0 nI$（管外 $\approx0$）</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「对称分布的电流，求 $B$」：</p>
+<blockquote>
+<p>① 根据对称性选安培环路（圆环或矩形）
+② 算环路包围的电流 $\sum I_{\text{内}}$
+③ $B\cdot(\text{环路长度})=\mu_0\sum I_{\text{内}}$ → 解 $B$</p>
+</blockquote>
+<h3>📝 例题8-B：同轴电缆磁场</h3>
+<p><strong>题目</strong>：同轴电缆：内导体半径a，外导体圆管内半径b、外半径c。I从内流去、从外流回，均匀分布。求各区域B。</p>
+<p><strong>解</strong>：取半径r圆环为安培环路。</p>
+<p>① $r\lt a$：$\sum I_{\text{内}}=I\cdot\dfrac{r^2}{a^2}$ → $B=\dfrac{\mu_0 Ir}{2\pi a^2}$
+<em>（电流按面积比例分配）</em></p>
+<p>② $a\lt r\lt b$：$\sum I_{\text{内}}=I$ → $B=\dfrac{\mu_0 I}{2\pi r}$</p>
+<p>③ $b\lt r\lt c$：$\sum I_{\text{内}}=I-I\cdot\dfrac{r^2-b^2}{c^2-b^2}=I\cdot\dfrac{c^2-r^2}{c^2-b^2}$ → $B=\dfrac{\mu_0 I(c^2-r^2)}{2\pi r(c^2-b^2)}$</p>
+<p>④ $r\gt c$：$\sum I_{\text{内}}=I-I=0$ → $B=0$（同轴电缆屏蔽效应）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>有限长直导线不能用安培环路定理！</strong> 定理要求闭合稳恒回路。一段直导线的磁场只能用毕奥-萨伐尔定律。</p>
+<hr />
+<h2>三、安培力——磁场对电流的作用</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：通电导线在磁场中像被无形的手推着。左手定则：掌迎B，四指沿I，拇指即F。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直导线（匀强B）</td>
+<td>$F=ILB\sin\theta$</td>
+</tr>
+<tr>
+<td>任意形状（匀强B）</td>
+<td>$\mathbf{F}=I\mathbf{L}_{\text{等效}}\times\mathbf{B}$</td>
+</tr>
+<tr>
+<td>两平行导线单位长力</td>
+<td>$\dfrac{F}{l}=\dfrac{\mu_0 I_1 I_2}{2\pi d}$（同向吸反向斥）</td>
+</tr>
+<tr>
+<td>线圈磁力矩</td>
+<td>$\mathbf{M}=NIS\,\mathbf{n}\times\mathbf{B}$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「长直导线旁有矩形线圈，求线圈受力」：</p>
+<blockquote>
+<p>① 长直导线在距 $r$ 处产生 $B=\dfrac{\mu_0 I_1}{2\pi r}$
+② 线圈各边受力：$F=I_2 L B$，方向用左手定则
+③ 近导线边受力大，远边受力小→合力指向导线</p>
+</blockquote>
+<h3>📝 例题8-C：直导线对矩形线圈的力</h3>
+<p><strong>题目</strong>：长直导线 $I_1=20$A，矩形线圈 $I_2=10$A 共面，CD距导线1cm，$a=9$cm，$b=20$cm。求合力。</p>
+<p><strong>解</strong>：</p>
+<p>① CD边（距 $d$）：$F_{\text{CD}}=I_2a\cdot\dfrac{\mu_0 I_1}{2\pi d}=3.60\times10^{-4}$ N（向上）</p>
+<p>② EF边（距 $d+b=21$cm）：$F_{\text{EF}}=I_2a\cdot\dfrac{\mu_0 I_1}{2\pi\times0.21}=1.71\times10^{-5}$ N（向下）</p>
+<p>③ DE和FC边水平力抵消。合力 $=3.43\times10^{-4}$ N（向上，指向导线）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>磁力矩 $M=NBIS\sin\theta$ 中的 $\theta$ 是磁矩方向与B的夹角，不是线圈平面与B的夹角！</strong> 线圈平面平行于B→磁矩⊥B→$\theta=90^\circ$→$M$ 最大。</p>
+<hr />
+<h2>四、洛伦兹力——磁场对运动电荷的作用</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：带电粒子在磁场中被甩向一边。$F=qv\times B$ 永远⊥v，不做功，只改变方向。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>运动</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>圆周半径</td>
+<td>$R=\dfrac{mv_\perp}{qB}$</td>
+</tr>
+<tr>
+<td>周期</td>
+<td>$T=\dfrac{2\pi m}{qB}$（与速度无关！）</td>
+</tr>
+<tr>
+<td>螺旋螺距</td>
+<td>$h=v_\parallel T=\dfrac{2\pi mv\cos\theta}{qB}$</td>
+</tr>
+<tr>
+<td>霍尔电压</td>
+<td>$U_H=\dfrac{IB}{nqd}$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「带电粒子在磁场中做圆周运动」：</p>
+<blockquote>
+<p>① $qvB=\dfrac{mv^2}{R}$ → $R=\dfrac{mv}{qB}$，$v=\dfrac{qBR}{m}$
+② 求动能：$E_k=\dfrac{1}{2}mv^2$</p>
+</blockquote>
+<h3>📝 例题8-D：电子圆周运动</h3>
+<p><strong>题目</strong>：电子在 $B=7.0\times10^{-3}$ T 中做 $r=3$cm 圆周运动。求 $v$ 和 $E_k$。（$m_e=9.1\times10^{-31}$kg，$e=1.6\times10^{-19}$C）</p>
+<p><strong>解</strong>：</p>
+<p>① $v=\dfrac{eBr}{m}=\dfrac{1.6\times10^{-19}\times7.0\times10^{-3}\times0.03}{9.1\times10^{-31}}=3.69\times10^7$ m/s</p>
+<p>② $E_k=\dfrac{1}{2}mv^2=6.20\times10^{-16}$ J $\approx 3.9$ keV</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>T与v无关，但R与v成正比。</strong> $v$ 变大→$R$ 变大，$T$ 不变。不要搞反。</p>
+<hr />
+<h2>五、磁介质</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>$\mu_r$</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顺磁质</td>
+<td>略 $&gt;1$</td>
+<td>铝、铂</td>
+</tr>
+<tr>
+<td>抗磁质</td>
+<td>略 $&lt;1$</td>
+<td>铜、水</td>
+</tr>
+<tr>
+<td>铁磁质</td>
+<td>$\gg1$（几千~几万）</td>
+<td>铁、钴、镍</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>核心区分</strong>：$H$ 只取决于传导电流，与介质无关。$B=\mu_0\mu_r H$，铁芯让 $B$ 放大数千倍。</p>
+</blockquote>
+<h3>🧠 解题模板</h3>
+<p>看到「螺线管/螺绕环，有/无磁介质」：</p>
+<blockquote>
+<p>① $H=\dfrac{NI}{L}$（与介质无关）
+② 真空：$B_0=\mu_0 H$；有介质：$B=\mu_0\mu_r H$</p>
+</blockquote>
+<h3>📝 例题8-E：螺绕环有铁芯</h3>
+<p><strong>题目</strong>：螺绕环 $L=10$cm，$N=200$，$I=100$mA。(1)真空求 $H,B_0$；(2)填 $\mu_r=4200$ 的铁芯求 $B,H$。</p>
+<p><strong>解</strong>：</p>
+<p>① $H=\dfrac{NI}{L}=\dfrac{200\times0.1}{0.1}=200$ A/m（始终不变）</p>
+<p>② 真空：$B_0=\mu_0 H=2.51\times10^{-4}$ T</p>
+<p>③ 有铁芯：$H$ 不变=200 A/m，$B=4200 B_0=1.06$ T（放大4200倍）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>有铁芯时 $H$ 不变，变的是 $B$！</strong> $H$ 由 $NI$ 决定，与有无铁芯无关。</p>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\oint\mathbf{B}\cdot d\mathbf{l}=0$→各处 $B=0$？</td>
+<td>错。只说明 $\sum I=0$，回路上 $B$ 可能非零</td>
+</tr>
+<tr>
+<td>一段有限长直导线能用安培环路定理？</td>
+<td>不能。必须闭合稳恒回路</td>
+</tr>
+<tr>
+<td>半圆圆心 $B=\mu_0 I/(2R)$？</td>
+<td>错。是 $\mu_0 I/(4R)$</td>
+</tr>
+<tr>
+<td>$v$ 越大→$T$ 越大？</td>
+<td>错。$T=2\pi m/(qB)$ 与 $v$ 无关</td>
+</tr>
+<tr>
+<td>有铁芯 $H$ 增大？</td>
+<td>错。$H=nI$ 不变，变的是 $B$</td>
+</tr>
+<tr>
+<td>同向电流相吸还是相斥？</td>
+<td>同向相吸，反向相斥</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测15题</h2>
+<h3>选择题（10题）</h3>
+<p><strong>8-1</strong> 半圆形细导线（半径R），圆心处 $B=$（ ）
+(A) $\dfrac{\mu_0 I}{4\pi R}$  (B) $\dfrac{\mu_0 I}{2\pi R}$  (C) $0$  (D) $\dfrac{\mu_0 I}{4R}$</p>
+<p><strong>8-2</strong> 关于安培环路定理，正确的是（ ）
+(A) $\oint=0$→$L$ 上 $B=0$  (B) $\oint=0$→$L$ 不包围电流
+(C) $\oint=0$→包围的 $\sum I=0$  (D) $L$ 上 $B$ 仅与包围电流有关</p>
+<p><strong>8-3</strong> 无限长载流圆柱（R），$r\lt R$ 处 $B\propto$（ ）
+(A) $r$  (B) $1/r$  (C) 常数  (D) $0$</p>
+<p><strong>8-4</strong> 圆形电流I内部取同心回路L，则（ ）
+(A) $\oint=0$，$B=0$  (B) $\oint=0$，$B\neq0$  (C) $\oint\neq0$  (D) 都不对</p>
+<p><strong>8-5</strong> 电子以 $v$ 射入 $B$，夹角 $\theta$。要增大螺距应（ ）
+(A) 增大B  (B) 减小B  (C) 增大 $\theta$  (D) 减小 $v$</p>
+<p><strong>8-6</strong> 密绕长直螺线管充 $\mu_r$ 介质，管内（ ）
+(A) $B=\mu_0\mu_r NI/l$  (B) $B=\mu_0 NI/l$  (C) $H=\mu_0 NI/l$  (D) $H=\mu_0\mu_r NI/l$</p>
+<p><strong>8-7</strong> 磁介质 $\mu_r$ 特征（ ）
+(A) 顺磁&gt;0，抗磁&lt;0  (B) 顺磁&gt;1，抗磁=1  (C) 顺磁&gt;1，抗磁&lt;1  (D) 顺磁&lt;0，抗磁&lt;1</p>
+<p><strong>8-8</strong> 两导线电流均为8A，一进一出。回路a包围两线，则（ ）
+(A) $a$ 上 $B=0$  (B) $a$ 上 $B\neq0$，$\oint=0$  (C) $\oint=8\mu_0$  (D) $\oint=16\mu_0$</p>
+<p><strong>8-9</strong> $B=1.5$T，线圈 $N=100$，$S=0.02$m²，$I=0.1$A，磁矩与B夹角 $30^\circ$，力矩（ ）
+(A) 0  (B) 0.15  (C) 0.26  (D) 0.30 N·m</p>
+<p><strong>8-10</strong> 铜片 $d=1$mm，$B=1.5$T，$I=200$A，$n=8.4\times10^{28}$，霍尔电压（ ）
+(A) $2.2\times10^{-5}$  (B) $2.2\times10^{-2}$  (C) $0.22$  (D) $2.2$ V</p>
+<h3>计算题（5题）</h3>
+<p><strong>计8-1</strong> 导线弯成：半无限长→$\frac{1}{4}$圆弧(R)→半无限长。两直导线延长线过圆心O。求O点B。</p>
+<p><strong>计8-2</strong> 同轴电缆（内a，外b~c），I均匀流去流回。求 $r&lt;a,a&lt;r&lt;b,b&lt;r<c,r>c$ 的B。</p>
+<p><strong>计8-3</strong> 圆柱导体 $R=2$cm，$I=50$A，求通过矩形（R→2R，轴向1m）的磁通量。</p>
+<p><strong>计8-4</strong> 长直导线 $I_1=20$A，矩形线圈 $I_2=10$A 共面。CD距1cm，$a=9$cm，$b=20$cm。求合力。</p>
+<p><strong>计8-5</strong> 电子在 $B=7.0\times10^{-3}$ T 中做 $r=3$cm 圆周。求 $v$ 和 $E_k$。</p>
+<hr />
+<h2>答案与详细解析</h2>
+<h3>选择题详细解析</h3>
+<hr />
+<p><strong>8-1.</strong> 答案：<strong>D</strong></p>
+<p><strong>思路</strong>：圆弧在圆心 $B=\dfrac{\mu_0 I\theta}{4\pi R}$，半圆 $\theta=\pi$→$B=\dfrac{\mu_0 I}{4R}$。两端直导线延长线过圆心→$d\mathbf{l}\times\mathbf{r}=0$→贡献为零。</p>
+<blockquote>
+<p><strong>坑</strong>：A是 $\mu_0 I/(4\pi R)$——少了因子 $\pi$。B是直线公式，不是圆弧。</p>
+</blockquote>
+<hr />
+<p><strong>8-2.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$\oint\mathbf{B}\cdot d\mathbf{l}=\mu_0\sum I_{\text{内}}$。环流为零⇔包围的传导电流代数和为零。但回路上各点的B受所有电流影响，可能非零。</p>
+<hr />
+<p><strong>8-3.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：圆柱内部 $r\lt R$：$B=\dfrac{\mu_0 Ir}{2\pi R^2}\propto r$。外部 $r\gt R$：$B=\dfrac{\mu_0 I}{2\pi r}\propto 1/r$。</p>
+<hr />
+<p><strong>8-4.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：回路L在圆形电流I的平面内，不包围I→$\oint=0$。但圆形电流在L上的各点都产生磁场→B≠0。</p>
+<blockquote>
+<p><strong>坑</strong>：A说"B=0"——不包围电流不等于没有磁场穿过回路。</p>
+</blockquote>
+<hr />
+<p><strong>8-5.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：螺距 $h=v_\parallel T=v\cos\theta\cdot\dfrac{2\pi m}{qB}$。减小B→T增大→h增大。或者减小 $\theta$→$v_\parallel$ 增大→h增大。</p>
+<hr />
+<p><strong>8-6.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：$H=nI$（由传导电流决定，与介质无关）。$B=\mu_0\mu_r H=\mu_0\mu_r nI$。</p>
+<blockquote>
+<p><strong>坑</strong>：D说 $H=\mu_0\mu_r nI$——H与介质无关！介质影响的是B。</p>
+</blockquote>
+<hr />
+<p><strong>8-7.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：顺磁质 $\mu_r&gt;1$（略大于1），抗磁质 $\mu_r&lt;1$（略小于1），铁磁质 $\mu_r\gg1$（几千到几万）。</p>
+<hr />
+<p><strong>8-8.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：两导线电流等大反向→$\sum I_{\text{内}}=0$→$\oint=0$。但回路a上各点：离近的导线磁场强、离远的弱，B不处处为零。</p>
+<hr />
+<p><strong>8-9.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：$M=NBIS\sin30^\circ=100\times1.5\times0.02\times0.1\times0.5=0.15$ N·m。</p>
+<blockquote>
+<p><strong>坑</strong>：$\theta$ 是磁矩（线圈法向）与B的夹角，不是线圈面与B的夹角。</p>
+</blockquote>
+<hr />
+<p><strong>8-10.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：$U_H=\dfrac{IB}{nqd}=\dfrac{200\times1.5}{8.4\times10^{28}\times1.6\times10^{-19}\times10^{-3}}\approx2.23\times10^{-5}$ V。</p>
+<hr />
+<h3>计算题详细解析</h3>
+<hr />
+<p><strong>计8-1.</strong> 弯折导线圆心磁场</p>
+<p>两直导线延长线过O→$B_1=B_2=0$。$\frac{1}{4}$圆弧：$B_3=\dfrac{\mu_0 I}{8R}$。$B_O=\dfrac{\mu_0 I}{8R}$，$\otimes$。</p>
+<hr />
+<p><strong>计8-2.</strong> 同轴电缆B分布</p>
+<p>$r\lt a$：$I_{\text{内}}=I r^2/a^2$→$B=\dfrac{\mu_0 Ir}{2\pi a^2}$。
+$a\lt r\lt b$：$I_{\text{内}}=I$→$B=\dfrac{\mu_0 I}{2\pi r}$。
+$b\lt r\lt c$：$I_{\text{内}}=I-I(r^2-b^2)/(c^2-b^2)$→$B=\dfrac{\mu_0 I(c^2-r^2)}{2\pi r(c^2-b^2)}$。
+$r\gt c$：$I_{\text{内}}=I-I=0$→$B=0$。</p>
+<hr />
+<p><strong>计8-3.</strong> 圆柱体磁通量</p>
+<p>$B(r)=\dfrac{\mu_0 Ir}{2\pi R^2}$（内部）。$\Phi=\int_R^{2R}\dfrac{\mu_0 Ir}{2\pi R^2}\cdot1\cdot dr=\dfrac{\mu_0 I}{2\pi}\ln2=6.93\times10^{-6}$ Wb。</p>
+<hr />
+<p><strong>计8-4.</strong> 直导线对线圈的安培力</p>
+<p>CD边（距1cm）：$B=\dfrac{\mu_0 I_1}{2\pi\times0.01}=4.0\times10^{-4}$ T。$F_{\text{CD}}=I_2 a B=3.60\times10^{-4}$ N（↑）。
+EF边（距21cm）：$B=1.90\times10^{-5}$ T。$F_{\text{EF}}=1.71\times10^{-5}$ N（↓）。
+合力 $=3.43\times10^{-4}$ N（↑，指向导线）。</p>
+<hr />
+<p><strong>计8-5.</strong> 电子圆周运动</p>
+<p>$v=\dfrac{eBr}{m}=\dfrac{1.6\times10^{-19}\times7.0\times10^{-3}\times0.03}{9.1\times10^{-31}}=3.69\times10^7$ m/s。
+$E_k=\dfrac{1}{2}mv^2=6.20\times10^{-16}$ J$\approx3.9$ keV。</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>选择≤2错</th>
+<th>选择3-5错</th>
+<th>选择&gt;5错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概念过关</td>
+<td>回看知识模块</td>
+<td>先看书再做题</td>
+</tr>
+</tbody>
+</table></div><div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p><p>小番茄题库 · 助力财大学子</p></div></body></html>

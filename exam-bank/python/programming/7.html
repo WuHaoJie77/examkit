@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第7章 关系逻辑运算 · Python程序题专练</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:0 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276;font-size:1.3em}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+pre{background:#1e1e1e;border-radius:8px;padding:18px;overflow-x:auto;margin:12px 0;line-height:1.5}
+pre code{color:#d4d4d4;background:none;padding:0;font-size:0.88em;font-family:"Fira Code","Cascadia Code",Consolas,monospace}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+.prob{border-top:1px solid #eee;padding:20px 0;margin-top:5px}
+.prob:first-child{border-top:none;padding-top:0}
+.prob-header{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.prob-num{font-size:1em;font-weight:700;color:#1a5276;background:#eaf2f8;border-radius:4px;padding:2px 8px}
+.prob-points{font-size:0.85em;color:#e74c3c;font-weight:600}
+.prob-title{font-size:0.9em;color:#666}
+.desc{line-height:2;margin:8px 0}
+.desc .hl-red{color:#e74c3c;font-weight:700}
+.desc .hl-green{color:#27ae60;font-weight:700}
+.desc .hl-cyan{color:#0e7c7b;font-weight:700}
+.io-block{background:#f0f4f8;border-left:3px solid #2980b9;border-radius:0 8px 8px 0;padding:15px 20px;margin:12px 0}
+.io-block .io-label{font-weight:700;color:#1a5276;margin-bottom:8px;font-size:0.9em}
+.io-block .io-line{color:#2980b9;font-family:Consolas,monospace;line-height:1.9;white-space:pre-wrap}
+.io-block .io-prompt{color:#555}
+.answer-toggle{display:inline-block;background:#1a5276;color:#fff;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;margin-top:8px;transition:background .15s}
+.answer-toggle:hover{background:#0d3b54}
+.answer-panel{display:none;margin-top:12px}
+.answer-panel.show{display:block}
+.answer-label{font-weight:700;color:#27ae60;margin-bottom:6px;font-size:0.9em}
+.problem-count{color:#888;font-size:0.85em;margin-bottom:10px}
+/* Directory page */
+.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;margin:30px 0}
+.chapter-card{background:#fff;border-radius:12px;padding:25px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:block}
+.chapter-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.10)}
+.chapter-card h2{font-size:1.1em;border:none;margin:0 0 10px;padding:0;color:#1a5276}
+.chapter-card .prob-list{list-style:none;padding:0;margin:0}
+.chapter-card .prob-list li{font-size:0.88em;color:#666;padding:3px 0;padding-left:16px;position:relative;line-height:1.6}
+.chapter-card .prob-list li::before{content:"▸";position:absolute;left:0;color:#1a5276;font-size:0.7em}
+@media(max-width:600px){.chapter-grid{grid-template-columns:1fr}}</style></head><body>
+<a class="back-link" href="index.html">← 返回程序题目录</a>
+<h1>🖥️ 第7章 关系逻辑运算</h1>
+<p class="problem-count">5 道程序题 · 每题5分</p>
+<div class="card"><div class="prob">
+<div class="prob-header"><span class="prob-num">7-1</span><span class="prob-points">(5.0分)</span><span class="prob-title">比较运算符</span></div>
+<div class="desc">定义<code>a=10,b=20</code>，输出a>b、a==b、a!=b结果。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">a > b: False
+a == b: False
+a != b: True</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a7-1',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a7-1">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>a,b=10,20
+print(f&quot;a &gt; b: {a&gt;b}\na == b: {a==b}\na != b: {a!=b}&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：比较运算符返回True/False。<code>==</code>判断相等，<code>!=</code>判断不等。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">7-2</span><span class="prob-points">(5.0分)</span><span class="prob-title">and逻辑与</span></div>
+<div class="desc">输入一个数，判断是否在[10,20]区间内（含边界），用<code>and</code>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line"><span class="io-prompt">请输入一个数：15</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">15在区间[10,20]内吗？ True</div>
+<div class="io-line" style="margin-top:6px"></div>
+<div class="io-line"><span class="io-prompt">请输入一个数：25</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">25在区间[10,20]内吗？ False</div>
+<div class="io-line" style="margin-top:6px"></div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a7-2',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a7-2">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>n=float(input(&quot;请输入一个数：&quot;))
+r=n&gt;=10 and n&lt;=20
+print(f&quot;{n}在区间[10,20]内吗？ {r}&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>and</code>两边都为True才True。Python支持<code>10<=n<=20</code>链式比较。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">7-3</span><span class="prob-points">(5.0分)</span><span class="prob-title">or逻辑或</span></div>
+<div class="desc">输入一个字母，判断是否元音（a/e/i/o/u），用<code>or</code>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line"><span class="io-prompt">请输入一个字母：a</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">a是元音字母吗？ True</div>
+<div class="io-line" style="margin-top:6px"></div>
+<div class="io-line"><span class="io-prompt">请输入一个字母：b</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">b是元音字母吗？ False</div>
+<div class="io-line" style="margin-top:6px"></div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a7-3',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a7-3">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>ch=input(&quot;请输入一个字母：&quot;).lower()
+r=ch==&quot;a&quot; or ch==&quot;e&quot; or ch==&quot;i&quot; or ch==&quot;o&quot; or ch==&quot;u&quot;
+print(f&quot;{ch}是元音字母吗？ {r}&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>or</code>任一边True就True。<code>.lower()</code>统一转小写简化判断。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">7-4</span><span class="prob-points">(5.0分)</span><span class="prob-title">not逻辑取反</span></div>
+<div class="desc">输入一个数，判断不是偶数（即奇数），用<code>not</code>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line"><span class="io-prompt">请输入一个整数：7</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">7不是偶数吗？ True</div>
+<div class="io-line" style="margin-top:6px"></div>
+<div class="io-line"><span class="io-prompt">请输入一个整数：8</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">8不是偶数吗？ False</div>
+<div class="io-line" style="margin-top:6px"></div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a7-4',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a7-4">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>n=int(input(&quot;请输入一个整数：&quot;))
+r=not(n%2==0)
+print(f&quot;{n}不是偶数吗？ {r}&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>not</code>取反。<code>n%2==0</code>判断偶数→<code>not</code>后变判断奇数。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">7-5</span><span class="prob-points">(5.0分)</span><span class="prob-title">组合条件：闰年判断</span></div>
+<div class="desc">输入年份，判断闰年。<span class="hl-red">规则</span>：能被4整除但不能被100整除，或能被400整除。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line"><span class="io-prompt">请输入年份：2000</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">2000是闰年吗？ True</div>
+<div class="io-line" style="margin-top:6px"></div>
+<div class="io-line"><span class="io-prompt">请输入年份：1900</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">1900是闰年吗？ False</div>
+<div class="io-line" style="margin-top:6px"></div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a7-5',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a7-5">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>y=int(input(&quot;请输入年份：&quot;))
+leap=(y%4==0 and y%100!=0) or (y%400==0)
+print(f&quot;{y}是闰年吗？ {leap}&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：括号控制优先级。优先级：not>and>or，不确定时加括号。</p>
+</div></div></div>
+<script>
+function toggleAnswer(id,btn){
+var p=document.getElementById(id);
+if(p.classList.contains('show')){p.classList.remove('show');btn.textContent='💡 显示参考答案'}
+else{p.classList.add('show');btn.textContent='🔒 隐藏参考答案'}
+}
+</script>
+<div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p></div>
+</body></html>

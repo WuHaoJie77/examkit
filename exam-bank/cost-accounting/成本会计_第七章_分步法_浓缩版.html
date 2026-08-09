@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>成本会计 第七章 产品成本计算的分步法 浓缩速记卡 · 成本会计 · 小番茄题库</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+h4{color:#34495e;margin:15px 0 8px}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid #e0e0e0;margin:20px 0}
+</style>
+</head>
+<body>
+<a class="back-link" href="./">← 返回成本会计</a>
+<h1>成本会计 第七章 产品成本计算的分步法 浓缩速记卡</h1>
+<blockquote>
+<p>全书最复杂章节 | 22题 | 预计用时45分钟</p>
+<p>💡 <strong>费曼类比</strong>：分步法就像多层蛋糕流水线——逐步结转法是把一楼烤好的蛋糕胚连成本一起交给二楼裱花，最后算出整只蛋糕的总成本。平行结转法是每层只记录自己做了多少贡献（份额），最后把各层的份额加起来。成本还原就是"逆向拆解"——把裱花师收到的"蛋糕胚（半成品成本）"拆回面粉+鸡蛋+糖的原始成本。</p>
+</blockquote>
+<hr />
+<h2>一、分步法总览</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>逐步结转分步法</th>
+<th>平行结转分步法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>是否计算半成品成本</strong></td>
+<td>✅ 计算</td>
+<td>❌ 不计算</td>
+</tr>
+<tr>
+<td><strong>半成品实物转移</strong></td>
+<td>随实物转移而结转</td>
+<td>不随实物结转</td>
+</tr>
+<tr>
+<td><strong>完工/在产品分配</strong></td>
+<td>各步在产品=狭义在产品</td>
+<td>各步在产品=<strong>广义在产品</strong></td>
+</tr>
+<tr>
+<td><strong>成本还原</strong></td>
+<td>综合结转→<strong>需要</strong>；分项结转→不需要</td>
+<td>不需要</td>
+</tr>
+<tr>
+<td><strong>适用</strong></td>
+<td>管理上需要半成品成本资料</td>
+<td>品种多、半成品对外销售少</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>判断</strong>："逐步结转分步法不计算半成品成本" → ❌ 错！刚好说反了，逐步结转<strong>要</strong>计算半成品成本，平行结转不计算。</p>
+</blockquote>
+<hr />
+<h2>二、逐步结转分步法流水线</h2>
+<h3>子类型：综合结转 vs 分项结转</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>综合结转法</th>
+<th>分项结转法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>结转方式</strong></td>
+<td>半成品成本作为一个整体（"半成品"项目）转入下一步</td>
+<td>半成品成本按原始项目（料/工/费）分别转入</td>
+</tr>
+<tr>
+<td><strong>能否看出上步费用</strong></td>
+<td>❌ 看不出（被揉成一个数了）</td>
+<td>✅ 看得出</td>
+</tr>
+<tr>
+<td><strong>是否需要成本还原</strong></td>
+<td>✅ <strong>需要</strong></td>
+<td>❌ 不需要</td>
+</tr>
+</tbody>
+</table>
+<h3>成本还原（综合结转法特有）</h3>
+<p>成本还原的对象 = <strong>各步骤所耗上一步骤半成品的综合成本</strong></p>
+<p><strong>目的</strong>：把"半成品"这个综合成本拆回原始的"直接材料+直接人工+制造费用"。</p>
+<p><strong>还原方法</strong>：</p>
+<blockquote>
+<p>还原分配率 = 本月产成品所耗上步半成品成本 ÷ 本月上步完工半成品总成本
+还原后材料 = 上步半成品中材料成本 × 还原分配率
+还原后人工 = 上步半成品中人工成本 × 还原分配率
+还原后制造费 = 上步半成品中制造费成本 × 还原分配率</p>
+</blockquote>
+<p><strong>什么时候需要成本还原？</strong>
+- ✅ 综合结转法 + 管理上要求按原始成本项目反映
+- ❌ 分项结转法（不需还原）
+- ❌ 平行结转法（没有半成品成本结转，不需还原）</p>
+<hr />
+<h2>三、平行结转分步法</h2>
+<h3>核心概念：广义在产品</h3>
+<p>平行结转法下，各步骤的"在产品" = <strong>广义在产品</strong>（包含三部分）：
+1. 本步骤正在加工的在产品
+2. 本步骤已完工转入半成品库的半成品
+3. 已转到后续步骤但尚未最终完工的半成品</p>
+<blockquote>
+<p><strong>判断</strong>："平行结转法下，各步完工与在产品之间的分配是产成品与广义在产品之间的分配" → ✅ 对！</p>
+</blockquote>
+<h3>计算公式</h3>
+<div class="codehilite"><pre><span></span><code>某步骤应计入产成品的份额 = 产成品耗用该步骤半成品数量 × 该步骤单位半成品成本
+</code></pre></div>
+
+<h3>逐步结转 vs 平行结转 一句话对比</h3>
+<blockquote>
+<p><strong>逐步结转</strong>：半成品成本跟着实物走，像接力棒一棒一棒传。
+<strong>平行结转</strong>：各步骤算自己的份额，最后加起来，实物传了但成本不传。</p>
+</blockquote>
+<hr />
+<h2>四、计算例题</h2>
+<h3>例题1：逐步结转——简单计算</h3>
+<p>三步骤。第一步→第二步：2,300元。第二步→第三步：4,100元（含第二步自身费用）。第三步自身费用2,500元（不含转入），第三步月初在产品800元，月末在产品600元。求产成品成本。</p>
+<p><strong>解</strong>：</p>
+<blockquote>
+<p>第三步总成本 = 转入4,100 + 自身2,500 + 月初800 - 月末600
+= 4,100 + 2,500 + 800 - 600 = <strong>6,800元</strong></p>
+</blockquote>
+<p><strong>坑点</strong>：2,300是第一步→第二步的，已包含在4,100中（4,100=第一步来的2,300+第二步自身费用），不要重复加。</p>
+<h3>例题2：成本还原</h3>
+<p>某产品两步生产。第一步完工半成品成本：直接材料4,000元，直接人工2,000元，制造费用1,000元，合计7,000元。第二步产成品中耗用第一步半成品成本为5,600元。进行成本还原。</p>
+<p><strong>解</strong>：</p>
+<blockquote>
+<p>还原分配率 = 5,600 ÷ 7,000 = <strong>0.8</strong>
+还原后：直接材料 = 4,000×0.8 = <strong>3,200元</strong>
+直接人工 = 2,000×0.8 = <strong>1,600元</strong>
+制造费用 = 1,000×0.8 = <strong>800元</strong>
+验证：3,200+1,600+800 = <strong>5,600元</strong> ✓</p>
+</blockquote>
+<hr />
+<h2>五、综合结转 vs 分项结转 vs 平行结转 对比速查</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>逐步综合结转</th>
+<th>逐步分项结转</th>
+<th>平行结转</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>半成品成本</strong></td>
+<td>计算，但混在一起</td>
+<td>计算，按原始项目</td>
+<td>不计算</td>
+</tr>
+<tr>
+<td><strong>成本还原</strong></td>
+<td>需要</td>
+<td>不需要</td>
+<td>不需要</td>
+</tr>
+<tr>
+<td><strong>在产品</strong></td>
+<td>狭义</td>
+<td>狭义</td>
+<td><strong>广义</strong></td>
+</tr>
+<tr>
+<td><strong>实物与成本</strong></td>
+<td>同步转移</td>
+<td>同步转移</td>
+<td>不同步</td>
+</tr>
+<tr>
+<td><strong>适用</strong></td>
+<td>需半成品成本+可接受还原工作量</td>
+<td>需半成品原始成本构成</td>
+<td>品种多，不需半成品资料</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>六、自测</h2>
+<h3>选择题（10题）</h3>
+<ol>
+<li>
+<p>分步法适用于（ ）。
+   A. 单步骤生产  B. 单件小批生产
+   C. 管理上要求分步的大量大批多步骤生产  D. 管理上不要求分步的多步骤生产</p>
+</li>
+<li>
+<p>逐步结转分步法是（ ）。
+   A. 分车间计算成本  B. 分产品批别计算成本
+   C. 计算各步骤"份额"的方法  D. 按步骤计算半成品和产成品成本的方法</p>
+</li>
+<li>
+<p>成本还原的对象是（ ）。
+   A. 产成品成本  B. 各步骤所耗上一步骤半成品的综合成本
+   C. 本步骤生产费用  D. 期末在产品成本</p>
+</li>
+<li>
+<p>平行结转法下，完工与在产品之间的分配是（ ）。
+   A. 产成品与狭义在产品  B. 产成品与广义在产品
+   C. 半成品与在产品  D. 完工半成品与在产品</p>
+</li>
+<li>
+<p>需要成本还原的是（ ）。
+   A. 分项结转法  B. 综合结转法  C. 平行结转法  D. 品种法</p>
+</li>
+<li>
+<p>三步骤，第一步→第二步2,300元，第二步→第三步4,100元，第三步自身2,500元，月初800元，月末600元。产成品成本为（ ）。
+   A. 10,900  B. 6,800  C. 6,400  D. 2,700</p>
+</li>
+<li>
+<p>逐步结转法下，半成品成本随实物转移而（ ）。
+   A. 不结转  B. 结转  C. 部分结转  D. 只在内部结转</p>
+</li>
+<li>
+<p>广义在产品不包括（ ）。
+   A. 本步骤加工中的在产品  B. 已入库的半成品
+   C. 已转入后续步骤的半成品  D. 已完工入库的产成品</p>
+</li>
+<li>
+<p>下列适合平行结转法的是（ ）。
+   A. 品种多，计算半成品工作量大  B. 管理上要求提供半成品成本
+   C. 产品种类少  D. 需要成本还原</p>
+</li>
+<li>
+<p>分步与实际生产步骤的关系是（ ）。
+    A. 必须一致  B. 必须不一致  C. 可能一致也可能不一致  D. 完全不相关</p>
+</li>
+</ol>
+<h3>计算题（5题）</h3>
+<p><strong>题1</strong>：两步生产。第一步半成品成本：料8,000+工4,000+费2,000=14,000。第二步产成品耗用第一步半成品11,200元。进行成本还原。</p>
+<p><strong>题2</strong>：三步骤。第一→二：5,000元。第二自身3,000元，第二→三：？第一→二5,000+第二自身3,000=？第三自身4,000元，月初1,000元，月末800元。求产成品成本。</p>
+<p><strong>题3</strong>：判断对错："逐步结转分步法不计算半成品成本，平行结转分步法则需要计算各步半成品成本。"</p>
+<p><strong>题4</strong>：什么是广义在产品？在平行结转分步法中为什么用广义在产品而不是狭义在产品？</p>
+<p><strong>题5</strong>：某企业有A、B两个生产步骤。A步骤单位半成品成本50元，B步骤加工费用每件30元。本月B步骤完工产成品800件，A步骤转入B步骤1,000件半成品，B步骤月末在产品200件（完工50%，A步骤半成品在B步骤开始一次投入）。用平行结转法求产成品成本。</p>
+<hr />
+<h2>七、答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>思路</th>
+<th>推导</th>
+<th>坑点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C</td>
+<td>分步法适用范围</td>
+<td>管理上要求分步+大量大批多步骤=分步法</td>
+<td>D是品种法的适用范围，刚好相反</td>
+</tr>
+<tr>
+<td>2</td>
+<td>D</td>
+<td>逐步结转定义</td>
+<td>逐步结转=一步一步算，每步都有半成品成本</td>
+<td>C是平行结转的特征（算份额）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>成本还原对象</td>
+<td>还原的是"上步半成品综合成本"这个黑箱，拆回料工费</td>
+<td>A产成品成本不需要还原（已是最终成本）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>平行结转核心</td>
+<td>各步骤面对的"在产品"包含后面步骤尚未完工的全部→广义</td>
+<td>狭义在产品只在逐步结转法下用</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>还原条件</td>
+<td>综合结转把成本揉成一个数→需要还原拆开。分项结转已拆开→不需</td>
+<td>平行结转没有半成品结转→不需还原</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>逐步结转计算</td>
+<td>4,100+2,500+800-600=6,800</td>
+<td>2,300已经包含在4,100里了（4,100=2,300+第二步自身），不要再加！</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td>逐步结转特征</td>
+<td>实物转移→成本跟着转移</td>
+<td>平行结转才是不随实物结转</td>
+</tr>
+<tr>
+<td>8</td>
+<td>D</td>
+<td>广义在产品边界</td>
+<td>已完工入库产成品=产成品，不是在产品</td>
+<td>半成品入库还在广义在产品范围内（尚未最终完工）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>A</td>
+<td>平行结转适用</td>
+<td>品种多+半成品工作量大→用平行结转省事</td>
+<td>B是逐步结转的适用条件</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C</td>
+<td>分步vs车间</td>
+<td>分步可按车间也可不按车间→可能一致也可能不一致</td>
+<td>"分步"不一定是"分车间"</td>
+</tr>
+</tbody>
+</table>
+<h3>计算题答案</h3>
+<p><strong>题1</strong>：
+- 还原分配率 = 11,200 ÷ 14,000 = 0.8
+- 材料 = 8,000×0.8=<strong>6,400</strong>；人工 = 4,000×0.8=<strong>3,200</strong>；制造费 = 2,000×0.8=<strong>1,600</strong>
+- 验证：6,400+3,200+1,600=11,200 ✓</p>
+<p><strong>题2</strong>：
+- 第二→第三 = 5,000+3,000 = <strong>8,000元</strong>
+- 产成品成本 = 8,000+4,000+1,000-800 = <strong>12,200元</strong>
+- 坑：5,000已含在8,000里，不要重复加</p>
+<p><strong>题3</strong>：❌ 错误。恰好说反了。正确是：<strong>逐步结转</strong>计算半成品成本，<strong>平行结转</strong>不计算半成品成本。</p>
+<p><strong>题4</strong>：广义在产品=本步骤加工中在产品+已完工入库半成品+已转后续步骤但未最终完工的在产品。平行结转法下各步骤只算自己贡献的"份额"，所以该步骤完工但后面步骤还在加工的部分，从该步骤角度仍是"在产品"→必须用广义概念。</p>
+<p><strong>题5</strong>：
+- A步骤：单位成本50元。产成品800件耗用800件→份额=800×50=40,000元
+- B步骤：加工费分配。A半成品一次投入→B在产品耗A半成品100%。约当产量：加工费=200×50%=100件。加工总约当=800+100=900件。加工费总额待算（题目未给总加工费，设本月B步加工费总额=X，则B步份额=800×(X÷900)；A半成品份额=800×50=40,000。若知道X即可算出）</p>
+<hr />
+<h2>八、防坑预警</h2>
+<table>
+<thead>
+<tr>
+<th>❌ 学生常犯</th>
+<th>✅ 正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逐步结转=不计算半成品</td>
+<td>逐步结转<strong>要</strong>计算，平行结转才不计算</td>
+</tr>
+<tr>
+<td>广义在产品=狭义在产品</td>
+<td>平行结转用<strong>广义</strong>（含已入库/已转后续步骤的半成品）</td>
+</tr>
+<tr>
+<td>综合结转不需还原</td>
+<td>综合结转<strong>需要还原</strong>，分项结转不需</td>
+</tr>
+<tr>
+<td>2,300和4,100直接相加</td>
+<td>2,300已在4,100中（转入的），不要重复加</td>
+</tr>
+<tr>
+<td>成本还原用产成品成本</td>
+<td>还原对象是<strong>所耗上步半成品综合成本</strong>，不是产成品总成本</td>
+</tr>
+<tr>
+<td>分步一定等于分车间</td>
+<td>分步可能按车间也可能不按→<strong>可能一致也可能不一致</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>九、评分线</h2>
+<table>
+<thead>
+<tr>
+<th>选择≤2错+计算对3题</th>
+<th>选择3-5错或计算对2题</th>
+<th>更差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 分步法掌握，成本会计完结</td>
+<td>⚠️ 重做计算题1和2，弄清综合结转的成本还原</td>
+<td>🔴 逐步vs平行没分清，回到第一张对比表从头看</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

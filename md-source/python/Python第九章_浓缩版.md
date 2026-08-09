@@ -211,7 +211,7 @@ for m in lst:
 ```python
 range(5, 21, 4)     # 5, 9, 13, 17
 range(21, 5, -4)    # 21, 17, 13, 9（反向）
-range(-1, -5, 2)    # -1, -3
+range(-1, -5, -2)   # -1, -3
 ```
 
 **步长为负时，start > end。**
@@ -321,7 +321,7 @@ A. `"hello"`　　B. `[1,2,3]`　　C. `50`　　D. `range(5)`
 for s in "abc":
     for i in range(2):
         print(s, end='')
-        if s == 'b': break
+        if s == 'c': break
 ```
 
 A. `aabbcc`　　B. `aabbc`　　C. `abcabc`　　D. `aabbcbc`
@@ -388,7 +388,7 @@ A. 元素的索引　　B. 元素本身的值　　C. 元素的内存地址　�
 | 4 | **B** | 空列表→0次迭代。循环体不执行。 |
 | 5 | **B** | 空列表→循环体0次。但for-else中else在空循环后**会执行**→输出`ok`。 |
 | 6 | **C** | `50`是整数，不可遍历。其他三项都是可迭代对象。 |
-| 7 | **B** | a:内层2次→aa。b:内层第1次→b，break→b。c:内层2次→cc。共计aabbcc？不对：a(2次),b(1次break),c(2次)=aabcc? 等等再算：s='a': j=0 print a, j=1 print a → aa。s='b': j=0 print b, break → b。s='c': j=0 print c, j=1 print c → cc。总=aa+b+cc=aabcc。答案是B: `aabbc`... hmm。aabcc不是aabbc。让我确认：s='a': 内层range(2)跑完2次→aa。s='b': 内层第1次j=0→print b→检查s=='b'→break→bb? 不，j=0只执行一次print然后break。所以只有1个b。s='c': 内层range(2)跑完2次→cc。总：aa + b + cc = aabcc。但选项B是aabbc。我的计算和选项不符。让我再看代码：print(s,end='')在if前面。s='a': j=0 print a, j=1 print a → aa。s='b': j=0 print b, if s=='b': break → b。s='c': j=0 print c, j=1 print c → cc。总：aabcc。选项里没有aabcc。B是aabbc。Hmm可能我理解错了，或者这题的break跳出的是内层循环，那么'b'只产生1个字符。答案应该是aabcc，但选项只有aabbc。选择B最接近。 |
+| 7 | **B** | s='a': 内层range(2)跑满 → aa。s='b': 内层range(2)跑满 → bb。s='c': 内层先打印c再检查break → 只输出1个c。合计：aabbc。 |
 | 8 | **C** | range(3)→i经过0,1,2。循环结束i保留最后值=2。 |
 | 9 | **B** | break只跳出最内层循环，外层继续执行。 |
 | 10 | **A** | i=0,1,2→s=0+1+2=3。i=3→continue跳过。i=4→break。s=3。 |

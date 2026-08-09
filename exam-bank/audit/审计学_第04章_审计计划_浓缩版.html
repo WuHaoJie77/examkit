@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>审计学_第04章_审计计划_浓缩版</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+.chapter-list a .badge{float:right;background:#1a5276;color:#fff;border-radius:12px;padding:2px 10px;font-size:0.75em;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+.notice{background:linear-gradient(135deg,#eaf2f8,#f0f4f8);border:1px solid #bdd7ee;border-radius:12px;padding:25px 30px;margin:30px 0;line-height:1.9}
+.notice h3{color:#1a5276;margin-bottom:12px;font-size:1.1em}
+.notice p{color:#555;font-size:0.95em;margin:6px 0}
+.notice .highlight{color:#e74c3c;font-weight:600}
+
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;z-index:999}
+.pdf-btn{display:inline-block;background:#1a5276;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:background .15s}
+.pdf-btn:hover{background:#0d3b54}
+</style>
+</head><body>
+<a class="back-link" href="index.html">← 返回审计学目录</a>
+<h1>审计学 第04章 审计计划 浓缩速记卡</h1>
+<h1>审计学 第4章 审计计划 浓缩速记卡</h1>
+<blockquote>
+<p>章节：审计计划 | 题量：约12道选择 + 3道简答 | 预计用时：45分钟</p>
+</blockquote>
+<hr />
+<h2>知识模块一：审计计划框架</h2>
+<h3>费曼类比</h3>
+<p>审计计划就像你策划一次长途自驾游——先看地图定大方向（总体审计策略：去哪、走哪条高速、安排几天），再细化每天在哪吃饭加油住店（具体审计计划：每天做什么程序、花多长时间）。路上遇到封路还可以临时调整路线，计划不是刻在石头上的。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义/关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总体审计策略</td>
+<td>确定审计范围、时间安排和方向，指导具体审计计划的制定</td>
+</tr>
+<tr>
+<td>具体审计计划</td>
+<td>比总体策略更详细，包括风险评估程序、进一步审计程序、其他审计程序</td>
+</tr>
+<tr>
+<td>二者关系</td>
+<td>总体审计策略是"纲领"，具体审计计划是"行动细节"；前者指导后者</td>
+</tr>
+<tr>
+<td>计划可修改性</td>
+<td>审计计划可以在审计过程中根据实际情况修改，并非一成不变</td>
+</tr>
+<tr>
+<td>制定时机</td>
+<td>在审计开始时制定总体审计策略，并随审计推进不断更新具体审计计划</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块二：重要性（Materiality）</h2>
+<h3>费曼类比</h3>
+<p>重要性就像一个"漏网之鱼"的尺寸标准。你去鱼塘捞鱼，鱼塘主人说"小于5厘米的鱼苗不用管"，这个5厘米就是重要性水平。如果漏掉10厘米的鱼，他会觉得亏大了；但漏掉3厘米的鱼苗无所谓。而且有些特殊品种（比如稀有金鱼）哪怕很小也要汇报——这就是"性质"上的重要性。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>定义/关键点</th>
+<th>补充</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>财务报表整体重要性</td>
+<td>如果一项错报单独或连同其他错报可能影响报表使用者经济决策，则该错报是重大的</td>
+<td>基准×百分比</td>
+</tr>
+<tr>
+<td>实际执行的重要性</td>
+<td>通常为整体重要性的50%-75%，为未发现错报留出缓冲</td>
+<td>不是75%-100%！</td>
+</tr>
+<tr>
+<td>明显微小错报临界值</td>
+<td>通常为整体重要性的3%-5%，低于此值的错报不累积</td>
+<td>超过则需累积</td>
+</tr>
+<tr>
+<td>重要性判断维度</td>
+<td>数量（金额大小）+ 性质（错报性质）两个维度</td>
+<td>不能只看金额</td>
+</tr>
+<tr>
+<td>重要性可修改性</td>
+<td>审计过程中可以根据实际情况修改整体重要性水平</td>
+<td>不是一成不变</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块三：审计业务约定书</h2>
+<h3>费曼类比</h3>
+<p>审计业务约定书就是CPA和客户签的"婚约"——明确双方谁负责什么、审计范围是多大、收费多少。必须是书面形式，口头说"咱俩合作吧"不算数。可以分多次签，比如先签审计约定，再单独签税务咨询。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>签约主体</td>
+<td>会计师事务所 ↔ 被审计单位</td>
+</tr>
+<tr>
+<td>形式要求</td>
+<td>必须书面形式，口头不具有同等法律效力</td>
+</tr>
+<tr>
+<td>灵活性</td>
+<td>可分别针对不同事项签订多份约定书</td>
+</tr>
+<tr>
+<td>签署人</td>
+<td>双方法定代表人或其授权代表签署</td>
+</tr>
+<tr>
+<td>基本内容</td>
+<td>审计目标与范围、CPA责任、管理层责任、审计收费等</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块四：治理层沟通</h2>
+<h3>费曼类比</h3>
+<p>CPA不仅要跟财务经理（管理层）打交道，还要向董事会/审计委员会（治理层）汇报。就像学校老师不仅要跟学生沟通，还要向家长会汇报——汇报内容包括：我的责任是什么、我打算怎么教（审计范围和时间）、发现了什么问题、我跟这个班有没有利益关系（独立性）。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>沟通事项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPA的责任</td>
+<td>按照审计准则对财务报表发表审计意见</td>
+</tr>
+<tr>
+<td>计划的审计范围和时间安排</td>
+<td>告知治理层审计的大致安排</td>
+</tr>
+<tr>
+<td>审计工作中发现的问题</td>
+<td>重大审计发现需及时沟通</td>
+</tr>
+<tr>
+<td>CPA的独立性</td>
+<td>声明并讨论可能影响独立性的情形</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"审计计划一旦制定，不得修改"</td>
+<td>错误！审计计划可以在审计过程中修改，不是一成不变的</td>
+</tr>
+<tr>
+<td>"明显微小错报临界值不需要考虑重大错报风险评估结果"</td>
+<td>错误！确定临界值需要考虑重大错报风险的评估结果</td>
+</tr>
+<tr>
+<td>"审计业务约定书口头形式具有同等法律效力"</td>
+<td>错误！必须以书面形式签订</td>
+</tr>
+<tr>
+<td>"实际执行的重要性通常为整体重要性的50%-75%，所以选75%-100%也行"</td>
+<td>实际执行重要性为50%-75%，不含75%-100%这个区间</td>
+</tr>
+<tr>
+<td>"具体审计计划=总体审计策略，一回事"</td>
+<td>错误！二者层次不同，总体策略定框架，具体计划定细节</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测</h2>
+<h3>选择题（15题）</h3>
+<ol>
+<li>
+<p>下列有关审计计划的说法中，正确的是（ ）。
+A. 审计计划仅指具体审计计划
+B. 审计计划一旦制定就不得修改
+C. 审计计划包括总体审计策略和具体审计计划
+D. 总体审计策略比具体审计计划更加详细</p>
+</li>
+<li>
+<p>注册会计师在确定计划的重要性水平时，通常不需要考虑的是（ ）。
+A. 被审计单位财务报表要素
+B. 以前年度审计中发现的错报
+C. 被审计单位员工的平均年龄
+D. 被审计单位所处的行业环境</p>
+</li>
+<li>
+<p>实际执行的重要性水平通常为财务报表整体重要性的（ ）。
+A. 10%-25%
+B. 30%-45%
+C. 50%-75%
+D. 80%-95%</p>
+</li>
+<li>
+<p>明显微小错报临界值通常为财务报表整体重要性的（ ）。
+A. 1%-2%
+B. 3%-5%
+C. 10%-15%
+D. 50%-75%</p>
+</li>
+<li>
+<p>关于审计业务约定书，下列说法正确的是（ ）。
+A. 可以由注册会计师个人与被审计单位签订
+B. 口头约定具有同等法律效力
+C. 应当采用书面形式
+D. 一份约定书必须涵盖所有审计与非审计服务</p>
+</li>
+<li>
+<p>下列不属于具体审计计划内容的是（ ）。
+A. 计划实施的风险评估程序
+B. 计划实施的控制测试的性质、时间安排和范围
+C. 计划实施的实质性程序的性质、时间安排和范围
+D. 确定审计范围、时间安排和方向</p>
+</li>
+<li>
+<p>低于明显微小错报临界值的错报，正确的处理方式是（ ）。
+A. 必须累积并提请管理层更正
+B. 不需要累积
+C. 累积但不要求管理层更正
+D. 直接视为重大错报</p>
+</li>
+<li>
+<p>关于重要性，下列说法错误的是（ ）。
+A. 重要性包括数量和性质两个方面的考虑
+B. 在审计过程中，重要性水平不可修改
+C. 重要性取决于具体环境下对错报金额和性质的判断
+D. 如果一项错报可能影响报表使用者经济决策，则该错报是重大的</p>
+</li>
+<li>
+<p>下列各项中，注册会计师应当与治理层沟通的是（ ）。
+A. 具体审计程序的详细时间表
+B. 注册会计师的独立性
+C. 每一位审计助理的工作时间
+D. 函证回函的具体内容</p>
+</li>
+<li>
+<p>在制定总体审计策略时，注册会计师应当确定（ ）。
+A. 每个科目的实质性程序细节
+B. 审计范围、时间安排和方向
+C. 每张凭证的抽查方案
+D. 管理层的具体配合人员名单</p>
+</li>
+<li>
+<p>下列关于计划重要性水平的说法中，错误的是（ ）。
+A. 在计划审计工作时应当确定一个可接受的重要性水平
+B. 确定的财务报表整体重要性水平在审计过程中可以修改
+C. 计划重要性水平仅考虑金额大小
+D. 特定类别交易可能需要单独设定更低的重要性水平</p>
+</li>
+<li>
+<p>审计业务约定书的基本内容不包括（ ）。
+A. 财务报表审计的目标与范围
+B. 管理层的责任
+C. 预期将发表的审计意见类型
+D. 审计收费</p>
+</li>
+<li>
+<p>下列有关明显微小错报临界值的说法中，正确的是（ ）。
+A. 确定明显微小错报临界值时不需要考虑重大错报风险的评估结果
+B. 超过明显微小错报临界值的错报可以不累积
+C. 明显微小错报临界值通常为整体重要性的3%-5%
+D. 明显微小错报临界值等于实际执行的重要性</p>
+</li>
+<li>
+<p>注册会计师在计划审计工作时，下列各项中与确定重要性水平相关的是（ ）。
+A. 被审计单位的所有权结构和融资方式
+B. 被审计单位的办公地点
+C. 被审计单位使用什么品牌的电脑
+D. 被审计单位食堂的菜品质量</p>
+</li>
+<li>
+<p>下列关于具体审计计划与总体审计策略关系的说法中，正确的是（ ）。
+A. 二者完全相同，只是名称不同
+B. 总体审计策略指导具体审计计划的制定
+C. 具体审计计划应当先于总体审计策略制定
+D. 二者独立制定，互不影响</p>
+</li>
+</ol>
+<h3>大题（5题）</h3>
+<ol>
+<li>
+<p>请简述审计计划的两个层次及其关系。</p>
+</li>
+<li>
+<p>ABC会计师事务所审计甲公司，财务报表整体重要性确定为100万元。请回答：（1）实际执行的重要性通常如何确定？（2）明显微小错报临界值通常如何确定？（3）对于超过明显微小错报临界值的错报应如何处理？</p>
+</li>
+<li>
+<p>请简述重要性、审计风险、审计证据三者之间的关系。</p>
+</li>
+<li>
+<p>审计业务约定书应包含哪些基本内容？为什么必须采用书面形式？</p>
+</li>
+<li>
+<p>注册会计师在审计过程中发现原来确定的重要性水平偏高或偏低，应当如何处理？请结合审计风险说明理由。</p>
+</li>
+</ol>
+<hr />
+<h2>答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C</td>
+<td><strong>思路</strong>：考查审计计划构成。<strong>推导</strong>：审计计划=总体审计策略+具体审计计划，A缺总体策略；B错在"不得修改"；D反了，具体计划更详细。<strong>坑</strong>：D——容易混淆谁指导谁、谁更详细。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td><strong>思路</strong>：考查重要性确定需考虑的因素。<strong>推导</strong>：需考虑报表要素(A)、历史错报(B)、行业环境(D)；员工平均年龄与财务错报无关。<strong>坑</strong>：此题属于排除法题，干扰项A/D都是教材明确列出的因素。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td><strong>思路</strong>：考查实际执行重要性的比例。<strong>推导</strong>：标准比例区间为50%-75%。A/B过低，D过高（D是重要性本身的比例区间而非实际执行比例）。<strong>坑</strong>：D（80%-95%）容易与实际执行重要性的定义混淆——实际执行一定要低于整体重要性。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td><strong>思路</strong>：考查明显微小错报临界值比例。<strong>推导</strong>：通常为整体重要性的3%-5%。A太低，C/D都太高。<strong>坑</strong>：D（50%-75%）是实际执行重要性的比例，不要混淆。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C</td>
+<td><strong>思路</strong>：考查审计业务约定书基本规定。<strong>推导</strong>：必须书面(C)；签约方是事务所非个人(A)；口头无效(B)；可针对不同事项单独签(D后半句错)。<strong>坑</strong>：D——"一份约定书必须涵盖所有"过于绝对。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>D</td>
+<td><strong>思路</strong>：考查具体审计计划vs总体审计策略区分。<strong>推导</strong>：A/B/C都是具体审计计划中的内容；D"确定审计范围、时间安排和方向"属于总体审计策略。<strong>坑</strong>：容易把"时间安排"直接等同于具体审计计划——总策也涉及时间安排但更多是方向性的。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td><strong>思路</strong>：考查明显微小错报临界值的处理。<strong>推导</strong>：低于临界值=不需要累积，这是其定义的核心要义。A/C/D均不符合准则规定。<strong>坑</strong>：A——"必须累积"是超过临界值的处理方式。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>B</td>
+<td><strong>思路</strong>：考查重要性可修改性。<strong>推导</strong>：重要性水平在审计过程中可以修改(B错)。A/C/D均正确。<strong>坑</strong>：容易误以为重要性一旦确定就不能动——实际可以根据新情况调整。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>B</td>
+<td><strong>思路</strong>：考查治理层沟通内容。<strong>推导</strong>：独立性是必须沟通的(D)；A过于细节不需沟通；C/D属于内部工作安排不需与治理层沟通。<strong>坑</strong>：A——"计划的审计范围和时间安排"是沟通内容，但"详细时间表"不是。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td><strong>思路</strong>：考查总体审计策略的目的。<strong>推导</strong>：总体审计策略的核心就是确定审计范围、时间安排和方向。A/C/D属于具体审计计划层面。<strong>坑</strong>：A——容易混淆"总体策略"与"具体计划"。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>C</td>
+<td><strong>思路</strong>：考查重要性双维度。<strong>推导</strong>：重要性不仅考虑金额（数量），还要考虑错报的性质(C错)。A/B/D均正确。<strong>坑</strong>：容易忽略"性质"维度，只关注金额。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td><strong>思路</strong>：考查审计业务约定书内容。<strong>推导</strong>：约定书应在审计开始前签订，此时无法预知审计意见类型，故C不属于基本内容。A/B/D均为基本内容。<strong>坑</strong>：D——审计收费确实属于基本内容。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C</td>
+<td><strong>思路</strong>：考查明显微小错报临界值。<strong>推导</strong>：3%-5%是正确比例；A错（需考虑重大错报风险评估）；B错（超过需累积）；D错（与实际执行重要性是两个概念）。<strong>坑</strong>：D——两个临界值概念容易混淆。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>A</td>
+<td><strong>思路</strong>：考查重要性考虑因素。<strong>推导</strong>：所有权结构和融资方式影响报表使用者的关注点，进而影响重要性确定。B/C/D均与财务报表无关。<strong>坑</strong>：需要区分"影响财务决策的因素"和"无关的经营细节"。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>B</td>
+<td><strong>思路</strong>：考查两层次关系。<strong>推导</strong>：总体审计策略是纲领，指导具体审计计划的制定。A/C/D均描述错误。<strong>坑</strong>：C——逻辑反了，先有总策略再有具体计划。</td>
+</tr>
+</tbody>
+</table>
+<h3>大题参考答案</h3>
+<p><strong>第1题</strong>：简述审计计划的两个层次及其关系。</p>
+<blockquote>
+<p><strong>思路</strong>：先定义两个层次，再说明关系。
+<strong>步骤</strong>：
+① 第一层：总体审计策略——确定审计范围、时间安排和方向，是审计工作的纲领性文件
+② 第二层：具体审计计划——包括风险评估程序、进一步审计程序（控制测试+实质性程序）、其他审计程序的性质、时间安排和范围
+③ 关系：总体审计策略指导具体审计计划的制定；具体审计计划比总体审计策略更加详细和具体
+<strong>坑</strong>：不要把"具体审计计划"等同于"总体审计策略"的细化——它们是不同层次的东西，具体计划虽然受总策指导但内容更丰富。</p>
+</blockquote>
+<p><strong>第2题</strong>：实际执行重要性和明显微小错报临界值的确定与处理。</p>
+<blockquote>
+<p><strong>思路</strong>：三个子问题逐一回答。
+<strong>步骤</strong>：
+① 实际执行的重要性：通常为财务报表整体重要性的50%-75%，需考虑以前年度审计中识别的错报、对被审计单位的了解、本期审计计划等综合确定
+② 明显微小错报临界值：通常为财务报表整体重要性的3%-5%，需考虑重大错报风险的评估结果
+③ 超过明显微小错报临界值的错报：应当累积起来，要求管理层更正；如果管理层拒绝更正，需评价对财务报表整体的影响
+<strong>坑</strong>：实际执行重要性和明显微小错报临界值都是基于整体重要性计算，但比例不同——50%-75% vs 3%-5%，答题时千万不要写反。</p>
+</blockquote>
+<p><strong>第3题</strong>：重要性、审计风险、审计证据三者关系。</p>
+<blockquote>
+<p><strong>思路</strong>：三者是三角互动关系。
+<strong>步骤</strong>：
+① 重要性水平越低→需要的审计证据越多（反向关系）——标准越严格，越要查得多
+② 审计风险越高→需要的审计证据越多（正向关系）——风险大，得多查
+③ 重要性水平和审计风险之间：在既定的审计风险水平下，重要性水平越低，需获取的审计证据越多
+④ 三者综合：CPA需要将审计风险降至可接受的低水平，通过确定适当的重要性水平，获取充分、适当的审计证据
+<strong>坑</strong>：容易说错"重要性"和"审计证据"的关系——重要性越低（即金额门槛越小），意味着要抓更小的错报，所以需要更多证据，是反向关系而非正向关系。</p>
+</blockquote>
+<p><strong>第4题</strong>：审计业务约定书基本内容及书面形式原因。</p>
+<blockquote>
+<p><strong>思路</strong>：先列内容，再说形式。
+<strong>步骤</strong>：
+① 基本内容：财务报表审计的目标与范围；注册会计师的责任；管理层的责任；适用的财务报告编制基础；审计报告的预期形式和内容；审计收费
+② 书面形式原因：审计业务约定书是法律文件，书面形式可以明确双方的权利和义务，避免日后纠纷；口头形式不具有法律效力，无法作为证据；审计准则明确要求必须签订书面业务约定书
+<strong>坑</strong>：容易遗漏"审计收费"——这不只是商业安排，也是约定书的基本内容之一。</p>
+</blockquote>
+<p><strong>第5题</strong>：重要性水平调整的处理。</p>
+<blockquote>
+<p><strong>思路</strong>：先说明可以修改，再说如何修改及理由。
+<strong>步骤</strong>：
+① 如果发现原来确定的重要性水平偏高（太宽松），应当调低——因为用原来的标准可能漏掉重大错报，审计风险增大
+② 如果发现偏低（太严格），可以根据实际情况适当调高——但必须谨慎，确保不影响审计质量
+③ 无论何种调整，都应当修改原定的审计计划，增加或减少审计程序，重新评估审计风险
+④ 理由：重要性是判断错报是否重大的标准，标准不合适会直接影响审计意见的恰当性；调低重要性意味着"门槛更严"，需要获取更多证据
+<strong>坑</strong>：不要认为"确定了就不能改"——审计过程是动态的，新发现可能导致原来的重要性水平不合适。</p>
+</blockquote>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扎实</td>
+<td>需复习</td>
+<td>重学本章</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>📚 小番茄题库浓缩版 · 审计学</p>
+</div>
+
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/audit/04" download>📥 下载本章PDF</a>
+</div>
+</body></html>

@@ -166,7 +166,7 @@ eval(a) == 56        # True
 
 ```python
 # 括号改变逻辑
-a=3, b=5, c=2
+a, b, c = 3, 5, 2
 a < b or b > c and a == c       # True or False and False → True or False = True
 (a < b or b > c) and a == c     # (True or False) and False → True and False = False
 

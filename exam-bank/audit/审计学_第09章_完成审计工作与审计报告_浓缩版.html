@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>审计学_第09章_完成审计工作与审计报告_浓缩版</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+.chapter-list a .badge{float:right;background:#1a5276;color:#fff;border-radius:12px;padding:2px 10px;font-size:0.75em;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+.notice{background:linear-gradient(135deg,#eaf2f8,#f0f4f8);border:1px solid #bdd7ee;border-radius:12px;padding:25px 30px;margin:30px 0;line-height:1.9}
+.notice h3{color:#1a5276;margin-bottom:12px;font-size:1.1em}
+.notice p{color:#555;font-size:0.95em;margin:6px 0}
+.notice .highlight{color:#e74c3c;font-weight:600}
+
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;z-index:999}
+.pdf-btn{display:inline-block;background:#1a5276;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:background .15s}
+.pdf-btn:hover{background:#0d3b54}
+</style>
+</head><body>
+<a class="back-link" href="index.html">← 返回审计学目录</a>
+<h1>审计学 第09章 完成审计工作与审计报告 浓缩速记卡</h1>
+<h1>审计学 第9章 完成审计工作与审计报告 浓缩速记卡</h1>
+<blockquote>
+<p>章节：完成审计工作与审计报告（期后事项、书面声明、审计意见类型） | 原题量：单选7 + 多选4 + 简答1 = 12题 | 预计用时：40分钟</p>
+</blockquote>
+<hr />
+<h2>知识模块</h2>
+<h3>模块一：期后事项</h3>
+<p><strong>费曼类比</strong>：期后事项就像你签了购房合同后、交房前这段时间里发生的事——比如房子突然被冰雹砸了（需要调整合同价格），或者隔壁规划建垃圾站（不需要改价格但得告诉买家）。合同签完到正式交房之间发生的事，有些影响合同本身，有些只需提醒注意。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>财务报表日至审计报告日之间发生的事项，以及审计报告日后知悉的事实</td>
+</tr>
+<tr>
+<td>分类</td>
+<td>调整事项（资产负债表日已存在，需调整报表）+ 非调整事项（资产负债表日后新发生，可能需披露）</td>
+</tr>
+<tr>
+<td>第一时段</td>
+<td>财务报表日至审计报告日——主动识别义务</td>
+</tr>
+<tr>
+<td>第二时段</td>
+<td>审计报告日后至财务报表报出日前——被动知悉后的应对义务</td>
+</tr>
+<tr>
+<td>第三时段</td>
+<td>财务报表报出日后——仅在知悉且可能影响报告时才需行动</td>
+</tr>
+<tr>
+<td>核心义务</td>
+<td>对第一时段事项必须主动实施审计程序；审计报告日后无主动识别责任</td>
+</tr>
+</tbody>
+</table>
+<h3>模块二：书面声明</h3>
+<p><strong>费曼类比</strong>：书面声明就像借款人写的借条——光有借条不能证明借款事实（还得看转账记录、消费凭证），但没有借条又不行，因为这是对方亲口承认"我欠钱"的证据。它不能代替实质性证据，但少了它审计师会心里没底。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性质</td>
+<td>必要信息，是审计证据的一部分，但本身不提供充分证据</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>管理层对财务报表的责任；提供信息的完整性；对内部控制的认知等</td>
+</tr>
+<tr>
+<td>时间</td>
+<td>应尽可能接近审计报告日，不早于审计报告日</td>
+</tr>
+<tr>
+<td>签署人</td>
+<td>管理层（通常为总经理和财务总监）</td>
+</tr>
+<tr>
+<td>误区</td>
+<td>书面声明不能替代应当获取的其他审计证据</td>
+</tr>
+</tbody>
+</table>
+<h3>模块三：审计意见类型</h3>
+<p><strong>费曼类比</strong>：审计意见就像体检报告结论——无保留意见=身体很健康；保留意见=大部分没问题但有一两项指标异常；否定意见=体检报告整体是错的/健康状况严重不实；无法表示意见=仪器坏了没法检查，不知道身体怎么样。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无保留意见</td>
+<td>财务报表按适用的编制基础公允反映</td>
+</tr>
+<tr>
+<td>保留意见</td>
+<td>存在重大错报但不广泛；或无法获取充分证据但不广泛</td>
+</tr>
+<tr>
+<td>否定意见</td>
+<td>存在重大且广泛的错报</td>
+</tr>
+<tr>
+<td>无法表示意见</td>
+<td>无法获取充分证据且影响广泛</td>
+</tr>
+<tr>
+<td>标准无保留意见</td>
+<td>无强调事项段、无其他事项段、无持续经营重大不确定性段</td>
+</tr>
+</tbody>
+</table>
+<h3>模块四：关键审计事项</h3>
+<p><strong>费曼类比</strong>：关键审计事项就像医生在体检报告里特别标出的项目——不是说你这些地方有病，而是"这几项检查过程最复杂、风险最大、需要专业判断最多，所以我们格外认真地查了"。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>注册会计师根据职业判断认为对本期财务报表审计最为重要的事项</td>
+</tr>
+<tr>
+<td>来源</td>
+<td>从与治理层沟通过的事项中选取</td>
+</tr>
+<tr>
+<td>披露位置</td>
+<td>审计报告中单独设段</td>
+</tr>
+<tr>
+<td>特殊规定</td>
+<td>不对关键审计事项发表单独意见；无法表示意见报告中不得包含关键审计事项</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>提高审计报告沟通价值，不是增加保证程度</td>
+</tr>
+</tbody>
+</table>
+<h3>模块五：持续经营</h3>
+<p><strong>费曼类比</strong>：持续经营就像判断一家餐厅还能不能开下去——如果餐厅亏损但有投资者愿意追加资金（有应对计划），可能还能开；如果已经资不抵债且没人愿意接手（无法持续经营），那就得在报告里明确说"这家可能干不下去了"。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>管理层责任</td>
+<td>评估持续经营能力</td>
+</tr>
+<tr>
+<td>注册会计师责任</td>
+<td>评价管理层评估的合理性；获取充分适当证据</td>
+</tr>
+<tr>
+<td>审计报告影响</td>
+<td>视情况可能：增加"与持续经营相关的重大不确定性"段、保留意见、否定意见</td>
+</tr>
+<tr>
+<td>误区</td>
+<td>财务困难≠必然出具否定意见；还要看管理层有无合理应对计划及披露是否充分</td>
+</tr>
+</tbody>
+</table>
+<h3>模块六：比较信息与审计报告要素</h3>
+<p><strong>费曼类比</strong>：比较信息就像成绩单上的"上学期成绩"那一栏——不是这学期考的，但放一起才能看出进步还是退步。审计师不需要重新改上学期的成绩，但得确认这栏抄对了。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>比较信息分类</td>
+<td>对应数据（本期报告的一部分）+ 比较财务报表（单独列示）</td>
+</tr>
+<tr>
+<td>审计责任</td>
+<td>获取证据确认比较信息与上期一致或已重述恰当；不对比较信息单独发表意见</td>
+</tr>
+<tr>
+<td>审计报告要素</td>
+<td>标题、收件人、审计意见、形成审计意见的基础、关键审计事项、管理层责任、注册会计师责任、签名盖章、地址、日期</td>
+</tr>
+<tr>
+<td>审计报告日期</td>
+<td>不早于获取充分适当证据并形成意见的日期；不早于管理层签署书面声明和财务报表的日期</td>
+</tr>
+</tbody>
+</table>
+<h3>模块七：强调事项段</h3>
+<p><strong>费曼类比</strong>：强调事项段就像报告里的"特别提醒"标签——不影响结论本身，但有些事情读者应该特别注意，比如公司正在打一场可能赔巨款的官司。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>适用情形</td>
+<td>异常诉讼/监管行动不确定性；提前应用新会计准则；特大灾难影响等</td>
+</tr>
+<tr>
+<td>性质</td>
+<td>不影响审计意见类型</td>
+</tr>
+<tr>
+<td>不适用情形</td>
+<td>管理层未在报表中充分披露时不能用强调事项段代替</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"审计报告日后注册会计师仍有主动识别期后事项的责任"</td>
+<td>审计报告日后无主动识别责任，仅在知悉后有应对义务</td>
+</tr>
+<tr>
+<td>"书面声明本身可以提供充分的审计证据"</td>
+<td>书面声明不能替代其他证据，本身不充分</td>
+</tr>
+<tr>
+<td>"标准无保留意见报告可以包含强调事项段"</td>
+<td>带强调事项段的报告属于无保留意见但不属于"标准"无保留意见</td>
+</tr>
+<tr>
+<td>"只要被审计单位出现财务困难，就出具否定意见"</td>
+<td>还需看管理层有无合理应对计划、披露是否充分</td>
+</tr>
+<tr>
+<td>"关键审计事项需要发表单独意见"</td>
+<td>关键审计事项不等同于保留意见，不对其发表单独意见</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测</h2>
+<h3>选择题（15题）</h3>
+<p><strong>1.</strong> 下列有关期后事项的说法中，正确的是（ ）。
+A. 期后事项仅指财务报表日至审计报告日之间发生的事项
+B. 审计报告日后，注册会计师仍有主动识别期后事项的责任
+C. 期后事项包括财务报表日后调整事项和非调整事项
+D. 注册会计师只需对审计报告日前的期后事项实施程序</p>
+<p><strong>2.</strong> 下列关于书面声明的说法中，正确的是（ ）。
+A. 书面声明本身可以提供充分的审计证据
+B. 书面声明可以替代其他审计程序
+C. 书面声明是审计证据的重要组成部分
+D. 书面声明的日期可以晚于审计报告日</p>
+<p><strong>3.</strong> 下列审计意见类型中，属于非无保留意见的是（ ）。
+A. 带强调事项段的无保留意见
+B. 保留意见
+C. 标准无保留意见
+D. 带其他事项段的无保留意见</p>
+<p><strong>4.</strong> 下列关于关键审计事项的说法中，错误的是（ ）。
+A. 关键审计事项从与治理层沟通过的事项中选取
+B. 关键审计事项应在审计报告中单独设段披露
+C. 注册会计师应当对关键审计事项发表单独意见
+D. 关键审计事项旨在提高审计报告沟通价值</p>
+<p><strong>5.</strong> 关于持续经营，下列做法中正确的是（ ）。
+A. 只要被审计单位出现财务困难就出具否定意见
+B. 管理层负责评估持续经营能力
+C. 注册会计师不需要对持续经营获取审计证据
+D. 持续经营问题只能导致否定意见</p>
+<p><strong>6.</strong> 下列关于比较信息的说法中，正确的是（ ）。
+A. 比较信息包括对应数据和比较财务报表
+B. 注册会计师应当对比较信息发表单独审计意见
+C. 比较信息不属于审计范围
+D. 注册会计师不需要对比较信息获取审计证据</p>
+<p><strong>7.</strong> 下列各项中，属于审计报告必要要素的是（ ）。
+A. 被审计单位财务报表
+B. 审计意见
+C. 被审计单位内部控制评价
+D. 被审计单位管理层建议书</p>
+<p><strong>8.</strong> 下列各项中，不属于审计意见类型的是（ ）。
+A. 无保留意见
+B. 保留意见
+C. 否定意见
+D. 强调意见</p>
+<p><strong>9.</strong> 下列情形中，注册会计师应当在审计报告中增加强调事项段的是（ ）。
+A. 被审计单位存在已经或持续产生重大影响的特大灾难
+B. 被审计单位财务报表存在重大错报且管理层拒绝调整
+C. 注册会计师无法获取充分适当的审计证据
+D. 持续经营假设不适当</p>
+<p><strong>10.</strong> 下列各项中，不属于书面声明内容的是（ ）。
+A. 管理层对财务报表的责任
+B. 管理层提供信息和交易的完整性
+C. 管理层对未来盈利的保证
+D. 管理层对内部控制设计和运行的责任</p>
+<p><strong>11.</strong> 关于审计报告日期，下列说法中正确的是（ ）。
+A. 审计报告日可以早于管理层签署书面声明的日期
+B. 审计报告日可以早于管理层签署财务报表的日期
+C. 审计报告日不应早于获取充分适当审计证据并形成审计意见的日期
+D. 审计报告日必须与财务报表批准日相同</p>
+<p><strong>12.</strong> 注册会计师发现财务报表存在重大错报，管理层拒绝调整，且该错报影响广泛。应出具的审计意见类型是（ ）。
+A. 保留意见
+B. 否定意见
+C. 无法表示意见
+D. 带强调事项段的无保留意见</p>
+<p><strong>13.</strong> 注册会计师因被审计单位未提供充分审计证据且影响广泛，应出具的审计意见类型是（ ）。
+A. 保留意见
+B. 否定意见
+C. 无法表示意见
+D. 带强调事项段的无保留意见</p>
+<p><strong>14.</strong> 审计报告日后注册会计师获悉某事项，如该事项在审计报告日已存在则可能影响审计报告。注册会计师的恰当做法是（ ）。
+A. 不需要采取任何行动
+B. 与管理层和治理层讨论，确定是否需要修改财务报表
+C. 直接修改审计报告
+D. 在下一期审计报告中披露</p>
+<p><strong>15.</strong> 下列关于强调事项段的说法中，错误的是（ ）。
+A. 强调事项段不影响审计意见类型
+B. 强调事项段用于提醒财务报表使用者关注已在报表中列报或披露的事项
+C. 管理层未在财务报表中披露的事项，可以用强调事项段代替
+D. 强调事项段所涉及的事项在审计报告中单独设段列示</p>
+<hr />
+<h3>大题（5题）</h3>
+<p><strong>1. 简答</strong>：什么是期后事项？注册会计师对不同时段的期后事项分别承担什么责任？</p>
+<p><strong>2. 分析</strong>：注册会计师A在审计报告日（2021年3月15日）后获悉被审计单位一主要客户于2021年3月18日宣告破产，该客户欠款在2020年12月31日已计提10%坏账准备。A注册会计师应当如何处理？</p>
+<p><strong>3. 简答</strong>：简述四种审计意见类型及其适用条件。</p>
+<p><strong>4. 分析</strong>：被审计单位持续经营能力存在重大不确定性，但管理层已在财务报表中充分披露了相关情况。注册会计师应如何考虑对审计报告的影响？</p>
+<p><strong>5. 综合分析</strong>：注册会计师B在审计甲公司时遇到以下情况：
+（1）甲公司因涉嫌违法正在接受监管调查，结果不确定，已在财务报表附注中充分披露；
+（2）甲公司应收账款中有一笔大额款项无法实施函证，也无法实施替代程序，但金额不广泛；
+（3）甲公司未向B注册会计师提供所有子公司的财务报表，导致B无法获取合并报表整体公允反映的充分证据，影响广泛；
+（4）管理层拒绝签署书面声明。
+请逐项判断应出具的审计意见类型。</p>
+<hr />
+<h2>答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C</td>
+<td><strong>思路</strong>：期后事项按是否需要调整报表分为调整事项和非调整事项。<strong>推导</strong>：A错——期后事项还包括审计报告日后知悉的事实；B错——审计报告日后没有主动识别责任，仅在被知悉后应对；D错——审计报告日后知悉的也需按规定处理。<strong>坑</strong>：注意"主动责任"和"知悉后应对"的区别。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td><strong>思路</strong>：书面声明是证据的一部分但不是充分的独立证据。<strong>推导</strong>：A、B错误——书面声明不能提供充分证据也不能替代其他程序；D错误——书面声明日期应尽可能接近审计报告日但不晚于审计报告日。<strong>坑</strong>：常见误解"签了书面声明就万事大吉"。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td><strong>思路</strong>：非无保留意见包括三种：保留、否定、无法表示。<strong>推导</strong>：带强调事项段或其他事项段的无保留意见仍属于无保留意见，只是加了说明段。<strong>坑</strong>：A、D容易被误认为"不标准就是非无保留"，但非无保留是指意见本身不是无保留。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C</td>
+<td><strong>思路</strong>：关键审计事项的概念是"最重要"而非"有问题"，不对其发表单独意见。<strong>推导</strong>：A、B、D均正确；C错误——注册会计师不对关键审计事项发表单独意见，只有一个总体审计意见。<strong>坑</strong>：混淆"关键"与"例外"——关键不意味着有问题。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td><strong>思路</strong>：管理层承担评估持续经营能力的责任，注册会计师评价其合理性。<strong>推导</strong>：A错误——财务困难不直接等于否定意见；C错误——注册会计师必须获取审计证据；D错误——持续经营问题可能对应多种意见类型（视披露情况和使用的编制基础适当性）。<strong>坑</strong>：财务困难→否定意见的简单化推理。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A</td>
+<td><strong>思路</strong>：比较信息包括对应数据和比较财务报表两种形式。<strong>推导</strong>：B错误——不对比较信息发表单独意见；C错误——属于审计范围；D错误——需要获取证据确认一致性。<strong>坑</strong>：容易被"不发表单独意见"误导为"不获取证据"。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td><strong>思路</strong>：审计意见是审计报告的核心必要要素。<strong>推导</strong>：审计报告要素包括标题、收件人、意见、形成意见的基础、关键审计事项（如适用）、管理层和注册会计师责任、签名盖章、地址、日期。<strong>坑</strong>：A（财务报表是被审计对象，附在报告后但不属于报告要素）；C和D都不是审计报告要素。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>D</td>
+<td><strong>思路</strong>："强调意见"不是独立意见类型。<strong>推导</strong>：审计意见类型仅四种：无保留、保留、否定、无法表示。"强调"只是附加段落不是意见类型。<strong>坑</strong>：容易把带强调事项段误认为一种意见类型。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>A</td>
+<td><strong>思路</strong>：特大灾难是强调事项段的典型适用情形。<strong>推导</strong>：B→应出具保留或否定意见（不是加段的问题）；C→保留或无法表示意见；D→视情况可能是保留或否定意见。强调事项段适用于已在报表中列报/披露的重大事项。<strong>坑</strong>：注意强调事项段≠出了问题才加。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C</td>
+<td><strong>思路</strong>：管理层对未来盈利的保证属于预测性信息，不属于书面声明的内容。<strong>推导</strong>：书面声明内容包括：财务报表编制责任、信息完整性、内控责任、对舞弊的认知等。管理层不能对未来结果做保证。<strong>坑</strong>：容易把"管理层对各种事项的确认"泛化理解为什么都能声明。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>C</td>
+<td><strong>思路</strong>：审计报告日有三个"不早于"的限制。<strong>推导</strong>：A错误——不能早于书面声明日期；B错误——不能早于管理层签署财务报表日期；D错误——审计报告日与管理层批准财务报表日可以不同。<strong>坑</strong>：记住三个不早于——审计证据形成日、书面声明日、财务报表签署日。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>B</td>
+<td><strong>思路</strong>：重大错报+管理层拒绝调整+影响广泛=否定意见。<strong>推导</strong>：判断路径：是否重大错报→是；管理层是否调整→否；影响是否广泛→是→否定意见。<strong>坑</strong>：如果影响不广泛但重大→保留意见（容易混淆广泛与不广泛）。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C</td>
+<td><strong>思路</strong>：范围受限+影响广泛=无法表示意见。<strong>推导</strong>：无法获取充分证据是范围受限，加上"影响广泛"，应出具无法表示意见。<strong>坑</strong>：范围受限但不广泛→保留意见；范围受限且广泛→无法表示意见。区分"广泛"是关键。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>B</td>
+<td><strong>思路</strong>：审计报告日后知悉的事实，首先应与管理层和治理层讨论。<strong>推导</strong>：正确流程：讨论→确定是否修改报表→如修改则实施程序→出具新报告或声明原报告失效。<strong>坑</strong>：A完全不管不对；C不能直接擅自修改；D不充分（应在本期处理）。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C</td>
+<td><strong>思路</strong>：强调事项段不能替代管理层在报表中的披露。<strong>推导</strong>：强调事项段只是提醒关注已列报/披露的事项。如果管理层未披露，应首先要求其披露，不披露则可能影响审计意见。<strong>坑</strong>：不能把强调事项段当作"漏披"的补丁。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>大题参考答案</h3>
+<p><strong>第1题</strong>：
+- <strong>思路</strong>：按三个时段分层回答。
+- <strong>步骤</strong>：
+  1. 期后事项是指财务报表日至审计报告日之间发生的事项，以及审计报告日后知悉的事实
+  2. 第一时段（财务报表日至审计报告日）：注册会计师有主动识别义务，应设计并实施程序
+  3. 第二时段（审计报告日后至财务报表报出日前）：无主动识别责任，但如知悉可能影响报告的事项应与管理层和治理层讨论
+  4. 第三时段（财务报表报出日后）：无主动责任，仅在知悉且可能影响报告时才需考虑行动
+  5. 期后事项分为调整事项（资产负债表日已存在，需调账）和非调整事项（日后新发生，可能需披露）
+- <strong>坑</strong>：最关键——审计报告日后没有"主动识别"责任，但"知悉后"有"应对"责任。</p>
+<p><strong>第2题</strong>：
+- <strong>思路</strong>：判断该事件属于资产负债表日后调整事项。
+- <strong>步骤</strong>：
+  1. 该事项属于资产负债表日后调整事项——客户破产的原因（财务状况恶化）在资产负债表日已存在
+  2. 由于在审计报告日后知悉，属于第二时段期后事项
+  3. A注册会计师应与管理层和治理层讨论，确定是否需要修改财务报表——很可能需要补提坏账准备
+  4. 如需修改报表：A应实施必要的审计程序，针对修改后的财务报表出具新的审计报告
+  5. 如管理层拒绝修改：考虑原审计报告是否仍有依据，必要时采取措施防止报表使用者信赖原报告
+- <strong>坑</strong>：不要把"审计报告日"和"事件发生日"的时间顺序作为唯一判断标准——要看事件的根本原因在资产负债表日是否存在。</p>
+<p><strong>第3题</strong>：
+- <strong>思路</strong>：按"是否获取充分证据"和"是否存在重大错报"两个维度。
+- <strong>步骤</strong>：
+  1. 无保留意见：已获取充分证据；财务报表按适用编制基础编制，在所有重大方面公允反映
+  2. 保留意见：两种情况——①存在重大错报但不广泛；②无法获取充分证据但不广泛
+  3. 否定意见：存在重大且广泛的错报——财务报表整体不公允
+  4. 无法表示意见：无法获取充分证据且影响广泛——无法对财务报表形成意见
+  5. 判断关键：重大性 + 广泛性两个维度
+- <strong>坑</strong>：保留意见与否定意见/无法表示意见的区别在于"广泛性"，这是最容易被忽略的维度。</p>
+<p><strong>第4题</strong>：
+- <strong>思路</strong>：持续经营重大不确定性的处理要看披露是否充分。
+- <strong>步骤</strong>：
+  1. 管理层已在财务报表中充分披露→属于"持续经营假设适当但存在重大不确定性"
+  2. 注册会计师应出具无保留意见，并在审计报告中增加"与持续经营相关的重大不确定性"的单独段落
+  3. 该段落应：说明存在重大不确定性；提醒关注报表中的相关披露；说明不影响审计意见
+  4. 不应当仅因为这个事项就出具保留意见或否定意见
+- <strong>坑</strong>：持续经营重大不确定性≠否定意见。只有当管理层使用了持续经营假设但实际不适用时才考虑否定意见。</p>
+<p><strong>第5题</strong>：
+- <strong>思路</strong>：逐项分析是否重大、是否广泛。
+- <strong>步骤</strong>：
+  1. 监管调查不确定性+已充分披露→应在无保留意见报告中增加强调事项段（提醒关注附注中披露的或有事项）
+  2. 无法函证+无法替代+不广泛→范围受限→保留意见
+  3. 无法获取合并报表充分证据+影响广泛→范围受限且广泛→无法表示意见
+  4. 管理层拒绝签署书面声明→范围受限（影响广泛）→无法表示意见
+- <strong>坑</strong>：第（1）最容易判断错误——已充分披露的或有事项用强调事项段，不是保留意见；第（4）拒绝书面声明属于严重情况，通常导致无法表示意见。</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扎实</td>
+<td>需复习</td>
+<td>重学本章</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>📚 小番茄题库浓缩版 · 审计学</p>
+</div>
+
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/audit/09" download>📥 下载本章PDF</a>
+</div>
+</body></html>

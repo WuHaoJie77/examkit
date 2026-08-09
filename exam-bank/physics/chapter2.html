@@ -1,0 +1,537 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>大学物理 第2章 质点动力学 浓缩速记卡 · 小番茄题库</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8;color:#555}
+a{color:#1a5276}strong{color:#1a5276}
+hr{border:none;border-top:1px solid #e0e0e0;margin:30px 0}
+</style><script>MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]]}};</script><script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script></head><body><a class="back-link" href="index.html">← 返回物理章节列表</a><h1>大学物理 第2章 质点动力学 浓缩速记卡</h1><div class="card"><blockquote>
+<p>课后原题：46题（12选择 + 9填空 + 25解答） | 预计用时：45分钟</p>
+</blockquote>
+<hr />
+<h2>一、牛顿第二定律——恒力与变力 $F(t)$</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：你推购物车——力越大推得越快（$F=ma$）。但如果力随时间变（越推越累），得用积分累加每个瞬间的加速效果。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>力的类型</th>
+<th>解法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>恒力 $F=\text{常量}$</td>
+<td>$a=\dfrac{F}{m}$，直接套匀变速公式</td>
+</tr>
+<tr>
+<td>$F=F(t)$</td>
+<td>$a(t)=\dfrac{F(t)}{m}$，积分：$v=v_0+\dfrac{1}{m}\int F(t)dt$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「已知 $F(t)$，求某时刻的速度和位置」：</p>
+<blockquote>
+<p>① $a(t)=\dfrac{F(t)}{m}$
+② $v=v_0+\int_0^t a(t)dt$
+③ $x=x_0+\int_0^t v(t)dt$</p>
+</blockquote>
+<h3>📝 例题2-A：变力求速度位移</h3>
+<p><strong>题目</strong>：$m=2$kg 的质点受 $F=6t$ (N) 沿x轴运动。$t=0$ 时 $v_0=1$ m/s，$x_0=0$。求 $t=2$s 时的速度和位置。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $a=\dfrac{F}{m}=\dfrac{6t}{2}=3t$
+<em>（加速度不是常数，随时间线性增大）</em></p>
+<p><strong>②</strong> $v=1+\int_0^2 3t\,dt=1+\left[\dfrac{3t^2}{2}\right]_0^2=1+6=7$ m/s
+<em>（$\int 3t\,dt=1.5t^2$，从0积到2得6）</em></p>
+<p><strong>③</strong> $x=0+\int_0^2(1+1.5t^2)dt=[t+0.5t^3]_0^2=2+4=6$ m</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>恒力才能直接用 $v=v_0+at$！</strong> 力随时间变→加速度随时间变→必须积分。把 $F(t)$ 当恒力代公式算必然错。</p>
+<hr />
+<h2>二、变力 $F(v)$ 和 $F(x)$ ——分离变量与链式法则</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>关键技巧</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$F=F(v)$</td>
+<td>$a=\dfrac{dv}{dt}=\dfrac{F(v)}{m}$ → 分离变量：$dt=\dfrac{m\,dv}{F(v)}$</td>
+</tr>
+<tr>
+<td>$F=F(x)$</td>
+<td>$a=v\dfrac{dv}{dx}=\dfrac{F(x)}{m}$ → $\int v\,dv=\dfrac{1}{m}\int F(x)dx$</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>链式法则</strong>：$a=\dfrac{dv}{dt}=v\dfrac{dv}{dx}$——当力是位置的函数时，用这个消去 $t$ 直接求 $v(x)$。</p>
+</blockquote>
+<h3>🧠 解题模板</h3>
+<p>看到「力只是速度的函数 $F(v)$」：</p>
+<blockquote>
+<p>① $m\dfrac{dv}{dt}=F(v)$ → $dt=\dfrac{m\,dv}{F(v)}$
+② 两边积分：$t=m\int_{v_0}^v \dfrac{dv}{F(v)}$</p>
+</blockquote>
+<p>看到「力只是位置的函数 $F(x)$，求 $v$」：</p>
+<blockquote>
+<p>① $v\dfrac{dv}{dx}=\dfrac{F(x)}{m}$
+② $\int_{v_0}^v v\,dv=\dfrac{1}{m}\int_{x_0}^x F(x)dx$ → $\dfrac{1}{2}(v^2-v_0^2)=\dfrac{1}{m}\int F(x)dx$</p>
+</blockquote>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$F=F(x)$ 时不能直接 $a=F/m$ 再用匀变速公式！</strong> 必须走 $v\dfrac{dv}{dx}$ 这条路，因为 $a$ 随 $x$ 变而不是随 $t$ 变。</p>
+<hr />
+<h2>三、动量定理与动量守恒</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：动量像"总账户余额"——只有外力能改变它（冲量=外力×时间积分）。内力（系统内部互相推搡）不能改变总动量，但可以重新分配动能。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>公式</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>动量</td>
+<td>$\mathbf{p}=m\mathbf{v}$</td>
+<td>—</td>
+</tr>
+<tr>
+<td>冲量</td>
+<td>$\mathbf{I}=\int\mathbf{F}dt$</td>
+<td>—</td>
+</tr>
+<tr>
+<td>动量定理</td>
+<td>$\mathbf{I}=\Delta\mathbf{p}$</td>
+<td>恒成立</td>
+</tr>
+<tr>
+<td>动量守恒</td>
+<td>$\sum m_i\mathbf{v}_i=\text{常矢量}$</td>
+<td>$\sum\mathbf{F}_{\text{外}}=0$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「碰撞/爆炸/分离，求碰后速度」：</p>
+<blockquote>
+<p>① 确认系统合外力为零（或某方向合外力为零→该方向动量守恒）
+② 碰前总动量 = 碰后总动量：$\sum m_i\mathbf{v}_{i\text{前}}=\sum m_i\mathbf{v}_{i\text{后}}$
+③ 完全非弹性（碰后粘一起）→碰后速度相同；完全弹性→加动能守恒方程</p>
+</blockquote>
+<h3>📝 例题2-B：子弹打木块（完全非弹性碰撞）</h3>
+<p><strong>题目</strong>：$m=100$g 子弹以 $v=20$ m/s 水平射入静止光滑水平面上 $M=1.9$kg 木块并嵌入。求碰后共同速度和动能损失。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> 水平方向无外力→水平动量守恒
+<em>（光滑面→无摩擦；碰撞力是内力）</em></p>
+<p><strong>②</strong> 碰前：$mv$；碰后：$(m+M)v'$</p>
+<p>$mv=(m+M)v'$ → $v'=\dfrac{0.1\times20}{2}=1$ m/s</p>
+<p><strong>③</strong> 碰前 $E_k=\dfrac{1}{2}\times0.1\times400=20$ J；碰后 $E_k=\dfrac{1}{2}\times2\times1=1$ J → 损失 $19$ J（变成热和形变）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>动量守恒 ≠ 动能守恒！</strong> 完全非弹性碰撞动量守恒但动能损失最大。只有完全弹性碰撞两者都守恒。</p>
+<hr />
+<h2>四、功与动能定理</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：做功就是"力沿着位移的累积"。恒力直推→$W=F\cos\theta\cdot s$；变力弯道→积分 $\int\mathbf{F}\cdot d\mathbf{r}$。合外力做功的总效果 = 动能增加。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>恒力做功</td>
+<td>$W=F\cos\theta\cdot s$</td>
+</tr>
+<tr>
+<td>变力做功</td>
+<td>$W=\int_{x_1}^{x_2}F(x)dx$</td>
+</tr>
+<tr>
+<td>动能定理</td>
+<td>$W_{\text{合}}=\dfrac{1}{2}mv_2^2-\dfrac{1}{2}mv_1^2$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「变力 $F(x)$，求做功和末速度」：</p>
+<blockquote>
+<p>① $W=\int_{x_1}^{x_2}F(x)dx$
+② $W=\Delta E_k=\dfrac{1}{2}mv_2^2-\dfrac{1}{2}mv_1^2$ → 解出 $v_2$</p>
+</blockquote>
+<h3>📝 例题2-C：变力做功</h3>
+<p><strong>题目</strong>：$m=2$kg 物体，在 $F=2x+4$ (N) 作用下从 $x=0$ 移到 $x=3$m。初动能 $10$J，忽略摩擦。求力做功和末速度。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $W=\int_0^3(2x+4)dx=[x^2+4x]_0^3=9+12=21$ J
+<em>（$\int 2x\,dx=x^2$，$\int 4\,dx=4x$）</em></p>
+<p><strong>②</strong> $21=\dfrac{1}{2}\times2\times v^2-10$ → $v^2=31$ → $v\approx 5.57$ m/s</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$W=F\cdot s$ 只适用恒力！</strong> 力随位置变→必须积分。把 $F(3)$ 的值×3 算是错的（本题 $F(3)=10$，$10\times3=30\neq21$）。</p>
+<hr />
+<h2>五、机械能守恒</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：保守力（重力、弹力、引力）像"储蓄罐"——动能和势能来回转换，总和不减。非保守力（摩擦力）像"烧钱"——能量真丢了变成热。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>保守力</th>
+<th>势能公式</th>
+<th>零点约定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重力</td>
+<td>$E_p=mgh$</td>
+<td>地面 $h=0$</td>
+</tr>
+<tr>
+<td>弹簧</td>
+<td>$E_p=\dfrac{1}{2}kx^2$</td>
+<td>原长 $x=0$</td>
+</tr>
+<tr>
+<td>万有引力</td>
+<td>$E_p=-\dfrac{GMm}{r}$</td>
+<td>无穷远 $E_p=0$</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>机械能守恒条件</strong>：只有保守力做功。$E_k+E_p=$ 常数。</p>
+</blockquote>
+<h3>🧠 解题模板</h3>
+<p>看到「只有重力/弹力做功，求速度或高度」：</p>
+<blockquote>
+<p>① 选初状态和末状态
+② $\dfrac{1}{2}mv_1^2+mgh_1+\dfrac{1}{2}kx_1^2=\dfrac{1}{2}mv_2^2+mgh_2+\dfrac{1}{2}kx_2^2$
+③ 解未知量</p>
+</blockquote>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>保守力做正功→势能减少，不是增加！</strong> $\Delta E_p=-W_{\text{保}}$。重力做正功（物体下落）→$E_p$ 减少。弹力做正功（弹簧回缩）→$E_p$ 减少。</p>
+<hr />
+<h2>六、角动量与角动量守恒</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：花样滑冰收臂转更快——$J$ 变小但 $L=J\omega$ 守恒，$\omega$ 必须增大。行星绕太阳也是：近太阳飞得快（$r$ 小 $v$ 大），远太阳飞得慢，$L=mvr_\perp$ 始终不变。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>质点</th>
+<th>刚体定轴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角动量</td>
+<td>$\mathbf{L}=\mathbf{r}\times m\mathbf{v}$</td>
+<td>$L=J\omega$</td>
+</tr>
+<tr>
+<td>角动量守恒条件</td>
+<td>$\mathbf{M}_{\text{外}}=0$</td>
+<td>$M_{\text{外}}=0$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「有心力（力始终指向某点）」：</p>
+<blockquote>
+<p>① 力矩 $\mathbf{M}=\mathbf{r}\times\mathbf{F}=0$（$\mathbf{r}$ 和 $\mathbf{F}$ 平行）→角动量守恒
+② $L_1=L_2$ 即 $mr_1v_{1\perp}=mr_2v_{2\perp}$</p>
+</blockquote>
+<h3>📝 例题2-D：哈雷彗星的角动量</h3>
+<p><strong>题目</strong>：哈雷彗星绕太阳椭圆轨道。关于它对太阳的角动量，正确的是？</p>
+<p><strong>解</strong>：太阳引力为有心力（始终指向太阳）→对太阳的力矩 $\mathbf{M}=0$→角动量处处守恒（大小方向都不变）。近太阳 $r$ 小 $v$ 大，远太阳 $r$ 大 $v$ 小，但 $L=mvr_\perp$ 不变。</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>"角动量守恒"≠"角速度不变"！</strong> $L=J\omega$ 不变，但 $J$ 可以变（如收臂），$J$ 变了 $\omega$ 就变。守恒的是 $L$ 不是 $\omega$。</p>
+<hr />
+<h2>七、质心与质心运动</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：一群学生在操场乱跑，但"平均位置"（质心）老老实实按 $\sum\mathbf{F}_{\text{外}}=M\mathbf{a}_{cm}$ 运动。内力（互相推搡）不影响质心——就像拽自己头发无法把自己提起来。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>关键公式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathbf{r}_{cm}=\dfrac{\sum m_i\mathbf{r}_i}{\sum m_i}$</td>
+<td>质心定义</td>
+</tr>
+<tr>
+<td>$\sum\mathbf{F}_{\text{外}}=M\mathbf{a}_{cm}$</td>
+<td>质心运动定理</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「人船模型、人走车退」：</p>
+<blockquote>
+<p>① 系统水平方向合外力为零→质心速度守恒
+② 初始静止→质心始终静止：$m_1\Delta x_1+m_2\Delta x_2=0$
+③ $v_{\text{船}}=-\dfrac{m_{\text{人}}}{M+m_{\text{人}}}u$（$u$ 为人相对船的速度）</p>
+</blockquote>
+<h3>📝 例题2-E：人船模型</h3>
+<p><strong>题目</strong>：$m$ 的人站在 $M$ 的静止小船上，人相对船以 $u$ 向船头走。不计水阻力。求船相对地面的速度。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> 水平方向无外力→质心速度守恒（初态静止→始终为零）</p>
+<p><strong>②</strong> 设船速为 $v_{\text{船}}$（向后），人对地速度 $=u+v_{\text{船}}$</p>
+<p>$m(u+v_{\text{船}})+M v_{\text{船}}=0$ → $v_{\text{船}}=-\dfrac{mu}{M+m}$（负号=向后）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>"人相对船的速度"≠人对地的速度！</strong> 人对地 $=$ 人对船 $+$ 船对地。列动量方程时要用人对地的速度。</p>
+<hr />
+<h2>八、流体基础</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：水管粗处水流慢、水压大；细处水流急、水压小——捏水管口，水喷更远。这就是伯努利原理。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>定律</th>
+<th>公式</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>连续性方程</td>
+<td>$S_1v_1=S_2v_2$</td>
+<td>不可压缩流体</td>
+</tr>
+<tr>
+<td>伯努利方程</td>
+<td>$p+\rho gh+\dfrac{1}{2}\rho v^2=\text{常量}$</td>
+<td>理想流体定常流动</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「管道截面积变化，求流速变化」：</p>
+<blockquote>
+<p>$S_1v_1=S_2v_2$ → $v_2=\dfrac{S_1}{S_2}v_1$</p>
+</blockquote>
+<h3>📝 例题2-F：管道截面积变化</h3>
+<p><strong>题目</strong>：水平管截面积由 $S$ 变为 $\dfrac{S}{2}$。求流速变化。</p>
+<p><strong>解</strong>：$S\cdot v=\dfrac{S}{2}\cdot v_2$ → $v_2=2v$（减半→翻倍）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>伯努利方程中 $p$ 和 $\dfrac{1}{2}\rho v^2$ 的关系</strong>：流速大的地方压强小（不是大！）。飞机机翼上方流速大→压强小→升力。</p>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内力能改变系统总动量？</td>
+<td>错！内力成对出现（牛三），不能改变总动量</td>
+</tr>
+<tr>
+<td>内力能改变系统总动能？</td>
+<td>能。爆炸、碰撞中内力做功改变动能分布</td>
+</tr>
+<tr>
+<td>动量守恒=动能守恒？</td>
+<td>不。完全非弹性碰：动量守恒，动能不守恒</td>
+</tr>
+<tr>
+<td>保守力做正功→势能增加？</td>
+<td>错。保守力做正功→势能<strong>减少</strong></td>
+</tr>
+<tr>
+<td>$\Delta E_p=-W_{\text{保}}$ 中负号</td>
+<td>重力做正功（下落）→$E_p$ 减→$W_{\text{保}}&gt;0$，$\Delta E_p&lt;0$</td>
+</tr>
+<tr>
+<td>弹簧 $E_p=\frac{1}{2}kx^2$，$x$ 从哪量？</td>
+<td>从<strong>原长</strong>量起</td>
+</tr>
+<tr>
+<td>$E_p=-\dfrac{GMm}{r}$ 负号含义</td>
+<td>无穷远 $E_p=0$，有限距离为负（被引力束缚）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测15题</h2>
+<h3>选择题（10题）</h3>
+<p><strong>1.</strong> 质点系合外力为零，则（ ）
+(A) 总动量和总动能均守恒  (B) 总动量守恒，总动能不一定守恒
+(C) 内力不能改变总动能  (D) 内力能改变总动量</p>
+<p><strong>2.</strong> 弹簧振子从最大位移向平衡位置运动（无摩擦），（ ）
+(A) 弹力做正功，$E_p$ 增加  (B) 弹力做正功，$E_p$ 减少
+(C) 弹力做负功，$E_p$ 增加  (D) 弹力做负功，$E_p$ 减少</p>
+<p><strong>3.</strong> 匀速圆周运动质点对圆心的角动量（ ）
+(A) 大小不变，方向不变  (B) 大小不变，方向改变  (C) 都改变  (D) 为零</p>
+<p><strong>4.</strong> 子弹水平射入沙袋并留在其中。碰撞中（ ）
+(A) 动量守恒，动能守恒  (B) 动量不守恒，动能不守恒
+(C) 动量守恒，动能不守恒  (D) 都不守恒</p>
+<p><strong>5.</strong> $\mathbf{F}=5\mathbf{i}+12\mathbf{j}$ (N)，$\mathbf{r}=3\mathbf{i}+4\mathbf{j}$ (m)，做功为（ ）
+(A) $15$ J  (B) $48$ J  (C) $63$ J  (D) $0$</p>
+<p><strong>6.</strong> 哈雷彗星绕太阳椭圆轨道，对太阳的角动量（ ）
+(A) 近太阳时大  (B) 处处相等  (C) 远太阳时大  (D) 方向不断变化</p>
+<p><strong>7.</strong> 物体从地面举到 $h$，重力势能增加 $mgh$，重力做功为（ ）
+(A) $mgh$  (B) $-mgh$  (C) $0$  (D) $2mgh$</p>
+<p><strong>8.</strong> 水平管截面积 $S\to\dfrac{S}{2}$，流速变为原来（ ）
+(A) $\dfrac{1}{2}$  (B) $2$ 倍  (C) 不变  (D) $4$ 倍</p>
+<p><strong>9.</strong> 弹簧竖直挂重物平衡后下拉释放，过平衡位置时（ ）
+(A) 动能最大，总势能最小  (B) 动能最大，总势能最大
+(C) 动能为零  (D) 动能最大，总势能为零</p>
+<p><strong>10.</strong> $m$ 的人站在 $M$ 静止船上，人相对船以 $u$ 走。船速大小为（ ）
+(A) $u$  (B) $\dfrac{Mu}{M+m}$  (C) $\dfrac{mu}{M+m}$  (D) $\dfrac{mu}{M}$</p>
+<h3>计算题（5题）</h3>
+<p><strong>11.</strong> $m=2$kg，$F=6t$ (N)，$v_0=1$ m/s，$x_0=0$。求：(1) $t=2$s 时 $v$；(2) $0\sim2$s 内冲量；(3) $t=2$s 时 $x$。</p>
+<p><strong>12.</strong> $m=100$g 以 $v=20$ m/s 射入 $M=1.9$kg 木块并嵌入。求：(1) 碰后 $v$；(2) 损失的动能。</p>
+<p><strong>13.</strong> 弹簧 $k=200$ N/m，原长 $0.2$m，$m=0.5$kg 物体在光滑水平面做 $\omega=4$ rad/s 圆周运动。求：(1) 弹簧长度；(2) 缓慢拉至 $0.3$m，$\omega$ 变为？（角动量守恒）</p>
+<p><strong>14.</strong> $m=2$kg，$F=2x+4$ (N)，$x:0\to3$m，初动能 $10$J。求：(1) $W$；(2) 末速度。</p>
+<p><strong>15.</strong> 绳跨滑轮，$m_1=2$kg、$m_2=1$kg，$h=0.5$m。求：(1) $a$；(2) $m_1$ 落地速度。</p>
+<hr />
+<h2>答案与详细解析</h2>
+<h3>选择题详细解析</h3>
+<hr />
+<p><strong>1.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：合外力为零→动量守恒（动量定理：合外力冲量=动量变化，合外力为零→变化为零）。但内力可以改变动能——比如炸弹爆炸，内力把化学能转为动能，总动能增加。</p>
+<blockquote>
+<p><strong>坑</strong>：A说"动能也守恒"——爆炸就是反例。C说内力不能改变动能——能。D说内力能改变动量——不能，牛三保证内力矢量和为零。</p>
+</blockquote>
+<hr />
+<p><strong>2.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：弹力方向始终指向平衡位置。从最大位移向平衡位置运动→位移方向远离平衡位置→弹力与位移反向？不——位移是从平衡位置算起的，从最大位移向平衡走→位移在减小，弹力方向指向平衡位置，与运动方向相同→弹力做正功。</p>
+<p>保守力做正功→势能减少（$\Delta E_p=-W_{\text{保}}$，$W&gt;0$→$\Delta E_p&lt;0$）。</p>
+<blockquote>
+<p><strong>坑</strong>：C/D说弹力做负功——弹力和运动同向，是做正功。搞清"位移"是从平衡位置算起的。</p>
+</blockquote>
+<hr />
+<p><strong>3.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：对圆心的角动量 $\mathbf{L}=\mathbf{r}\times m\mathbf{v}$。匀速圆周运动中，$\mathbf{r}$ 和 $\mathbf{v}$ 始终垂直，叉积大小 $L=rmv$ 不变。方向由右手定则：$\mathbf{r}\times\mathbf{v}$ 始终垂直轨道平面，方向不变。</p>
+<blockquote>
+<p><strong>坑</strong>：B说方向改变——混淆了角动量方向和速度方向。速度方向一直在变，但 $\mathbf{r}\times\mathbf{v}$ 的方向始终垂直纸面不变。</p>
+</blockquote>
+<hr />
+<p><strong>4.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：子弹射入沙袋→完全非弹性碰撞（嵌入一起动）。</p>
+<p>水平方向无外力→动量守恒。碰撞中有永久形变和发热→动能不守恒（损失最大）。</p>
+<hr />
+<p><strong>5.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：恒力做功 $W=\mathbf{F}\cdot\mathbf{r}=F_x x+F_y y=5\times3+12\times4=15+48=63$ J。</p>
+<hr />
+<p><strong>6.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：太阳引力始终指向太阳→有心力。有心力对力心的力矩 $\mathbf{M}=\mathbf{r}\times\mathbf{F}=0$（$\mathbf{r}$ 和 $\mathbf{F}$ 平行）→角动量守恒→处处相等。</p>
+<blockquote>
+<p><strong>坑</strong>：A/C说"近/远太阳时大"——把角速度和角动量搞混了。$L=mvr_\perp$ 不变，近太阳时 $v$ 大 $r$ 小，乘积不变。</p>
+</blockquote>
+<hr />
+<p><strong>7.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：重力方向向下，物体向上运动→力与位移反向→重力做负功 $W=-mgh$。</p>
+<p>重力势能的变化与重力做功的关系：$\Delta E_p=-W_{\text{重}}=-(-mgh)=+mgh$。势能增加，做功能量从哪儿来？人克服重力做的功转化为了势能。</p>
+<blockquote>
+<p><strong>坑</strong>：A说重力做正功——方向都反了。C说零——只有在水平面上移动重力才不做功。</p>
+</blockquote>
+<hr />
+<p><strong>8.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：不可压缩流体→流量恒定：$S_1v_1=S_2v_2$。</p>
+<p>$S\cdot v=\dfrac{S}{2}\cdot v_2$ → $v_2=2v$。</p>
+<blockquote>
+<p><strong>坑</strong>：A说减半——面积减半流速应该翻倍。D说4倍——那是面积减到1/4的情况。</p>
+</blockquote>
+<hr />
+<p><strong>9.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：弹簧竖直悬挂重物，平衡位置在重力与弹力平衡处（$mg=kx_0$）。下拉释放后，系统在平衡位置附近振动。</p>
+<p>过平衡位置时：合力为零→加速度为零→速率最大→动能最大。总势能（重力势能+弹性势能）在平衡位置处最小（因为无论向上还是向下偏离，总势能都增加）。</p>
+<blockquote>
+<p><strong>坑</strong>：D说"总势能为零"——势能零点是人定的（题目说以释放点为势能零点），过平衡位置时离释放点有距离，势能不为零。</p>
+</blockquote>
+<hr />
+<p><strong>10.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：人和船系统水平方向不受外力→质心速度守恒。初始静止→质心始终静止。</p>
+<p>设船速为 $v_{\text{船}}$（向后），人对地速度 $=u+v_{\text{船}}$（向前为正）。</p>
+<p>$m(u+v_{\text{船}})+Mv_{\text{船}}=0$ → $mu+(m+M)v_{\text{船}}=0$ → $v_{\text{船}}=-\dfrac{mu}{M+m}$。大小为 $\dfrac{mu}{M+m}$。</p>
+<blockquote>
+<p><strong>坑</strong>：D是 $\dfrac{mu}{M}$——忘了人对地速度包含船速在内，动量方程应写 $m(u+v_{\text{船}})$ 不是 $mu$。</p>
+</blockquote>
+<hr />
+<h3>计算题详细解析</h3>
+<hr />
+<p><strong>11.</strong> 变力 $F(t)$ 的积分问题</p>
+<p><strong>(1)</strong> $a=\dfrac{F}{m}=3t$。$v=v_0+\int_0^2 3t\,dt=1+[1.5t^2]_0^2=1+6=7$ m/s。</p>
+<p><strong>(2)</strong> 冲量 $I=\int_0^2 F\,dt=\int_0^2 6t\,dt=[3t^2]_0^2=12$ N·s。验算：$\Delta p=mv_2-mv_1=14-2=12$ ✓。</p>
+<p><strong>(3)</strong> $x=x_0+\int_0^2 v(t)dt=\int_0^2(1+1.5t^2)dt=[t+0.5t^3]_0^2=2+4=6$ m。</p>
+<blockquote>
+<p><strong>坑</strong>：$a$ 不是常数！不能直接用 $v=v_0+at$ 和 $x=v_0t+\frac{1}{2}at^2$。$a=3t$ 随时间变，必须积分。</p>
+</blockquote>
+<hr />
+<p><strong>12.</strong> 完全非弹性碰撞</p>
+<p><strong>(1)</strong> 水平方向无外力→动量守恒：$mv=(m+M)v'$ → $v'=\dfrac{0.1\times20}{2}=1$ m/s。</p>
+<p><strong>(2)</strong> 碰前动能 $E_{k0}=\dfrac{1}{2}\times0.1\times400=20$ J。碰后 $E_k=\dfrac{1}{2}\times2\times1=1$ J。损失 $\Delta E=19$ J（转为内能）。</p>
+<blockquote>
+<p><strong>坑</strong>：100g=0.1kg，别忘了单位换算。</p>
+</blockquote>
+<hr />
+<p><strong>13.</strong> 弹簧+圆周运动</p>
+<p><strong>(1)</strong> 弹簧拉力提供向心力：$k(r-\ell_0)=m\omega^2 r$。</p>
+<p>$200(r-0.2)=0.5\times16\times r$ → $200r-40=8r$ → $192r=40$ → $r\approx0.208$ m。</p>
+<p><strong>(2)</strong> "缓慢拉动"→过程极为缓慢→每一瞬间都近似平衡→无外力矩→角动量守恒。</p>
+<p>$mr_1^2\omega_1=mr_2^2\omega_2$ → $0.208^2\times4=0.3^2\times\omega_2$ → $\omega_2\approx1.93$ rad/s。</p>
+<blockquote>
+<p><strong>坑</strong>：不能用机械能守恒——缓慢拉动过程中人手对系统做了功。</p>
+</blockquote>
+<hr />
+<p><strong>14.</strong> 变力 $F(x)$ 做功</p>
+<p><strong>(1)</strong> 力随位置变化，必须积分：$W=\int_0^3(2x+4)dx=[x^2+4x]_0^3=9+12=21$ J。</p>
+<p><strong>(2)</strong> 动能定理：$W=\Delta E_k=\dfrac{1}{2}mv^2-E_{k0}$ → $21=\dfrac{1}{2}\times2\times v^2-10$ → $v^2=31$ → $v\approx5.57$ m/s。</p>
+<blockquote>
+<p><strong>坑</strong>：不能用力在起点/终点的值算平均再乘位移。$F(0)=4$，$F(3)=10$，平均值7乘3=21恰好对是因为 $F$ 是线性的——但别养成这个习惯，非线性的力这样算准错。<strong>老老实实积分最安全。</strong></p>
+</blockquote>
+<hr />
+<p><strong>15.</strong> 滑轮连接体</p>
+<p><strong>(1)</strong> 对 $m_1$：$m_1g-T=m_1a$；对 $m_2$：$T-m_2g=m_2a$。</p>
+<p>两式相加消去 $T$：$m_1g-m_2g=(m_1+m_2)a$ → $a=\dfrac{(m_1-m_2)g}{m_1+m_2}=\dfrac{(2-1)\times9.8}{3}\approx3.27$ m/s²。</p>
+<p><strong>(2)</strong> 匀加速：$v^2=2ah=2\times3.27\times0.5=3.27$ → $v\approx1.81$ m/s。</p>
+<blockquote>
+<p><strong>坑</strong>：$m_1$ 落地时 $m_2$ 还在上升——别把 $h$ 写成 $m_2$ 上升的高度，两者相等（绳不可伸长）。</p>
+</blockquote>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 已掌握</td>
+<td>🟡 重点：动量vs动能守恒、保守力做功与势能关系、角动量守恒条件</td>
+<td>🔴 从头过</td>
+</tr>
+</tbody>
+</table></div><div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p><p>小番茄题库 · 助力财大学子</p></div></body></html>

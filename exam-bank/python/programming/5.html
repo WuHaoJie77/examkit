@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第5章 字符串深入 · Python程序题专练</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:0 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276;font-size:1.3em}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+pre{background:#1e1e1e;border-radius:8px;padding:18px;overflow-x:auto;margin:12px 0;line-height:1.5}
+pre code{color:#d4d4d4;background:none;padding:0;font-size:0.88em;font-family:"Fira Code","Cascadia Code",Consolas,monospace}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+.prob{border-top:1px solid #eee;padding:20px 0;margin-top:5px}
+.prob:first-child{border-top:none;padding-top:0}
+.prob-header{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.prob-num{font-size:1em;font-weight:700;color:#1a5276;background:#eaf2f8;border-radius:4px;padding:2px 8px}
+.prob-points{font-size:0.85em;color:#e74c3c;font-weight:600}
+.prob-title{font-size:0.9em;color:#666}
+.desc{line-height:2;margin:8px 0}
+.desc .hl-red{color:#e74c3c;font-weight:700}
+.desc .hl-green{color:#27ae60;font-weight:700}
+.desc .hl-cyan{color:#0e7c7b;font-weight:700}
+.io-block{background:#f0f4f8;border-left:3px solid #2980b9;border-radius:0 8px 8px 0;padding:15px 20px;margin:12px 0}
+.io-block .io-label{font-weight:700;color:#1a5276;margin-bottom:8px;font-size:0.9em}
+.io-block .io-line{color:#2980b9;font-family:Consolas,monospace;line-height:1.9;white-space:pre-wrap}
+.io-block .io-prompt{color:#555}
+.answer-toggle{display:inline-block;background:#1a5276;color:#fff;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;margin-top:8px;transition:background .15s}
+.answer-toggle:hover{background:#0d3b54}
+.answer-panel{display:none;margin-top:12px}
+.answer-panel.show{display:block}
+.answer-label{font-weight:700;color:#27ae60;margin-bottom:6px;font-size:0.9em}
+.problem-count{color:#888;font-size:0.85em;margin-bottom:10px}
+/* Directory page */
+.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;margin:30px 0}
+.chapter-card{background:#fff;border-radius:12px;padding:25px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:block}
+.chapter-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.10)}
+.chapter-card h2{font-size:1.1em;border:none;margin:0 0 10px;padding:0;color:#1a5276}
+.chapter-card .prob-list{list-style:none;padding:0;margin:0}
+.chapter-card .prob-list li{font-size:0.88em;color:#666;padding:3px 0;padding-left:16px;position:relative;line-height:1.6}
+.chapter-card .prob-list li::before{content:"▸";position:absolute;left:0;color:#1a5276;font-size:0.7em}
+@media(max-width:600px){.chapter-grid{grid-template-columns:1fr}}</style></head><body>
+<a class="back-link" href="index.html">← 返回程序题目录</a>
+<h1>🖥️ 第5章 字符串深入</h1>
+<p class="problem-count">5 道程序题 · 每题5分</p>
+<div class="card"><div class="prob">
+<div class="prob-header"><span class="prob-num">5-1</span><span class="prob-points">(5.0分)</span><span class="prob-title">转义字符处理</span></div>
+<div class="desc">用<span class="hl-green">一条print</span>输出含双引号、单引号、反斜杠、换行符的文字。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">他说："你好！"
+这是反斜杠：\
+换行成功！</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a5-1',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a5-1">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>print('他说：&quot;你好！&quot;\n这是反斜杠：\\\n换行成功！')</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>\"</code>双引号，<code>\\</code>反斜杠，<code>\n</code>换行。注意引号嵌套。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">5-2</span><span class="prob-points">(5.0分)</span><span class="prob-title">字符串拼接与重复</span></div>
+<div class="desc">定义<code>a='Hello',b='World'</code>，用+和*生成<code>'HelloWorld'</code>和<code>'HelloHelloHello'</code>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">拼接: HelloWorld
+重复: HelloHelloHello</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a5-2',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a5-2">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>a,b=&quot;Hello&quot;,&quot;World&quot;
+print(&quot;拼接:&quot;,a+b)
+print(&quot;重复:&quot;,a*3)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>+</code>拼接，<code>*</code>重复n次。不能+字符串和整数。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">5-3</span><span class="prob-points">(5.0分)</span><span class="prob-title">字符串格式化%操作符</span></div>
+<div class="desc">用<code>%</code>格式化输出：我叫XX，今年XX岁，身高XX米。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">我叫Tom，今年18岁，身高1.75米</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a5-3',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a5-3">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>name,age,height=&quot;Tom&quot;,18,1.75
+print(&quot;我叫%s，今年%d岁，身高%.2f米&quot;%(name,age,height))</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>%s</code>字符串，<code>%d</code>整数，<code>%f</code>浮点数。<code>%.2f</code>保留两位。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">5-4</span><span class="prob-points">(5.0分)</span><span class="prob-title">字符串切片步长</span></div>
+<div class="desc">定义<code>s="0123456789"</code>，输出<span class="hl-green">每隔一个字符、倒序</span>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">每隔一个: 02468
+倒序: 9876543210</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a5-4',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a5-4">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>s=&quot;0123456789&quot;
+print(&quot;每隔一个:&quot;,s[::2])
+print(&quot;倒序:&quot;,s[::-1])</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>s[::2]</code>步长2跳着取。<code>s[::-1]</code>步长-1反转。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">5-5</span><span class="prob-points">(5.0分)</span><span class="prob-title">字符串成员运算符</span></div>
+<div class="desc">定义<code>s="Hello Python"</code>，判断"Py"和"py"是否在s中。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">Py在字符串中吗？ True
+py在字符串中吗？ False</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a5-5',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a5-5">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>s=&quot;Hello Python&quot;
+print(&quot;Py在字符串中吗？&quot;,&quot;Py&quot; in s)
+print(&quot;py在字符串中吗？&quot;,&quot;py&quot; in s)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>in</code>判断子串存在，区分大小写。<code>not in</code>判断不存在。</p>
+</div></div></div>
+<script>
+function toggleAnswer(id,btn){
+var p=document.getElementById(id);
+if(p.classList.contains('show')){p.classList.remove('show');btn.textContent='💡 显示参考答案'}
+else{p.classList.add('show');btn.textContent='🔒 隐藏参考答案'}
+}
+</script>
+<div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p></div>
+</body></html>

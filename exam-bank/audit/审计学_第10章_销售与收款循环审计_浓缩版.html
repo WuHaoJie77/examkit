@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>审计学_第10章_销售与收款循环审计_浓缩版</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+.chapter-list a .badge{float:right;background:#1a5276;color:#fff;border-radius:12px;padding:2px 10px;font-size:0.75em;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+.notice{background:linear-gradient(135deg,#eaf2f8,#f0f4f8);border:1px solid #bdd7ee;border-radius:12px;padding:25px 30px;margin:30px 0;line-height:1.9}
+.notice h3{color:#1a5276;margin-bottom:12px;font-size:1.1em}
+.notice p{color:#555;font-size:0.95em;margin:6px 0}
+.notice .highlight{color:#e74c3c;font-weight:600}
+
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;z-index:999}
+.pdf-btn{display:inline-block;background:#1a5276;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:background .15s}
+.pdf-btn:hover{background:#0d3b54}
+</style>
+</head><body>
+<a class="back-link" href="index.html">← 返回审计学目录</a>
+<h1>审计学 第10章 销售与收款循环审计 浓缩速记卡</h1>
+<h1>审计学 第10章 销售与收款循环审计 浓缩速记卡</h1>
+<blockquote>
+<p>章节：销售与收款循环审计（控制、收入、应收账款、函证、截止测试） | 原题量：单选5 + 多选4 + 综合2 = 11题 | 预计用时：45分钟</p>
+</blockquote>
+<hr />
+<h2>知识模块</h2>
+<h3>模块一：销售与收款循环概述</h3>
+<p><strong>费曼类比</strong>：销售收款循环就像餐厅的完整出餐收款流程——客人下单（客户订购单）→前台确认能不能赊账（批准赊销信用）→厨房按单子出菜（按销售单供货）→服务员端上桌（装运发货）→打小票（开具发票）→记账（记录销售）→客人结账（收款）→客人退菜（销售退回）。每一步都有单据和签字，防止服务员私吞菜钱。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要业务活动</td>
+<td>接受客户订购单→批准赊销信用→按销售单供货→装运发货→开具发票→记录销售→收款→办理退回折让→注销坏账→提坏账准备</td>
+</tr>
+<tr>
+<td>主要凭证</td>
+<td>客户订购单、销售单、发运凭证、销售发票、客户对账单、汇款通知等</td>
+</tr>
+<tr>
+<td>主要账户</td>
+<td>应收账款、主营业务收入、银行存款、坏账准备、应收票据等</td>
+</tr>
+<tr>
+<td>风险关注</td>
+<td>既要关注高估（发生认定）也要关注低估（完整性认定），不可偏废</td>
+</tr>
+</tbody>
+</table>
+<h3>模块二：销售与收款循环内部控制</h3>
+<p><strong>费曼类比</strong>：一个超市的收款内控就像——收银员不能又收钱又记账（职责分离），顾客退换货必须有小票和经理签字（授权审批），每笔交易都有小票存根且连号（充分的凭证记录和预先编号），监控摄像头对着收银台（监控）。</p>
+<table>
+<thead>
+<tr>
+<th>控制措施</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>适当的职责分离</td>
+<td>销售、发货、开票、收款、记账不应由同一人/部门完成</td>
+</tr>
+<tr>
+<td>适当的授权审批</td>
+<td>赊销需信用部门批准；销售价格、条件需授权</td>
+</tr>
+<tr>
+<td>充分的凭证和记录</td>
+<td>每个环节都有对应单据，形成证据链</td>
+</tr>
+<tr>
+<td>凭证的预先编号</td>
+<td>销售单、发运凭证、发票连续编号，防止遗漏或重复</td>
+</tr>
+<tr>
+<td>月度对账</td>
+<td>按月寄发客户对账单；核对发货单、订单、发票与入账收入</td>
+</tr>
+<tr>
+<td>内部核查</td>
+<td>系统自动匹配或人工核对未匹配项目清单</td>
+</tr>
+</tbody>
+</table>
+<h3>模块三：主营业务收入审计</h3>
+<p><strong>费曼类比</strong>：查收入就像查饭店的营业额——你得确认：这张小票真有客人消费吗（发生认定）？所有消费都打小票入账了吗（完整性认定）？金额算对没有（准确性认定）？有没有把1月的单子记到12月（截止认定）？</p>
+<table>
+<thead>
+<tr>
+<th>认定</th>
+<th>审计目标</th>
+<th>典型程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发生</td>
+<td>记录的营业收入确实发生</td>
+<td>从明细账追查至发运凭证、销售发票（逆查）</td>
+</tr>
+<tr>
+<td>完整性</td>
+<td>所有营业收入均已记录</td>
+<td>从发运凭证追查至明细账（顺查）；检查凭证连续编号</td>
+</tr>
+<tr>
+<td>准确性</td>
+<td>营业收入金额正确</td>
+<td>核对发票与明细账；重新计算</td>
+</tr>
+<tr>
+<td>截止</td>
+<td>记录于正确的会计期间</td>
+<td>截止测试：检查资产负债表日前后若干天的凭证</td>
+</tr>
+<tr>
+<td>分类</td>
+<td>列入适当的报表项目</td>
+<td>检查科目是否正确</td>
+</tr>
+</tbody>
+</table>
+<h3>模块四：应收账款函证</h3>
+<p><strong>费曼类比</strong>：应收账款函证就像你借了钱给朋友——年底你直接打电话问朋友"你还欠我多少钱"来核实你的账本。如果朋友不接电话（未回函），你就得翻聊天记录和转账记录来找证据（替代程序）。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基本要求</td>
+<td>应当对应收账款实施函证程序</td>
+</tr>
+<tr>
+<td>不函证的例外</td>
+<td>不对应收账款函证时应在工作底稿中说明理由</td>
+</tr>
+<tr>
+<td>证明的认定</td>
+<td>主要是存在认定（证明应收账款真实存在），对计价和分摊认定的证明力有限</td>
+</tr>
+<tr>
+<td>未回函处理</td>
+<td>实施替代程序——检查销售合同、销售发票、发运凭证；检查期后收款情况</td>
+</tr>
+<tr>
+<td>替代程序不可用</td>
+<td>仅向内部人员询问→不足够；仅向信用管理部门询问→不足够</td>
+</tr>
+</tbody>
+</table>
+<h3>模块五：坏账准备审计</h3>
+<p><strong>费曼类比</strong>：坏账准备就像你预估借出去的钱有多少可能收不回来——你得看看欠钱的人最近经济状况怎么样（期后收款情况），欠了多久了（账龄分析），以前借钱不还的比例（历史损失率），不能随便拍脑袋定个比例。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>核心任务</td>
+<td>评价坏账准备计提的合理性</td>
+</tr>
+<tr>
+<td>计提方法变更</td>
+<td>属于会计估计变更（不是会计政策变更）</td>
+</tr>
+<tr>
+<td>关注事项</td>
+<td>计提比例是否反映预计损失；账龄分析是否合理；期后收款情况</td>
+</tr>
+<tr>
+<td>关联认定</td>
+<td>应收账款的计价和分摊认定</td>
+</tr>
+</tbody>
+</table>
+<h3>模块六：销售截止测试</h3>
+<p><strong>费曼类比</strong>：截止测试就像跨年倒计时直播里确认倒数时间——12月31日23:59:59的交易算今年，00:00:01的算明年。你不能把明年的收入提前算到今年冲业绩，也不能把今年的成本推迟到明年粉饰利润。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目的</td>
+<td>确定主营业务收入的会计记录归属期是否正确；防止和纠正高估或低估</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>选取资产负债表日前后若干天的发运凭证/发票，追查至明细账（顺查+逆查）</td>
+</tr>
+<tr>
+<td>同时测试</td>
+<td>存货的截止（发货与收货记录）</td>
+</tr>
+<tr>
+<td>易出问题</td>
+<td>下期期初的销售退回被计入本期</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"销售与收款循环审计只需关注收入高估风险"</td>
+<td>既要关注高估（发生）也要关注低估（完整性）风险</td>
+</tr>
+<tr>
+<td>"应收账款函证主要证明计价和分摊认定"</td>
+<td>函证主要证明存在认定，对计价和分摊证明力有限</td>
+</tr>
+<tr>
+<td>"坏账准备计提方法的变更属于会计政策变更"</td>
+<td>属于会计估计变更</td>
+</tr>
+<tr>
+<td>"未收到回函时只需向内部人员询问"</td>
+<td>必须实施替代程序——检查外部证据+期后收款</td>
+</tr>
+<tr>
+<td>"截止测试只需要测试收入"</td>
+<td>截止测试还需关注存货收发、费用入账等</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测</h2>
+<h3>选择题（15题）</h3>
+<p><strong>1.</strong> 下列有关销售与收款循环的说法中，错误的是（ ）。
+A. 循环涉及的主要业务活动包括接受客户订购单、批准赊销信用、按销售单供货等
+B. 循环涉及的主要凭证有客户订购单、销售单、发运凭证、销售发票等
+C. 循环涉及的主要账户有应收账款、主营业务收入、银行存款、坏账准备等
+D. 该循环审计只需关注主营业务收入的高估风险</p>
+<p><strong>2.</strong> 注册会计师在审计主营业务收入时，下列认定中无需关注的是（ ）。
+A. 发生认定
+B. 完整性认定
+C. 截止认定
+D. 权利和义务认定</p>
+<p><strong>3.</strong> 应收账款函证主要针对的认定是（ ）。
+A. 存在认定
+B. 计价和分摊认定
+C. 完整性认定
+D. 权利和义务认定</p>
+<p><strong>4.</strong> 下列程序中，最有助于测试营业收入完整性认定的是（ ）。
+A. 从发运凭证追查至主营业务收入明细账
+B. 从主营业务收入明细账追查至发运凭证
+C. 检查应收账款明细账的加总
+D. 函证大额应收账款</p>
+<p><strong>5.</strong> 下列关于坏账准备的说法中，错误的是（ ）。
+A. 注册会计师应当评价坏账准备计提的合理性
+B. 坏账准备计提方法的变更属于会计估计变更
+C. 坏账准备的计提比例应合理反映预计损失
+D. 坏账准备计提方法的变更属于会计政策变更</p>
+<p><strong>6.</strong> 下列各项中，属于销售与收款循环内部控制的是（ ）。
+A. 适当的职责分离
+B. 由仓库人员兼任信用审批
+C. 发货单无需预先编号
+D. 销售部门自行记录销售收入</p>
+<p><strong>7.</strong> 下列各项中，不属于营业收入审计目标的是（ ）。
+A. 确定记录的营业收入是否确实发生
+B. 确定营业收入是否已全部记录
+C. 确定营业收入是否记录于正确的会计期间
+D. 确定营业收入增长率是否达标</p>
+<p><strong>8.</strong> 应收账款函证未收到回函时，下列替代程序中不恰当的是（ ）。
+A. 检查销售合同、销售发票和发运凭证
+B. 检查期后收款情况
+C. 仅向被审计单位内部销售人员询问
+D. 检查与客户的往来邮件</p>
+<p><strong>9.</strong> 实施销售截止测试的主要目的是（ ）。
+A. 确定主营业务收入的金额是否正确
+B. 确定主营业务收入是否记录于正确的会计期间
+C. 确定应收账款的可收回性
+D. 确定销售退回是否已全部入账</p>
+<p><strong>10.</strong> 下列关于应收账款函证的说法中，正确的是（ ）。
+A. 注册会计师可以选择不对应收账款实施函证
+B. 若不对应收账款函证，必须在审计工作底稿中说明理由
+C. 应收账款函证可以替代所有其他审计程序
+D. 应收账款函证主要针对完整性认定</p>
+<p><strong>11.</strong> 测试营业收入发生认定时，最常用的审计程序是（ ）。
+A. 从发运凭证追查至主营业务收入明细账
+B. 从主营业务收入明细账追查至发运凭证和销售发票
+C. 检查销售发票的连续编号
+D. 重新计算主营业务收入明细账的加总</p>
+<p><strong>12.</strong> 下列职责分离中，属于销售与收款循环关键控制的是（ ）。
+A. 出纳与会计由同一人担任
+B. 批准赊销与销售由同一部门执行
+C. 装运发货与开具发票由不同人员执行
+D. 记录销售与收取现金由同一人执行</p>
+<p><strong>13.</strong> 注册会计师在审计中发现被审计单位将下年度1月初的销售计入本年度12月。该做法主要影响（ ）。
+A. 营业收入的发生认定
+B. 营业收入的完整性认定
+C. 营业收入的截止认定
+D. 营业收入的准确性认定</p>
+<p><strong>14.</strong> 关于销售与收款循环的凭证预先编号控制，下列说法中正确的是（ ）。
+A. 预先编号主要是为了便于归档
+B. 预先编号有助于确保完整性和防止重复记录
+C. 预先编号可以替代职责分离
+D. 预先编号仅适用于销售发票</p>
+<p><strong>15.</strong> 注册会计师评估应收账款存在认定的重大错报风险为高水平。下列做法中，最恰当的是（ ）。
+A. 扩大应收账款函证的范围
+B. 减少应收账款函证样本量
+C. 仅实施控制测试
+D. 仅询问管理层</p>
+<hr />
+<h3>大题（5题）</h3>
+<p><strong>1. 简答</strong>：简述销售与收款循环涉及的主要业务活动和主要凭证，并说明各凭证在审计中的作用。</p>
+<p><strong>2. 分析</strong>：注册会计师拟对主营业务收入实施审计程序。请分别针对发生认定和完整性认定，设计具体的审计程序并说明原因。</p>
+<p><strong>3. 简答</strong>：应收账款函证未收到回函时，注册会计师应当如何处理？请列举至少3种替代程序。</p>
+<p><strong>4. 分析</strong>：注册会计师A在对W公司实施销售截止测试时，发现以下情况：
+（1）一张编号为#1234的发运凭证，发货日期为12月30日，但对应的销售发票日期为次年1月3日，收入记录在次年1月；
+（2）一张编号为#1235的发运凭证，发货日期为次年1月2日，对应的销售发票日期为12月31日，收入记录在本年度12月。
+请分析每种情况对主营业务收入认定的影响，并说明注册会计师应如何处理。</p>
+<p><strong>5. 综合分析</strong>：Y公司主要从事电子产品销售，以仓库为交货地点。以下是注册会计师了解到的情况：
+（1）仓库人员根据销售部门批准的客户订单生成连续编号的发货单，发货后将发货单状态设为"已执行"并提交结算部门。结算部门据此生成并打印销售发票。系统月末自动汇总主营业务收入。
+（2）系统每月自动匹配发货单、订单、发票和入账的主营业务收入，生成未匹配项目清单。系统授权销售部经理和总经理可以生成和阅读该报告。
+（3）注册会计师发现，从2020年6月以后，管理层没有实际生成和阅读上述未匹配项目报告，但在注册会计师要求下生成的报告显示无不匹配事项。
+要求：（A）逐项指出上述控制与何种认定相关；（B）判断控制设计是否存在缺陷，如存在请说明并提出改进建议；（C）判断控制是否得到有效执行，如未有效执行请说明理由。</p>
+<hr />
+<h2>答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>D</td>
+<td><strong>思路</strong>：销售收款循环既要关注高估也要关注低估。<strong>推导</strong>：A、B、C都是正确的全流程描述；D错误——收入的高估风险和低估风险都需要关注，不能"只关注高估"。<strong>坑</strong>：收入审计中通常重点防高估，但这不等于"只需"关注高估。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>D</td>
+<td><strong>思路</strong>：营业收入审计关注发生、完整性、准确性、截止、分类，权利和义务通常不适用（收入是利润表项目）。<strong>推导</strong>：权利和义务认定主要针对资产负债表项目（如资产所有权），收入一般不特别强调这一认定。<strong>坑</strong>：D选项容易在"五大认定"中被忽略区别——收入VS资产认定的侧重点不同。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td><strong>思路</strong>：函证的核心价值是"让第三方确认应收账款是否真实存在"。<strong>推导</strong>：函证直接回应的认定是存在——客户承认欠款说明这笔应收确实存在。对计价和分摊（是否全额可收回）证明力有限，因为客户可能承认欠款但无力偿还。<strong>坑</strong>：容易选B——客户回函只确认金额，但坏账风险客户不会告诉你。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A</td>
+<td><strong>思路</strong>：完整性=所有已发生交易都已入账→从原始凭证追到账=顺查。<strong>推导</strong>：A是顺查——从发运凭证（原始凭据）追溯到收入明细账（是否遗漏入账）；B是逆查，测试发生认定；C测试准确性；D测试存在。<strong>坑</strong>：顺查测完整、逆查测发生，方向不能反。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>D</td>
+<td><strong>思路</strong>：坏账准备计提方法变更属于会计估计变更。<strong>推导</strong>：政策变更=原则变更（如从成本法变权益法）；估计变更=基于新信息修正判断（如坏账比例调整）。计提比例的修改是对估计的修正。<strong>坑</strong>：容易混淆"政策变更"和"估计变更"——坏账准备始终属于估计范畴。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A</td>
+<td><strong>思路</strong>：职责分离是内部控制的核心要素。<strong>推导</strong>：A正确；B→仓库兼信用审批违反职责分离；C→无编号凭证不利于完整性和防止重复；D→销售部门自记账违反职责分离。<strong>坑</strong>：记住四大内控要素：职责分离、授权审批、充分凭证记录、凭证预先编号。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>D</td>
+<td><strong>思路</strong>：增长率是否达标是业绩分析，不是审计目标。<strong>推导</strong>：审计目标围绕"财务报表是否公允反映"展开——发生、完整性、准确性、截止、分类、列报。增长率属于管理层的业绩指标，审而不计。<strong>坑</strong>：容易混淆管理分析目标和审计目标。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C</td>
+<td><strong>思路</strong>：仅向内部人员询问证明力不足，不能作为替代程序。<strong>推导</strong>：替代程序需要外部证据支撑——合同、发票、发运凭证（外部或独立凭证）、期后收款（客观事实）。仅内部询问属于最弱证据。<strong>坑</strong>：即使"向信用管理部门询问"也不够，替代程序必须有客观证据。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>B</td>
+<td><strong>思路</strong>：截止测试的核心是"归属期是否正确"。<strong>推导</strong>：截止测试目的是确定交易是否记录于正确期间，防止跨期错报。A是准确性目标；C是计价目标；D只是截止测试关注的方面之一。<strong>坑</strong>：截止≠金额准确，截止只管"时间对不对"。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td><strong>思路</strong>：函证是"应当实施"的程序，不实施需说明理由。<strong>推导</strong>：A错误——注册会计师"应当"对应收账款实施函证（非可选）；B正确——不实施必须在底稿中说明理由；C错误——函证不能替代所有程序；D错误——主要针对存在认定。<strong>坑</strong>："应当"≠"必须"——确有合理理由（如不重要、无效）可不函证，但必须说明。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td><strong>思路</strong>：发生认定="账上记的是真发生了吗"→从账追到原始凭证。<strong>推导</strong>：B是从明细账（会计记录）逆查至发运凭证（原始证据），确认入账收入确有真实交易支撑。<strong>坑</strong>：A是测试完整性的顺查；C测完整性（编号连续性）；D测准确性。逆查测发生，方向不可弄反。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td><strong>思路</strong>：装运发货与开票应分离，防止篡改发货记录。<strong>推导</strong>：A→出纳会计应分离；B→赊销审批应与销售分离；C→发货与开票分离是正确的职责分离；D→收款与记账必须分离。<strong>坑</strong>：职责分离的实质是"操作+记录"不能同一人。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>C</td>
+<td><strong>思路</strong>：将下年度收入计入本年属于跨期错误，影响截止认定。<strong>推导</strong>：截止认定关注交易是否记录于正确的会计期间。将次年1月收入提前至本年12月，导致本年收入虚增、次年收入少计——典型的截止错报。<strong>坑</strong>：由于交易真实发生（非虚构），所以不是发生认定问题；只是"时间不对"。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>B</td>
+<td><strong>思路</strong>：预先编号的核心作用是确保完整性和防重复。<strong>推导</strong>：连续编号→可检查是否有遗漏（完整性）或重复记录。A只是附带好处；C不能替代；D也适用于发运凭证等其他单据。<strong>坑</strong>：编号的审计价值在于"追号"——断了就知道有问题。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>A</td>
+<td><strong>思路</strong>：高风险→扩大实质性程序的范围。<strong>推导</strong>：评估高风险时应扩大函证范围以获取更多证据，降低检查风险。B方向相反；C仅控制测试不够（高风险下必须实质性程序）；D询问不够充分。<strong>坑</strong>：风险评估结果直接影响实质性程序的范围大小。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>大题参考答案</h3>
+<p><strong>第1题</strong>：
+- <strong>思路</strong>：按业务流程链回答，突出每个凭证的审计价值。
+- <strong>步骤</strong>：
+  1. 主要业务活动（10项）：接受订购单→批准赊销→按销售单供货→装运→开票→记录销售→收款→办理退回折让→注销坏账→提坏账准备
+  2. 客户订购单：证明销售交易由真实客户需求发起
+  3. 销售单：证明赊销已审批，是发货和开票的依据
+  4. 发运凭证：证明货物已实际发出（支持发生认定），是截止测试的关键单据
+  5. 销售发票：证明交易金额和税务处理，是收入入账的直接依据
+  6. 客户对账单：用于函证程序，证明应收账款存在性和准确性
+- <strong>坑</strong>：不要遗漏"销售单"——它在审批赊销环节有独立价值，容易与订购单混淆。</p>
+<p><strong>第2题</strong>：
+- <strong>思路</strong>：发生认定用逆查，完整性认定用顺查。
+- <strong>步骤</strong>：
+  1. 发生认定（防高估）：从主营业务收入明细账中选取样本，追查至销售发票→发运凭证→客户订购单
+  2. 逻辑：账上记录的收入→必须有真实的发货和客户订单支撑
+  3. 完整性认定（防低估）：从发运凭证中选取样本，追查至销售发票→主营业务收入明细账
+  4. 逻辑：已发货的货物→必须在账上体现为收入
+  5. 补充程序：检查发运凭证和销售发票的连续编号，看有无遗漏
+- <strong>坑</strong>：顺查和逆查方向不可反。记住口诀——"账到证=发生，证到账=完整"。</p>
+<p><strong>第3题</strong>：
+- <strong>思路</strong>：替代程序的核心是找外部证据和客观事实。
+- <strong>步骤</strong>：
+  1. 检查销售合同——确认交易条款和双方权责
+  2. 检查销售发票和发运凭证——确认货物已发出、价格已确定
+  3. 检查期后收款情况——最有力的替代证据（客户已付款=应收确实存在）
+  4. 检查与客户的其他往来函件或记录
+  5. 不可仅使用内部询问（证明力不足）
+- <strong>坑</strong>：最容易遗漏的是"期后收款"——这是最有力的替代证据，因为真金白银的付款直接证实了应收账款的存在。</p>
+<p><strong>第4题</strong>：
+- <strong>思路</strong>：分别判断是否跨期，以及影响方向。
+- <strong>步骤</strong>：
+  1. 情况（1）：12月30日发货但收入记在次年1月
+     - 影响：本年收入少计、次年收入多计→影响截止认定和完整性认定
+     - 正确处理：应建议将收入调整至本年度12月
+  2. 情况（2）：次年1月2日发货但收入记在本年12月
+     - 影响：本年收入多计、次年收入少计→影响截止认定和发生认定
+     - 正确处理：应建议冲减本年度12月的收入，调整至次年
+  3. 核心判断依据：以发货（履约）日期为准，而非开票日期
+- <strong>坑</strong>：不要以发票日期作为截止判断的唯一标准——收入确认的关键是履约时点（发货），发票可能滞后。</p>
+<p><strong>第5题</strong>：
+- <strong>思路</strong>：按（A）（B）（C）三部分分别回答。
+- <strong>步骤</strong>：
+  <strong>（A）控制与认定的对应关系</strong>：
+  1. 控制（1）：连续编号发货单→自动汇总收入→与营业收入的发生、完整性和准确性认定相关
+  2. 控制（2）：系统自动匹配并生成未匹配清单→与营业收入的发生和完整性认定相关（发现未匹配=可能虚记或漏记）</p>
+<p><strong>（B）控制设计缺陷分析</strong>：
+  1. 控制（1）：设计上无明显缺陷。连续编号+系统自动汇总是良好的自动化控制
+  2. 控制（2）：存在缺陷——未匹配项目报告仅限销售部经理和总经理可查阅。改进建议：该报告也应提供给财务部门或独立于销售部的其他部门，以增强监控的独立性</p>
+<p><strong>（C）控制执行有效性</strong>：
+  1. 控制（1）：仅通过观察开票过程和选取明细账测试，证据有限。应扩大测试范围
+  2. 控制（2）：未得到有效执行——2020年6月后管理层未实际生成和阅读报告，控制"名存实亡"。即使最终报告无不匹配事项，控制的"持续运行"已被中断，不能认为一贯有效
+- <strong>坑</strong>：第（C）最关键——即使最终结果"没有发现问题"，也不能证明控制在被省略的期间内是有效的。控制的精髓在于"持续"运行。</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扎实</td>
+<td>需复习</td>
+<td>重学本章</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>📚 小番茄题库浓缩版 · 审计学</p>
+</div>
+
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/audit/10" download>📥 下载本章PDF</a>
+</div>
+</body></html>

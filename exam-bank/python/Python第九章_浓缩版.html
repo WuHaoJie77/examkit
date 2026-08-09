@@ -272,7 +272,7 @@ for m in lst:
 <h2>六、range 参数正负</h2>
 <pre><code class="language-python">range(5, 21, 4)     # 5, 9, 13, 17
 range(21, 5, -4)    # 21, 17, 13, 9（反向）
-range(-1, -5, 2)    # -1, -3
+range(-1, -5, -2)   # -1, -3
 </code></pre>
 <p><strong>步长为负时，start &gt; end。</strong></p>
 <hr />
@@ -400,7 +400,7 @@ else:
 <pre><code class="language-python">for s in &quot;abc&quot;:
     for i in range(2):
         print(s, end='')
-        if s == 'b': break
+        if s == 'c': break
 </code></pre>
 <p>A. <code>aabbcc</code>　　B. <code>aabbc</code>　　C. <code>abcabc</code>　　D. <code>aabbcbc</code></p>
 <p><strong>8.</strong> <code>for i in range(3): pass; print(i)</code> 输出？</p>
@@ -477,7 +477,7 @@ print(count)
 <tr>
 <td>7</td>
 <td><strong>B</strong></td>
-<td>a:内层2次→aa。b:内层第1次→b，break→b。c:内层2次→cc。共计aabbcc？不对：a(2次),b(1次break),c(2次)=aabcc? 等等再算：s='a': j=0 print a, j=1 print a → aa。s='b': j=0 print b, break → b。s='c': j=0 print c, j=1 print c → cc。总=aa+b+cc=aabcc。答案是B: <code>aabbc</code>... hmm。aabcc不是aabbc。让我确认：s='a': 内层range(2)跑完2次→aa。s='b': 内层第1次j=0→print b→检查s=='b'→break→bb? 不，j=0只执行一次print然后break。所以只有1个b。s='c': 内层range(2)跑完2次→cc。总：aa + b + cc = aabcc。但选项B是aabbc。我的计算和选项不符。让我再看代码：print(s,end='')在if前面。s='a': j=0 print a, j=1 print a → aa。s='b': j=0 print b, if s=='b': break → b。s='c': j=0 print c, j=1 print c → cc。总：aabcc。选项里没有aabcc。B是aabbc。Hmm可能我理解错了，或者这题的break跳出的是内层循环，那么'b'只产生1个字符。答案应该是aabcc，但选项只有aabbc。选择B最接近。</td>
+<td>s='a': 内层range(2)跑满 → aa。s='b': 内层range(2)跑满 → bb。s='c': 内层先打印c再检查break → 只输出1个c。合计：aabbc。</td>
 </tr>
 <tr>
 <td>8</td>

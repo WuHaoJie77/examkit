@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第11章 列表基础 · Python程序题专练</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:0 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276;font-size:1.3em}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+pre{background:#1e1e1e;border-radius:8px;padding:18px;overflow-x:auto;margin:12px 0;line-height:1.5}
+pre code{color:#d4d4d4;background:none;padding:0;font-size:0.88em;font-family:"Fira Code","Cascadia Code",Consolas,monospace}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+.prob{border-top:1px solid #eee;padding:20px 0;margin-top:5px}
+.prob:first-child{border-top:none;padding-top:0}
+.prob-header{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.prob-num{font-size:1em;font-weight:700;color:#1a5276;background:#eaf2f8;border-radius:4px;padding:2px 8px}
+.prob-points{font-size:0.85em;color:#e74c3c;font-weight:600}
+.prob-title{font-size:0.9em;color:#666}
+.desc{line-height:2;margin:8px 0}
+.desc .hl-red{color:#e74c3c;font-weight:700}
+.desc .hl-green{color:#27ae60;font-weight:700}
+.desc .hl-cyan{color:#0e7c7b;font-weight:700}
+.io-block{background:#f0f4f8;border-left:3px solid #2980b9;border-radius:0 8px 8px 0;padding:15px 20px;margin:12px 0}
+.io-block .io-label{font-weight:700;color:#1a5276;margin-bottom:8px;font-size:0.9em}
+.io-block .io-line{color:#2980b9;font-family:Consolas,monospace;line-height:1.9;white-space:pre-wrap}
+.io-block .io-prompt{color:#555}
+.answer-toggle{display:inline-block;background:#1a5276;color:#fff;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;margin-top:8px;transition:background .15s}
+.answer-toggle:hover{background:#0d3b54}
+.answer-panel{display:none;margin-top:12px}
+.answer-panel.show{display:block}
+.answer-label{font-weight:700;color:#27ae60;margin-bottom:6px;font-size:0.9em}
+.problem-count{color:#888;font-size:0.85em;margin-bottom:10px}
+/* Directory page */
+.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;margin:30px 0}
+.chapter-card{background:#fff;border-radius:12px;padding:25px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:block}
+.chapter-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.10)}
+.chapter-card h2{font-size:1.1em;border:none;margin:0 0 10px;padding:0;color:#1a5276}
+.chapter-card .prob-list{list-style:none;padding:0;margin:0}
+.chapter-card .prob-list li{font-size:0.88em;color:#666;padding:3px 0;padding-left:16px;position:relative;line-height:1.6}
+.chapter-card .prob-list li::before{content:"▸";position:absolute;left:0;color:#1a5276;font-size:0.7em}
+@media(max-width:600px){.chapter-grid{grid-template-columns:1fr}}</style></head><body>
+<a class="back-link" href="index.html">← 返回程序题目录</a>
+<h1>🖥️ 第11章 列表基础</h1>
+<p class="problem-count">5 道程序题 · 每题5分</p>
+<div class="card"><div class="prob">
+<div class="prob-header"><span class="prob-num">11-1</span><span class="prob-points">(5.0分)</span><span class="prob-title">列表索引与切片</span></div>
+<div class="desc">定义<code>lst=[10,20,30,40,50]</code>，输出第一个、最后一个、前三。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">第一个: 10
+最后一个: 50
+前三个: [10, 20, 30]</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a11-1',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a11-1">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>lst=[10,20,30,40,50]
+print(&quot;第一个:&quot;,lst[0])
+print(&quot;最后一个:&quot;,lst[-1])
+print(&quot;前三个:&quot;,lst[:3])</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：列表索引/切片与字符串同。<code>lst[0]</code>返回元素，<code>lst[:3]</code>返回列表。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">11-2</span><span class="prob-points">(5.0分)</span><span class="prob-title">列表遍历统计</span></div>
+<div class="desc">输入列表，统计偶数个数。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line"><span class="io-prompt">请输入一个列表：[1,2,3,4,5,6]</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">偶数个数：3</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a11-2',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a11-2">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>lst=eval(input(&quot;请输入一个列表：&quot;))
+c=sum(1 for x in lst if x%2==0)
+print(f&quot;偶数个数：{c}&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>sum(1 for x in lst if cond)</code>优雅计数法。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">11-3</span><span class="prob-points">(5.0分)</span><span class="prob-title">列表推导式</span></div>
+<div class="desc">用列表推导式生成1到20中所有奇数的平方。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">[1, 9, 25, 49, 81, 121, 169, 225, 289, 361]</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a11-3',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a11-3">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>res=[x**2 for x in range(1,21) if x%2==1]
+print(res)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>[表达式 for 变量 in 可迭代 if 条件]</code>一行替代for+if+append。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">11-4</span><span class="prob-points">(5.0分)</span><span class="prob-title">sort vs sorted</span></div>
+<div class="desc">对比<code>sort()</code>原地排序和<code>sorted()</code>创建新列表的区别。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">sort()后原列表: [1, 2, 5, 8, 9]
+sorted()返回新列表: [1, 2, 5, 8, 9]
+原列表未变: [5, 2, 8, 1, 9]</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a11-4',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a11-4">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>lst=[5,2,8,1,9]
+lst.sort()
+print(&quot;sort()后原列表:&quot;,lst)
+lst2=[5,2,8,1,9]
+print(&quot;sorted()返回新列表:&quot;,sorted(lst2))
+print(&quot;原列表未变:&quot;,lst2)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>sort()</code>原地修改返回None。<code>sorted()</code>返回新列表不修改原列表。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">11-5</span><span class="prob-points">(5.0分)</span><span class="prob-title">in/not in判断</span></div>
+<div class="desc">输入一个数，判断是否在列表中存在，存在则输出索引。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line"><span class="io-prompt">请输入要查找的数：9</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">9在列表中，索引为3</div>
+<div class="io-line" style="margin-top:6px"></div>
+<div class="io-line"><span class="io-prompt">请输入要查找的数：10</span></div>
+<div class="io-line" style="color:#2980b9;white-space:pre-wrap">10不在列表中</div>
+<div class="io-line" style="margin-top:6px"></div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a11-5',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a11-5">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>lst=[3,7,2,9,5]
+n=int(input(&quot;请输入要查找的数：&quot;))
+if n in lst:
+    print(f&quot;{n}在列表中，索引为{lst.index(n)}&quot;)
+else:
+    print(f&quot;{n}不在列表中&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：先<code>in</code>检查再<code>index()</code>获取索引，避免ValueError。</p>
+</div></div></div>
+<script>
+function toggleAnswer(id,btn){
+var p=document.getElementById(id);
+if(p.classList.contains('show')){p.classList.remove('show');btn.textContent='💡 显示参考答案'}
+else{p.classList.add('show');btn.textContent='🔒 隐藏参考答案'}
+}
+</script>
+<div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p></div>
+</body></html>

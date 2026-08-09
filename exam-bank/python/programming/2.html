@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第2章 变量·切片·赋值 · Python程序题专练</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:0 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276;font-size:1.3em}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+pre{background:#1e1e1e;border-radius:8px;padding:18px;overflow-x:auto;margin:12px 0;line-height:1.5}
+pre code{color:#d4d4d4;background:none;padding:0;font-size:0.88em;font-family:"Fira Code","Cascadia Code",Consolas,monospace}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+.prob{border-top:1px solid #eee;padding:20px 0;margin-top:5px}
+.prob:first-child{border-top:none;padding-top:0}
+.prob-header{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.prob-num{font-size:1em;font-weight:700;color:#1a5276;background:#eaf2f8;border-radius:4px;padding:2px 8px}
+.prob-points{font-size:0.85em;color:#e74c3c;font-weight:600}
+.prob-title{font-size:0.9em;color:#666}
+.desc{line-height:2;margin:8px 0}
+.desc .hl-red{color:#e74c3c;font-weight:700}
+.desc .hl-green{color:#27ae60;font-weight:700}
+.desc .hl-cyan{color:#0e7c7b;font-weight:700}
+.io-block{background:#f0f4f8;border-left:3px solid #2980b9;border-radius:0 8px 8px 0;padding:15px 20px;margin:12px 0}
+.io-block .io-label{font-weight:700;color:#1a5276;margin-bottom:8px;font-size:0.9em}
+.io-block .io-line{color:#2980b9;font-family:Consolas,monospace;line-height:1.9;white-space:pre-wrap}
+.io-block .io-prompt{color:#555}
+.answer-toggle{display:inline-block;background:#1a5276;color:#fff;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:13px;margin-top:8px;transition:background .15s}
+.answer-toggle:hover{background:#0d3b54}
+.answer-panel{display:none;margin-top:12px}
+.answer-panel.show{display:block}
+.answer-label{font-weight:700;color:#27ae60;margin-bottom:6px;font-size:0.9em}
+.problem-count{color:#888;font-size:0.85em;margin-bottom:10px}
+/* Directory page */
+.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;margin:30px 0}
+.chapter-card{background:#fff;border-radius:12px;padding:25px 30px;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:block}
+.chapter-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.10)}
+.chapter-card h2{font-size:1.1em;border:none;margin:0 0 10px;padding:0;color:#1a5276}
+.chapter-card .prob-list{list-style:none;padding:0;margin:0}
+.chapter-card .prob-list li{font-size:0.88em;color:#666;padding:3px 0;padding-left:16px;position:relative;line-height:1.6}
+.chapter-card .prob-list li::before{content:"▸";position:absolute;left:0;color:#1a5276;font-size:0.7em}
+@media(max-width:600px){.chapter-grid{grid-template-columns:1fr}}</style></head><body>
+<a class="back-link" href="index.html">← 返回程序题目录</a>
+<h1>🖥️ 第2章 变量·切片·赋值</h1>
+<p class="problem-count">5 道程序题 · 每题5分</p>
+<div class="card"><div class="prob">
+<div class="prob-header"><span class="prob-num">2-1</span><span class="prob-points">(5.0分)</span><span class="prob-title">变量命名合法性判断</span></div>
+<div class="desc">编写程序，判断以下变量名是否合法，<span class="hl-red">用代码证明</span>（合法的赋值成功，非法的用注释说明原因）。<br>变量名：<code>_temp</code>、<code>2var</code>、<code>my-var</code>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">合法变量 _temp = 100
+2var 和 my-var 是非法变量名</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a2-1',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a2-1">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>_temp = 100
+print(&quot;合法变量 _temp =&quot;, _temp)
+# 2var = 200  → 非法，数字开头
+# my-var = 300  → 非法，含连字符
+print(&quot;2var 和 my-var 是非法变量名&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：合法：字母/下划线/汉字开头。非法：数字开头、含空格/特殊符号、是关键字。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">2-2</span><span class="prob-points">(5.0分)</span><span class="prob-title">字符串索引取值</span></div>
+<div class="desc">编写程序，定义字符串 <code>s = "Python编程"</code>，分别输出它的<span class="hl-red">第一个字符、最后一个字符、倒数第二个字符</span>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">第一个字符: P
+最后一个字符: 程
+倒数第二个字符: 编</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a2-2',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a2-2">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>s = &quot;Python编程&quot;
+print(&quot;第一个字符:&quot;, s[0])
+print(&quot;最后一个字符:&quot;, s[-1])
+print(&quot;倒数第二个字符:&quot;, s[-2])</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：正向索引从0开始，反向索引从-1开始。中英文混排的字符串，每个汉字也是一个索引位置。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">2-3</span><span class="prob-points">(5.0分)</span><span class="prob-title">字符串切片实战</span></div>
+<div class="desc">编写程序，定义 <code>s = "abcdefg"</code>，分别输出：<span class="hl-green">前3个、第2到第5个、最后3个</span>。<br>牢记：end 索引<span class="hl-red">不包含</span>！</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">前3个: abc
+第2到第5个: bcde
+最后3个: efg</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a2-3',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a2-3">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>s = &quot;abcdefg&quot;
+print(&quot;前3个:&quot;, s[:3])
+print(&quot;第2到第5个:&quot;, s[1:5])
+print(&quot;最后3个:&quot;, s[-3:])</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>s[:3]</code>=索引0,1,2；<code>s[1:5]</code>=索引1,2,3,4（5不包含）；<code>s[-3:]</code>=最后3个。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">2-4</span><span class="prob-points">(5.0分)</span><span class="prob-title">同步赋值交换变量</span></div>
+<div class="desc">编写程序，定义 <code>a=10, b=20</code>，用<span class="hl-green">同步赋值</span>交换，输出交换前后的值。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">交换前: a=10, b=20
+交换后: a=20, b=10</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a2-4',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a2-4">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>a, b = 10, 20
+print(f&quot;交换前: a={a}, b={b}&quot;)
+a, b = b, a
+print(f&quot;交换后: a={a}, b={b}&quot;)</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：<code>a,b=b,a</code>右侧先全部计算，再一次性赋给左侧。不需要临时变量。</p>
+</div></div><div class="prob">
+<div class="prob-header"><span class="prob-num">2-5</span><span class="prob-points">(5.0分)</span><span class="prob-title">中文字符串切片</span></div>
+<div class="desc">编写程序，定义 <code>s="河南财经政法大学"</code>，分别输出：<span class="hl-green">前两字、后两字、中间四字(财经政法)</span>。</div>
+<div class="io-block"><div class="io-label">▼ 预期运行结果</div><div class="io-line" style="color:#2980b9;white-space:pre-wrap">前两字: 河南
+后两字: 大学
+中间四字: 财经政法</div></div>
+<button class="answer-toggle" onclick="toggleAnswer('a2-5',this)">💡 显示参考答案</button>
+<div class="answer-panel" id="a2-5">
+<div class="answer-label">✅ 参考代码</div>
+<pre><code>s = &quot;河南财经政法大学&quot;
+print(&quot;前两字:&quot;, s[:2])
+print(&quot;后两字:&quot;, s[-2:])
+print(&quot;中间四字:&quot;, s[2:6])</code></pre>
+<p style="color:#888;font-size:0.85em;margin-top:6px">🔑 关键：中文每字一个索引。河(0)南(1)财(2)经(3)政(4)法(5)大(6)学(7)。<code>s[2:6]</code>=财,经,政,法。</p>
+</div></div></div>
+<script>
+function toggleAnswer(id,btn){
+var p=document.getElementById(id);
+if(p.classList.contains('show')){p.classList.remove('show');btn.textContent='💡 显示参考答案'}
+else{p.classList.add('show');btn.textContent='🔒 隐藏参考答案'}
+}
+</script>
+<div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p></div>
+</body></html>

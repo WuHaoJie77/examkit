@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>审计学_第07章_风险评估_浓缩版</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+.chapter-list a .badge{float:right;background:#1a5276;color:#fff;border-radius:12px;padding:2px 10px;font-size:0.75em;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+.notice{background:linear-gradient(135deg,#eaf2f8,#f0f4f8);border:1px solid #bdd7ee;border-radius:12px;padding:25px 30px;margin:30px 0;line-height:1.9}
+.notice h3{color:#1a5276;margin-bottom:12px;font-size:1.1em}
+.notice p{color:#555;font-size:0.95em;margin:6px 0}
+.notice .highlight{color:#e74c3c;font-weight:600}
+
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;z-index:999}
+.pdf-btn{display:inline-block;background:#1a5276;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:background .15s}
+.pdf-btn:hover{background:#0d3b54}
+</style>
+</head><body>
+<a class="back-link" href="index.html">← 返回审计学目录</a>
+<h1>审计学 第07章 风险评估 浓缩速记卡</h1>
+<h1>审计学 第7章 风险评估 浓缩速记卡</h1>
+<blockquote>
+<p>章节：风险评估 | 题量：约16道选择 + 多道简答 | 预计用时：50分钟</p>
+</blockquote>
+<hr />
+<h2>知识模块一：风险评估程序</h2>
+<h3>费曼类比</h3>
+<p>风险评估就像医生接诊的第一步"问诊"——不是直接开刀（实质性程序），而是先通过问病人哪里不舒服（询问管理层）、看体检报告（分析程序）、观察病人气色（观察）、翻看病历（检查文件）来了解病情全貌。这一步的核心目的不是"找出具体病症"，而是"判断哪些地方可能出问题"，为后续详细检查指路。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>风险评估程序定义</td>
+<td>CPA为了解被审计单位及其环境而实施的程序</td>
+</tr>
+<tr>
+<td>必备程序①</td>
+<td>询问管理层和被审计单位内部其他人员</td>
+</tr>
+<tr>
+<td>必备程序②</td>
+<td>实施分析程序</td>
+</tr>
+<tr>
+<td>必备程序③</td>
+<td>观察和检查</td>
+</tr>
+<tr>
+<td><strong>不是</strong>风险评估程序</td>
+<td>内部控制测试（穿行测试可做，但控制测试不是风险评估程序）</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>识别和评估重大错报风险，不是直接发现错报</td>
+</tr>
+<tr>
+<td>贯穿性</td>
+<td>了解被审计单位及其环境是一个连续和动态的过程，贯穿审计始终</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块二：了解被审计单位及其环境</h2>
+<h3>费曼类比</h3>
+<p>了解被审计单位就像去一家新公司上班前做功课——先了解这个行业是赚什么钱的（行业状况）、公司靠什么赚钱（商业模式）、老板是怎么样的人（所有权结构）、公司用什么系统和流程（内部控制）。你不把这些搞清楚就直接干活，很容易踩坑。而且这不是一次性工作，在整个工作过程中你都在不断加深了解。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>了解的方面</th>
+<th>具体内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行业状况、法律环境与监管环境</td>
+<td>行业竞争、技术变化、法律法规</td>
+</tr>
+<tr>
+<td>被审计单位的性质</td>
+<td>所有权结构、治理结构、经营活动、投资活动、筹资活动</td>
+</tr>
+<tr>
+<td>会计政策的选择与运用</td>
+<td>是否恰当、是否与行业一致</td>
+</tr>
+<tr>
+<td>目标、战略及经营风险</td>
+<td>公司想去哪、怎么去、路上有什么坑</td>
+</tr>
+<tr>
+<td>财务业绩的衡量与评价</td>
+<td>KPI、预算、分部报告等</td>
+</tr>
+<tr>
+<td>内部控制</td>
+<td>五要素（控制环境、风险评估过程、信息系统与沟通、控制活动、监督）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块三：内部控制的五要素</h2>
+<h3>费曼类比</h3>
+<p>内部控制五要素就像盖房子的五个关键系统：
+- <strong>控制环境</strong>是地基——地基不牢，房子再漂亮也没用
+- <strong>风险评估过程</strong>是烟雾报警器——公司得有机制发现哪里有火灾风险
+- <strong>信息系统与沟通</strong>是水电管道和对讲机——信息要在公司内部流动
+- <strong>控制活动</strong>是门锁、防盗网、监控摄像头——具体防错措施
+- <strong>监督</strong>是定期请人来做房屋安全检查——看看前面的系统还在不在运转</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>定义</th>
+<th>CPA关注点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>控制环境</td>
+<td>治理职能和管理职能，以及治理层和管理层对内部控制的态度</td>
+<td>基调！是所有其他要素的基础</td>
+</tr>
+<tr>
+<td>风险评估过程</td>
+<td>被审计单位识别、分析和管理风险的过程</td>
+<td>公司自己有没有风险识别机制</td>
+</tr>
+<tr>
+<td>信息系统与沟通</td>
+<td>与财务报告相关的信息系统以及内部沟通</td>
+<td>信息怎么传递、财务数据怎么生成</td>
+</tr>
+<tr>
+<td>控制活动</td>
+<td>确保管理层指令得以执行的政策和程序</td>
+<td>授权、业绩评价、信息处理、实物控制、职责分离</td>
+</tr>
+<tr>
+<td>对控制的监督</td>
+<td>评价内部控制在一段时间内运行有效性的过程</td>
+<td>管理层是否持续监控内控运行</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块四：控制环境（重中之重）</h2>
+<h3>费曼类比</h3>
+<p>控制环境就像家庭的"家风"——如果父母自己天天撒谎，那定再多规矩（控制活动）也没用，孩子不会遵守。公司也一样，如果老板和董事会（治理层/管理层）自己就不重视诚信，财务部门设再多审批流程也是摆设。审计师特别看重控制环境，因为它决定整个内控体系会不会被"架空"。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>控制环境包括治理职能和管理职能，设定被审计单位内部控制基调</td>
+</tr>
+<tr>
+<td>地位</td>
+<td><strong>是所有其他内部控制要素的基础</strong></td>
+</tr>
+<tr>
+<td>能力范围</td>
+<td>控制环境本身<strong>不能</strong>防止或发现并纠正认定层次的重大错报</td>
+</tr>
+<tr>
+<td>影响范围</td>
+<td>控制环境对重大错报风险的评估具有<strong>广泛影响</strong></td>
+</tr>
+<tr>
+<td>构成要素</td>
+<td>诚信与道德价值观、胜任能力、治理层参与度、管理理念与经营风格、组织结构、权力与责任分配、人力资源政策</td>
+</tr>
+<tr>
+<td>评价方向</td>
+<td>CPA评价的是"管理层是否营造了重视内控的文化"，而非具体控制措施</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块五：了解内部控制的程度与方法</h2>
+<h3>费曼类比</h3>
+<p>了解内部控制的深度把握很关键——你只需要搞清楚"这个控制设计得合不合理"以及"它实际上在不在运转"，而不需要测试它运转得"好不好"。就像你去看一套房子的安防系统：先看设计图（设计是否合理），再亲眼看到门锁确实装上了（是否得到执行），但不需要花一整天测试锁芯耐不耐撬（那是控制测试的事）。<strong>穿行测试</strong>是了解内控的利器——追踪一笔交易从头到尾怎么走的。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>关键点</th>
+<th>易错提示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>了解程度</td>
+<td>足以评价控制的设计，并确定其是否得到执行</td>
+<td>不需要测试运行有效性！</td>
+</tr>
+<tr>
+<td>了解≠测试</td>
+<td>了解内部控制 ≠ 控制测试</td>
+<td>了解是"有没有、合不合理"；测试是"好不好用"</td>
+</tr>
+<tr>
+<td>是否所有内控都要了解</td>
+<td>只了解与审计相关的内部控制</td>
+<td>不是了解所有内控</td>
+</tr>
+<tr>
+<td>穿行测试</td>
+<td>追踪某笔交易从发生到记录的全过程</td>
+<td>属于了解内控的程序</td>
+</tr>
+<tr>
+<td>重新执行</td>
+<td>通常用于控制测试</td>
+<td>了解内控时<strong>通常不采用</strong>重新执行</td>
+</tr>
+</tbody>
+</table>
+<h3>了解内控的程序（四件套）</h3>
+<table>
+<thead>
+<tr>
+<th>程序</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>询问被审计单位人员</td>
+<td>问相关岗位的人：流程是怎样的？</td>
+</tr>
+<tr>
+<td>观察特定控制的运用</td>
+<td>亲眼看看控制实际是否在执行</td>
+</tr>
+<tr>
+<td>检查文件和报告</td>
+<td>翻看制度文件、流程图、审批单</td>
+</tr>
+<tr>
+<td>穿行测试</td>
+<td>追踪一笔交易，验证对流程的理解是否正确</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>知识模块六：特别风险与重大错报风险</h2>
+<h3>费曼类比</h3>
+<p>特别风险就像是所有风险中的"VIP贵宾"——需要特别考虑。这类风险通常涉及：重大关联方交易（自己人之间的买卖最容易做手脚）、超出正常经营过程的重大交易（突然卖掉一栋楼）、管理层凌驾于内控之上（老板自己不受约束）。对于特别风险，必须实施实质性程序——光靠控制测试不够，必须直接查账。</p>
+<h3>知识要点表格</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>特别风险定义</td>
+<td>CPA识别和评估的、需要特别考虑的重大错报风险</td>
+</tr>
+<tr>
+<td>判断因素①</td>
+<td>风险是否属于舞弊风险</td>
+</tr>
+<tr>
+<td>判断因素②</td>
+<td>风险是否与近期经济环境、会计处理方法等重大变化相关</td>
+</tr>
+<tr>
+<td>判断因素③</td>
+<td>交易的复杂程度</td>
+</tr>
+<tr>
+<td>判断因素④</td>
+<td>风险是否涉及重大的关联方交易</td>
+</tr>
+<tr>
+<td>判断因素⑤</td>
+<td>财务信息计量的主观程度</td>
+</tr>
+<tr>
+<td>判断因素⑥</td>
+<td>风险是否涉及超出正常经营过程的重大交易</td>
+</tr>
+<tr>
+<td>应对要求</td>
+<td>必须实施实质性程序，<strong>不能仅实施控制测试</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"风险评估程序应当包括内部控制测试"</td>
+<td>错误！风险评估程序包括询问、分析程序、观察和检查，<strong>不包括</strong>控制测试</td>
+</tr>
+<tr>
+<td>"控制环境本身可以防止认定层次的重大错报"</td>
+<td>错误！控制环境只能提供基础氛围，<strong>不能直接</strong>防止认定层次错报</td>
+</tr>
+<tr>
+<td>"注册会计师应当了解所有内部控制"</td>
+<td>错误！只了解与审计相关的内部控制</td>
+</tr>
+<tr>
+<td>"了解内部控制时需要测试控制运行的有效性"</td>
+<td>错误！了解阶段只需评价设计和是否执行，<strong>不需要测试有效性</strong></td>
+</tr>
+<tr>
+<td>"对于特别风险，可以仅实施控制测试"</td>
+<td>错误！特别风险必须实施实质性程序，<strong>不能仅</strong>依赖控制测试</td>
+</tr>
+<tr>
+<td>"了解被审计单位及其环境主要是为了发现财务报表中的错报"</td>
+<td>错误！主要目的是<strong>识别和评估</strong>重大错报风险，不是直接发现错报</td>
+</tr>
+<tr>
+<td>"重新执行是了解内部控制时常用的程序"</td>
+<td>错误！重新执行通常用于控制测试，了解阶段通常不采用</td>
+</tr>
+<tr>
+<td>"穿行测试属于控制测试"</td>
+<td>错误！穿行测试是了解内部控制的程序</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测</h2>
+<h3>选择题（15题）</h3>
+<ol>
+<li>
+<p>下列各项中，不属于风险评估程序的是（ ）。
+A. 询问管理层和被审计单位内部其他人员
+B. 实施分析程序
+C. 观察和检查
+D. 内部控制测试</p>
+</li>
+<li>
+<p>了解被审计单位及其环境的主要目的是（ ）。
+A. 发现财务报表中的具体错报金额
+B. 识别和评估重大错报风险
+C. 测试内部控制运行的有效性
+D. 确定审计收费</p>
+</li>
+<li>
+<p>下列各项中，属于内部控制五要素的是（ ）。
+A. 控制环境
+B. 风险评估过程
+C. 对控制的监督
+D. 以上全部</p>
+</li>
+<li>
+<p>下列关于控制环境的说法中，正确的是（ ）。
+A. 控制环境本身可以防止认定层次的重大错报
+B. 控制环境对重大错报风险的评估具有广泛影响
+C. 控制环境仅包括管理职能，不包括治理职能
+D. 控制环境是所有内部控制要素中最不重要的</p>
+</li>
+<li>
+<p>注册会计师了解内部控制的程度应当足以（ ）。
+A. 测试控制运行的有效性
+B. 评价控制的设计并确定其是否得到执行
+C. 发现财务报表中的所有错报
+D. 对内部控制发表审计意见</p>
+</li>
+<li>
+<p>在了解内部控制时，注册会计师通常不采用的程序是（ ）。
+A. 询问被审计单位人员
+B. 检查内部控制手册
+C. 重新执行内部控制
+D. 观察特定控制的运用</p>
+</li>
+<li>
+<p>下列关于穿行测试的说法中，正确的是（ ）。
+A. 穿行测试属于控制测试
+B. 穿行测试是了解内部控制的程序
+C. 穿行测试是实质性程序
+D. 穿行测试仅用于测试控制运行的有效性</p>
+</li>
+<li>
+<p>下列关于特别风险的说法中，错误的是（ ）。
+A. 特别风险是需要特别考虑的重大错报风险
+B. 判断特别风险时应考虑是否涉及重大关联方交易
+C. 对于特别风险，可以仅实施控制测试
+D. 特别风险可能涉及超出正常经营过程的重大交易</p>
+</li>
+<li>
+<p>下列各项中，属于控制环境构成要素的是（ ）。
+A. 诚信和道德价值观念
+B. 治理层的参与程度
+C. 管理层的理念和经营风格
+D. 以上全部</p>
+</li>
+<li>
+<p>关于了解被审计单位及其环境，下列说法错误的是（ ）。
+A. 这是一个连续和动态地收集、更新与分析信息的过程
+B. 贯穿于整个审计过程的始终
+C. 主要目的是为了发现财务报表中的错报
+D. 包括了解被审计单位的内部控制</p>
+</li>
+<li>
+<p>下列各项中，注册会计师在了解被审计单位内部控制时应当实施的程序是（ ）。
+A. 询问被审计单位人员
+B. 函证
+C. 重新计算
+D. 存货监盘</p>
+</li>
+<li>
+<p>控制活动包括的政策和程序主要有（ ）。
+A. 授权
+B. 业绩评价
+C. 职责分离
+D. 以上全部</p>
+</li>
+<li>
+<p>下列各项中，属于特别风险判断因素的是（ ）。
+A. 风险是否属于舞弊风险
+B. 交易的复杂程度
+C. 风险是否涉及重大的关联方交易
+D. 以上全部</p>
+</li>
+<li>
+<p>关于内部控制了解与内部控制测试的关系，下列说法正确的是（ ）。
+A. 了解内部控制就是控制测试
+B. 了解内部控制需要测试控制运行的有效性
+C. 了解内部控制的程度足以评价控制的设计，不需要测试有效性
+D. 二者没有区别</p>
+</li>
+<li>
+<p>注册会计师了解被审计单位及其环境时，不需要了解的是（ ）。
+A. 行业状况、法律环境和监管环境
+B. 被审计单位的性质
+C. 被审计单位每一位员工的个人信息
+D. 被审计单位的目标、战略以及相关经营风险</p>
+</li>
+</ol>
+<h3>大题（5题）</h3>
+<ol>
+<li>
+<p>请列示风险评估程序的种类，并说明风险评估程序的目的是什么。</p>
+</li>
+<li>
+<p>请简述内部控制五要素，并说明控制环境为什么被认为是"所有其他要素的基础"。</p>
+</li>
+<li>
+<p>注册会计师在了解内部控制时通常实施哪些程序？了解内部控制的程度应达到什么标准？与控制测试有何区别？</p>
+</li>
+<li>
+<p>什么是特别风险？判断特别风险时应考虑哪些因素？针对特别风险应如何应对？</p>
+</li>
+<li>
+<p>请比较"了解内部控制"和"控制测试"在目的、程序、时间和范围上的区别。</p>
+</li>
+</ol>
+<hr />
+<h2>答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>D</td>
+<td><strong>思路</strong>：考查风险评估程序的范围。<strong>推导</strong>：风险评估程序=询问+分析程序+观察检查(A/B/C)。D"内部控制测试"属于进一步审计程序中的控制测试，不属于风险评估程序。<strong>坑</strong>：容易把控制测试混入风险评估——控制测试是"进一步审计程序"范畴。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td><strong>思路</strong>：考查了解被审计单位的目的。<strong>推导</strong>：核心目的是识别和评估重大错报风险(B)。A是实质性程序的目的；C是控制测试的目的；D无关。<strong>坑</strong>：A——"发现错报"是后面实质性程序做的事，风险评估阶段只是"找风险区域"。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td><strong>思路</strong>：考查内控五要素。<strong>推导</strong>：五要素=控制环境+风险评估过程+信息系统与沟通+控制活动+监督。A/B/C都是，故选D。<strong>坑</strong>：容易漏掉"对控制的监督"——它是第五要素。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td><strong>思路</strong>：考查控制环境特征。<strong>推导</strong>：控制环境具有广泛影响(B正确)；A错（不能直接防止认定层次错报）；C错（包括治理和管理职能）；D错（是最重要的基础）。<strong>坑</strong>：A最容易选错——控制环境影响的是"基调"和"氛围"，不是具体防错。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td><strong>思路</strong>：考查了解内控的程度标准。<strong>推导</strong>：了解内控的程度=足以评价设计+确定是否执行(B)。A是控制测试的标准；C过高；D不是审计目标。<strong>坑</strong>：A——"测试运行有效性"是控制测试的事，了解阶段不需要做到这个程度。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C</td>
+<td><strong>思路</strong>：考查了解内控的程序。<strong>推导</strong>：了解内控用询问+检查+观察+穿行测试(A/B/D)。C"重新执行"通常用于控制测试，了解阶段通常不用。<strong>坑</strong>：重新执行是"亲自动手做一遍"，用于测试有效性而不是了解设计。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td><strong>思路</strong>：考查穿行测试的性质。<strong>推导</strong>：穿行测试是了解内部控制的程序(B对)。A错（不是控制测试）；C错（不是实质性程序）；D错（不是用于测试有效性）。<strong>坑</strong>：A是最常见的混淆——穿行测试听起来像"测试"，但实际上属于"了解"范畴。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C</td>
+<td><strong>思路</strong>：考查特别风险应对。<strong>推导</strong>：对于特别风险"可以仅实施控制测试"是错误说法(C)，必须实施实质性程序。A/B/D均为正确表述。<strong>坑</strong>：记住——特别风险=必须做实质性程序，控制测试可以辅助但不能替代。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>D</td>
+<td><strong>思路</strong>：考查控制环境构成。<strong>推导</strong>：控制环境包括诚信与道德价值观(A)、治理层参与度(B)、管理理念与经营风格(C)等，故D全部正确。<strong>坑</strong>：三个都是控制环境的构成要素，没有干扰项。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>C</td>
+<td><strong>思路</strong>：考查了解环境的目的。<strong>推导</strong>：C错误——主要目的是识别和评估风险，不是"发现错报"。A/B/D均为正确描述。<strong>坑</strong>：第2题考过的同一知识点，换个表述再考一次。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>A</td>
+<td><strong>思路</strong>：考查了解内控的程序。<strong>推导</strong>：询问是了解内控的首要程序(A)。B(函证)、C(重新计算)、D(监盘)通常属于实质性程序范畴。<strong>坑</strong>：B/C/D都属于"获取审计证据"的程序，但不是"了解内控"的典型程序。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>D</td>
+<td><strong>思路</strong>：考查控制活动内容。<strong>推导</strong>：控制活动包括授权(A)、业绩评价(B)、职责分离(C)等，D全部正确。<strong>坑</strong>：三项均为控制活动，另外还有信息处理和实物控制。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>D</td>
+<td><strong>思路</strong>：考查特别风险判断因素。<strong>推导</strong>：舞弊风险(A)、交易复杂度(B)、重大关联方交易(C)都是特别风险的判断因素，D全部正确。<strong>坑</strong>：多项因素都需要考虑，不能只看一个。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>C</td>
+<td><strong>思路</strong>：考查了解vs测试的区别。<strong>推导</strong>：了解阶段只评价设计和是否执行，不测试有效性(C对)。A/B/D均错误。<strong>坑</strong>：B——"需要测试有效性"是控制测试的要求，不是了解阶段的要求。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>C</td>
+<td><strong>思路</strong>：考查了解范围。<strong>推导</strong>：行业环境(A)、被审计单位性质(B)、目标战略(D)都需要了解。C"每一位员工的个人信息"不需要了解。<strong>坑</strong>：显然无关项，但提示注意了解范围是"与审计相关的信息"。</td>
+</tr>
+</tbody>
+</table>
+<h3>大题参考答案</h3>
+<p><strong>第1题</strong>：风险评估程序种类及目的。</p>
+<blockquote>
+<p><strong>思路</strong>：逐一列示并说明目的。
+<strong>步骤</strong>：
+① 询问管理层和被审计单位内部其他人员——了解经营情况、内控设计、变化趋势
+② 实施分析程序——发现异常波动，识别可能存在重大错报风险的领域
+③ 观察和检查——观察经营活动、检查文件记录、阅读管理层报告、实地查看经营场所
+④ 目的：识别和评估财务报表层次和认定层次的重大错报风险，为设计和实施进一步审计程序提供基础
+⑤ 注意：风险评估程序本身不足以为发表审计意见提供充分适当的审计证据
+<strong>坑</strong>：不要把"内部控制测试"列为风险评估程序——这是高频考点。风险评估程序是"了解"层面的，控制测试是"进一步审计程序"层面的。</p>
+</blockquote>
+<p><strong>第2题</strong>：内部控制五要素及控制环境的地位。</p>
+<blockquote>
+<p><strong>思路</strong>：先列五要素，再深入分析控制环境。
+<strong>步骤</strong>：
+① 五要素：控制环境、被审计单位的风险评估过程、与财务报告相关的信息系统与沟通、控制活动、对控制的监督
+② 控制环境是基础的原因：
+   - 它设定了被审计单位的内部控制基调
+   - 影响员工对内部控制的认识和态度
+   - 如果控制环境薄弱（如管理层不诚信），其他控制要素再完善也可能被绕过或架空
+   - 控制环境对重大错报风险的评估具有广泛影响（不是局部影响）
+③ 注意：控制环境本身不能防止或发现认定层次的重大错报，它是提供基础氛围
+<strong>坑</strong>：别把"控制环境可以防止认定层次错报"——它只能提供基础，具体的防止要靠控制活动。</p>
+</blockquote>
+<p><strong>第3题</strong>：了解内部控制的程序、程度标准、与控制测试的区别。</p>
+<blockquote>
+<p><strong>思路</strong>：分三部分回答。
+<strong>步骤</strong>：
+① 了解内部控制的程序（4种）：
+   - 询问被审计单位人员
+   - 观察特定控制的运用
+   - 检查文件和报告（内部控制手册、流程图等）
+   - 穿行测试（追踪一笔交易从头到尾的流程）
+② 了解程度的标准：
+   - 足以评价控制的设计是否合理
+   - 足以确定控制是否得到执行
+   - <strong>不需要</strong>测试控制运行的有效性（那是控制测试的事）
+③ 与控制测试的区别：
+   - 目的不同：了解→评价设计+是否执行；控制测试→测试运行是否有效
+   - 程序不同：了解→询问+观察+检查+穿行测试；控制测试→询问+观察+检查+<strong>重新执行</strong>
+   - 范围不同：了解→所有与审计相关的内控；控制测试→仅对拟信赖的内控
+<strong>坑</strong>：穿行测试的归属是最大易错点——属于"了解"范畴，不属于"控制测试"。</p>
+</blockquote>
+<p><strong>第4题</strong>：特别风险的定义、判断因素和应对。</p>
+<blockquote>
+<p><strong>思路</strong>：定义→判断→应对，三段式。
+<strong>步骤</strong>：
+① 定义：特别风险是CPA识别和评估的、需要特别考虑的重大错报风险
+② 判断因素（至少列出以下）：
+   - 风险是否属于舞弊风险
+   - 风险是否与近期经济环境、会计处理方法等重大变化相关
+   - 交易的复杂程度
+   - 风险是否涉及重大的关联方交易
+   - 财务信息计量的主观程度（如公允价值估计）
+   - 风险是否涉及超出正常经营过程的重大交易
+③ 应对要求：
+   - 必须实施实质性程序
+   - 不能仅依赖控制测试（实质性程序不可替代）
+   - 如果拟信赖针对特别风险的控制，应当在本期测试这些控制
+<strong>坑</strong>："可以仅实施控制测试"是高频错误选项——特别风险=必须做实质性程序。</p>
+</blockquote>
+<p><strong>第5题</strong>：了解内部控制 vs 控制测试 全面对比。</p>
+<blockquote>
+<p><strong>思路</strong>：从目的、程序、时间、范围四维度对比。
+<strong>步骤</strong>：
+① 目的：
+   - 了解：评价控制的设计是否合理、是否得到执行
+   - 控制测试：评价控制运行的有效性（好不好用）
+② 程序：
+   - 了解：询问、观察、检查、穿行测试
+   - 控制测试：询问、观察、检查、重新执行
+   - 关键差异：穿行测试属于了解，重新执行属于控制测试
+③ 时间：
+   - 了解：风险评估阶段（审计计划阶段）
+   - 控制测试：进一步审计程序阶段（审计实施阶段）
+④ 范围：
+   - 了解：所有与审计相关的内部控制都需要了解
+   - 控制测试：仅对拟信赖的内部控制进行测试
+⑤ 强制/选择：
+   - 了解：必须做（准则强制要求）
+   - 控制测试：并非必须——当仅靠实质性程序不足或拟信赖内控时才做
+<strong>坑</strong>：最大坑在于把穿行测试归入控制测试——考试中反复出现这个考点。穿行测试=了解，重新执行=控制测试。</p>
+</blockquote>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扎实</td>
+<td>需复习</td>
+<td>重学本章</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>📚 小番茄题库浓缩版 · 审计学</p>
+</div>
+
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/audit/07" download>📥 下载本章PDF</a>
+</div>
+</body></html>

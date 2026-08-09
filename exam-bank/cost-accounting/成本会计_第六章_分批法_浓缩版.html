@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>成本会计 第六章 产品成本计算的分批法 浓缩速记卡 · 成本会计 · 小番茄题库</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+h4{color:#34495e;margin:15px 0 8px}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid #e0e0e0;margin:20px 0}
+</style>
+</head>
+<body>
+<a class="back-link" href="./">← 返回成本会计</a>
+<h1>成本会计 第六章 产品成本计算的分批法 浓缩速记卡</h1>
+<blockquote>
+<p>⚠️ 单件小批生产的成本计算 | 15+题 | 预计用时35分钟</p>
+</blockquote>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：分批法就像婚庆公司接婚礼订单——每场婚礼（每批订单）的规格不同，鲜花、布置、司仪的费用都得按&quot;这一场&quot;单独算，不能像食堂一样把本月所有婚礼的成本混在一起分摊。简化分批法就是——公司同时接了十几场婚礼，先把所有婚礼的公共费用（司仪统筹费、车辆调度费）汇总，等哪场办完了再按工时比例算给它，没办完的先不摊这笔钱。</p>
+</blockquote>
+<hr />
+<h2>一、分批法核心特征</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>分批法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>别名</strong></td>
+<td><strong>订单法</strong></td>
+</tr>
+<tr>
+<td><strong>成本计算对象</strong></td>
+<td>产品<strong>批别</strong>（订单）</td>
+</tr>
+<tr>
+<td><strong>成本计算期</strong></td>
+<td>产品<strong>生产周期</strong>（与会计报告期不一致）</td>
+</tr>
+<tr>
+<td><strong>完工/在产品分配</strong></td>
+<td>批内同时完工→一般<strong>不需要</strong>分配</td>
+</tr>
+<tr>
+<td><strong>适用生产类型</strong></td>
+<td>单件小批生产</td>
+</tr>
+<tr>
+<td><strong>典型企业</strong></td>
+<td>服装、造船、重型机械、印刷</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>二、简化分批法（= 累计间接费用分配法）</h2>
+<h3>为什么简化？</h3>
+<p>普通分批法：每批产品都要分配间接费用 → 批次多时工作量大
+简化分批法：<strong>不逐批分配间接费用</strong>，等到产品完工时用<strong>累计间接费用分配率</strong>一次性分配</p>
+<h3>核心机制</h3>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>产品成本明细账</strong></td>
+<td>完工前只登记<strong>直接费用+生产工时</strong>，不登记间接费用</td>
+</tr>
+<tr>
+<td><strong>生产成本二级账</strong></td>
+<td>必须设置！汇总全部批次的数据</td>
+</tr>
+<tr>
+<td><strong>累计间接费用分配率</strong></td>
+<td>= 全部间接费用累计 ÷ 全部工时累计</td>
+</tr>
+<tr>
+<td><strong>分配时机</strong></td>
+<td>有产品<strong>完工时</strong>才分配，未完工批次不分配</td>
+</tr>
+</tbody>
+</table>
+<h3>累计间接费用分配率的作用</h3>
+<blockquote>
+<p>既是<strong>各批产品之间</strong>分配间接费用的依据，<strong>也是</strong>完工产品与在产品之间分配的依据 → <strong>双重功能</strong>。</p>
+</blockquote>
+<blockquote>
+<p><strong>判断</strong>：&quot;不论月份内是否有完工产品，都应计算累计间接费用分配率&quot; → ❌ 错！没有完工就不算。</p>
+</blockquote>
+<hr />
+<h2>三、分批法 vs 简化分批法对比</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>普通分批法</th>
+<th>简化分批法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>间接费用分配</strong></td>
+<td>逐批分配</td>
+<td>完工时一次性分配</td>
+</tr>
+<tr>
+<td><strong>明细账</strong></td>
+<td>登记全部费用</td>
+<td>完工前只登记直接费用+工时</td>
+</tr>
+<tr>
+<td><strong>二级账</strong></td>
+<td>不需要</td>
+<td><strong>必须设置</strong></td>
+</tr>
+<tr>
+<td><strong>适用</strong></td>
+<td>批次少</td>
+<td>批次多、月末未完工批次多</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、间接费用分配标准的选择</h2>
+<table>
+<thead>
+<tr>
+<th>分配标准</th>
+<th>适用场景</th>
+<th>优缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>生产工时</strong></td>
+<td>各批产品工时差异大、制造费用与工时正相关</td>
+<td>最常用，反映了劳动消耗</td>
+</tr>
+<tr>
+<td><strong>生产工人工资</strong></td>
+<td>各批工人工资率相近</td>
+<td>简化计算，但工资率不同时失真</td>
+</tr>
+<tr>
+<td><strong>机器小时</strong></td>
+<td>高度自动化、设备折旧占比大</td>
+<td>适合机器密集型生产</td>
+</tr>
+<tr>
+<td><strong>直接材料成本</strong></td>
+<td>制造费用与材料消耗正相关</td>
+<td>材料价格波动会影响分配结果</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>选择原则</strong>：分配标准必须与制造费用的发生有<strong>因果关系</strong>（相关性），而不是图方便随便选。选了产量就等于退化回传统成本法了。</p>
+</blockquote>
+<hr />
+<h2>五、计算流水线</h2>
+<h3>例题1：一般分批法——三批产品</h3>
+<p>某企业按订单生产，本月投产三批产品：</p>
+<table>
+<thead>
+<tr>
+<th>批号</th>
+<th>产品</th>
+<th>产量</th>
+<th>投产日期</th>
+<th>完工情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401</td>
+<td>A产品</td>
+<td>100件</td>
+<td>4月</td>
+<td>本月全部完工</td>
+</tr>
+<tr>
+<td>402</td>
+<td>B产品</td>
+<td>80件</td>
+<td>4月</td>
+<td>本月完工50件</td>
+</tr>
+<tr>
+<td>403</td>
+<td>C产品</td>
+<td>120件</td>
+<td>4月</td>
+<td>本月全部未完工</td>
+</tr>
+</tbody>
+</table>
+<p>本月发生费用：</p>
+<table>
+<thead>
+<tr>
+<th>批号</th>
+<th>直接材料</th>
+<th>直接人工</th>
+<th>生产工时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>401</td>
+<td>50,000</td>
+<td>24,000</td>
+<td>1,200h</td>
+</tr>
+<tr>
+<td>402</td>
+<td>40,000</td>
+<td>18,000</td>
+<td>800h</td>
+</tr>
+<tr>
+<td>403</td>
+<td>60,000</td>
+<td>30,000</td>
+<td>2,000h</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>150,000</strong></td>
+<td><strong>72,000</strong></td>
+<td><strong>4,000h</strong></td>
+</tr>
+</tbody>
+</table>
+<p>制造费用总额80,000元，按生产工时分配。402批完工50件为B产品产成品，其余30件为月末在产品（材料全部投入，加工程度50%）。</p>
+<blockquote>
+<p><strong>Step 1：分配制造费用</strong>（为什么：按工时比例——谁花的时间多谁多摊）
+制造费分配率 = 80,000 ÷ 4,000 = <strong>20元/h</strong>
+401制造费 = 1,200×20 = 24,000元
+402制造费 = 800×20 = 16,000元
+403制造费 = 2,000×20 = 40,000元</p>
+</blockquote>
+<blockquote>
+<p><strong>Step 2：汇总各批总成本</strong>（为什么：直接费用+分配的间接费用=该批总成本）
+401总成本 = 50,000+24,000+24,000 = <strong>98,000元</strong> → 单位成本 = 980元/件
+402总成本 = 40,000+18,000+16,000 = <strong>74,000元</strong>（需要分完工/在产品）
+403总成本 = 60,000+30,000+40,000 = <strong>130,000元</strong>（全部未完工）</p>
+</blockquote>
+<blockquote>
+<p><strong>Step 3：402批完工与在产品分配</strong>（为什么：批内部分完工时仍然需要分配，材料一次投入+加工50%）
+402批材料：40,000÷80=500元/件×50件完工=25,000元；在产品=40,000-25,000=15,000元
+402批加工费：总加工费=18,000+16,000=34,000；约当=50+30×50%=65件
+分配率=34,000÷65≈523.08元/件
+完工加工费=50×523.08≈26,154元；在产品加工费=30×50%×523.08≈7,846元
+402批完工总成本=25,000+26,154=<strong>51,154元</strong>；单位=1,023.08元/件</p>
+</blockquote>
+<blockquote>
+<p><strong>Step 4：月末汇总</strong>（为什么：区分完工产品和在产品——分批法的产品明细账就是&quot;天然的成本汇总表&quot;）
+本月完工产品总成本 = 401(98,000) + 402完工(51,154) = <strong>149,154元</strong>
+月末在产品总成本 = 402在产品(22,846) + 403(130,000) = <strong>152,846元</strong></p>
+</blockquote>
+<h3>例题2：简化分批法——累计间接费用分配</h3>
+<p>某企业采用简化分批法。7月份基本生产成本二级账累计数据：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>直接材料</th>
+<th>生产工时</th>
+<th>直接人工</th>
+<th>制造费用</th>
+<th>合计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>月初累计</td>
+<td>120,000</td>
+<td>3,000h</td>
+<td>45,000</td>
+<td>60,000</td>
+<td>225,000</td>
+</tr>
+<tr>
+<td>本月发生</td>
+<td>180,000</td>
+<td>5,000h</td>
+<td>75,000</td>
+<td>100,000</td>
+<td>355,000</td>
+</tr>
+<tr>
+<td><strong>累计</strong></td>
+<td><strong>300,000</strong></td>
+<td><strong>8,000h</strong></td>
+<td><strong>120,000</strong></td>
+<td><strong>160,000</strong></td>
+<td><strong>580,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>各批产品明细账工时记录：</p>
+<table>
+<thead>
+<tr>
+<th>批号</th>
+<th>月初累计工时</th>
+<th>本月工时</th>
+<th>完工情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>701</td>
+<td>800h</td>
+<td>1,200h</td>
+<td>本月完工</td>
+</tr>
+<tr>
+<td>702</td>
+<td>1,200h</td>
+<td>1,800h</td>
+<td>本月完工</td>
+</tr>
+<tr>
+<td>703</td>
+<td>1,000h</td>
+<td>2,000h</td>
+<td>未完工</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Step 1：计算全部产品累计间接费用分配率</strong>（为什么：二级账汇总了所有批次的累计数据）
+人工累计分配率 = 120,000 ÷ 8,000 = <strong>15元/h</strong>
+制造费累计分配率 = 160,000 ÷ 8,000 = <strong>20元/h</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Step 2：分配间接费用给完工批次</strong>（为什么：只有完工的批次才享受分配，未完工的703不参与）
+701批累计工时 = 800+1,200 = <strong>2,000h</strong>
+701批人工 = 2,000×15 = 30,000元；制造费 = 2,000×20 = 40,000元</p>
+<p>702批累计工时 = 1,200+1,800 = <strong>3,000h</strong>
+702批人工 = 3,000×15 = 45,000元；制造费 = 3,000×20 = 60,000元</p>
+<p>703批：未完工→<strong>不分配</strong>间接费用！</p>
+</blockquote>
+<blockquote>
+<p><strong>Step 3：各批产品总成本汇总</strong>（为什么：完工批次的成本=直接材料(来自明细账)+分配的间接费用）
+（需要各批明细账的直接材料数据）
+假设：701批直接材料60,000元 → 总成本=60,000+30,000+40,000=<strong>130,000元</strong>
+702批直接材料90,000元 → 总成本=90,000+45,000+60,000=<strong>195,000元</strong>
+703批：明细账上只有直接材料48,000元和累计工时3,000h→<strong>不计算总成本</strong>，结转下月</p>
+</blockquote>
+<blockquote>
+<p><strong>核心理解</strong>：简化分批法下，未完工批次的明细账上只有直接材料和生产工时——没有间接费用。等该批完工那个月，才用当月的累计分配率一次性补上。</p>
+</blockquote>
+<hr />
+<h2>六、自测</h2>
+<h3>选择题（10题）</h3>
+<ol>
+<li>
+<p>分批法又称（ ）。
+A. 品种法  B. 订单法  C. 分类法  D. 定额法</p>
+</li>
+<li>
+<p>下列适合分批法的是（ ）。
+A. 发电企业  B. 服装企业  C. 供水企业  D. 采掘企业</p>
+</li>
+<li>
+<p>简化分批法下，在产品完工前明细账（ ）。
+A. 不登记任何费用  B. 只登记直接费用和生产工时
+C. 登记全部费用  D. 只登记间接费用</p>
+</li>
+<li>
+<p>累计间接费用分配率的计算依据是（ ）的数据。
+A. 基本生产明细账  B. 基本生产成本总账
+C. 基本生产成本二级账  D. 各批产品成本明细账</p>
+</li>
+<li>
+<p>简化分批法下，累计间接费用分配率是（ ）。
+A. 仅在各批产品之间分配的依据
+B. 仅在完工/在产品之间分配的依据
+C. 既是各批之间也是完工/在产品之间的分配依据
+D. 仅在月末未完工产品之间分配的依据</p>
+</li>
+<li>
+<p>分批法成本计算期是（ ）。
+A. 月度  B. 生产周期  C. 季度  D. 年度</p>
+</li>
+<li>
+<p>小批生产批内同时完工，月末一般不存在（ ）。
+A. 间接费用分配  B. 直接费用分配
+C. 完工/在产品分配  D. 期间费用分配</p>
+</li>
+<li>
+<p>简化分批法之所以简化，是因为（ ）。
+A. 不计算完工成本  B. 不分批计算在产品成本
+C. 不分批计算完工成本  D. 采用累计费用分配率</p>
+</li>
+<li>
+<p>采用简化分批法必须设置（ ）。
+A. 制造费用明细账  B. 生产成本二级账
+C. 管理费用明细账  D. 总分类账</p>
+</li>
+<li>
+<p>分批法适用于（ ）生产。
+A. 大量大批单步骤  B. 单件小批  C. 大量大批多步骤  D. 连续式</p>
+</li>
+</ol>
+<h3>计算题（5题）</h3>
+<p><strong>题1</strong>：某企业本月投产两批产品。#801批：A产品60件，直接材料36,000元，直接人工15,000元，工时1,500h，本月全部完工。#802批：B产品80件，直接材料48,000元，直接人工25,200元，工时2,100h，本月全部未完工。制造费用总额54,000元，按工时分配。求各批总成本和#801批单位成本。</p>
+<p><strong>题2</strong>：以上题数据为基础。如果#802批本月完工40件，另外40件为在产品（材料一次投入，加工程度60%），制造费用改按直接人工比例分配。求#802批完工产品和月末在产品成本。</p>
+<p><strong>题3</strong>：某企业采用简化分批法。7月份二级账累计：直接人工75,000元，制造费用105,000元，累计工时7,500h。#601批本月完工，累计工时2,500h，直接材料88,000元。#602批未完工，累计工时2,000h，直接材料64,000元。求#601批总成本和单位成本（产量200件）。</p>
+<p><strong>题4</strong>：说明在什么情况下应该选用简化分批法而不是普通分批法？简化分批法的两个前提条件是什么？</p>
+<p><strong>题5</strong>：判断：&quot;简化分批法下，不论是否有完工产品，每月末都应计算累计间接费用分配率。&quot;是否正确？说明理由。</p>
+<hr />
+<h2>七、答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>思路</th>
+<th>推导</th>
+<th>坑点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>分批法的别名</td>
+<td>分批法=按订单生产=订单法</td>
+<td>品种法没有别名</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>适合分批法的企业</td>
+<td>服装=每批款式不同=单件小批=分批法。A/C/D都是大量大批→品种法</td>
+<td>小型水泥厂虽然是水泥，但它是大量大批→品种法</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>简化分批法特征</td>
+<td>完工前只登记直接费用+生产工时，间接费用等完工后再分配</td>
+<td>A&quot;不登记任何&quot;错了（直接费用还是要登记的）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C</td>
+<td>累计间接费用分配率来源</td>
+<td>二级账汇总了全部批次的数据→分配率由此计算</td>
+<td>明细账只记录单个批次，看不到全貌</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C</td>
+<td>双重分配功能</td>
+<td>完工时一次性分配→既区分了各批，也区分了完工/在产品</td>
+<td>这是简化分批法的核心优势</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B</td>
+<td>分批法计算期</td>
+<td>分批法=按订单生产→订单完成才结算→计算期=生产周期</td>
+<td>品种法才是月度</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C</td>
+<td>分批法优势</td>
+<td>批内同时完工→完工时该批全部完成→不需要完工/在产品分配</td>
+<td>不是不需要费用分配，是不需要&quot;完工vs在产品&quot;的分配</td>
+</tr>
+<tr>
+<td>8</td>
+<td>D</td>
+<td>简化核心</td>
+<td>用累计分配率一次性分配→不用逐批分配→简化</td>
+<td>B&quot;不分批计算在产品成本&quot;也是结果，但根因是D</td>
+</tr>
+<tr>
+<td>9</td>
+<td>B</td>
+<td>必要条件</td>
+<td>二级账汇总全部批次数据→没有它无法算累计分配率</td>
+<td>普通分批法不需要二级账</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td>适用类型</td>
+<td>单件小批=分批法。A/C=品种法/分步法</td>
+<td>生产组织类型决定成本计算方法</td>
+</tr>
+</tbody>
+</table>
+<h3>计算题答案</h3>
+<p><strong>题1</strong>：</p>
+<blockquote>
+<p><strong>Step 1</strong>：制造费分配率 = 54,000÷(1,500+2,100) = 54,000÷3,600 = <strong>15元/h</strong>
+<strong>Step 2</strong>：#801制造费 = 1,500×15=22,500；#802制造费 = 2,100×15=31,500
+<strong>Step 3</strong>：#801总成本 = 36,000+15,000+22,500 = <strong>73,500元</strong> → 单位=73,500÷60=<strong>1,225元/件</strong>
+#802总成本 = 48,000+25,200+31,500 = <strong>104,700元</strong>（全部为在产品，结转下月）</p>
+</blockquote>
+<p><strong>题2</strong>：</p>
+<blockquote>
+<p>#802批材料：48,000÷80=600元/件 → 完工40件=24,000元；在产品40件=24,000元
+#802批加工费总额 = 25,200+31,500=56,700元（制造费本题按人工比例；但制造费此题仍用题1的15元/h结果→保持自洽，即制造费=31,500不变）
+约当产量 = 40+40×60% = 64件
+加工分配率 = 56,700÷64 ≈ 885.94元/件
+完工加工费 = 40×885.94≈35,438元；在产品加工费 = 40×60%×885.94≈21,262元
+<strong>完工总成本</strong> = 24,000+35,438 = <strong>59,438元</strong> → 单位=1,485.95元/件
+<strong>在产品成本</strong> = 24,000+21,262 = <strong>45,262元</strong></p>
+</blockquote>
+<p><strong>题3</strong>：</p>
+<blockquote>
+<p><strong>Step 1</strong>：累计人工分配率 = 75,000÷7,500 = <strong>10元/h</strong>
+累计制造费分配率 = 105,000÷7,500 = <strong>14元/h</strong>
+<strong>Step 2</strong>：#601批人工 = 2,500×10=25,000元；制造费 = 2,500×14=35,000元
+<strong>Step 3</strong>：#601总成本 = 88,000+25,000+35,000 = <strong>148,000元</strong> → 单位=148,000÷200 = <strong>740元/件</strong>
+#602批：未完工，不做分配，直接材料和2,000h结转下月。</p>
+</blockquote>
+<p><strong>题4</strong>：
+选用简化分批法的前提条件（两个必要条件）：
+① 投产<strong>批次多</strong>，月末未完工批次也多——逐批分配工作量太大，用累计分配法才有意义
+② 各月间接费用水平<strong>相对稳定</strong>——如果波动大，用累计分配率会造成完工批次的成本失真（可能把淡季的低费用率用在了旺季完工的产品上）
+两者缺一不可。批次少→普通分批法更准确；费用波动大→简化分批法反而失真。</p>
+<p><strong>题5</strong>：
+❌ 错误。简化分批法只在<strong>有产品完工的月份</strong>才需要计算累计间接费用分配率。如果当月没有完工产品，就无需计算——因为没有产品需要分配间接费用。无完工月份只需将本月发生的间接费用和生产工时累计到二级账中即可。</p>
+<hr />
+<h2>八、⚠️ 防坑预警</h2>
+<table>
+<thead>
+<tr>
+<th>❌ 学生常犯</th>
+<th>✅ 正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>坑1</strong>：分批法成本计算期=月度</td>
+<td>分批法计算期 = <strong>生产周期</strong>（≠会计报告期），和品种法刚好相反</td>
+</tr>
+<tr>
+<td><strong>坑2</strong>：简化分批法下未完工批次也分配间接费用</td>
+<td>简化分批法下→<strong>没有完工就不分配</strong>！未完工批次明细账只记直接材料+工时</td>
+</tr>
+<tr>
+<td><strong>坑3</strong>：简化和普通分批法的区别只在&quot;有没有二级账&quot;</td>
+<td>核心区别是<strong>分配时机</strong>——普通逐批分配，简化等完工一次性分配。二级账只是工具</td>
+</tr>
+<tr>
+<td><strong>坑4</strong>：批内部分完工时不需要完工/在产品分配</td>
+<td>如果一批产品<strong>跨月陆续完工</strong>→仍然需要在该批内部做完工/在产品分配！（见例题1的402批）</td>
+</tr>
+<tr>
+<td><strong>坑5</strong>：制造费用分配标准随便选</td>
+<td>标准必须与制造费用有<strong>因果关系</strong>——选产量=退化回传统成本法；选工时/工资/机器小时取决于费用驱动因素</td>
+</tr>
+<tr>
+<td><strong>坑6</strong>：简化分批法任何时候都比普通法好用</td>
+<td>不是！间接费用水平波动大的企业→简化分批法会失真（完工批次的成本受其他月份费用的影响）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>九、评分线</h2>
+<table>
+<thead>
+<tr>
+<th>🏆 优秀：全对</th>
+<th>✅ 及格：≤2错</th>
+<th>⚠️ 需复习：≥3错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 分批法掌握，可进入分步法</td>
+<td>⚠️ 重点看简化分批法（计算题3）和累计分配率</td>
+<td>🔴 简化分批法和累计分配率没理解，回到例题2重算</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

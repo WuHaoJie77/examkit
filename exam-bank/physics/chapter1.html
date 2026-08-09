@@ -1,0 +1,549 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>大学物理 第1章 质点运动学 浓缩速记卡 · 小番茄题库</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8;color:#555}
+a{color:#1a5276}strong{color:#1a5276}
+hr{border:none;border-top:1px solid #e0e0e0;margin:30px 0}
+</style><script>MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]]}};</script><script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script></head><body><a class="back-link" href="index.html">← 返回物理章节列表</a><h1>大学物理 第1章 质点运动学 浓缩速记卡</h1><div class="card"><blockquote>
+<p>课后原题：31题（7选择 + 7填空 + 17解答） | 预计用时：45分钟</p>
+</blockquote>
+<hr />
+<h2>一、位矢——描述"质点在哪儿"</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：位矢就是GPS坐标。以校门口为原点，你在图书馆，位矢 $\mathbf{r}$ 就是从校门口指向图书馆的箭头。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>写法</td>
+<td>$\mathbf{r}=x\mathbf{i}+y\mathbf{j}+z\mathbf{k}$，二维简写为 $\mathbf{r}=x\mathbf{i}+y\mathbf{j}$</td>
+</tr>
+<tr>
+<td>大小（离原点距离）</td>
+<td>$\lvert\mathbf{r}\rvert=\sqrt{x^2+y^2}$</td>
+</tr>
+<tr>
+<td>是矢量还是标量？</td>
+<td>矢量（有方向）</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「已知 $\mathbf{r}=x\mathbf{i}+y\mathbf{j}$，求离原点多远」：</p>
+<blockquote>
+<p>直接套勾股定理：$\lvert\mathbf{r}\rvert=\sqrt{x^2+y^2}$</p>
+</blockquote>
+<h3>📝 例题1-A：求位矢大小</h3>
+<p><strong>题目</strong>：$\mathbf{r}=3\mathbf{i}+4\mathbf{j}$ (m)。求质点离原点的距离。</p>
+<p><strong>解</strong>：$\lvert\mathbf{r}\rvert=\sqrt{3^2+4^2}=5$ m</p>
+<p><em>（和直角三角形斜边算法一模一样。$\mathbf{i}$ 分量是横坐标，$\mathbf{j}$ 分量是纵坐标）</em></p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$\mathbf{r}$ 和 $\lvert\mathbf{r}\rvert$ 分不清？</strong> $\mathbf{r}$ 是箭头（矢量，有方向），$\lvert\mathbf{r}\rvert$ 是箭头长度（标量，纯粹一个数）。题目问"距离"→给 $\lvert\mathbf{r}\rvert$；问"位置"→给 $\mathbf{r}$。</p>
+<hr />
+<h2>二、位移——描述"从A到B怎么变"</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：位移是从起点画到终点的箭头，不管中间怎么绕。从图书馆到食堂，位移就是两点连线；但你实际拐了几个弯走的路是路程。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>公式</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>位移（矢量）</td>
+<td>$\Delta\mathbf{r}=\mathbf{r}_2-\mathbf{r}_1$</td>
+<td>末减初，$\mathbf{i},\mathbf{j}$ 分量分别相减</td>
+</tr>
+<tr>
+<td>位移大小</td>
+<td>$\lvert\Delta\mathbf{r}\rvert=\sqrt{(\Delta x)^2+(\Delta y)^2}$</td>
+<td>初末位置直线距离</td>
+</tr>
+<tr>
+<td>路程</td>
+<td>$\Delta s$</td>
+<td>实际轨迹总长度，永远 ≥ 位移大小</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「已知 $\mathbf{r}(t)$，求 $t_1$ 到 $t_2$ 的位移」：</p>
+<blockquote>
+<p>① 把 $t_1,t_2$ 分别代入 $\mathbf{r}(t)$ → 得 $\mathbf{r}_1,\mathbf{r}_2$
+② $\Delta\mathbf{r}=\mathbf{r}_2-\mathbf{r}_1$（分量分别相减）
+③ $\lvert\Delta\mathbf{r}\rvert=\sqrt{(\Delta x)^2+(\Delta y)^2}$</p>
+</blockquote>
+<h3>📝 例题1-B：求位移和位移大小</h3>
+<p><strong>题目</strong>：$\mathbf{r}=2t\mathbf{i}+(3-t^2)\mathbf{j}$ (SI)。求 $t=1$s 到 $3$s 的位移和位移大小。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $\mathbf{r}(1)=2\mathbf{i}+2\mathbf{j}$，$\mathbf{r}(3)=6\mathbf{i}-6\mathbf{j}$
+<em>（$t=1$：$2\times1=2$，$3-1=2$；$t=3$：$2\times3=6$，$3-9=-6$——$y$ 分量从正变负，质点在往回走）</em></p>
+<p><strong>②</strong> $\Delta\mathbf{r}=(6-2)\mathbf{i}+(-6-2)\mathbf{j}=4\mathbf{i}-8\mathbf{j}$ (m)
+<em>（末减初，$\mathbf{i}$ 分量 $6-2=4$，$\mathbf{j}$ 分量 $-6-2=-8$）</em></p>
+<p><strong>③</strong> $\lvert\Delta\mathbf{r}\rvert=\sqrt{4^2+8^2}=\sqrt{80}\approx 8.94$ m
+<em>（$-8$ 平方后是 $64$，负号不影响大小）</em></p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$\lvert\Delta\mathbf{r}\rvert$（位移大小）≠ $\Delta r$（位矢大小的变化量）</strong>。这题 $\Delta r=\lvert\mathbf{r}(3)\rvert-\lvert\mathbf{r}(1)\rvert=\sqrt{72}-\sqrt{8}=5.66$ m，和 $8.94$ 不一样。因为质点走的不是过原点的直线。两者相等是巧合，不等才是常态。</p>
+<hr />
+<h2>三、速度——描述"运动快慢和方向"</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：开车时速度表显示的是瞬时速率（只管快慢），但GPS导航算的"预计到达时间"用的是平均速率。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>公式</th>
+<th>矢量/标量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>瞬时速度</td>
+<td>$\mathbf{v}=\dfrac{d\mathbf{r}}{dt}$</td>
+<td>矢量（方向=轨迹切线）</td>
+</tr>
+<tr>
+<td>瞬时速率</td>
+<td>$v=\lvert\mathbf{v}\rvert=\dfrac{ds}{dt}$</td>
+<td>标量（就是速度的大小）</td>
+</tr>
+<tr>
+<td>平均速度</td>
+<td>$\bar{\mathbf{v}}=\dfrac{\Delta\mathbf{r}}{\Delta t}$</td>
+<td>矢量（方向=位移方向）</td>
+</tr>
+<tr>
+<td>平均速率</td>
+<td>$\bar{v}=\dfrac{\Delta s}{\Delta t}$</td>
+<td>标量</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>核心关系</strong>：瞬时速度大小 = 瞬时速率（$\lvert\mathbf{v}\rvert=v$ 恒成立）。但平均速度大小 ≠ 平均速率（绕一圈回来，平均速度=0，平均速率≠0）。</p>
+</blockquote>
+<h3>🧠 解题模板</h3>
+<p>看到「已知 $\mathbf{r}(t)$，求 $t$ 时刻的速度」：</p>
+<blockquote>
+<p>① 对 $\mathbf{r}(t)$ 每个分量求导 → $\mathbf{v}=\dfrac{d\mathbf{r}}{dt}$
+② 速率 = 速度的模：$v=\lvert\mathbf{v}\rvert=\sqrt{v_x^2+v_y^2}$</p>
+</blockquote>
+<h3>📝 例题1-C：求速度和速率</h3>
+<p><strong>题目</strong>：$\mathbf{r}=2t\mathbf{i}+(3-t^2)\mathbf{j}$ (SI)。求 $t=2$s 时的速度和速率。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> 求导：$\mathbf{v}=\dfrac{d\mathbf{r}}{dt}=2\mathbf{i}-2t\mathbf{j}$
+<em>（$2t$ 求导得 $2$；$3-t^2$ 求导得 $-2t$）</em></p>
+<p>$t=2$ 时：$\mathbf{v}=2\mathbf{i}-4\mathbf{j}$ (m/s)
+<em>（$\mathbf{i}$ 方向2m/s向东，$\mathbf{j}$ 方向−4m/s向南）</em></p>
+<p><strong>②</strong> $v=\lvert\mathbf{v}\rvert=\sqrt{2^2+4^2}=\sqrt{20}\approx 4.47$ m/s</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>"速度"二字在题里到底指什么？</strong> 物理题说"求速度"→给矢量 $\mathbf{v}$（含方向）；说"求速率"→只给数 $v$。不放心就把两个都写上。</p>
+<hr />
+<h2>四、加速度——描述"速度怎么变"</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：踩油门改变快慢→切向加速度 $a_\tau$；打方向盘改变方向→法向加速度 $a_n$。匀速拐弯时 $a_\tau=0$ 但 $a_n\neq0$，所以你感觉到被甩出去。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>分量</th>
+<th>符号</th>
+<th>公式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>切向加速度</td>
+<td>$a_\tau$</td>
+<td>$a_\tau=\dfrac{dv}{dt}$</td>
+<td>改变速率大小</td>
+</tr>
+<tr>
+<td>法向加速度</td>
+<td>$a_n$</td>
+<td>$a_n=\dfrac{v^2}{\rho}$</td>
+<td>改变速度方向</td>
+</tr>
+<tr>
+<td>合加速度</td>
+<td>$a$</td>
+<td>$a=\sqrt{a_\tau^2+a_n^2}$</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「已知 $v$、$a_\tau$、轨迹半径 $R$，求合加速度」：</p>
+<blockquote>
+<p>① 法向 $a_n=\dfrac{v^2}{R}$
+② 合 $a=\sqrt{a_\tau^2+a_n^2}$
+③ 方向 $\tan\theta=\dfrac{a_n}{a_\tau}$（$\theta$ 是 $a$ 与速度方向的夹角）</p>
+</blockquote>
+<h3>📝 例题1-D：弯道行车的加速度</h3>
+<p><strong>题目</strong>：汽车在半径 $R=400$m 圆形轨道上，某时刻 $v=20$ m/s，$a_\tau=0.5$ m/s²。求法向加速度和合加速度。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $a_n=\dfrac{v^2}{R}=\dfrac{400}{400}=1$ m/s²
+<em>（$20^2=400$，除以半径400得1）</em></p>
+<p><strong>②</strong> $a=\sqrt{a_\tau^2+a_n^2}=\sqrt{0.25+1}\approx 1.12$ m/s²
+<strong>③</strong> $\tan\theta=\dfrac{1}{0.5}=2$ → $\theta\approx 63.4^\circ$（偏向法线方向）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$a_\tau=0$ 不等于 $a=0$！</strong> 匀速圆周运动：$a_\tau=0$ 但 $a_n\neq0$，合加速度 $a=a_n\neq0$。加速度为零意味着既不变快慢也不变方向→只能是匀速直线运动。</p>
+<hr />
+<h2>五、圆周运动的角量描述</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：旋转木马——离中心越远（$R$ 大），同样角速度下线速度越大。$\omega$ 和 $v$ 就差一个 $R$。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>角量</th>
+<th>线量</th>
+<th>桥接公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角位移 $\theta$</td>
+<td>弧长 $s$</td>
+<td>$s=R\theta$</td>
+</tr>
+<tr>
+<td>角速度 $\omega=\dfrac{d\theta}{dt}$</td>
+<td>线速度 $v$</td>
+<td>$v=R\omega$</td>
+</tr>
+<tr>
+<td>角加速度 $\alpha=\dfrac{d\omega}{dt}$</td>
+<td>$a_\tau$</td>
+<td>$a_\tau=R\alpha$</td>
+</tr>
+<tr>
+<td>—</td>
+<td>$a_n$</td>
+<td>$a_n=R\omega^2=\dfrac{v^2}{R}$</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>匀角加速公式（把直线公式改个字母就行）</strong>：$\theta=\theta_0+\omega_0t+\frac{1}{2}\alpha t^2$，$\omega=\omega_0+\alpha t$，$\omega^2-\omega_0^2=2\alpha(\theta-\theta_0)$</p>
+</blockquote>
+<h3>🧠 解题模板</h3>
+<p>看到「匀角加速圆周运动，已知 $\alpha,R,t$」：</p>
+<blockquote>
+<p>① $\omega=\omega_0+\alpha t$（从静止开始则 $\omega=\alpha t$）
+② $a_\tau=R\alpha$，$a_n=R\omega^2$
+③ $a=\sqrt{a_\tau^2+a_n^2}$</p>
+</blockquote>
+<h3>📝 例题1-E：匀角加速圆周运动</h3>
+<p><strong>题目</strong>：质点从静止沿 $R=1$m 圆周做匀角加速运动，$\alpha=2$ rad/s²。求 $t=1$s 时的 $a_\tau$、$a_n$ 和合加速度。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $\omega=\alpha t=2$ rad/s
+<em>（初速度为零，直接 $\omega=\alpha t$）</em></p>
+<p><strong>②</strong> $a_\tau=R\alpha=1\times2=2$ m/s²
+$a_n=R\omega^2=1\times4=4$ m/s²</p>
+<p><strong>③</strong> $a=\sqrt{2^2+4^2}=\sqrt{20}\approx 4.47$ m/s²</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$\alpha$ 恒定 ≠ 加速度恒定！</strong> $\alpha$ 恒定意味着 $a_\tau=R\alpha$ 不变，但 $a_n=R\omega^2$ 随 $\omega$ 增大而增大→合加速度的大小和方向都在变。</p>
+<hr />
+<h2>六、运动方程消去 $t$ 求轨迹</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：$x(t),y(t)$ 是一秒一秒拍照片记录质点在哪；消掉 $t$ 得到 $y=f(x)$ 就是画地图——只看路线不看时间。</p>
+</blockquote>
+<h3>🧠 解题模板</h3>
+<blockquote>
+<p>① 从 $x(t)$ 解出 $t=\cdots$（用 $x$ 表示 $t$）
+② 代入 $y(t)$，消去 $t$ → 得 $y=f(x)$</p>
+</blockquote>
+<h3>📝 例题1-F：消 t 求轨迹</h3>
+<p><strong>题目</strong>：$x=2t,\ y=4t^2$ (SI)。求轨迹方程。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $x=2t$ → $t=\dfrac{x}{2}$
+<strong>②</strong> $y=4\left(\dfrac{x}{2}\right)^2=4\cdot\dfrac{x^2}{4}=x^2$</p>
+<p>轨迹方程为 $y=x^2$（抛物线）。</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>消 $t$ 后别忘了检查 $x$ 的范围！</strong> 比如 $x=2t$ 且题目说 $t\ge0$，则 $x\ge0$，轨迹只是抛物线右半边。这题没给时间限制就不需要。</p>
+<hr />
+<h2>七、相对运动——换参考系</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：你在高铁上走，地面人看你速度 = 高铁速度 + 你相对高铁的速度。伽利略变换就是"换摄像头"——从高铁自拍切到地面监控。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>关系</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>速度变换</td>
+<td>$\mathbf{v}_{\text{绝对}}=\mathbf{v}_{\text{相对}}+\mathbf{v}_{\text{牵连}}$</td>
+</tr>
+<tr>
+<td>加速度变换</td>
+<td>$\mathbf{a}_{\text{绝对}}=\mathbf{a}_{\text{相对}}+\mathbf{a}_{\text{牵连}}$（牵连平动时）</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「A相对于B运动，B相对于地面运动，求A相对地面的速度」：</p>
+<blockquote>
+<p>① 找牵连速度（B对地）、相对速度（A对B）
+② 矢量相加：$\mathbf{v}_{\text{绝对}}=\mathbf{v}_{\text{相对}}+\mathbf{v}_{\text{牵连}}$
+③ 若两速度垂直：$v_{\text{绝对}}=\sqrt{v_{\text{相对}}^2+v_{\text{牵连}}^2}$</p>
+</blockquote>
+<h3>📝 例题1-G：船与水手的相对运动</h3>
+<p><strong>题目</strong>：船以 $4$ m/s 向东，水手在船上以 $3$ m/s 向北走。求地面人看水手的速率。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> 牵连速度 = 船速（4 m/s向东），相对速度 = 水手在船上走（3 m/s向北）
+<strong>②</strong> 两速度垂直：$v=\sqrt{4^2+3^2}=5$ m/s</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>"相对"二字看准谁相对谁！</strong> "A相对B的速度"是站在B上看A——B是参考系。地面人看水手→牵连=船对地，相对=水手对船。</p>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\lvert\Delta\mathbf{r}\rvert=\Delta r$？</td>
+<td>一般不等。$\lvert\Delta\mathbf{r}\rvert$是初末位置直线距离，$\Delta r$是离原点距离的变化量</td>
+</tr>
+<tr>
+<td>$dv/dt=\lvert\mathbf{a}\rvert$？</td>
+<td>错。$dv/dt=a_\tau$，$\lvert\mathbf{a}\rvert=\sqrt{a_\tau^2+a_n^2}$</td>
+</tr>
+<tr>
+<td>$a\lt 0$ 一定减速？</td>
+<td>不一定。$v\lt 0$ 且 $a\lt 0$ → 反向加速（速率增大）</td>
+</tr>
+<tr>
+<td>匀速率圆周运动 $a=0$？</td>
+<td>错！$a_n\neq0$，合加速度 $a=a_n\neq0$</td>
+</tr>
+<tr>
+<td>平均速度大小 = 平均速率？</td>
+<td>只在单向直线运动时成立</td>
+</tr>
+<tr>
+<td>$\alpha$ 恒定 = 加速度恒定？</td>
+<td>错。$a_\tau=R\alpha$ 不变，但 $a_n=R\omega^2$ 随 $\omega$ 增大→合加速度在变</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测15题</h2>
+<h3>选择题（10题）</h3>
+<p><strong>1.</strong> 一质点从A点沿曲线运动到B点再回A点。此过程中（ ）
+(A) 位移为零，路程为零
+(B) 位移为零，路程不为零
+(C) 位移不为零，路程为零
+(D) 位移不为零，路程不为零</p>
+<p><strong>2.</strong> 下列等式中恒成立的是（ ）
+(A) $\lvert d\mathbf{r}\rvert=dr$
+(B) $\lvert d\mathbf{r}\rvert=ds$
+(C) $\lvert\Delta\mathbf{r}\rvert=\Delta r$
+(D) $\dfrac{dr}{dt}=\left\lvert\dfrac{d\mathbf{r}}{dt}\right\rvert$</p>
+<p><strong>3.</strong> 质点作曲线运动，$\mathbf{r}$ 为位矢，$s$ 为路程。正确的是（ ）
+(A) $\left\lvert\dfrac{d\mathbf{r}}{dt}\right\rvert=v$
+(B) $\dfrac{d\mathbf{r}}{dt}=v$
+(C) $\dfrac{ds}{dt}=\lvert\mathbf{v}\rvert$
+(D) $\lvert\mathbf{r}\rvert=ds$</p>
+<p><strong>4.</strong> $x=2t,\ y=4t^2$（SI），轨迹方程为（ ）
+(A) $y=x^2$  (B) $y=2x^2$  (C) $x=y^2$  (D) $y=\dfrac{x^2}{2}$</p>
+<p><strong>5.</strong> 质点做圆周运动，$\omega$ 恒定。下列正确的是（ ）
+(A) $a_\tau=0,\ a_n=0$  (B) $a_\tau\neq0,\ a_n=0$  (C) $a_\tau=0,\ a_n\neq0$  (D) 都不对</p>
+<p><strong>6.</strong> 质点 $v=-3$ m/s，$a=-2$ m/s²，则该时刻质点（ ）
+(A) 做加速运动  (B) 做减速运动  (C) 速率增大  (D) 速率减小</p>
+<p><strong>7.</strong> $x=4t-t^3$（SI）。$t=1$s 时的加速度为（ ）
+(A) $1$ m/s²  (B) $-1$ m/s²  (C) $-6$ m/s²  (D) $6$ m/s²</p>
+<p><strong>8.</strong> 质点从静止沿 $R=1$m 圆周匀角加速 $\alpha=2$ rad/s²。$t=1$s 时 $a_n$ 为（ ）
+(A) $2$  (B) $4$  (C) $0$  (D) $1$ m/s²</p>
+<p><strong>9.</strong> $a_\tau=0$ 但 $a_n\neq0$ 的是（ ）
+(A) 匀加速直线  (B) 匀速直线  (C) 匀速率圆周运动  (D) 抛体运动</p>
+<p><strong>10.</strong> 船以 $4$ m/s 向东，水手以 $3$ m/s 向北在船上走。地面人看水手速率（ ）
+(A) $7$  (B) $1$  (C) $5$  (D) $25$ m/s</p>
+<h3>计算题（5题）</h3>
+<p><strong>11.</strong> $\mathbf{r}=2t\mathbf{i}+(3-t^2)\mathbf{j}$（SI）。求：(1) $t=1$s 到 $3$s 的位移；(2) 轨迹方程；(3) $t=2$s 的速度和加速度大小。</p>
+<p><strong>12.</strong> 质点沿x轴，$a=2+6t$（SI），$t=0$ 时 $v_0=1$ m/s，$x_0=0$。求：(1) $t=2$s 时的速度；(2) $t=2$s 时的位置。</p>
+<p><strong>13.</strong> 质点沿 $R=0.5$m 圆周，$\theta=2+t^2$（SI）。求 $t=2$s 时：(1) $\omega$ 和 $\alpha$；(2) $a_\tau$ 和 $a_n$；(3) 合加速度。</p>
+<p><strong>14.</strong> $x=3t,\ y=4t-5t^2$（SI）。求：(1) 轨迹方程；(2) $t=1$s 时的 $a_\tau$ 和 $a_n$。</p>
+<p><strong>15.</strong> 汽车 $R=400$m，$v=20$ m/s，$a_\tau=0.5$ m/s²。求：(1) $a_n$；(2) 合加速度大小和方向。</p>
+<hr />
+<h2>答案与详细解析</h2>
+<h3>选择题详细解析</h3>
+<hr />
+<p><strong>1.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：位移看起点到终点，路程看实际轨迹长度。</p>
+<p>从A到B再回A→终点=起点→位移 $\Delta\mathbf{r}=0$。但轨迹经过了B点→实际走过的路非零→路程 $\neq0$。</p>
+<blockquote>
+<p><strong>坑</strong>：A说"路程为零"——除非质点根本没动，否则路程必大于零。C/D说位移不为零——回到原地位移就是零。</p>
+</blockquote>
+<hr />
+<p><strong>2.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：逐项检验恒等式。</p>
+<p>A：$\lvert d\mathbf{r}\rvert=dr$——$dr$ 是位矢大小的微分（标量），$\lvert d\mathbf{r}\rvert$ 是位移微元的大小。绕弯时 $\lvert d\mathbf{r}\rvert\neq dr$。不是恒成立。</p>
+<p>B：$\lvert d\mathbf{r}\rvert=ds$——在 $dt\to0$ 的极限下，位移微元的大小等于路程微元。这是微积分定义，<strong>恒成立</strong>。✓</p>
+<p>C：$\lvert\Delta\mathbf{r}\rvert=\Delta r$——有限位移时，位移大小≠位矢大小变化（除非质点沿过原点的直线运动）。一般不等。</p>
+<p>D：$\dfrac{dr}{dt}=\left\lvert\dfrac{d\mathbf{r}}{dt}\right\rvert$——$dr/dt$ 是速度的径向分量，$\lvert d\mathbf{r}/dt\rvert$ 是速率。一般不等（除非圆周运动等特殊情况）。</p>
+<blockquote>
+<p><strong>坑</strong>：A、C、D在特定条件下都成立，但题目问"恒成立"——只有B在所有情况下都对。</p>
+</blockquote>
+<hr />
+<p><strong>3.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：速率 $v$ 的定义就是 $ds/dt$，也等于速度矢量的大小 $\lvert\mathbf{v}\rvert$。</p>
+<p>A：$\lvert d\mathbf{r}/dt\rvert=v$——实际上这也是对的（速度大小=速率）。但C更直接——$ds/dt$ 就是速率的定义式。</p>
+<p>B：$d\mathbf{r}/dt=v$——左边是速度矢量，右边是速率标量，不是同类量。</p>
+<p>D：$\lvert\mathbf{r}\rvert=ds$——位矢大小和路程完全不是一回事。</p>
+<p>正确答案是C（A也正确，但C是标准定义）。</p>
+<hr />
+<p><strong>4.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：从 $x(t)$ 解出 $t$，代入 $y(t)$。</p>
+<p>$x=2t$→$t=\dfrac{x}{2}$。代入 $y$：$y=4\left(\dfrac{x}{2}\right)^2=4\cdot\dfrac{x^2}{4}=x^2$。</p>
+<blockquote>
+<p><strong>坑</strong>：B是 $y=2x^2$——错在 $4\cdot(x/2)^2=4x^2/4=x^2$，不是 $2x^2$。</p>
+</blockquote>
+<hr />
+<p><strong>5.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$\omega$ 恒定→角加速度 $\alpha=d\omega/dt=0$→切向加速度 $a_\tau=R\alpha=0$。</p>
+<p>法向加速度 $a_n=R\omega^2$，$\omega\neq0$ 时 $a_n\neq0$。所以 $a_\tau=0$ 但 $a_n\neq0$。</p>
+<blockquote>
+<p><strong>坑</strong>：A说 $a_n=0$——匀速率圆周运动的法向加速度一定不为零，否则就做直线运动了。D"都不对"也错，C就是对的。</p>
+</blockquote>
+<hr />
+<p><strong>6.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：速率的变化看 $v$ 和 $a$ 的符号——同号则速率增大，异号则速率减小。</p>
+<p>$v=-3&lt;0$（沿负方向运动），$a=-2&lt;0$（加速度也沿负方向）。同号→速率增大（沿负方向越走越快）。</p>
+<blockquote>
+<p><strong>坑</strong>：题目里 $v$ 和 $a$ 都是负的，直觉会觉得"加速度为负→减速"——但减速看的是速率，不是速度值！$v$ 从 $-3$ 变到 $-5$，数值变小了但速率从3增到5。<strong>判断速率的增减看 $v$ 和 $a$ 是否同号，不看 $a$ 的正负。</strong></p>
+</blockquote>
+<hr />
+<p><strong>7.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：先求速度再求加速度（求两次导）。</p>
+<p>$v=\dfrac{dx}{dt}=4-3t^2$</p>
+<p>$a=\dfrac{dv}{dt}=-6t$</p>
+<p>$t=1$→$a=-6$ m/s²。</p>
+<hr />
+<p><strong>8.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：匀角加速→$\omega=\omega_0+\alpha t$。从静止出发→$\omega_0=0$。</p>
+<p>$\omega=\alpha t=2\times1=2$ rad/s</p>
+<p>$a_n=R\omega^2=1\times4=4$ m/s²</p>
+<blockquote>
+<p><strong>坑</strong>：A给 $a_\tau=2$——那是切向加速度不是法向。注意区分 $a_\tau=R\alpha$ 和 $a_n=R\omega^2$。</p>
+</blockquote>
+<hr />
+<p><strong>9.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$a_\tau=0$→速率不变。$a_n\neq0$→方向在变。同时满足两条件→匀速率圆周运动。</p>
+<p>A：匀加速直线→$a_n=0,a_\tau\neq0$ ✗
+B：匀速直线→$a_n=0,a_\tau=0$ ✗
+C：匀速率圆周运动→$a_\tau=0$（速率不变），$a_n=v^2/R\neq0$（方向一直变） ✓
+D：抛体运动→$a_\tau$和$a_n$都不为零 ✗</p>
+<hr />
+<p><strong>10.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：船速向东(4)→牵连速度。水手相对船向北走(3)→相对速度。两速度垂直。</p>
+<p>$v=\sqrt{4^2+3^2}=5$ m/s</p>
+<blockquote>
+<p><strong>坑</strong>：A说7——那是直接加（$4+3$），但速度是矢量，垂直时用勾股定理。D说25——那是 $4^2+3^2$ 忘了开根号。</p>
+</blockquote>
+<hr />
+<h3>计算题详细解析</h3>
+<hr />
+<p><strong>11.</strong> 运动方程求位移、轨迹、速度</p>
+<p><strong>(1) 求位移</strong></p>
+<p><strong>思路</strong>：代入时间得位矢→末减初→勾股定理求大小。</p>
+<p>$\mathbf{r}(1)=2\mathbf{i}+2\mathbf{j}$，$\mathbf{r}(3)=6\mathbf{i}-6\mathbf{j}$</p>
+<p>$\Delta\mathbf{r}=\mathbf{r}(3)-\mathbf{r}(1)=(6-2)\mathbf{i}+(-6-2)\mathbf{j}=4\mathbf{i}-8\mathbf{j}$ (m)</p>
+<p>$\lvert\Delta\mathbf{r}\rvert=\sqrt{4^2+8^2}=\sqrt{80}\approx8.94$ m</p>
+<blockquote>
+<p><strong>坑</strong>：$\mathbf{r}$ 是 $x\mathbf{i}+y\mathbf{j}$ 形式，代入 $t$ 时 $x$ 和 $y$ 分量分别算。$y$ 分量 $3-t^2$ 在 $t=3$ 时是 $3-9=-6$。</p>
+</blockquote>
+<p><strong>(2) 轨迹方程</strong></p>
+<p><strong>思路</strong>：从 $x=2t$ 解出 $t=x/2$，代入 $y$。</p>
+<p>$y=3-\left(\dfrac{x}{2}\right)^2=3-\dfrac{x^2}{4}$</p>
+<p><strong>(3) 速度与加速度大小</strong></p>
+<p><strong>思路</strong>：对 $\mathbf{r}$ 求导得速度，再求导得加速度，分别求模。</p>
+<p>$\mathbf{v}=\dfrac{d\mathbf{r}}{dt}=2\mathbf{i}-2t\mathbf{j}$ → $t=2$ 时 $\mathbf{v}=2\mathbf{i}-4\mathbf{j}$</p>
+<p>$\lvert\mathbf{v}\rvert=\sqrt{2^2+4^2}=\sqrt{20}\approx4.47$ m/s</p>
+<p>$\mathbf{a}=\dfrac{d\mathbf{v}}{dt}=-2\mathbf{j}$ → $\lvert\mathbf{a}\rvert=2$ m/s²</p>
+<hr />
+<p><strong>12.</strong> 变加速直线运动</p>
+<p><strong>思路</strong>：加速度是 $t$ 的函数→积分求速度→再积分求位置。</p>
+<p><strong>(1)</strong> $a=\dfrac{dv}{dt}=2+6t$</p>
+<p>$v=v_0+\int_0^2(2+6t)dt=1+[2t+3t^2]_0^2=1+4+12=17$ m/s</p>
+<p><strong>(2)</strong> $x=x_0+\int_0^2 v(t)dt$，其中 $v(t)=1+2t+3t^2$（从 $v_0$ 开始积分的结果）</p>
+<p>$x=0+\int_0^2(1+2t+3t^2)dt=[t+t^2+t^3]_0^2=2+4+8=14$ m</p>
+<blockquote>
+<p><strong>坑</strong>：不能用匀变速公式 $v=v_0+at$！$a$ 不是常数，必须积分。</p>
+</blockquote>
+<hr />
+<p><strong>13.</strong> 圆周运动角量与线量</p>
+<p><strong>思路</strong>：先求 $\omega$ 和 $\alpha$（对 $\theta$ 求导），再用桥接公式转线量。</p>
+<p><strong>(1)</strong> $\omega=\dfrac{d\theta}{dt}=2t$ → $t=2$ 时 $\omega=4$ rad/s</p>
+<p>$\alpha=\dfrac{d\omega}{dt}=2$ rad/s²</p>
+<p><strong>(2)</strong> $a_\tau=R\alpha=0.5\times2=1$ m/s²</p>
+<p>$a_n=R\omega^2=0.5\times16=8$ m/s²</p>
+<p><strong>(3)</strong> $a=\sqrt{a_\tau^2+a_n^2}=\sqrt{1+64}\approx8.06$ m/s²</p>
+<hr />
+<p><strong>14.</strong> 求轨迹和切向法向加速度</p>
+<p><strong>(1) 轨迹方程</strong></p>
+<p><strong>思路</strong>：$t=\dfrac{x}{3}$，代入 $y$。</p>
+<p>$y=4\cdot\dfrac{x}{3}-5\left(\dfrac{x}{3}\right)^2=\dfrac{4x}{3}-\dfrac{5x^2}{9}$</p>
+<p><strong>(2) 切向和法向加速度</strong></p>
+<p><strong>思路</strong>：先求速度大小 $v(t)$，$a_\tau=dv/dt$，$a_n=\sqrt{a^2-a_\tau^2}$。</p>
+<p>$v_x=\dfrac{dx}{dt}=3$，$v_y=\dfrac{dy}{dt}=4-10t$</p>
+<p>$v=\sqrt{v_x^2+v_y^2}=\sqrt{9+(4-10t)^2}$</p>
+<p>$t=1$：$v_y=4-10=-6$，$v=\sqrt{9+36}=\sqrt{45}\approx6.71$ m/s</p>
+<p>$\mathbf{a}=(a_x,a_y)=(0,-10)$，$\lvert\mathbf{a}\rvert=10$ m/s²</p>
+<p>$a_\tau=\dfrac{dv}{dt}=\dfrac{\mathbf{v}\cdot\mathbf{a}}{v}=\dfrac{3\times0+(-6)\times(-10)}{\sqrt{45}}=\dfrac{60}{\sqrt{45}}\approx8.94$ m/s²</p>
+<p>$a_n=\sqrt{\lvert\mathbf{a}\rvert^2-a_\tau^2}=\sqrt{100-80}\approx4.47$ m/s²</p>
+<blockquote>
+<p><strong>坑</strong>：求 $a_\tau$ 最快的方法是用 $a_\tau=\mathbf{v}\cdot\mathbf{a}/v$（速度矢量点乘加速度矢量除以速率），不用真的对 $v(t)$ 求导。</p>
+</blockquote>
+<hr />
+<p><strong>15.</strong> 弯道行车的加速度</p>
+<p><strong>思路</strong>：已知 $v,R,a_\tau$→先求 $a_n$→再合成。</p>
+<p><strong>(1)</strong> $a_n=\dfrac{v^2}{R}=\dfrac{400}{400}=1$ m/s²</p>
+<p><strong>(2)</strong> $a=\sqrt{a_\tau^2+a_n^2}=\sqrt{0.25+1}\approx1.12$ m/s²</p>
+<p>$\tan\theta=\dfrac{a_n}{a_\tau}=2$ → $\theta\approx63.4^\circ$（合加速度偏向法线方向）</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 已掌握</td>
+<td>🟡 重点：$\lvert\Delta\mathbf{r}\rvert$ vs $\Delta r$、$a_\tau$ vs $a_n$、匀角加速公式</td>
+<td>🔴 整章重过</td>
+</tr>
+</tbody>
+</table></div><div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p><p>小番茄题库 · 助力财大学子</p></div></body></html>

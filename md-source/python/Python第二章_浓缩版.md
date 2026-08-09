@@ -278,7 +278,7 @@ A. 3, 8　　B. 5, 8　　C. 5, 3　　D. 3, 5
 
 **7.** 字符串 `s = "Hello World"`，`s[6:]` 的结果是？
 
-A. `World`　　B. ` World`　　C. `W`　　D. `Hello`
+A. `World`　　B. `ello World`　　C. `W`　　D. `Hello`
 
 **8.** 字符串 `s = "Python"`，`s[2:4]` 的结果是？
 

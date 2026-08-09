@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>大学物理简明教程 · 小番茄题库</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:960px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.chapter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:20px 0}
+.chapter-card{background:#fff;border-radius:12px;padding:22px;box-shadow:0 1px 8px rgba(0,0,0,0.05);border:1px solid #e8e8e8;transition:transform .15s,box-shadow .15s;text-decoration:none;color:inherit;display:block}
+.chapter-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+.chapter-card .num{font-size:0.85em;color:#999;margin-bottom:4px}
+.chapter-card h3{color:#1a5276;font-size:1.05em;margin-bottom:10px}
+.chapter-card .prob-list{list-style:none;padding:0;margin:0}
+.chapter-card .prob-list li{font-size:0.85em;color:#555;padding:2px 0;padding-left:16px;position:relative;line-height:1.6}
+.chapter-card .prob-list li::before{content:"▸";position:absolute;left:0;color:#1a5276;font-size:0.7em}
+.chapter-card .status{display:inline-block;border-radius:8px;padding:1px 10px;font-size:0.75em;margin-top:8px}
+.chapter-card .status.ready{background:#d4efdf;color:#27ae60}
+.chapter-card .status.skip{background:#fff3cd;color:#856404}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+</style>
+</head>
+<body>
+<a class="back-link" href="/">← 返回首页</a>
+<h1>⚛️ 大学物理简明教程</h1>
+<p style="color:#666;margin-bottom:20px">赵近芳、王登龙 · 北京邮电大学出版社（第5版）</p>
+
+<div class="card" style="text-align:center;padding:25px;background:linear-gradient(135deg,#fef9e7,#fdebd0);border:2px solid #f39c12">
+<p style="font-size:1.2em;font-weight:700;color:#e67e22">📝 <a href="mock-exam.html" style="color:#e67e22;text-decoration:underline">期末模拟卷</a></p>
+<p style="color:#888;font-size:0.85em;margin-top:4px">重点课后原题 · 20选择+10计算 · 满分100分</p>
+</div>
+
+<div class="card">
+<h2>📖 考试章节（6章）</h2>
+<p style="color:#888;font-size:0.9em;margin-bottom:15px">点击章节卡片进入 → 先学例题再刷自测</p>
+<div class="chapter-grid">
+
+<a class="chapter-card" href="chapter1.html">
+<div class="num">第1章</div><h3>质点运动学</h3>
+<ul class="prob-list">
+<li>位矢·位移·路程  → 求位移大小</li>
+<li>速度·速率  → 求瞬时速度</li>
+<li>切向·法向加速度  → 弯道行车</li>
+<li>圆周运动角量线量  → 匀角加速转动</li>
+<li>运动方程→轨迹  → 消t得抛物线</li>
+<li>相对运动  → 船+水手叠加</li>
+</ul>
+<div class="status ready">✅ 10选+5计算</div>
+</a>
+
+<a class="chapter-card" href="chapter2.html">
+<div class="num">第2章</div><h3>质点动力学</h3>
+<ul class="prob-list">
+<li>牛顿定律微分方程  → 变力F=6t求v,x</li>
+<li>动量定理·守恒  → 子弹打木块</li>
+<li>动能定理·机械能守恒  → 变力F=2x+4做功</li>
+<li>角动量·守恒  → 哈雷彗星轨道</li>
+<li>质心运动  → 人走船退</li>
+<li>流体基础  → 截面积减半流速翻倍</li>
+</ul>
+<div class="status ready">✅ 10选+5计算</div>
+</a>
+
+<a class="chapter-card" href="chapter3.html">
+<div class="num">第3章</div><h3>刚体力学基础</h3>
+<ul class="prob-list">
+<li>转动惯量  → 圆盘vs圆环</li>
+<li>转动定律M=Jα  → 滑轮+重物系统</li>
+<li>转动动能·力矩做功  → 杆水平释放</li>
+<li>角动量守恒  → 人走转台</li>
+<li>碰撞+转动综合  → 子弹打悬挂杆</li>
+</ul>
+<div class="status ready">✅ 10选+5计算</div>
+</a>
+
+<a class="chapter-card" href="chapter4.html">
+<div class="num">第4章</div><h3>机械振动与机械波</h3>
+<ul class="prob-list">
+<li>简谐振动特征量  → 由初始条件求方程</li>
+<li>旋转矢量法  → 判初相位</li>
+<li>振动能量  → 位移一半时动能</li>
+<li>振动合成  → 同频A₁=3,A₂=4合振幅</li>
+<li>波函数  → 已知一点求全场</li>
+<li>干涉加强减弱  → S₁S₂外侧合振幅</li>
+</ul>
+<div class="status ready">✅ 10选+5计算</div>
+</a>
+
+<a class="chapter-card" href="chapter7.html">
+<div class="num">第7章</div><h3>静电场</h3>
+<ul class="prob-list">
+<li>库仑定律·场强  → 三角形顶点电荷平衡</li>
+<li>高斯定理  → 带电球壳分层场强</li>
+<li>电势·电势能  → 细杆延长线上电势</li>
+<li>导体静电平衡  → 同心球壳接地</li>
+<li>电介质·电容  → 带介质金属球</li>
+<li>静电场能量  → 平行板电容器储能</li>
+</ul>
+<div class="status ready">✅ 10选+5计算</div>
+</a>
+
+<a class="chapter-card" href="chapter8.html">
+<div class="num">第8章</div><h3>稳恒磁场</h3>
+<ul class="prob-list">
+<li>毕奥-萨伐尔定律  → 弯折导线圆心B</li>
+<li>安培环路定理  → 同轴电缆磁场</li>
+<li>安培力  → 直导线对矩形线圈力</li>
+<li>洛伦兹力  → 电子圆周运动</li>
+<li>磁介质  → 螺绕环填铁芯</li>
+</ul>
+<div class="status ready">✅ 10选+5计算</div>
+</a>
+
+</div>
+</div>
+
+<div class="card">
+<h2>⏭️ 不在考试范围</h2>
+<div class="chapter-grid">
+<div class="chapter-card"><div class="num">第5章</div><h3>气体动理论</h3><div class="status skip">不考</div></div>
+<div class="chapter-card"><div class="num">第6章</div><h3>热力学基础</h3><div class="status skip">不考</div></div>
+<div class="chapter-card"><div class="num">第9章</div><h3>电磁感应</h3><div class="status skip">不考</div></div>
+<div class="chapter-card"><div class="num">第10章</div><h3>波动光学</h3><div class="status skip">不考</div></div>
+<div class="chapter-card"><div class="num">第11章</div><h3>狭义相对论</h3><div class="status skip">不考</div></div>
+<div class="chapter-card"><div class="num">第12章</div><h3>量子物理基础</h3><div class="status skip">不考</div></div>
+</div>
+</div>
+
+<div class="footer">
+<p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p>
+<p>小番茄题库 · 助力财大学子</p>
+</div>
+</body>
+</html>

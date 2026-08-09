@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>审计学_第08章_风险应对_浓缩版</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+.chapter-list a .badge{float:right;background:#1a5276;color:#fff;border-radius:12px;padding:2px 10px;font-size:0.75em;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+.notice{background:linear-gradient(135deg,#eaf2f8,#f0f4f8);border:1px solid #bdd7ee;border-radius:12px;padding:25px 30px;margin:30px 0;line-height:1.9}
+.notice h3{color:#1a5276;margin-bottom:12px;font-size:1.1em}
+.notice p{color:#555;font-size:0.95em;margin:6px 0}
+.notice .highlight{color:#e74c3c;font-weight:600}
+
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;z-index:999}
+.pdf-btn{display:inline-block;background:#1a5276;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:background .15s}
+.pdf-btn:hover{background:#0d3b54}
+</style>
+</head><body>
+<a class="back-link" href="index.html">← 返回审计学目录</a>
+<h1>审计学 第08章 风险应对 浓缩速记卡</h1>
+<h1>审计学 第8章 风险应对 浓缩速记卡</h1>
+<blockquote>
+<p>章节：风险应对（进一步审计程序、控制测试、实质性程序） | 原题量：单选6 + 多选4 + 简答1 = 11题 | 预计用时：40分钟</p>
+</blockquote>
+<hr />
+<h2>知识模块</h2>
+<h3>模块一：进一步审计程序总体框架</h3>
+<p><strong>费曼类比</strong>：就像医生给病人看病——先通过问诊（风险评估）找到可疑病因，然后针对性地开检查单（进一步审计程序）。检查分两种：化验血常规看身体各项指标是否达标（实质性程序），和做心电图看心脏这个"控制系统"是否正常工作（控制测试）。不是所有病人都需要做所有检查，而是根据风险高低决定检查的深度和范围。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>注册会计师针对评估的认定层次重大错报风险设计和实施的审计程序</td>
+</tr>
+<tr>
+<td>包括</td>
+<td>控制测试 + 实质性程序（不含风险评估程序）</td>
+</tr>
+<tr>
+<td>设计依据</td>
+<td>评估的重大错报风险决定性质、时间安排和范围</td>
+</tr>
+<tr>
+<td>应对层级</td>
+<td>认定层次的重大错报风险（非报表层次）</td>
+</tr>
+<tr>
+<td>实质性程序的强制性</td>
+<td>无论风险高低，必须对所有重大类别的交易、账户余额和披露实施实质性程序</td>
+</tr>
+</tbody>
+</table>
+<h3>模块二：控制测试</h3>
+<p><strong>费曼类比</strong>：控制测试就像检验一把锁是否真的能锁住门——你不是看锁的外观说明书（了解内部控制），而是亲自用钥匙去试，看锁芯是否能转动、是否能卡住。还可以看锁上是否有锈迹（留下的痕迹），或者问每天用这把锁的人它是否有过失效的情况。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目的</td>
+<td>测试内部控制运行的有效性（不是设计是否合理）</td>
+</tr>
+<tr>
+<td>与了解内控的区别</td>
+<td>了解内控是看有没有制度；控制测试是看制度是否被执行且有效</td>
+</tr>
+<tr>
+<td>是否必须实施</td>
+<td>不是必须的——仅在拟信赖内部控制时才需要</td>
+</tr>
+<tr>
+<td>与实质性程序的关系</td>
+<td>不能完全替代实质性程序</td>
+</tr>
+<tr>
+<td>运行有效的证据</td>
+<td>签字、电子记录等痕迹（仅询问不够）</td>
+</tr>
+<tr>
+<td>影响范围的因素</td>
+<td>拟信赖的时间长度、控制执行频率、拟信赖程度、预期偏差</td>
+</tr>
+<tr>
+<td>期中测试</td>
+<td>期中测试后还需对剩余期间获取审计证据</td>
+</tr>
+</tbody>
+</table>
+<h3>模块三：利用以前年度控制测试证据</h3>
+<p><strong>费曼类比</strong>：就像你的驾照年检——如果交通规则没变（控制未变），驾驶记录良好（非特别风险），不需要每年都重新考科目二，但也不能拿十年前的驾照说事，至少每三年得重新验证一次驾驶技能。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前提</td>
+<td>拟信赖的控制自上次测试后未发生变化</td>
+</tr>
+<tr>
+<td>测试间隔</td>
+<td>每三年至少测试一次（非每年必须）</td>
+</tr>
+<tr>
+<td>特殊规定</td>
+<td>特别风险的控制必须每年测试</td>
+</tr>
+<tr>
+<td>禁止做法</td>
+<td>不能无限期依赖以前年度证据</td>
+</tr>
+</tbody>
+</table>
+<h3>模块四：实质性程序</h3>
+<p><strong>费曼类比</strong>：实质性程序就像审计版的"盘点库存"——你亲自数仓库里有多少货（细节测试），或者看今年销量和库存的比例是否合理（分析程序）。不能只看账本上的数字，必须动手核实。你可以全部逐笔核对，也可以用数据分析大致判断，但无论如何都得做。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类</td>
+<td>细节测试 + 实质性分析程序</td>
+</tr>
+<tr>
+<td>目标</td>
+<td>发现认定层次的重大错报</td>
+</tr>
+<tr>
+<td>与风险的关系</td>
+<td>无论风险评估结果如何，重大类别的交易、账户余额和披露必须实施实质性程序</td>
+</tr>
+<tr>
+<td>实质性分析程序</td>
+<td>考虑信息来源的可获得性、可比性、性质和相关性；可单独或结合细节测试使用</td>
+</tr>
+<tr>
+<td>误区纠正</td>
+<td>实质性分析程序并不总比细节测试提供更高水平的保证；仅在能更有效降低检查风险时可单独使用</td>
+</tr>
+</tbody>
+</table>
+<h3>模块五：期中实施审计程序</h3>
+<p><strong>费曼类比</strong>：期中审计就像期中考试——能帮你提前发现问题，但不能代替期末考试。期中成绩再好，离期末这段时间发生了什么你还是得查。</p>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>有助于在审计工作初期识别重大事项</td>
+</tr>
+<tr>
+<td>剩余期间</td>
+<td>期中测试后必须针对剩余期间获取审计证据</td>
+</tr>
+<tr>
+<td>控制测试</td>
+<td>期中测试控制有效后，期末仍需考虑是否再次测试（不能直接免掉）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"控制测试必须在每次审计中实施"</td>
+<td>控制测试仅在拟信赖内部控制时才需要，不是必须的</td>
+</tr>
+<tr>
+<td>"控制测试可以完全替代实质性程序"</td>
+<td>实质性程序不可被替代，重大类别必须实施实质性程序</td>
+</tr>
+<tr>
+<td>"期中测试了控制，期末就不用测了"</td>
+<td>期中测试后还需对剩余期间获取审计证据</td>
+</tr>
+<tr>
+<td>"以前测试过的控制可以无限期信赖"</td>
+<td>每三年至少测试一次；特别风险必须每年测试</td>
+</tr>
+<tr>
+<td>"实质性分析程序总比细节测试更有保证"</td>
+<td>仅在比细节测试更有效降低检查风险时可单独使用，并非总是更强</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测</h2>
+<h3>选择题（15题）</h3>
+<p><strong>1.</strong> 下列有关进一步审计程序的说法中，错误的是（ ）。
+A. 进一步审计程序包括控制测试和实质性程序
+B. 进一步审计程序的性质、时间安排和范围取决于评估的重大错报风险
+C. 进一步审计程序应对的是报表层次的重大错报风险
+D. 进一步审计程序是针对认定层次重大错报风险设计和实施的</p>
+<p><strong>2.</strong> 注册会计师实施控制测试的主要目的是（ ）。
+A. 了解内部控制的设计是否合理
+B. 测试内部控制是否得到执行
+C. 测试内部控制运行的有效性
+D. 发现财务报表的重大错报</p>
+<p><strong>3.</strong> 下列有关实质性程序的说法中，正确的是（ ）。
+A. 如果风险评估结果为低水平，可以不实施实质性程序
+B. 实质性程序仅包括细节测试
+C. 无论风险评估结果如何，重大类别的交易、账户余额和披露都应实施实质性程序
+D. 实质性程序可以完全被控制测试替代</p>
+<p><strong>4.</strong> 注册会计师在期中实施了控制测试并确认控制有效。下列关于期末处理的做法中，正确的是（ ）。
+A. 期末无需再对控制进行任何测试
+B. 期末只需询问即可
+C. 应当针对剩余期间获取审计证据
+D. 应当将期中测试结果直接延伸至期末</p>
+<p><strong>5.</strong> 注册会计师拟信赖某项控制，该控制自上次测试后未发生变化且不涉及特别风险，上次测试距今两年。下列做法中，恰当的是（ ）。
+A. 必须今年重新测试
+B. 可以等到满三年时再测试
+C. 可以无限期依赖以前测试结果
+D. 必须每年测试一次</p>
+<p><strong>6.</strong> 下列有关实质性分析程序的说法中，错误的是（ ）。
+A. 用作实质性程序时应考虑信息的来源、可比性、性质和相关性
+B. 可以单独或结合细节测试使用
+C. 总是比细节测试提供更高水平的保证
+D. 当比细节测试更有效降低检查风险时，可单独使用</p>
+<p><strong>7.</strong> 下列各项中，不属于进一步审计程序的是（ ）。
+A. 控制测试
+B. 风险评估程序
+C. 细节测试
+D. 实质性分析程序</p>
+<p><strong>8.</strong> 在设计进一步审计程序时，注册会计师应当考虑的因素不包括（ ）。
+A. 风险的重要性
+B. 重大错报发生的可能性
+C. 被审计单位的股票价格
+D. 被审计单位采用的特定控制的性质</p>
+<p><strong>9.</strong> 下列证据中，最能表明内部控制运行有效的是（ ）。
+A. 被审计单位的内部控制手册
+B. 注册会计师通过询问了解到的情况
+C. 信息系统中留下的电子记录痕迹
+D. 管理层对内部控制的口头保证</p>
+<p><strong>10.</strong> 下列因素中，不影响控制测试范围的是（ ）。
+A. 拟信赖控制运行有效性的时间长度
+B. 控制执行的频率
+C. 对控制有效性的拟信赖程度
+D. 被审计单位的资产总额</p>
+<p><strong>11.</strong> 对于涉及特别风险的控制，下列做法中正确的是（ ）。
+A. 可以利用以前年度控制测试的证据
+B. 应当每年对该控制进行测试
+C. 每三年测试一次即可
+D. 只需在首次审计时测试</p>
+<p><strong>12.</strong> 下列关于控制测试与实质性程序关系的说法中，正确的是（ ）。
+A. 控制测试可以完全替代实质性程序
+B. 实施了控制测试就可以减少实质性程序的范围
+C. 控制测试和实质性程序是互斥的
+D. 实质性程序可以完全替代控制测试</p>
+<p><strong>13.</strong> 注册会计师在期中实施审计程序，主要优点在于（ ）。
+A. 可以完全替代期末审计程序
+B. 有助于在审计工作初期识别重大事项
+C. 可以减少实质性程序的范围
+D. 可以省略期末的审计工作</p>
+<p><strong>14.</strong> 注册会计师对银行存款存在认定的重大错报风险评估为低水平。下列做法中，正确的是（ ）。
+A. 可以不实施实质性程序
+B. 仍然应当实施实质性程序
+C. 仅实施控制测试即可
+D. 仅询问管理层即可</p>
+<p><strong>15.</strong> 下列有关进一步审计程序性质的说法中，错误的是（ ）。
+A. 进一步审计程序的性质包括审计程序的目的和类型
+B. 控制测试的目的是评价控制运行的有效性
+C. 实质性程序的目的是发现认定层次的重大错报
+D. 风险评估程序属于进一步审计程序</p>
+<hr />
+<h3>大题（5题）</h3>
+<p><strong>1. 简答</strong>：注册会计师在设计进一步审计程序时应当考虑哪些因素？请列举至少4个。</p>
+<p><strong>2. 简答</strong>：控制测试与实质性程序的主要区别是什么？二者是否可以相互替代？为什么？</p>
+<p><strong>3. 分析</strong>：注册会计师A在期中（10月）对某公司的销售与收款循环实施了控制测试，测试结果表明内部控制运行有效。A注册会计师计划在期末不再对该循环的控制执行任何测试。请评价该做法是否恰当，并说明理由。</p>
+<p><strong>4. 分析</strong>：注册会计师B拟信赖某项控制，该控制上次测试是在两年前，且控制自上次测试后未发生变化，也不涉及特别风险。B注册会计师认为可以依赖上次测试结果，今年无需测试。请判断该做法是否恰当，并说明理由。</p>
+<p><strong>5. 综合分析</strong>：注册会计师C在审计甲公司时作出以下决策：
+（1）评估存货存在认定的重大错报风险为高水平，仅实施控制测试；
+（2）评估银行存款存在认定的重大错报风险为低水平，未实施实质性程序；
+（3）对应收账款实施函证，未收到回函的未做任何处理；
+（4）在期末对存货实施监盘后，未对存货计价实施实质性程序。
+请逐项判断是否恰当，如不恰当请说明理由。</p>
+<hr />
+<h2>答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>C</td>
+<td><strong>思路</strong>：进一步审计程序应对认定层次而非报表层次风险。<strong>推导</strong>：风险评估程序分两个层次——报表层次和认定层次。进一步审计程序是针对认定层次设计的；报表层次重大错报风险通过总体应对措施来应对。<strong>坑</strong>：A正确（包含控制测试和实质性程序）；B正确（风险决定程序）；D正确（认定层次）；C将报表层次与认定层次混淆。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td><strong>思路</strong>：控制测试的核心是"运行有效性"，不是设计或执行。<strong>推导</strong>：A属于了解内部控制阶段的工作；B是"穿行测试"确认控制是否被执行过；C才是控制测试的核心——反复运行是否一贯有效；D是实质性程序的目标。<strong>坑</strong>：常见混淆是认为控制测试就是了解内部控制，实际上两者阶段不同、目的不同。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td><strong>思路</strong>：实质性程序具有强制性，不可跳过。<strong>推导</strong>：审计准则明确规定，无论风险评估结果如何，对所有重大类别的交易、账户余额和披露都应当实施实质性程序。<strong>坑</strong>：A错误（低风险也不能省略实质性程序）；B错误（实质性程序还包括实质性分析程序）；D错误（控制测试不能替代实质性程序）。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>C</td>
+<td><strong>思路</strong>：期中测试不能覆盖剩余期间，需要补充证据。<strong>推导</strong>：期中到期末之间存在时间差，控制可能发生变化或未被一贯执行，必须获取剩余期间的审计证据。<strong>坑</strong>：A和D都把期中结果等同于期末结果；B仅询问不够充分。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td><strong>思路</strong>：未变化且非特别风险的控制，每三年至少测一次。<strong>推导</strong>：上次测试距今两年，仍在三年窗口内，可以等到满三年再测试。<strong>坑</strong>：A和D要求每年测试（仅特别风险需要）；C无限期依赖是绝对禁止的。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C</td>
+<td><strong>思路</strong>：实质性分析程序并不"总是"比细节测试更强。<strong>推导</strong>：实质性分析程序通过数据间关系发现异常波动，在数据可靠性高、可预测性强时有效；但在需要精确核实时不如细节测试。<strong>坑</strong>：A、B、D均正确；C用了"总是"这一绝对化表述，是典型错误。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>B</td>
+<td><strong>思路</strong>：风险评估程序与进一步审计程序是并列关系，不是包含关系。<strong>推导</strong>：审计程序分三大类：风险评估程序→进一步审计程序（控制测试+实质性程序）→其他审计程序。风险评估程序是单独的阶段。<strong>坑</strong>：控制测试、细节测试、实质性分析程序都属于进一步审计程序或其子类。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C</td>
+<td><strong>思路</strong>：设计进一步审计程序关注的是风险特征和业务特征，不包含股票价格。<strong>推导</strong>：应考虑的因素包括：风险的重要性、重大错报发生的可能性、涉及的交易/账户/披露的特征、被审计单位特定控制的性质、是否拟获取审计证据以确定内部控制有效性。股票价格不是审计程序设计的因素。<strong>坑</strong>：其他三项均为准则明确列出的因素。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>C</td>
+<td><strong>思路</strong>：电子记录是客观留下的运行痕迹，比口头证据和制度文件更可靠。<strong>推导</strong>：A仅证明制度存在；B/D属于口头询问，证明力最弱；C是控制实际运行留下的客观痕迹。<strong>坑</strong>：容易误选手册（A），但手册只证明制度设计，不证明执行有效。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>D</td>
+<td><strong>思路</strong>：控制测试范围取决于控制本身特征，而非被审计单位的资产规模。<strong>推导</strong>：影响控制测试范围的因素：拟信赖的时间长度（越长→样本越多）、控制执行频率（越频繁→样本越多）、拟信赖程度（越高→样本越多）、预期偏差（越可能偏差→样本越多）。资产总额与具体控制的测试范围无直接关系。<strong>坑</strong>：可能误以为大公司就要测更多，但实际上是对特定控制的测试范围。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td><strong>思路</strong>：特别风险的控制必须每年测试，不能依赖以前年度证据。<strong>推导</strong>：特别风险是需要特别考虑的重大错报风险，涉及的内部控制即使未变化也应当每年测试。<strong>坑</strong>：A和C适用于非特别风险的控制；D完全错误。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>B</td>
+<td><strong>思路</strong>：控制测试有效可以减少实质性程序的范围（但不能完全替代）。<strong>推导</strong>：控制测试和实质性程序是互补关系：控制有效→信赖控制→可适当减少（但不能取消）实质性程序；控制无效→不信赖→实质性程序范围扩大。<strong>坑</strong>：A和D错误（二者不可相互替代）；C错误（非互斥而是互补）。</td>
+</tr>
+<tr>
+<td>13</td>
+<td>B</td>
+<td><strong>思路</strong>：期中审计的核心价值是提前发现问题。<strong>推导</strong>：期中实施审计程序使注册会计师在审计工作初期就能识别重大事项，为后续工作提供方向。<strong>坑</strong>：A、C、D均夸大了期中审计的作用——不能替代期末程序，也不能直接减少实质性程序范围。</td>
+</tr>
+<tr>
+<td>14</td>
+<td>B</td>
+<td><strong>思路</strong>：无论风险评估结果如何，必须实施实质性程序。<strong>推导</strong>：审计准则的刚性要求——对所有重大类别的交易、账户余额和披露都应当实施实质性程序，不可因风险评估为低水平而省略。<strong>坑</strong>：容易被"低风险"误导认为可以不做，但实质性程序是底线性要求。</td>
+</tr>
+<tr>
+<td>15</td>
+<td>D</td>
+<td><strong>思路</strong>：风险评估程序不属于进一步审计程序。<strong>推导</strong>：进一步审计程序包括控制测试和实质性程序两大类。风险评估程序是审计的前置阶段，不属于进一步审计程序。<strong>坑</strong>：A、B、C均是对进一步审计程序性质的正确描述。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>大题参考答案</h3>
+<p><strong>第1题</strong>：
+- <strong>思路</strong>：回想审计准则对进一步审计程序设计的要求，围绕风险特征、交易特征、控制特征展开。
+- <strong>步骤</strong>：
+  1. 风险的重要性——越重要的风险越需要关注
+  2. 重大错报发生的可能性——可能性越高程序越严格
+  3. 涉及的各类交易、账户余额和披露的特征——不同业务适用不同程序
+  4. 被审计单位采用的特定控制的性质——手工控制还是自动化控制
+  5. 是否拟获取关于内部控制有效性的审计证据——决定是否实施控制测试
+- <strong>坑</strong>：不要遗漏"特定控制的性质"这一项，这是区分自动控制和手工控制的关键。</p>
+<p><strong>第2题</strong>：
+- <strong>思路</strong>：从目的、性质、强制性三个维度对比。
+- <strong>步骤</strong>：
+  1. 目的不同：控制测试→测试内控运行有效性；实质性程序→发现认定层次重大错报
+  2. 是否必须：控制测试→非必须（仅在拟信赖时实施）；实质性程序→必须（重大类别不可省略）
+  3. 不可相互替代——控制测试有效可减少但不可替代实质性程序；实质性程序不能替代控制测试（因为目标不同）
+  4. 二者是互补关系：控制有效→实质性程序范围可缩减；控制无效→实质性程序范围需扩大
+- <strong>坑</strong>：不能说"二者选其一即可"，它们是互补而非互斥。</p>
+<p><strong>第3题</strong>：
+- <strong>思路</strong>：期中测试有时间局限性，剩余期间需要补充证据。
+- <strong>步骤</strong>：
+  1. A注册会计师的做法不恰当
+  2. 理由：期中测试只能证明控制在该时点有效，不能证明从期中到期末这段"剩余期间"控制是否持续有效
+  3. 正确做法：应当针对剩余期间获取审计证据，例如——对剩余期间实施控制测试、实施实质性程序、或将两者结合
+  4. 剩余期间越长，需要获取的补充证据越多
+- <strong>坑</strong>：不能认为期中有效=全年有效，这是时间维度上的错误推广。</p>
+<p><strong>第4题</strong>：
+- <strong>思路</strong>：对照"三年测试一次"规则判断。
+- <strong>步骤</strong>：
+  1. B注册会计师的做法恰当
+  2. 理由：准则规定，如果控制未发生变化且不涉及特别风险，应当每三年至少测试一次
+  3. 本次距上次测试仅两年，仍在三年窗口期内
+  4. 注册会计师可以信赖上次测试结果，本年无需再次测试
+- <strong>坑</strong>：不要与"特别风险必须每年测试"混淆。这道题的题干明确说了"不涉及特别风险"。</p>
+<p><strong>第5题</strong>：
+- <strong>思路</strong>：逐项对照准则规定。
+- <strong>步骤</strong>：
+  1. 不恰当。评估为高水平的重大错报风险，不能仅实施控制测试，应当实施实质性程序（且范围应扩大）
+  2. 不恰当。无论风险评估结果如何，都应当对所有重大类别的账户实施实质性程序，银行存款即使评估为低风险也不能省略实质性程序
+  3. 不恰当。未收到回函时应当实施替代程序（如检查销售合同、发运凭证、期后收款等）
+  4. 不恰当。存货监盘主要针对存在认定，不能替代对存货计价（准确性、计价和分摊认定）的实质性程序
+- <strong>坑</strong>：第（3）最容易遗漏——函证未回函需要替代程序，不是"不管了"。</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>扎实</td>
+<td>需复习</td>
+<td>重学本章</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>📚 小番茄题库浓缩版 · 审计学</p>
+</div>
+
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/audit/08" download>📥 下载本章PDF</a>
+</div>
+</body></html>

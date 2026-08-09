@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>审计学_第03章_审计证据_浓缩版</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+.subject-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:30px 0}
+.subject-card{background:#fff;border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-decoration:none;color:inherit;display:block}
+.subject-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}
+.subject-icon{font-size:3em;margin-bottom:15px}
+.subject-card h2{font-size:1.2em;border:none;margin:0 0 8px;padding:0}
+.subject-card p{color:#666;font-size:0.9em}
+.chapter-list{list-style:none;padding:0}
+.chapter-list li{margin:4px 0}
+.chapter-list a{display:block;padding:12px 16px;background:#fff;border-radius:8px;margin:4px 0;text-decoration:none;color:#1a5276;font-weight:600;transition:background .15s;border:1px solid #e8e8e8}
+.chapter-list a:hover{background:#eaf2f8}
+.chapter-list a .badge{float:right;background:#1a5276;color:#fff;border-radius:12px;padding:2px 10px;font-size:0.75em;font-weight:400}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+.notice{background:linear-gradient(135deg,#eaf2f8,#f0f4f8);border:1px solid #bdd7ee;border-radius:12px;padding:25px 30px;margin:30px 0;line-height:1.9}
+.notice h3{color:#1a5276;margin-bottom:12px;font-size:1.1em}
+.notice p{color:#555;font-size:0.95em;margin:6px 0}
+.notice .highlight{color:#e74c3c;font-weight:600}
+
+.pdf-toolbar{position:fixed;bottom:20px;right:20px;z-index:999}
+.pdf-btn{display:inline-block;background:#1a5276;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:background .15s}
+.pdf-btn:hover{background:#0d3b54}
+</style>
+</head><body>
+<a class="back-link" href="index.html">← 返回审计学目录</a>
+<h1>审计学 第03章 审计证据 浓缩速记卡</h1>
+<h1>审计学 第3章 审计证据 浓缩速记卡</h1>
+<blockquote>
+<p>原始题量：15单选+7多选+5简答 | 预计用时：40分钟 | 本章是审计实务操作的核心基础</p>
+</blockquote>
+<hr />
+<h2>一、审计证据的基本属性</h2>
+<h3>💡 费曼类比</h3>
+<p>审计证据就像破案时收集的线索——光多不够（充分性），还得靠谱（适当性）。你在街上找目击者（外部来源）比听嫌疑人自己说（内部来源）靠谱；监控录像（书面/电子证据）比"我记得好像是..."（口头证据）靠谱。但如果监控模糊不清（质量差），你装再多摄像头也没用。</p>
+<h3>知识要点</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+<th>关键考点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>充分性</strong></td>
+<td>对证据<strong>数量</strong>的衡量</td>
+<td>受重大错报风险评估影响（风险越高→需要越多）；受证据质量影响（质量越高→需要可能越少）</td>
+</tr>
+<tr>
+<td><strong>适当性</strong></td>
+<td>对证据<strong>质量</strong>的衡量</td>
+<td>= 相关性 + 可靠性</td>
+</tr>
+<tr>
+<td><strong>相关性</strong></td>
+<td>证据与认定的关联程度</td>
+<td>特定程序只对应特定认定；不同来源证据矛盾→说明有问题</td>
+</tr>
+<tr>
+<td><strong>可靠性</strong></td>
+<td>证据的可信赖程度</td>
+<td>外部&gt;内部；直接获取&gt;推论；书面&gt;口头；原件&gt;复印件/传真件</td>
+</tr>
+</tbody>
+</table>
+<h3>🔥 易混点</h3>
+<ul>
+<li>充分性=数量，适当性=质量。<strong>量不能补质</strong>（质量差的证据再多也没用）</li>
+<li>可靠≠百分百正确：外部独立来源的证据也可能因对方不诚信而不可靠</li>
+</ul>
+<hr />
+<h2>二、审计程序</h2>
+<h3>💡 费曼类比</h3>
+<p>审计程序就像工具箱：询证函是"打电话确认"、检查是"翻凭证"、观察是"盯着看"、重新计算是"自己算一遍"、分析程序是"比对比对看合不合理"。</p>
+<h3>知识要点</h3>
+<table>
+<thead>
+<tr>
+<th>程序</th>
+<th>说明</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>检查</strong></td>
+<td>检查记录/文件、有形资产</td>
+<td>存在性、完整性</td>
+</tr>
+<tr>
+<td><strong>观察</strong></td>
+<td>查看他人执行的程序</td>
+<td>控制测试、细节测试均可用</td>
+</tr>
+<tr>
+<td><strong>询问</strong></td>
+<td>口头/书面了解信息</td>
+<td>风险评估、控制测试、实质性程序均可用</td>
+</tr>
+<tr>
+<td><strong>函证</strong></td>
+<td>直接向第三方获取书面答复</td>
+<td>存在性、权利和义务、准确性</td>
+</tr>
+<tr>
+<td><strong>重新计算</strong></td>
+<td>核对数学准确性</td>
+<td>细节测试</td>
+</tr>
+<tr>
+<td><strong>重新执行</strong></td>
+<td>独立执行内部控制程序</td>
+<td>控制测试（不可用于实质性程序）</td>
+</tr>
+<tr>
+<td><strong>分析程序</strong></td>
+<td>分析数据间内在关系</td>
+<td>风险评估、实质性程序、总体复核</td>
+</tr>
+</tbody>
+</table>
+<h3>⚠️ 关键区分</h3>
+<ul>
+<li><strong>询问</strong>本身不能提供充分证据（口说无凭），需配合其他程序</li>
+<li><strong>观察</strong>仅适用于观察发生的时刻，不能证明以前也这样</li>
+<li><strong>重新执行</strong>是"自己做一遍内控" → 只用于控制测试</li>
+<li><strong>重新计算</strong>是"重算一遍数字" → 只用于细节测试</li>
+</ul>
+<hr />
+<h2>三、函证程序</h2>
+<h3>💡 费曼类比</h3>
+<p>函证就是给第三方发微信问"他说的这个数字对不对？"——你得自己发、自己收，不能让他帮着发（管理层代发=可能被拦截篡改）。</p>
+<h3>知识要点</h3>
+<table>
+<thead>
+<tr>
+<th>要点</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>积极式函证</strong></td>
+<td>要求被询证者<strong>必须回复</strong>（无论是否同意）。如回函是必要程序，替代程序不够</td>
+</tr>
+<tr>
+<td><strong>消极式函证</strong></td>
+<td>只要求<strong>不同意时回复</strong>。风险较高时不能单独使用</td>
+</tr>
+<tr>
+<td><strong>管理层阻挠</strong></td>
+<td>如阻挠原因不合理→可能发表非无保留意见</td>
+</tr>
+<tr>
+<td><strong>回函可靠性</strong></td>
+<td>口头回复不可靠；由被审计单位转交的回函不可靠；电子回函需验证来源</td>
+</tr>
+<tr>
+<td><strong>免责条款</strong></td>
+<td>不必然削弱回函可靠性（需评估条款性质）</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 函证决策影响因素</h3>
+<table>
+<thead>
+<tr>
+<th>因素</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>认定层次重大错报风险</td>
+<td>风险越高→越需要函证</td>
+</tr>
+<tr>
+<td>函证与认定相关性</td>
+<td>函证主要应对<strong>存在</strong>认定（也能应对计价、权利等）</td>
+</tr>
+<tr>
+<td>被询证者客观性</td>
+<td>关联方回函可靠性低于独立第三方</td>
+</tr>
+<tr>
+<td>被审计单位配合度</td>
+<td>配合度低→需替代程序</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>四、分析程序</h2>
+<h3>💡 费曼类比</h3>
+<p>分析程序就是"这事合不合理？"——比如一个学生说他月消费5000，但他每月打工只挣2000，父母只给1000，多出来的2000从哪来？不合理就得查。</p>
+<h3>分析程序三阶段</h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>目的</th>
+<th>是否强制</th>
+<th>关键特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>风险评估</strong></td>
+<td>识别异常变化→发现重大错报风险</td>
+<td><strong>强制</strong></td>
+<td>汇总性强，可不设精确预期值</td>
+</tr>
+<tr>
+<td><strong>实质性程序</strong></td>
+<td>发现认定层次错报</td>
+<td><strong>非强制</strong>（可选）</td>
+<td>需可靠数据+可预期关系+可接受差异额</td>
+</tr>
+<tr>
+<td><strong>总体复核</strong></td>
+<td>最后再看一遍有无遗漏</td>
+<td><strong>强制</strong></td>
+<td>重点在财务报表层次，方法与风险评估类似</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 实质性分析程序的四要素</h3>
+<p>看到"确定实质性分析程序是否适用"时：</p>
+<blockquote>
+<p>① 评估认定层次重大错报风险
+② 考虑数据之间是否存在<strong>稳定的可预期关系</strong>
+③ 考虑数据<strong>可靠性</strong>（来源、性质、相关控制）
+④ 考虑<strong>可接受差异额</strong>（差异额&gt;可接受差异额→调查）</p>
+</blockquote>
+<h3>可接受差异额的影响因素</h3>
+<table>
+<thead>
+<tr>
+<th>因素</th>
+<th>关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重要性水平</td>
+<td>重要性越低→差异额需越小</td>
+</tr>
+<tr>
+<td>重大错报风险评估</td>
+<td>风险越高→差异额需越小</td>
+</tr>
+<tr>
+<td>计划保证水平</td>
+<td>保证水平越高→差异额需越小</td>
+</tr>
+<tr>
+<td>预期值准确度</td>
+<td>预期值越准→差异额可越小</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正确答案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"获取更多证据可以弥补质量缺陷"</td>
+<td><strong>错！</strong> 充分性（数量）不能弥补适当性（质量），质量差的证据再多也没用</td>
+</tr>
+<tr>
+<td>"分析程序可用作控制测试"</td>
+<td><strong>错！</strong> 分析程序只能用于风险评估、实质性程序、总体复核，不能用于控制测试</td>
+</tr>
+<tr>
+<td>"函证应付账款主要证实存在性"</td>
+<td><strong>不完全对！</strong> 函证应付账款主要证实<strong>完整性</strong>（有没有少记债务），而函证应收账款主要证实<strong>存在性</strong>（有没有虚增债权）</td>
+</tr>
+<tr>
+<td>"重新执行可以用于实质性程序"</td>
+<td><strong>错！</strong> 重新执行=自己重做一遍内控，只用于<strong>控制测试</strong></td>
+</tr>
+<tr>
+<td>"口头回函也是可靠的"</td>
+<td><strong>错！</strong> 口头回复不能作为可靠的函证回函</td>
+</tr>
+<tr>
+<td>"询问本身可提供充分适当证据"</td>
+<td><strong>错！</strong> 询问本身不足以为认定层次提供充分证据</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测</h2>
+<h3>选择题（15题）</h3>
+<p><strong>1.</strong> 下列关于审计证据充分性的说法中，错误的是（　　）。
+A. 审计证据的充分性是对审计证据数量的衡量
+B. 获取更多的审计证据可以弥补审计证据质量上的缺陷
+C. 重大错报风险评估结果越高，需要的审计证据可能越多
+D. 审计证据质量越高，需要的审计证据可能越少</p>
+<p><strong>2.</strong> 下列关于审计证据可靠性的说法中，正确的是（　　）。
+A. 外部独立来源获取的审计证据一定是可靠的
+B. 内部控制薄弱时内部生成的审计证据完全不可靠
+C. 从独立的外部来源获取的审计证据也可能是不可靠的
+D. 审计证据可靠性不受被审计单位内部控制影响</p>
+<p><strong>3.</strong> 下列审计程序中，仅可用于控制测试的是（　　）。
+A. 询问
+B. 观察
+C. 重新计算
+D. 重新执行</p>
+<p><strong>4.</strong> 下列有关函证程序的说法中，错误的是（　　）。
+A. 积极式函证要求被询证者在所有情况下都必须回函
+B. 消极式函证只要求被询证者不同意时才需回函
+C. 由被审计单位转交给注册会计师的回函不是可靠证据
+D. 如果管理层阻挠函证且理由不合理，可能发表非无保留意见</p>
+<p><strong>5.</strong> 下列审计程序中，可用于控制测试也可用于细节测试的是（　　）。
+A. 重新计算
+B. 重新执行
+C. 观察
+D. 分析程序</p>
+<p><strong>6.</strong> 注册会计师在确定函证决策时，通常不需考虑的因素是（　　）。
+A. 认定层次重大错报风险
+B. 被询证者对函证事项的了解程度
+C. 被审计单位管理层的配合程度
+D. 被审计单位的资产规模</p>
+<p><strong>7.</strong> 下列关于分析程序用作风险评估程序的说法中，错误的是（　　）。
+A. 分析程序用作风险评估程序是强制要求
+B. 此类分析程序使用的数据汇总性通常较强
+C. 此类分析程序必须确定精确的预期值
+D. 主要目的在于识别可能表明重大错报风险的异常变化</p>
+<p><strong>8.</strong> 下列关于实质性分析程序的说法中，正确的是（　　）。
+A. 实质性分析程序在任何情况下都比细节测试更有效
+B. 实施实质性分析程序时不需要确定可接受差异额
+C. 数据可靠性是确定实质性分析程序适用性的因素之一
+D. 实质性分析程序可以替代所有细节测试</p>
+<p><strong>9.</strong> 下列关于"询问"这一审计程序的说法中，错误的是（　　）。
+A. 询问可以以口头或书面方式进行
+B. 询问适用于风险评估、控制测试和实质性程序
+C. 仅通过询问通常不足以发现认定层次重大错报
+D. 询问本身可以为认定层次提供充分适当的审计证据</p>
+<p><strong>10.</strong> 甲公司的产量与生产工人工资之间存在稳定关系。A注册会计师拟利用产量信息测算直接人工成本。该做法属于（　　）。
+A. 检查
+B. 重新计算
+C. 实质性分析程序
+D. 控制测试</p>
+<p><strong>11.</strong> 下列可接受差异额的说法中，正确的是（　　）。
+A. 评估的重大错报风险越高，可接受差异额越高
+B. 从实质性分析程序获取保证程度越高，可接受差异额越高
+C. 重要性水平越高，可接受差异额通常越高
+D. 预期值准确度越高，可接受差异额越高</p>
+<p><strong>12.</strong> A注册会计师在临近审计结束时运用分析程序，下列说法中错误的是（　　）。
+A. 该阶段的分析程序是强制要求
+B. 分析的重点通常集中在财务报表层次
+C. 目的是识别可能表明存在重大错报风险的异常变化
+D. 采用的方法与风险评估程序中的分析程序完全不同</p>
+<p><strong>13.</strong> 下列关于函证回函可靠性的说法中，正确的是（　　）。
+A. 被询证者的口头回复是可靠的审计证据
+B. 询证函中的免责条款必然削弱回函可靠性
+C. 由被审计单位转交的回函不可靠
+D. 以电子形式收到的回函均不可靠</p>
+<p><strong>14.</strong> 下列有关审计证据的说法中，错误的是（　　）。
+A. 审计证据的适当性包括相关性和可靠性
+B. 特定审计程序可能只为某些认定提供相关证据
+C. 针对同一认定从不同来源获取的证据存在矛盾时，应认为其中一份证据是可靠的
+D. 审计证据质量影响所需证据的数量</p>
+<p><strong>15.</strong> 下列各项中，不属于影响函证决策因素的是（　　）。
+A. 评估的认定层次重大错报风险
+B. 函证信息与特定认定的相关性
+C. 被询证者的客观性
+D. 被审计单位的盈利水平</p>
+<h3>大题（5题）</h3>
+<p><strong>大题1.</strong> 简述审计证据充分性与适当性的关系。</p>
+<p><strong>大题2.</strong> 列出审计程序中可用于控制测试的有哪些？可用于实质性程序的有哪些？</p>
+<p><strong>大题3.</strong> ABC会计师事务所审计甲公司，与函证相关事项如下：（1）对于年末余额为零的银行存款账户，未实施函证；（2）审计项目组成员跟随甲公司出纳到银行函证，出纳办理时审计人员在等候区等候；（3）甲公司客户回函金额与账面差10万元，因超过明显微小错报临界值，直接提出审计调整。逐项判断是否恰当并说明理由。</p>
+<p><strong>大题4.</strong> A注册会计师对运输费用实施实质性分析程序，确定可接受差异额为100万元，实际差异为250万元。A注册会计师就超出的150万元询问了管理层，并对答复获取了充分适当的审计证据。判断做法是否恰当并说明理由。</p>
+<p><strong>大题5.</strong> 简述分析程序在审计三个阶段的运用目的及是否强制。</p>
+<hr />
+<h2>答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>B</strong></td>
+<td><strong>思路</strong>：考查充分性与适当性的关系。<strong>推导</strong>：充分性（数量）不能弥补适当性（质量）——如果证据本身不可靠，堆再多也没用。A对：充分性=数量；C对：风险高→需要更多；D对：质量好→可以少拿点。<strong>坑</strong>：很多人会混淆"多能补差"，实际上质量差的证据累积再多也无法形成可靠结论。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：考查可靠性的相对性。<strong>推导</strong>：外部独立来源的证据通常更可靠，但不是绝对的——对方也可能不诚信或出错。A错在"一定"；B错在"完全不可靠"（内控薄弱只是降低可靠性，不归零）；D内部控制会影响内部证据的可靠性。<strong>坑</strong>：容易把"更可靠"当成"绝对可靠"。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>D</strong></td>
+<td><strong>思路</strong>：区分各程序的适用场景。<strong>推导</strong>：重新执行=审计师自己把被审计单位的内部控制重做一遍→只能用于控制测试。A询问、B观察→控制测试和实质性程序都可用；C重新计算→只用于细节测试（实质性程序）。<strong>坑</strong>：重新执行和重新计算名称相似但用途完全不同。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>A</strong></td>
+<td><strong>思路</strong>：积极式函证要求"必须回复"，但不是说所有情况——如果被询证者不回，注册会计师应跟进。选项A表述"所有情况下都必须回函"不准确。B对：消极式=不同意时才回；C对：转交可能被篡改；D对：阻挠=审计范围受限。<strong>坑</strong>：积极式≠100%回函率。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：考查各程序的适用范围。<strong>推导</strong>：观察——既可以在控制测试中用（看员工是否按流程操作），也可以在细节测试中用（观察存货盘点）。A重新计算仅用于细节测试；B重新执行仅用于控制测试；D分析程序不能用于控制测试。<strong>坑</strong>：观察虽然有时间局限性，但确实是唯一横跨两类测试的程序。</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>D</strong></td>
+<td><strong>思路</strong>：函证决策取决于风险和相关因素，不是看被审计单位大小。<strong>推导</strong>：A风险→直接影响；B被询证者了解程度→影响回函可靠性；C管理层配合→影响能否顺利执行。D资产规模本身不影响是否应该函证——小公司大额的应收账款更需要函证。<strong>坑</strong>：容易认为大公司才需要函证，实际上函证针对的是"可能错报"而非"公司大小"。</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：风险评估阶段的分析程序特点。<strong>推导</strong>：风险评估阶段的分析程序数据汇总性强，目的是发现异常变化→不需要精确预期值。A对：风险评估阶段强制使用分析程序；B对：汇总性强；D对：核心目的就是找异常。<strong>坑</strong>：混淆风险评估阶段和实质性程序阶段对"预期值精确度"的要求。</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：实质性分析程序的适用性判断。<strong>推导</strong>：适用性取决于四要素：①评估的重大错报风险②数据可靠性③预期关系的稳定性④可接受差异额。A错：不一定比细节测试更有效；B错：必须确定可接受差异额；D错：不能替代所有细节测试。<strong>坑</strong>：分析程序不是万能的——在缺乏稳定预期关系时不适用。</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>D</strong></td>
+<td><strong>思路</strong>：询问的局限性。<strong>推导</strong>：询问本身不足以发现认定层次重大错报——口说无凭，必须结合其他程序。A对；B对（三阶段均可）；C对（需要配合其他程序）。<strong>坑</strong>："询问本身可以为认定层次提供充分适当证据"是一个常见错误表述。</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：识别程序类型。<strong>推导</strong>：利用产量与工资之间的预期关系，通过分析进行测算→这是典型的实质性分析程序。不是简单的重新计算（不是重算一个已知数字），也不是检查（不是查凭证）。<strong>坑</strong>：利用数据关系分析=分析程序，直接重算已知数字=重新计算。</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：可接受差异额的决定因素。<strong>推导</strong>：重要性水平越高（即可以容忍的错误越大）→可接受差异额越高。A错：风险越高→差异额应越小（更严格）；B错：保证程度越高→差异额应越小；D错：预期值越准→差异额可以越小。<strong>坑</strong>：风险/保证要求与差异额是<strong>反向</strong>关系。</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>D</strong></td>
+<td><strong>思路</strong>：总体复核阶段分析程序。<strong>推导</strong>：总体复核采用的方法与风险评估阶段<strong>基本类似</strong>，不是完全不同。A对（强制）；B对（关注整体）；C对（找遗漏风险）。<strong>坑</strong>：三个阶段都可用分析程序，方法相通，只是目的不同。</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：函证回函可靠性判断。<strong>推导</strong>：由被审计单位转交的回函有被拦截篡改的风险→不可靠。A错：口头不可靠；B错：免责条款不一定削弱（需评估）；D错：电子回函经适当验证后可以使用。<strong>坑</strong>：并非所有电子回函都不可靠——可验证来源真实性的电子回函是可靠的。</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>C</strong></td>
+<td><strong>思路</strong>：审计证据的评估。<strong>推导</strong>：当不同来源的证据矛盾时，应追加程序查明原因，而不是简单认为"其中一份可靠"。A对（适当性=相关+可靠）；B对（程序有针对性）；D对（质量影响数量需求）。<strong>坑</strong>：矛盾≠错误——可能两边都对但角度不同，要调查而非武断。</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>D</strong></td>
+<td><strong>思路</strong>：函证决策因素。<strong>推导</strong>：影响函证决策的是与"错报风险"和"函证效果"相关的因素。A风险→直接相关；B相关性→直接相关；C客观性→影响可靠性。D企业盈利水平与是否需要函证无直接关系——亏损企业同样需要函证。<strong>坑</strong>：把被审计单位的经营特征与审计程序决策混为一谈。</td>
+</tr>
+</tbody>
+</table>
+<h3>大题参考答案</h3>
+<p><strong>大题1.</strong> 简述审计证据充分性与适当性的关系。</p>
+<p><strong>思路</strong>：先定义两个概念，再讲相互关系，最后强调核心原则。</p>
+<p><strong>步骤</strong>：
+① <strong>分别定义</strong>：充分性=对证据数量的衡量；适当性=对证据质量的衡量，含相关性和可靠性
+② <strong>相互关系</strong>：证据质量越高，可能需要的数量越少（反向关系）；但<strong>数量不能弥补质量缺陷</strong>——如果证据本身不可靠，获取再多也没用
+③ <strong>综合考量</strong>：只有充分且适当的证据才能为审计意见提供合理基础</p>
+<p><strong>坑</strong>：最常见的错误是认为"多拿点总能补上"，实际上质量差的证据再多也是垃圾。</p>
+<hr />
+<p><strong>大题2.</strong> 审计程序的适用范围。</p>
+<p><strong>思路</strong>：按控制测试/实质性程序分类罗列。</p>
+<p><strong>步骤</strong>：
+① <strong>仅控制测试</strong>：重新执行
+② <strong>仅实质性程序（细节测试）</strong>：重新计算
+③ <strong>两者皆可</strong>：询问、观察、检查、函证
+④ <strong>分析程序</strong>：用于风险评估、实质性程序、总体复核，<strong>不用于控制测试</strong></p>
+<p><strong>坑</strong>：重新执行（控制测试）vs 重新计算（细节测试）容易混淆。记忆口诀："自做内控→重新执行；重算数字→重新计算"。</p>
+<hr />
+<p><strong>大题3.</strong> 函证实务判断。</p>
+<p><strong>思路</strong>：逐项对照函证准则。</p>
+<p><strong>步骤</strong>：
+① <strong>（1）不恰当</strong>：银行存款函证不能因为余额为零就省略。银行存款函证应覆盖所有账户，零余额账户也可能存在未入账的负债。
+② <strong>（2）不恰当</strong>：注册会计师应<strong>全程保持对询证函的控制</strong>。出纳办理时审计人员应在旁监督，不能在等候区等候——存在函证被篡改的风险。
+③ <strong>（3）不恰当</strong>：差异超过明显微小错报临界值→应<strong>先调查原因</strong>，而不是直接提出审计调整。可能的原因包括未达账项、截止性差异等，调查后才能确定是否需要调整。</p>
+<p><strong>坑</strong>：银行存款函证的口诀是"全函"——不管余额多少、什么账户，都要函。</p>
+<hr />
+<p><strong>大题4.</strong> 实质性分析程序差异处理。</p>
+<p><strong>思路</strong>：超出可接受差异额的处理流程。</p>
+<p><strong>步骤</strong>：
+① <strong>（1）不恰当</strong>：差异250万元超出可接受差异额100万元→超出部分150万元需要调查
+② 仅询问管理层并获取答复<strong>不够</strong>——注册会计师还需获取<strong>进一步的审计证据</strong>来佐证管理层的解释
+③ 正确做法：询问管理层→了解差异原因→执行追加程序（如检查支持性文件、重新计算等）→验证管理层解释的合理性</p>
+<p><strong>坑</strong>：询问≠获取充分适当证据。超出可接受差异额意味着存在异常，必须追加实质性程序验证，不能只靠管理层一句话。</p>
+<hr />
+<p><strong>大题5.</strong> 分析程序三阶段对比。</p>
+<p><strong>思路</strong>：按三个阶段→目的→是否强制→特征。</p>
+<p><strong>步骤</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>目的</th>
+<th>是否强制</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>风险评估</strong></td>
+<td>识别可能表明重大错报风险的异常变化</td>
+<td>✅强制</td>
+<td>数据汇总性强；可配合趋势分析和比率分析</td>
+</tr>
+<tr>
+<td><strong>实质性程序</strong></td>
+<td>发现认定层次的重大错报</td>
+<td>❌非强制（可选择）</td>
+<td>需要可靠数据+稳定预期+设定可接受差异额；比细节测试效率高但适用性有限</td>
+</tr>
+<tr>
+<td><strong>总体复核</strong></td>
+<td>在审计结束前对财务报表整体进行分析，确认没有遗漏的重大问题</td>
+<td>✅强制</td>
+<td>方法与风险评估类似，但更侧重于财务报表整体</td>
+</tr>
+</tbody>
+</table>
+<p><strong>坑</strong>：三阶段都用到分析程序，但目的完全不同——风险评估是"找问题"、实质性程序是"查问题"、总体复核是"确认没有遗漏问题"。</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>审计证据基础扎实，可以继续</td>
+<td>需重点复习函证程序和分析程序</td>
+<td>重学本章，特别是证据属性与程序分类</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<p>📚 小番茄题库浓缩版 · 审计学</p>
+</div>
+
+<div class="pdf-toolbar">
+<a class="pdf-btn" href="/api/pdf/audit/03" download>📥 下载本章PDF</a>
+</div>
+</body></html>

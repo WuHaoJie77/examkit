@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>大学物理 第7章 静电场 浓缩速记卡 · 小番茄题库</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8;color:#555}
+a{color:#1a5276}strong{color:#1a5276}
+hr{border:none;border-top:1px solid #e0e0e0;margin:30px 0}
+</style><script>MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]]}};</script><script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script></head><body><a class="back-link" href="index.html">← 返回物理章节列表</a><h1>大学物理 第7章 静电场 浓缩速记卡</h1><div class="card"><blockquote>
+<p>课后原题：43题（11选择 + 12填空 + 20解答） | 预计用时：45分钟</p>
+</blockquote>
+<hr />
+<h2>一、库仑定律与电场强度</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：电荷间的力像磁力球——同性相斥异性相吸。电场强度E就是"单位正电荷感受到的力"，离电荷越远越弱（$\propto 1/r^2$）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>定律</th>
+<th>公式</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>库仑定律</td>
+<td>$F=\dfrac{kq_1q_2}{r^2}$，$k=\dfrac{1}{4\pi\varepsilon_0}=9\times10^9$</td>
+<td>真空点电荷</td>
+</tr>
+<tr>
+<td>场强定义</td>
+<td>$\mathbf{E}=\dfrac{\mathbf{F}}{q_0}$</td>
+<td>矢量</td>
+</tr>
+<tr>
+<td>点电荷场强</td>
+<td>$E=\dfrac{Q}{4\pi\varepsilon_0 r^2}$</td>
+<td>$+Q$向外，$-Q$向内</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「多个点电荷，求某点的合场强」：</p>
+<blockquote>
+<p>① 分别算每个电荷在该点的 $E_i=\dfrac{kq_i}{r_i^2}$ 和方向
+② 矢量叠加（分解成 $x,y$ 分量分别求和）
+③ $E=\sqrt{E_x^2+E_y^2}$</p>
+</blockquote>
+<h3>📝 例题7-A：正三角形顶点电荷的平衡</h3>
+<p><strong>题目</strong>：电量都是 $q$ 的三个点电荷放在正三角形三个顶点。在中心放什么电荷可使四个电荷都平衡？</p>
+<p><strong>解</strong>：</p>
+<p>取一个顶点上的 $q$ 分析：</p>
+<p>① 另两个 $q$ 的斥力各 $F=\dfrac{kq^2}{a^2}$，夹角 $60^\circ$，合力 $F_{12}=\dfrac{\sqrt{3}kq^2}{a^2}$，背离中心
+<em>（两个等大力的夹角60°，合力=$\sqrt{3}F$，用余弦定理）</em></p>
+<p>② 中心Q：距离 $d=\dfrac{a}{\sqrt{3}}$，$F_3=\dfrac{kqQ}{d^2}=\dfrac{3kqQ}{a^2}$</p>
+<p>③ 平衡：$\dfrac{\sqrt{3}kq^2}{a^2}+\dfrac{3kqQ}{a^2}=0$ → $Q=-\dfrac{q}{\sqrt{3}}$（负号表示吸引各顶点）</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>场强叠加是矢量叠加，不是标量加减！</strong> 同一直线上可直接加减，不同方向必须分解。</p>
+<hr />
+<h2>二、高斯定理 ⭐</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：高斯面像渔网袋——穿过袋子的总电通量只取决于袋内有多少"鱼"（净电荷），与袋外无关。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>核心公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\displaystyle\oint_S\mathbf{E}\cdot d\mathbf{S}=\dfrac{\sum q_{\text{内}}}{\varepsilon_0}$</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>带电体</th>
+<th>球内($r\lt R$)</th>
+<th>球外($r\gt R$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>均匀带电球面</td>
+<td>$E=0$</td>
+<td>$E=\dfrac{Q}{4\pi\varepsilon_0 r^2}$</td>
+</tr>
+<tr>
+<td>均匀带电球体</td>
+<td>$E=\dfrac{Qr}{4\pi\varepsilon_0 R^3}\propto r$</td>
+<td>$E=\dfrac{Q}{4\pi\varepsilon_0 r^2}$</td>
+</tr>
+<tr>
+<td>无限长直线</td>
+<td>—</td>
+<td>$E=\dfrac{\lambda}{2\pi\varepsilon_0 r}$</td>
+</tr>
+<tr>
+<td>无限大平面</td>
+<td>—</td>
+<td>$E=\dfrac{\sigma}{2\varepsilon_0}$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「带球对称分布电荷，求某点 $E$」：</p>
+<blockquote>
+<p>① 以球心为心、$r$ 为半径做高斯球面
+② 算面内包围的电荷 $\sum q_{\text{内}}$
+③ $E\cdot4\pi r^2=\dfrac{\sum q_{\text{内}}}{\varepsilon_0}$ → $E$</p>
+</blockquote>
+<h3>📝 例题7-B：带电球壳各点场强</h3>
+<p><strong>题目</strong>：球壳内径6cm、外径10cm，$\rho=2\times10^{-5}$ C/m³。求 $r=5,8,12$cm 处的 $E$。</p>
+<p><strong>解</strong>：</p>
+<p>① $r=5$cm（空腔）：$\sum q=0$ → $E=0$
+<em>（高斯面包围区域无电荷）</em></p>
+<p>② $r=8$cm（壳内）：$q_{\text{内}}=\rho\cdot\dfrac{4\pi}{3}(0.08^3-0.06^3)\approx2.48\times10^{-8}$ C
+$E=\dfrac{q_{\text{内}}}{4\pi\varepsilon_0 r^2}\approx3.49\times10^4$ N/C</p>
+<p>③ $r=12$cm（壳外）：$Q=\rho\cdot\dfrac{4\pi}{3}(0.10^3-0.06^3)\approx6.56\times10^{-8}$ C
+$E=\dfrac{Q}{4\pi\varepsilon_0 r^2}\approx4.10\times10^4$ N/C</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>高斯面内无电荷→电通量为零，但不代表面上 $E=0$！</strong> $E$ 可能非零，只是正负通量抵消。</p>
+<hr />
+<h2>三、电势与电势能</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：电势U像海拔——电荷q在高电势处有势能 $W=qU$，就像石头在高处有 $mgh$。<strong>电势是标量叠加用代数和！</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>点电荷电势</td>
+<td>$U=\dfrac{Q}{4\pi\varepsilon_0 r}$</td>
+</tr>
+<tr>
+<td>电势叠加</td>
+<td>$U=\sum\dfrac{Q_i}{4\pi\varepsilon_0 r_i}$（标量！）</td>
+</tr>
+<tr>
+<td>电场力做功</td>
+<td>$W_{ab}=q_0(U_a-U_b)$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「连续带电体，求某点电势」：</p>
+<blockquote>
+<p>① 取微元 $dq$，写出 $dU=\dfrac{dq}{4\pi\varepsilon_0 r}$
+② 积分：$U=\int dU$
+③ 注意：这是标量积分，比求场强的矢量积分简单得多</p>
+</blockquote>
+<h3>📝 例题7-C：带电细杆延长线上电势</h3>
+<p><strong>题目</strong>：$q$ 均匀分布在长 $L$ 细杆上。求杆外延长线上距杆端 $a$ 处电势。</p>
+<p><strong>解</strong>：</p>
+<p>① $\lambda=\dfrac{q}{L}$，取微元 $dx$，$dq=\lambda dx$，到P点距离 $a+x$</p>
+<p>② $dU=\dfrac{\lambda dx}{4\pi\varepsilon_0(a+x)}$</p>
+<p>③ $U=\int_0^L\dfrac{\lambda}{4\pi\varepsilon_0(a+x)}dx=\dfrac{\lambda}{4\pi\varepsilon_0}\ln\dfrac{a+L}{a}=\dfrac{q}{4\pi\varepsilon_0 L}\ln!\left(1+\dfrac{L}{a}\right)$</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>电势是标量叠加不用管方向！</strong> 和场强的矢量叠加完全不同，这是电势计算最大的优势。</p>
+<hr />
+<h2>四、静电场中的导体</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：导体像电荷的溜冰场——自由电子在表面滑动。静电平衡时内部 $E=0$，电荷全在表面，整个导体等势。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>规律</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内部</td>
+<td>$E=0$，等势体</td>
+</tr>
+<tr>
+<td>表面</td>
+<td>$\mathbf{E}\perp$ 表面，$E=\sigma/\varepsilon_0$</td>
+</tr>
+<tr>
+<td>空腔</td>
+<td>内有 $+q$→内表面 $-q$，外表面 $+q$</td>
+</tr>
+<tr>
+<td>接地</td>
+<td>电势为零，外表面电荷入地</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「同心球壳，内壳带电，外壳接地」：</p>
+<blockquote>
+<p>① 内壳电荷→外壳内表面感应等量异号电荷
+② 接地→外表面电荷流入大地→外表面电荷为零
+③ 外壳电势=0（地电势）</p>
+</blockquote>
+<h3>📝 例题7-D：同心球壳接地</h3>
+<p><strong>题目</strong>：$R_1\lt R_2$ 同心金属球壳，内壳 $+q$。(1)外壳不接地；(2)外壳接地后断开。求电荷分布和电势。</p>
+<p><strong>解</strong>：</p>
+<p>(1) 不接地：内表面 $-q$，外表面 $+q$。外壳电势 $=\dfrac{q}{4\pi\varepsilon_0 R_2}$。</p>
+<p>(2) 接地后断开：外表面 $+q$ 入地→外表面=0。断开后内表面 $-q$ 保留，外表面仍为0。外壳电势=0。</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>接地≠电荷为零！</strong> 接地把电势钳为0，外表面电荷可能流入地，但内表面感应电荷不受影响。</p>
+<hr />
+<h2>五、电容与电介质</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$C=\dfrac{\varepsilon_0\varepsilon_r S}{d}$</td>
+<td>平行板</td>
+</tr>
+<tr>
+<td>$\mathbf{D}=\varepsilon_0\varepsilon_r\mathbf{E}$</td>
+<td>电位移</td>
+</tr>
+<tr>
+<td>$\oint\mathbf{D}\cdot d\mathbf{S}=\sum q_{\text{自由}}$</td>
+<td>有介质高斯定理</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「有介质时求场强」：</p>
+<blockquote>
+<p>① 用 $\oint\mathbf{D}\cdot d\mathbf{S}=\sum q_{\text{自由}}$ 求 $D$
+② $E=\dfrac{D}{\varepsilon_0\varepsilon_r}$</p>
+</blockquote>
+<h3>📝 例题7-E：带介质球壳的金属球</h3>
+<p><strong>题目</strong>：$R_1$ 金属球外包 $R_2$ 介质壳（$\varepsilon_r$），金属球带电 $Q$。求介质内外场强和金属球电势。</p>
+<p><strong>解</strong>：</p>
+<p>① $D=\dfrac{Q}{4\pi r^2}$（$r\gt R_1$）</p>
+<p>② 介质内：$E=\dfrac{Q}{4\pi\varepsilon_0\varepsilon_r r^2}$；介质外：$E=\dfrac{Q}{4\pi\varepsilon_0 r^2}$</p>
+<p>③ $U=\displaystyle\int_{R_1}^{R_2}\dfrac{Q}{4\pi\varepsilon_0\varepsilon_r r^2}dr+\int_{R_2}^\infty\dfrac{Q}{4\pi\varepsilon_0 r^2}dr=\dfrac{Q}{4\pi\varepsilon_0}!\left[\dfrac{1}{\varepsilon_r R_1}-\dfrac{1}{\varepsilon_r R_2}+\dfrac{1}{R_2}\right]$</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$C=Q/U$，但 $C$ 不随 $Q$ 变！</strong> $C$ 只取决于几何和介质，$Q/U$ 是常数。$Q$ 加倍→$U$ 也加倍→$C$ 不变。</p>
+<hr />
+<h2>六、静电场能量</h2>
+<table>
+<thead>
+<tr>
+<th>公式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$W=\dfrac{1}{2}CU^2$</td>
+<td>电容器储能</td>
+</tr>
+<tr>
+<td>$w=\dfrac{1}{2}\varepsilon_0\varepsilon_r E^2$</td>
+<td>能量密度</td>
+</tr>
+</tbody>
+</table>
+<h3>📝 例题7-F：平行板电容器储能</h3>
+<p><strong>题目</strong>：$S=20$ cm²，$d=2$ mm，$U=400$ V。求电容和储能。</p>
+<p><strong>解</strong>：$S=2.0\times10^{-3}$ m²，$d=2.0\times10^{-3}$ m。$C=\dfrac{\varepsilon_0 S}{d}=8.85$ pF。$W=\dfrac{1}{2}CU^2=7.08\times10^{-7}$ J。</p>
+<hr />
+<h2>自测15题</h2>
+<h3>选择题（10题）</h3>
+<p><strong>7-1</strong> 关于高斯定理，正确的是（ ）
+(A) 面上 $E=0$ → 面内无电荷  (B) 面内无电荷 → 面上 $E=0$
+(C) 面上 $E\neq0$ → 面内有电荷  (D) 面内有净电荷 → 电通量不为零</p>
+<p><strong>7-2</strong> 静电平衡导体内部（ ）
+(A) $E=0$，$U=0$  (B) $E\neq0$，$U=0$  (C) $E=0$，等势体  (D) $U$ 低于表面</p>
+<p><strong>7-3</strong> 导体球半径 $R$，面密度 $\sigma$。距球面 $R$ 处（距心 $2R$）$E=$（ ）
+(A) $\sigma/\varepsilon_0$  (B) $\sigma/2\varepsilon_0$  (C) $\sigma/4\varepsilon_0$  (D) $\sigma/8\varepsilon_0$</p>
+<p><strong>7-4</strong> 同心球面 $R_a\lt R_b$，带电 $Q_a,Q_b$。$r\gt R_b$ 处 $E=$（ ）
+(A) $\dfrac{Q_a+Q_b}{4\pi\varepsilon_0 r^2}$  (B) $\dfrac{Q_a-Q_b}{4\pi\varepsilon_0 r^2}$  (C) $\dfrac{Q_a}{4\pi\varepsilon_0 r^2}$  (D) $\dfrac{Q_b}{4\pi\varepsilon_0 r^2}$</p>
+<p><strong>7-5</strong> 均匀带电球体 $E$-$r$ 关系（正电）（ ）
+(A) 内0，外 $\propto1/r^2$  (B) 内 $\propto r$，外 $\propto1/r^2$  (C) 内0，外 $\propto1/r$  (D) 内 $\propto1/r$，外 $\propto1/r^2$</p>
+<p><strong>7-6</strong> 关于电容器（ ）
+(A) 一板 $+Q$ 一板 $-Q$→不带电  (B) $C=Q/U$→$C$ 随 $Q$ 增大
+(C) $Q$ 不变，$d$↑→$U$↓  (D) $Q\propto U$</p>
+<p><strong>7-7</strong> 空腔球壳内半径 $R$，腔内距心 $d$ 处放 $+q$。接地后撤地线，球心电势（ ）
+(A) 0  (B) $\dfrac{q}{2\pi\varepsilon_0 d}$  (C) $-\dfrac{q}{4\pi\varepsilon_0 R}$  (D) $\dfrac{q}{4\pi\varepsilon_0}!\left(\dfrac{1}{d}-\dfrac{1}{R}\right)$</p>
+<p><strong>7-8</strong> $-q$ 射入电势差 $U$ 的平行板间，动能增量（ ）
+(A) $-qU/d$  (B) $+qU$  (C) $-qU$  (D) $\frac{1}{2}qU$</p>
+<p><strong>7-9</strong> 正方形对角线两端放 $Q$，另一对角线放 $q$。$Q$ 受合力零→$Q:q=$（ ）
+(A) $Q=-2^{3/2}q$  (B) $Q=2^{3/2}q$  (C) $Q=-2q$  (D) $Q=2q$</p>
+<p><strong>7-10</strong> 两无限大平面 $+\sigma$ 和 $+2\sigma$，板间 $E=$（ ）
+(A) $\sigma/\varepsilon_0$  (B) $\sigma/2\varepsilon_0$  (C) $3\sigma/2\varepsilon_0$  (D) $3\sigma/\varepsilon_0$</p>
+<h3>计算题（5题）</h3>
+<p><strong>计7-1</strong> 球壳内径6cm、外径10cm，$\rho=2\times10^{-5}$。求 $r=5,8,12$cm 处 $E$。</p>
+<p><strong>计7-2</strong> 同轴圆柱 $R_1,R_2$，单位长 $+\lambda,-\lambda$。求 $r&lt;R_1,R_1&lt;r<R_2,r>R_2$ 各处的 $E$。</p>
+<p><strong>计7-3</strong> $S=20$ cm²，$d=2$ mm，$U=400$ V。求 $C,W$。</p>
+<p><strong>计7-4</strong> $q$ 均匀分布在长 $L$ 细杆上，求杆外延长线距端 $a$ 处电势。</p>
+<p><strong>计7-5</strong> $R_1$ 金属球外包 $R_2$ 介质壳（$\varepsilon_r$），球带电 $Q$。求介质内外 $E$ 和球电势。</p>
+<hr />
+<h2>答案与详细解析</h2>
+<h3>选择题详细解析</h3>
+<hr />
+<p><strong>7-1.</strong> 答案：<strong>D</strong></p>
+<p><strong>思路</strong>：高斯定理 $\oint_S\mathbf{E}\cdot d\mathbf{S}=\dfrac{\sum q_{\text{内}}}{\varepsilon_0}$。</p>
+<p>A：面内正负电荷抵消（$\sum q=0$）→电通量为零，但面上E可不为零 ✗
+B：面外电荷的电场穿过高斯面→面上E可不为零 ✗
+C：面上E≠0可能是面外电荷产生的 ✗
+D：面内有净电荷→$\sum q\neq0$→电通量≠0 ✓</p>
+<hr />
+<p><strong>7-2.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：静电平衡导体：内部E=0，整个导体是等势体。电势值取决于参考点，不一定为零。</p>
+<hr />
+<p><strong>7-3.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$Q=\sigma\cdot4\pi R^2$。距球心 $2R$ 处：$E=\dfrac{Q}{4\pi\varepsilon_0(2R)^2}=\dfrac{\sigma\cdot4\pi R^2}{4\pi\varepsilon_0\cdot4R^2}=\dfrac{\sigma}{4\varepsilon_0}$。</p>
+<blockquote>
+<p><strong>坑</strong>："距球面R处"是距球心2R处，不是R处。</p>
+</blockquote>
+<hr />
+<p><strong>7-4.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：$r&gt;R_b$ 时，两个球面的电荷都在高斯面内→总电荷 $Q_a+Q_b$→$E=\dfrac{Q_a+Q_b}{4\pi\varepsilon_0 r^2}$。</p>
+<hr />
+<p><strong>7-5.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：均匀带电球体，内部高斯面只包围部分电荷→$E=\dfrac{Qr}{4\pi\varepsilon_0 R^3}\propto r$（线性增长）。外部全包围→$E\propto 1/r^2$。</p>
+<blockquote>
+<p><strong>坑</strong>：A是带电球面的情况（内部E=0），C/D乱写。球体和球面的E-r图完全不同。</p>
+</blockquote>
+<hr />
+<p><strong>7-6.</strong> 答案：<strong>D</strong></p>
+<p><strong>思路</strong>：$C=\dfrac{Q}{U}$ 是电容的定义式，但C只取决于几何和介质，是常数。所以 $Q=CU$→$Q\propto U$。</p>
+<p>C错：$Q$ 不变→$U=\dfrac{Q}{C}$，$d$↑→$C=\dfrac{\varepsilon_0 S}{d}$↓→$U$↑。</p>
+<hr />
+<p><strong>7-7.</strong> 答案：<strong>D</strong></p>
+<p><strong>思路</strong>：接地→外壳电势=0。球心电势=点电荷q的贡献+内表面−q的贡献。</p>
+<p>$U_O=\dfrac{q}{4\pi\varepsilon_0 d}+\dfrac{-q}{4\pi\varepsilon_0 R}=\dfrac{q}{4\pi\varepsilon_0}!\left(\dfrac{1}{d}-\dfrac{1}{R}\right)$。</p>
+<hr />
+<p><strong>7-8.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：−q从低电势板射入，到达高电势板。电场力做功 $W=(-q)\cdot(-U)=qU$（负电荷逆电场方向运动，电场力做正功）。动能增量=电场力做功=+qU。</p>
+<blockquote>
+<p><strong>坑</strong>：不要只看电荷符号。负电荷从低→高电势是顺电场力方向，做正功。</p>
+</blockquote>
+<hr />
+<p><strong>7-9.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：正方形边长为a，对角线长 $\sqrt{2}a$。一个Q受：对角线上Q的斥力 $F_1=\dfrac{kQ^2}{2a^2}$，两个q的力各 $F_2=\dfrac{kQq}{a^2}$ 夹45°→合力 $\dfrac{2kQq\cos45^\circ}{a^2}=\dfrac{\sqrt{2}kQq}{a^2}$。$F_1+F_2=0$→$Q=-2\sqrt{2}q=-2^{3/2}q$。</p>
+<hr />
+<p><strong>7-10.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：$+\sigma$ 平面产生 $E_1=\dfrac{\sigma}{2\varepsilon_0}$（向右）；$+2\sigma$ 平面产生 $E_2=\dfrac{\sigma}{\varepsilon_0}$（向左）。板间两者反向：$E=|E_2-E_1|=\dfrac{\sigma}{2\varepsilon_0}$。</p>
+<hr />
+<h3>计算题详细解析</h3>
+<hr />
+<p><strong>计7-1.</strong> 带电球壳各点场强</p>
+<p>$r=5$cm（空腔）：$\sum q=0$→$E=0$。
+$r=8$cm（壳内）：$q_{\text{内}}=\rho\cdot\frac{4\pi}{3}(0.08^3-0.06^3)\approx2.48\times10^{-8}$C→$E\approx3.49\times10^4$ N/C。
+$r=12$cm（壳外）：$Q=\rho\cdot\frac{4\pi}{3}(0.10^3-0.06^3)\approx6.56\times10^{-8}$C→$E\approx4.10\times10^4$ N/C。</p>
+<hr />
+<p><strong>计7-2.</strong> 同轴圆柱面</p>
+<p>$E\cdot2\pi rl=\lambda_{\text{内}}l/\varepsilon_0$。$r\lt R_1$：$\lambda_{\text{内}}=0$→$E=0$。$R_1\lt r\lt R_2$：$\lambda_{\text{内}}=+\lambda$→$E=\dfrac{\lambda}{2\pi\varepsilon_0 r}$。$r\gt R_2$：$\lambda_{\text{内}}=0$→$E=0$。</p>
+<hr />
+<p><strong>计7-3.</strong> 平行板电容器</p>
+<p>$S=2.00\times10^{-3}$ m²，$d=2.00\times10^{-3}$ m。$C=\dfrac{\varepsilon_0 S}{d}=8.85$ pF。$W=\dfrac{1}{2}CU^2=7.08\times10^{-7}$ J。</p>
+<hr />
+<p><strong>计7-4.</strong> 带电细杆电势</p>
+<p>$\lambda=\dfrac{q}{L}$，$dU=\dfrac{\lambda dx}{4\pi\varepsilon_0(a+x)}$。$U=\int_0^L\dfrac{\lambda}{4\pi\varepsilon_0(a+x)}dx=\dfrac{q}{4\pi\varepsilon_0 L}\ln!\left(1+\dfrac{L}{a}\right)$。</p>
+<hr />
+<p><strong>计7-5.</strong> 带介质球壳</p>
+<p>介质内：$E=\dfrac{Q}{4\pi\varepsilon_0\varepsilon_r r^2}$。介质外：$E=\dfrac{Q}{4\pi\varepsilon_0 r^2}$。$U=\dfrac{Q}{4\pi\varepsilon_0}!\left[\dfrac{1}{\varepsilon_r R_1}-\dfrac{1}{\varepsilon_r R_2}+\dfrac{1}{R_2}\right]$。</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>选择≤2错</th>
+<th>选择3-5错</th>
+<th>选择&gt;5错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概念过关</td>
+<td>回看知识模块</td>
+<td>基础不牢，先看书</td>
+</tr>
+</tbody>
+</table></div><div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p><p>小番茄题库 · 助力财大学子</p></div></body></html>

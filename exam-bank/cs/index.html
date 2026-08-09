@@ -22,22 +22,6 @@ strong{color:#1a5276}
 .tips-dots{text-align:center;padding:6px 0;background:#fff3cd;border-radius:0 0 8px 8px;margin-top:-1px;border:1px solid #ffc107;border-top:none}
 .tips-dots span{display:inline-block;width:8px;height:8px;margin:0 4px;border-radius:50%;background:#ccc;cursor:pointer}
 .tips-dots span.active{background:#856404}
-/* Comment */
-.comment-section{max-width:900px;margin:40px auto;background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
-.comment-section h3{margin-bottom:15px;color:#1a5276}
-.comment-input{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;min-height:80px;resize:vertical;margin-bottom:10px;font-family:inherit;box-sizing:border-box}
-.comment-name{width:200px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;margin-bottom:10px}
-.comment-password{width:200px;padding:8px 12px;border:1px solid #e74c3c;border-radius:8px;font-size:14px;margin-bottom:10px;display:none}
-.comment-password.visible{display:inline-block}
-.comment-submit{background:#1a5276;color:#fff;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:14px}
-.comment-submit:hover{background:#0d3b54}
-.comment-item{background:#f8f9fa;border-radius:8px;padding:15px;margin:10px 0}
-.comment-item .author{font-weight:600;margin-right:10px}
-.comment-item .author.admin{color:#e74c3c}
-.comment-item .time{color:#999;font-size:0.85em}
-.comment-item .text{margin-top:8px;line-height:1.6}
-.comment-status{margin-top:8px;font-size:13px;color:#e74c3c;display:none}
-.comment-status.show{display:block}
 </style>
 </head><body>
 <a class="back-link" href="../index.html">← 返回科目选择</a>
@@ -45,7 +29,7 @@ strong{color:#1a5276}
 <p style="color:#666">8张速记卡 · 费曼例子+知识表格+高频陷阱+自测(15选择+5大题)+解析+评分线。</p>
 <div class="tips-carousel">
 <button class="tips-arrow prev" onclick="slideTips(-1)">‹</button>
-<div class="tips-track" id="tipsTrack"><div class="tips-slide">💡 <b>番茄大王建议：</b>计算机科学概论的费曼类比用'厨房/做饭'系列，帮你把抽象概念变生活常识。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>大题都有答题框架（定义→关键点→举例→对比），按框架答就能拿满分。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>高频陷阱表格里的每一条都是一个考试易错点，先把这些啃下来。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>每章30分钟搞定——先用10分钟过知识表格，10分钟刷自测，10分钟看解析。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>进制转换和原码反码补码是第一章的计算重点，必须动手算几道题。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>评论区可以提问，番茄大王亲自回复！也可以分享你的复习心得。</div></div>
+<div class="tips-track" id="tipsTrack"><div class="tips-slide">💡 <b>番茄大王建议：</b>计算机科学概论的费曼类比用'厨房/做饭'系列，帮你把抽象概念变生活常识。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>大题都有答题框架（定义→关键点→举例→对比），按框架答就能拿满分。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>高频陷阱表格里的每一条都是一个考试易错点，先把这些啃下来。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>每章30分钟搞定——先用10分钟过知识表格，10分钟刷自测，10分钟看解析。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>进制转换和原码反码补码是第一章的计算重点，必须动手算几道题。</div><div class="tips-slide">💡 <b>番茄大王建议：</b>学习疑问欢迎回首页评论区提问，番茄大王亲自回复！</div></div>
 <button class="tips-arrow next" onclick="slideTips(1)">›</button>
 </div>
 <div class="tips-dots" id="tipsDots"><span class="active" onclick="goToTip(0)"></span><span class="" onclick="goToTip(1)"></span><span class="" onclick="goToTip(2)"></span><span class="" onclick="goToTip(3)"></span><span class="" onclick="goToTip(4)"></span><span class="" onclick="goToTip(5)"></span></div>
@@ -70,24 +54,5 @@ setInterval(()=>slideTips(1),6000);
 <a href="/api/pdf-all/cs" download style="display:inline-block;background:#1a5276;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;margin:8px 8px 8px 0">📦 下载全部8章</a>
 <span style="color:#888;font-size:0.85em">或单独下载每章（在章节页面右下角）</span>
 </div>
-<div class="comment-section">
-<h3>💬 评论区</h3>
-<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
-<input class="comment-name" id="commentName" placeholder="昵称（选填）" maxlength="20" oninput="checkName()">
-<input class="comment-password" id="commentPassword" type="password" placeholder="🔒 站长密码" onkeydown="if(event.key==='Enter')postComment()">
-</div>
-<textarea class="comment-input" id="commentContent" placeholder="写下你的疑问或心得..." maxlength="500"></textarea>
-<button class="comment-submit" onclick="postComment()">发布评论</button>
-<span class="comment-status" id="commentStatus"></span>
-<div id="commentList" style="margin-top:20px"></div>
-<div style="text-align:center;margin-top:15px"><button onclick="loadComments(1)" style="background:none;border:1px solid #ddd;padding:8px 20px;border-radius:6px;cursor:pointer;color:#666">刷新评论</button></div>
-</div>
-<script>
-let cP=1;
-function checkName(){var n=document.getElementById("commentName").value.trim();var p=document.getElementById("commentPassword");if(n==="番茄大王"){p.style.display="inline-block";p.focus()}else{p.style.display="none";p.value=""}}
-async function loadComments(p){cP=p;try{var r=await fetch("/api/comments?page="+p+"&size=10");var d=await r.json();var h=d.comments.map(function(c){return '<div class="comment-item"><span class="author'+(c.name==="番茄大王"?" admin":"")+'">'+c.name+'</span><span class="time">'+c.created_at+'</span><div class="text">'+c.content+'</div></div>'}).join("");document.getElementById("commentList").innerHTML=h+(d.total>p*10?'<p style="color:#999;text-align:center;cursor:pointer;margin-top:10px" onclick="loadComments('+(p+1)+')">— 点击加载更多 —</p>':'<p style="color:#999;text-align:center">— 已加载全部评论 —</p>')}catch(e){}}
-async function postComment(){var c=document.getElementById("commentContent").value.trim();if(!c)return;var n=document.getElementById("commentName").value.trim()||"匿名";var pw=document.getElementById("commentPassword").value;var s=document.getElementById("commentStatus");try{var r=await fetch("/api/comment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:c,name:n,password:pw})});if(r.ok){document.getElementById("commentContent").value="";loadComments(1);s.style.display="none";s.className="comment-status"}else{var e=await r.json();s.textContent=e.detail;s.style.display="block";s.className="comment-status show"}}catch(e){s.textContent="发送失败，请重试";s.style.display="block";s.className="comment-status show"}}
-loadComments(1);
-</script>
 <div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p></div>
 </body></html>

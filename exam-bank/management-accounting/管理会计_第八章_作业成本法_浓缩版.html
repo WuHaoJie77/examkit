@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>管理会计 第八章 作业成本法 浓缩速记卡 · 管理会计 · 小番茄题库</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+h4{color:#34495e;margin:15px 0 8px}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid #e0e0e0;margin:20px 0}
+</style>
+</head>
+<body>
+<a class="back-link" href="./">← 返回管理会计</a>
+<h1>管理会计 第八章 作业成本法 浓缩速记卡</h1>
+<blockquote>
+<p>⚠️ 新型成本核算方法 | 15+题 | 预计用时35分钟</p>
+</blockquote>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：传统成本法像把制造费按人头AA分——大肚汉和小胃口的人付一样的钱不合理。作业成本法（ABC）像按每个人实际吃了什么来结账——谁吃了龙虾谁多付，谁只喝了水谁少付，更公平。</p>
+</blockquote>
+<hr />
+<h2>一、四类作业</h2>
+<table>
+<thead>
+<tr>
+<th>作业类型</th>
+<th>执行频率</th>
+<th>成本驱动</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>单位作业</strong></td>
+<td>每生产1件</td>
+<td>产量</td>
+<td>直接材料/直接人工</td>
+</tr>
+<tr>
+<td><strong>批次作业</strong></td>
+<td>每生产1批</td>
+<td>批次数</td>
+<td>机器调试、采购订单</td>
+</tr>
+<tr>
+<td><strong>产品作业</strong></td>
+<td>维持某产品线</td>
+<td>品种数</td>
+<td>产品设计、工艺改进</td>
+</tr>
+<tr>
+<td><strong>全厂维持作业</strong></td>
+<td>维持工厂运行</td>
+<td>组织规模</td>
+<td>厂部管理、安保</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>判断</strong>：&quot;机器调试费属于单位作业&quot; → ❌ 错！调试是按批进行的，属于<strong>批次作业</strong>。&quot;产品设计费属于批次作业&quot; → ❌ 错！设计是为产品线服务的，属于<strong>产品作业</strong>。</p>
+</blockquote>
+<hr />
+<h2>二、ABC核心原理</h2>
+<pre><code>资源 → 资源动因 → 作业 → 作业动因 → 产品
+</code></pre>
+<p><strong>核心逻辑</strong>：产品消耗作业，作业消耗资源。</p>
+<p><strong>与传统法对比</strong>：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>传统成本法</th>
+<th>作业成本法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>分配依据</strong></td>
+<td>数量（工时/机器小时）</td>
+<td>作业动因（多种）</td>
+</tr>
+<tr>
+<td><strong>结果</strong></td>
+<td>高产量产品补贴低产量产品（<strong>成本交叉补贴</strong>）</td>
+<td>更精确反映各产品消耗</td>
+</tr>
+<tr>
+<td><strong>制造费用占比低时</strong></td>
+<td>误差可接受</td>
+<td>不必要</td>
+</tr>
+<tr>
+<td><strong>制造费用占比高时</strong></td>
+<td>严重失真</td>
+<td>应当采用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>适用条件</strong>：产品多样化、制造费用占比高、间接成本难追溯。</p>
+<hr />
+<h2>三、计算流水线</h2>
+<h3>例题1：两阶段ABC基础题</h3>
+<p>某企业生产A、B两种产品。A产量5,000件，B产量20,000件。制造费用共300,000元，来自两个作业中心：</p>
+<table>
+<thead>
+<tr>
+<th>作业中心</th>
+<th>制造费用</th>
+<th>作业动因</th>
+<th>A耗用</th>
+<th>B耗用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>调试</td>
+<td>200,000元</td>
+<td>调试次数</td>
+<td>80次</td>
+<td>20次</td>
+</tr>
+<tr>
+<td>维护</td>
+<td>100,000元</td>
+<td>维护工时</td>
+<td>400h</td>
+<td>600h</td>
+</tr>
+</tbody>
+</table>
+<p>要求：分别用传统成本法（按产量）和ABC法分配制造费用，并比较单位成本差异。</p>
+<blockquote>
+<p><strong>Step 1：传统成本法分配</strong>（为什么：传统法只看产量，不管产品消耗了多少作业）
+总产量 = 5,000 + 20,000 = 25,000件
+单位制造费用分配率 = 300,000 ÷ 25,000 = 12元/件
+A制造费用 = 5,000×12 = 60,000元；B制造费用 = 20,000×12 = 240,000元
+A单位制造费用 = 12元/件；B单位制造费用 = 12元/件</p>
+</blockquote>
+<blockquote>
+<p><strong>Step 2：ABC法分配——调试费用</strong>（为什么：调试按次数分配，A是复杂产品调试多）
+调试分配率 = 200,000 ÷ (80+20) = 2,000元/次
+A调试费 = 80×2,000 = 160,000元
+B调试费 = 20×2,000 = 40,000元</p>
+</blockquote>
+<blockquote>
+<p><strong>Step 3：ABC法分配——维护费用</strong>（为什么：维护按工时分配）
+维护分配率 = 100,000 ÷ (400+600) = 100元/h
+A维护费 = 400×100 = 40,000元
+B维护费 = 600×100 = 60,000元</p>
+</blockquote>
+<blockquote>
+<p><strong>Step 4：汇总并比较</strong>（为什么：A调试次数多所以ABC下成本更高——传统法低估了A、高估了B）
+A总制造费(ABC) = 160,000+40,000 = 200,000元 → 单位 = 200,000÷5,000 = <strong>40元/件</strong>
+B总制造费(ABC) = 40,000+60,000 = 100,000元 → 单位 = 100,000÷20,000 = <strong>5元/件</strong></p>
+<p><strong>对比结论</strong>：</p>
+<ul>
+<li>A产品：传统法12元 vs ABC法40元 → 传统法<strong>低估</strong>了A的成本（低28元/件！）</li>
+<li>B产品：传统法12元 vs ABC法5元 → 传统法<strong>高估</strong>了B的成本</li>
+</ul>
+</blockquote>
+<h3>例题2：多作业中心ABC（含制造费用归集）</h3>
+<p>某企业生产甲、乙两种产品。本月制造费用明细如下：</p>
+<table>
+<thead>
+<tr>
+<th>费用项目</th>
+<th>金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工资（调试人员）</td>
+<td>60,000元</td>
+</tr>
+<tr>
+<td>折旧（机器）</td>
+<td>120,000元</td>
+</tr>
+<tr>
+<td>物料消耗（按批次领用）</td>
+<td>30,000元</td>
+</tr>
+<tr>
+<td>水电费（按机器小时）</td>
+<td>40,000元</td>
+</tr>
+<tr>
+<td>检验费（按检验次数）</td>
+<td>50,000元</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>300,000元</strong></td>
+</tr>
+</tbody>
+</table>
+<p>识别的作业中心和动因：</p>
+<table>
+<thead>
+<tr>
+<th>作业中心</th>
+<th>费用归入</th>
+<th>作业动因</th>
+<th>甲耗用</th>
+<th>乙耗用</th>
+<th>合计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>调试作业</td>
+<td>60,000</td>
+<td>调试次数</td>
+<td>15次</td>
+<td>5次</td>
+<td>20次</td>
+</tr>
+<tr>
+<td>机器作业</td>
+<td>120,000+40,000=160,000</td>
+<td>机器小时</td>
+<td>600h</td>
+<td>1,000h</td>
+<td>1,600h</td>
+</tr>
+<tr>
+<td>批次作业</td>
+<td>30,000</td>
+<td>批次数</td>
+<td>8批</td>
+<td>2批</td>
+<td>10批</td>
+</tr>
+<tr>
+<td>检验作业</td>
+<td>50,000</td>
+<td>检验次数</td>
+<td>30次</td>
+<td>20次</td>
+<td>50次</td>
+</tr>
+</tbody>
+</table>
+<p>甲产量1,000件，乙产量10,000件。</p>
+<blockquote>
+<p><strong>Step 1：计算各作业中心分配率</strong>（为什么：先归集费用到作业，再按动因算分摊率）
+调试分配率 = 60,000 ÷ 20 = <strong>3,000元/次</strong>
+机器分配率 = 160,000 ÷ 1,600 = <strong>100元/h</strong>
+批次分配率 = 30,000 ÷ 10 = <strong>3,000元/批</strong>
+检验分配率 = 50,000 ÷ 50 = <strong>1,000元/次</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Step 2：分配制造费用到产品</strong>（为什么：各产品按实际消耗动因量×分配率）</p>
+<table>
+<thead>
+<tr>
+<th>作业</th>
+<th>甲分配</th>
+<th>乙分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>调试</td>
+<td>15×3,000=45,000</td>
+<td>5×3,000=15,000</td>
+</tr>
+<tr>
+<td>机器</td>
+<td>600×100=60,000</td>
+<td>1,000×100=100,000</td>
+</tr>
+<tr>
+<td>批次</td>
+<td>8×3,000=24,000</td>
+<td>2×3,000=6,000</td>
+</tr>
+<tr>
+<td>检验</td>
+<td>30×1,000=30,000</td>
+<td>20×1,000=20,000</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>159,000元</strong></td>
+<td><strong>141,000元</strong></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<blockquote>
+<p><strong>Step 3：计算单位制造费用</strong>（为什么：总费用÷各自产量）
+甲单位制造费 = 159,000 ÷ 1,000 = <strong>159元/件</strong>
+乙单位制造费 = 141,000 ÷ 10,000 = <strong>14.1元/件</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Step 4：传统成本法对比</strong>（为什么：传统法按产量分配，甲只占1/11的产量却消耗了大量作业）
+传统分配率 = 300,000 ÷ 11,000 = 27.27元/件
+甲传统单位费用 = 27.27元（vs ABC的159元→传统法严重<strong>低估</strong>）
+乙传统单位费用 = 27.27元（vs ABC的14.1元→传统法<strong>高估</strong>）</p>
+</blockquote>
+<hr />
+<h2>四、自测</h2>
+<h3>选择题（8题）</h3>
+<ol>
+<li>
+<p>每生产一批产品需执行的作业是（ ）。
+A. 单位作业  B. 批次作业  C. 产品作业  D. 全厂维持作业</p>
+</li>
+<li>
+<p>ABC原理是（ ）。
+A. 产品消耗资源  B. 产品消耗作业，作业消耗资源
+C. 作业消耗产品  D. 资源消耗产品</p>
+</li>
+<li>
+<p>为维持某特定产品线而执行的作业是（ ）。
+A. 单位作业  B. 批次作业  C. 产品作业  D. 全厂维持作业</p>
+</li>
+<li>
+<p>传统成本法错误反映成本的主要原因是（ ）。
+A. 以数量为基准，造成成本交叉补贴  B. 直接材料难追溯
+C. 直接人工占比高  D. 品种单一</p>
+</li>
+<li>
+<p>自动化提高后占比越来越大的是（ ）。
+A. 直接人工  B. 直接材料  C. 制造费用  D. 采购费用</p>
+</li>
+<li>
+<p>全厂维持作业成本与什么有关（ ）。
+A. 产量  B. 批次数  C. 品种数量  D. 组织规模和结构</p>
+</li>
+<li>
+<p>诱致成本发生的原因包括（ ）。
+A. 资源动因和作业动因  B. 产量和批数
+C. 材料和人工  D. 销售收入</p>
+</li>
+<li>
+<p>ABC法下，低产量复杂产品与传统法相比成本通常（ ）。
+A. 更低  B. 相同  C. 更高  D. 无法确定</p>
+</li>
+</ol>
+<h3>大题（3题）</h3>
+<p><strong>题1</strong>：某企业有C、D两种产品。C年产2,000件，D年产8,000件。制造费用280,000元，分为两个作业中心：调试（180,000元，C用60次/D用30次，共90次）、物料处理（100,000元，C用120次/D用80次，共200次）。分别用传统法和ABC法计算单位制造费用，并分析差异原因。</p>
+<p><strong>题2</strong>：说明作业成本法下&quot;成本交叉补贴&quot;的含义。为什么传统成本法下高产量产品补贴低产量产品？</p>
+<p><strong>题3</strong>：判断：&quot;作业成本法消除了所有成本分配的误差。&quot;是否正确？说明理由。</p>
+<hr />
+<h2>五、答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>思路</th>
+<th>推导</th>
+<th>坑点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>四类作业分类</td>
+<td>批次作业=每生产一批才执行一次→调试、采购订单</td>
+<td>单位作业是每件都发生的（如直接材料），批次是每批一次</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>ABC核心逻辑链</td>
+<td>资源→作业→产品，产品消耗作业，作业消耗资源</td>
+<td>A&quot;产品直接消耗资源&quot;跳过了作业这个中间环节</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td>产品作业vs批次作业</td>
+<td>产品作业=为特定产品线存在→与产量/批数无关</td>
+<td>产品作业不随产量变化，随<strong>品种</strong>变化</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A</td>
+<td>传统法的根本缺陷</td>
+<td>所有产品用同一个数量基准分配→消耗作业多的产品被补贴</td>
+<td>这不是材料追溯问题（B），而是间接费用分配问题</td>
+</tr>
+<tr>
+<td>5</td>
+<td>C</td>
+<td>自动化趋势</td>
+<td>自动化→直接人工↓→制造费用（折旧/维护/软件）占比↑</td>
+<td>制造费用占比越高，传统法失真越严重，ABC越有必要</td>
+</tr>
+<tr>
+<td>6</td>
+<td>D</td>
+<td>全厂维持作业驱动</td>
+<td>厂部管理/安保=维持整个组织的→随组织规模变化</td>
+<td>不是C（品种）——全厂维持不随品种而变</td>
+</tr>
+<tr>
+<td>7</td>
+<td>A</td>
+<td>ABC双动因框架</td>
+<td>资源动因（资源→作业）+作业动因（作业→产品）=成本发生的两层原因</td>
+<td>B是传统法的思路，ABC用动因替代产量</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C</td>
+<td>ABC法效应</td>
+<td>低产量复杂产品消耗的调试/检验/批次作业多→ABC下成本更高</td>
+<td>传统法低估复杂产品成本、高估简单产品成本</td>
+</tr>
+</tbody>
+</table>
+<h3>大题参考答案</h3>
+<p><strong>题1</strong>：</p>
+<blockquote>
+<p><strong>传统法</strong>：分配率 = 280,000÷10,000 = 28元/件。C单位=28元，D单位=28元。
+<strong>ABC法</strong>：调试分配率=180,000÷90=2,000元/次；物料分配率=100,000÷200=500元/次。
+C总费用=60×2,000+120×500=120,000+60,000=180,000元 → 单位=<strong>90元/件</strong>
+D总费用=30×2,000+80×500=60,000+40,000=100,000元 → 单位=<strong>12.5元/件</strong>
+<strong>差异分析</strong>：C是低产量复杂产品（调式次数多、物料处理次数多），传统法28元严重低于ABC的90元→传统法低估了C；D是简单产品，传统法28元高于ABC的12.5元→传统法高估了D。这就是成本交叉补贴：简单产品补贴了复杂产品。</p>
+</blockquote>
+<p><strong>题2</strong>：
+成本交叉补贴指：传统成本法按单一数量基准（如产量/工时）分配制造费用，导致高产量产品和低产量产品承担相同的单位制造费用，而实际上低产量复杂产品消耗了更多的调试、检验、物料处理等批次级和产品级作业资源。高产量产品&quot;补贴&quot;了低产量产品的这部分差异。</p>
+<p><strong>题3</strong>：
+❌ 错误。作业成本法提高了成本分配的准确性，但没有消除所有误差。原因：
+① 作业动因的选择仍有<strong>主观性</strong>——同一个作业可以有多种动因（如调试可以用次数也可以用小时），不同选择导致不同结果；
+② 部分成本（如全厂维持作业）本身难以追溯，分配仍有近似性；
+③ ABC法的实施成本高昂，识别作业和动因需要大量主观判断。
+→ ABC法比传统法<strong>更精确</strong>，但不是<strong>完全精确</strong>。</p>
+<hr />
+<h2>六、⚠️ 防坑预警</h2>
+<table>
+<thead>
+<tr>
+<th>❌ 学生常犯</th>
+<th>✅ 正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>坑1</strong>：传统法下高产量产品成本更高</td>
+<td>恰恰相反！高产量产品在传统法下被<strong>高估</strong>，低产量复杂产品被<strong>低估</strong>——这是成本交叉补贴</td>
+</tr>
+<tr>
+<td><strong>坑2</strong>：作业动因用产量</td>
+<td>选动因不能用产量——那就退化回传统成本法了！动因要能反映作业的<strong>真实消耗</strong>（次数/小时/批数）</td>
+</tr>
+<tr>
+<td><strong>坑3</strong>：调试次数和调试小时混为一谈</td>
+<td>两者是不同的动因！次数假设每次调试成本相同，小时反映每次长短不同。动因选择直接影响计算结果</td>
+</tr>
+<tr>
+<td><strong>坑4</strong>：ABC法=完全精确</td>
+<td>ABC法仍有主观性（动因选择）和近似性（全厂维持作业）。ABC是<strong>更精确</strong>不是<strong>绝对精确</strong></td>
+</tr>
+<tr>
+<td><strong>坑5</strong>：全厂维持作业分配到产品</td>
+<td>全厂维持作业通常<strong>不分配</strong>，因为无法找到有意义的动因——强行分配反而扭曲成本</td>
+</tr>
+<tr>
+<td><strong>坑6</strong>：四类作业搞混</td>
+<td>口诀：&quot;单件是单位，每批是批次，品种是产品，全厂看组织&quot;</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>七、评分线</h2>
+<table>
+<thead>
+<tr>
+<th>🏆 优秀：全对</th>
+<th>✅ 及格：≤2错</th>
+<th>⚠️ 需复习：≥3错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ABC掌握，进入下一章</td>
+<td>重做大题1，重点理解&quot;成本交叉补贴&quot;</td>
+<td>四类作业和ABC核心逻辑（产品→作业→资源）没分清</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>成本会计 第四章 完工产品与在产品分配 浓缩速记卡 · 成本会计 · 小番茄题库</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+h3{color:#2c3e50;margin:20px 0 10px}
+h4{color:#34495e;margin:15px 0 8px}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px;text-align:left}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+code{background:#e8e8e8;color:#c7254e;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#f4f4f4;border:1px solid #ddd;padding:15px;border-radius:5px;overflow-x:auto}
+pre code{background:none;color:#333;padding:0}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8}
+a{color:#1a5276}
+strong{color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.back-link:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid #e0e0e0;margin:20px 0}
+</style>
+</head>
+<body>
+<a class="back-link" href="./">← 返回成本会计</a>
+<h1>成本会计 第四章 完工产品与在产品分配 浓缩速记卡</h1>
+<blockquote>
+<p>⚠️ 挂科重灾区！全书的计算核心 | 31题 | 预计用时60分钟</p>
+<p>💡 <strong>费曼类比</strong>：完工和在产品分配就像给一群人和半碗饭分账单——完工产品是吃饱走人的，在产品是还在吃的。你不能把整桌菜钱全算到走的人头上，也不能平均分——得看每个人吃了多少（约当产量）。</p>
+</blockquote>
+<hr />
+<h2>一、七种分配方法对比表（必背！）</h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>适用条件</th>
+<th>核心逻辑</th>
+<th>关键坑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>不计算在产品成本</strong></td>
+<td>月末在产品数量<strong>很小</strong></td>
+<td>本月生产费用=完工产品成本</td>
+<td>数量很小才行，不是"变化小"</td>
+</tr>
+<tr>
+<td><strong>按年初固定数计算</strong></td>
+<td>在产品数量<strong>较大但变化不大</strong></td>
+<td>每月在产品成本固定=年初数，本月费用=完工成本</td>
+<td>年末需调整回实际数</td>
+</tr>
+<tr>
+<td><strong>按所耗原材料计价</strong></td>
+<td>材料费占比<strong>很大</strong></td>
+<td>在产品只计材料费，加工费全给完工</td>
+<td>仅适用于材料密集型（如面粉厂）</td>
+</tr>
+<tr>
+<td><strong>约当产量比例法</strong></td>
+<td>数量大+变化大+料工费比重<strong>相差不多</strong></td>
+<td>把在产品按完工程度折算为完工品</td>
+<td>投料程度≠加工程度！分别算</td>
+</tr>
+<tr>
+<td><strong>在产品按定额成本计价</strong></td>
+<td>定额健全+<strong>在产品数量变化不大</strong></td>
+<td>在产品=定额成本，差异全给完工</td>
+<td>变化大→完工成本可能为负数！</td>
+</tr>
+<tr>
+<td><strong>定额比例法</strong></td>
+<td>定额健全+在产品数量<strong>变化较大</strong></td>
+<td>按定额比例分配实际费用，差异共担</td>
+<td>与定额成本法相反：差异由双方共担</td>
+</tr>
+<tr>
+<td><strong>完工产品法</strong></td>
+<td>在产品<strong>已接近完工</strong></td>
+<td>在产品视同完工产品，按实际产量分配</td>
+<td>仅适用于已基本完工的情况</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>选择方法的口诀</strong>："量小不算，量大不变用固定，料重用材料，料工费平衡约当，定额稳用定额法（变大小决定比例还是成本），接近完工直接分。"</p>
+</blockquote>
+<hr />
+<h2>二、约当产量法完整流水线（★★★ 全书最重要）</h2>
+<h3>总流程图</h3>
+<div class="codehilite"><pre><span></span><code>Step 1: 判断投料方式 → 算材料约当产量
+Step 2: 算加工程度 → 算加工费约当产量
+Step 3: 分别计算材料分配率和加工费分配率
+Step 4: 分配 → 完工产品成本 = 完工产量×分配率
+</code></pre></div>
+
+<h3>子流程A：投料程度计算（三种情形）</h3>
+<table>
+<thead>
+<tr>
+<th>投料方式</th>
+<th>投料程度计算</th>
+<th>约当产量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>①一次投料</strong>（生产开始全部投入）</td>
+<td>投料程度 = <strong>100%</strong></td>
+<td>材料约当产量 = 在产品实际数量</td>
+</tr>
+<tr>
+<td><strong>②分工序一次投料</strong>（每道工序开始时投）</td>
+<td>某工序投料程度 = 前面工序累计定额/总定额</td>
+<td>约当产量 = Σ(各工序在产品×该工序投料程度)</td>
+</tr>
+<tr>
+<td><strong>③陆续投料（与加工进度一致）</strong></td>
+<td>投料程度 = 加工程度</td>
+<td>材料约当产量 = 加工费约当产量</td>
+</tr>
+<tr>
+<td><strong>③'陆续投料（与加工进度不一致）</strong></td>
+<td>单独计算投料程度</td>
+<td>与加工程度分开算</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>例题（第③'种）</strong>：两道工序，定额20kg+30kg=50kg。陆续投入，投料与加工进度不一致。
+第一道投料程度 = (20×50%)/50 = <strong>20%</strong>
+第二道投料程度 = (20+30×50%)/50 = <strong>70%</strong>
+<em>每道工序内按50%算，前面工序全额</em></p>
+</blockquote>
+<h3>子流程B：加工程度计算</h3>
+<p><strong>公式</strong>：</p>
+<div class="codehilite"><pre><span></span><code>某工序加工程度 = (前面各工序工时定额之和 + 本工序工时定额×50%) / 总工时定额
+</code></pre></div>
+
+<blockquote>
+<p><strong>注意</strong>：前面工序是<strong>全额定額</strong>（已完成），本工序是<strong>50%</strong>（进行中）。</p>
+</blockquote>
+<p><strong>例题</strong>：三道工序40h, 16h, 24h，总80h。
+- 第一道加工程度 = (40×50%)/80 = <strong>25%</strong>
+- 第二道加工程度 = (40 + 16×50%)/80 = <strong>60%</strong>
+- 第三道加工程度 = (40+16 + 24×50%)/80 = <strong>85%</strong></p>
+<p><strong>判断</strong>："某道工序加工程度=(本工序工时定额+前面各工序×50%)/总定额" → ❌ 错！是<strong>前面全額+本工序×50%</strong>。</p>
+<h3>子流程C：加工程度快速算法（各工序统一50%）</h3>
+<p>如果不分别测定各工序，对各工序在产品统一按<strong>50%</strong>计算加工程度。简单但粗糙。</p>
+<hr />
+<h2>三、两种定额法对比（高频混淆）</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>在产品按定额成本计价法</th>
+<th>定额比例法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>在产品数量变化</strong></td>
+<td>变化<strong>不大</strong></td>
+<td>变化<strong>较大</strong></td>
+</tr>
+<tr>
+<td><strong>差异归属</strong></td>
+<td>差异全部由<strong>完工产品</strong>负担</td>
+<td>差异由完工和在产品<strong>共同负担</strong></td>
+</tr>
+<tr>
+<td><strong>计算顺序</strong></td>
+<td>先算在产品定额成本→倒挤完工成本</td>
+<td>先算分配率→双方按定额比例分</td>
+</tr>
+<tr>
+<td><strong>变化大时的后果</strong></td>
+<td>完工成本可能为<strong>负数</strong>！</td>
+<td>正常分配</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>判断</strong>："定额成本法下差异全部计入在产品成本" → ❌ 错！差异计入<strong>完工产品</strong>成本。
+<strong>判断</strong>："定额比例法下差异由完工和在产品共同负担" → ✅ 对。</p>
+</blockquote>
+<hr />
+<h2>四、广义在产品</h2>
+<table>
+<thead>
+<tr>
+<th>包括</th>
+<th>不包括</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 正在加工中的在产品</td>
+<td>❌ 已验收入库的产成品</td>
+</tr>
+<tr>
+<td>✅ 已完成部分步骤仍需继续加工的半成品</td>
+<td>❌ 已销售的产成品</td>
+</tr>
+<tr>
+<td>✅ 等待返修的废品</td>
+<td></td>
+</tr>
+<tr>
+<td>✅ 尚未验收入库的产成品</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>判断</strong>："等待返修的废品属于广义在产品" → ✅ 对！</p>
+</blockquote>
+<hr />
+<h2>五、例题精练</h2>
+<h3>例题1：约当产量法——一次投料+加工程度</h3>
+<p>某产品本月完工600件，月末在产品200件。原材料一次投入。在产品加工程度50%。月初在产品+本月发生：直接材料80,000元，直接人工22,000元，制造费用11,000元。</p>
+<p><strong>解</strong>：</p>
+<blockquote>
+<p><strong>Step 1：材料约当产量</strong>（一次投料→投料程度100%）
+材料约当产量 = 200 × 100% = <strong>200件</strong>
+材料总约当产量 = 600 + 200 = 800件</p>
+<p><strong>Step 2：加工费约当产量</strong>（加工程度50%）
+加工约当产量 = 200 × 50% = <strong>100件</strong>
+加工总约当产量 = 600 + 100 = 700件</p>
+<p><strong>Step 3：分配率</strong>
+直接材料分配率 = 80,000 ÷ 800 = <strong>100元/件</strong>
+直接人工分配率 = 22,000 ÷ 700 = <strong>31.43元/件</strong>
+制造费用分配率 = 11,000 ÷ 700 = <strong>15.71元/件</strong></p>
+<p><strong>Step 4：分配</strong>
+完工产品成本 = 600×(100+31.43+15.71) = <strong>88,286元</strong>
+在产品成本 = 80,000+22,000+11,000 - 88,286 = <strong>24,714元</strong>
+<em>验证：材料200×100=20,000 + 加工100×(31.43+15.71)=4,714 → 24,714 ✓</em></p>
+</blockquote>
+<p><strong>坑点</strong>：材料一次投料→材料约当产量=在产品实际数量（200），加工约当产量=200×50%=100。两个约当产量不同！</p>
+<h3>例题2：约当产量法——分工序测加工程度</h3>
+<p>三道工序：40h/16h/24h，总80h。完工1,000件，在产品：第一道100件，第二道200件，第三道150件。本月加工费用56,700元。</p>
+<p><strong>解</strong>：</p>
+<blockquote>
+<p><strong>各工序加工程度</strong>（前面已验证）：
+第一道=(40×50%)/80=25%，第二道=(40+16×50%)/80=60%，第三道=(40+16+24×50%)/80=85%</p>
+<p><strong>加工费约当产量</strong>：
+= 100×25% + 200×60% + 150×85%
+= 25 + 120 + 127.5 = <strong>272.5件</strong></p>
+<p><strong>分配率</strong> = 56,700 ÷ (1,000 + 272.5) = <strong>44.56元/件</strong></p>
+<p><strong>完工加工费</strong> = 1,000 × 44.56 = <strong>44,560元</strong>
+<strong>在产品加工费</strong> = 272.5 × 44.56 = <strong>12,140元</strong></p>
+</blockquote>
+<h3>例题3：盘亏处理</h3>
+<p>在产品因意外灾害盘亏，扣除残值和保险赔偿后的净损失→借记<strong>营业外支出</strong>。</p>
+<p>在产品盘盈，经审批后→贷记<strong>管理费用</strong>（冲减）。</p>
+<hr />
+<h2>六、自测</h2>
+<h3>选择题（10题）</h3>
+<ol>
+<li>
+<p>月末在产品数量很小，应采用（ ）。
+   A. 约当产量法  B. 不计算在产品成本法  C. 定额比例法  D. 按年初固定数法</p>
+</li>
+<li>
+<p>在产品数量较大但变化不大，应采用（ ）。
+   A. 不计算在产品成本法  B. 按年初固定数计算法
+   C. 约当产量比例法  D. 定额比例法</p>
+</li>
+<li>
+<p>数量大+变化大+料工费比重相差不多，应采用（ ）。
+   A. 按所耗原材料计价法  B. 约当产量比例法
+   C. 定额成本法  D. 不计算在产品法</p>
+</li>
+<li>
+<p>三道工序工时定额40h/16h/24h，第二道工序加工程度为（ ）。
+   A. 50%  B. 60%  C. 80%  D. 20%</p>
+</li>
+<li>
+<p>原材料一次投入，分配直接材料时应选（ ）比例。
+   A. 在产品约当产量  B. 完工实际产量+在产品实际产量
+   C. 完工实际产量+在产品约当产量  D. 完工实际产量</p>
+</li>
+<li>
+<p>在产品按定额成本计价，数量变动大时可能导致（ ）。
+   A. 月初在产品为负  B. 本月生产费用为负
+   C. 本月完工产品成本为负  D. 月末在产品为负</p>
+</li>
+<li>
+<p>定额比例法下，脱离定额的差异由（ ）。
+   A. 完工产品单独负担  B. 在产品单独负担
+   C. 完工和在产品共同负担  D. 计入管理费用</p>
+</li>
+<li>
+<p>下列不属于广义在产品的是（ ）。
+   A. 正在加工的在产品  B. 已完成部分步骤的半成品
+   C. 已验收入库的产成品  D. 等待返修的废品</p>
+</li>
+<li>
+<p>意外灾害造成在产品净损失应借记（ ）。
+   A. 管理费用  B. 制造费用  C. 生产成本  D. 营业外支出</p>
+</li>
+<li>
+<p>在产品盘盈，审批后贷记（ ）。
+    A. 营业外收入  B. 管理费用  C. 制造费用  D. 待处理财产损溢</p>
+</li>
+</ol>
+<h3>计算题（5题）</h3>
+<p><strong>题1</strong>：完工800件，在产品200件。材料一次投入，加工程度50%。直接材料96,000元，直接人工24,000元，制造费用12,000元。用约当产量法分配。</p>
+<p><strong>题2</strong>：三道工序：30h/20h/10h，总60h。完工500件。在产品：第一道50件、第二道80件、第三道40件。本月加工费用38,500元。分工序测定加工程度，求完工产品和在产品各应负担的加工费用。</p>
+<p><strong>题3</strong>：A产品定额：直接材料100元/件，直接人工30元/件，制造费用20元/件。本月完工400件，在产品100件（加工程度60%）。材料一次投入。月初+本月：直接材料55,000元，直接人工18,000元，制造费用10,000元。用定额成本法（在产品按定额成本计价）。</p>
+<p><strong>题4</strong>：用题3数据，改用定额比例法分配。</p>
+<p><strong>题5</strong>：判断对错并改正："某道工序在产品加工程度=(本工序工时定额+前面各工序工时定额×50%)/产品工时定额。"</p>
+<hr />
+<h2>七、答案与解析</h2>
+<h3>选择题答案</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>思路</th>
+<th>推导</th>
+<th>坑点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>七法选择第一步</td>
+<td>在产品量很小→忽略不计→不计算在产品成本法</td>
+<td>不是"变化小"，是"数量小"——两回事</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>量大但变化不大</td>
+<td>变化不大→可以"固定"→年初固定数法</td>
+<td>不能用不计算法（量不小），不能用约当（变化不大不需要那么精确）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>B</td>
+<td>约当产量法适用三条件</td>
+<td>量大+变化大+料工费均衡=约当产量法的标准场景</td>
+<td>这是约当产量法最经典的适用描述，记住这三个条件</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B</td>
+<td>加工程度公式</td>
+<td>(40+16×50%)/80=48/80=60%</td>
+<td>本工序50%+前面全額，不是本工序全額+前面50%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>B</td>
+<td>一次投料→投料100%</td>
+<td>投料程度100%→在产品视同完工→材料按<strong>实际产量</strong>比例分</td>
+<td>选项C是加工费的分配比例，此处问的是材料→用实际产量</td>
+</tr>
+<tr>
+<td>6</td>
+<td>C</td>
+<td>定额成本法的缺陷</td>
+<td>数量变化大→定额与实际差异大→差异全由完工承担→可能负</td>
+<td>这是定额成本法的致命缺陷，适合考单选</td>
+</tr>
+<tr>
+<td>7</td>
+<td>C</td>
+<td>定额比例法的差异归属</td>
+<td>定额比例法=按定额比例分实际费用→差异共担</td>
+<td>与定额成本法相反记忆：一个独担、一个共担</td>
+</tr>
+<tr>
+<td>8</td>
+<td>C</td>
+<td>广义在产品的边界</td>
+<td>已入库产成品=已完工→不是广义在产品</td>
+<td>D"等待返修的废品"虽然叫废品，但在修好前算广义在产品</td>
+</tr>
+<tr>
+<td>9</td>
+<td>D</td>
+<td>意外灾害→营业外支出</td>
+<td>非常损失（天灾人祸）=营业外支出。管理不善=管理费用</td>
+<td>灾害类型决定科目——天灾=营业外，人祸=管理</td>
+</tr>
+<tr>
+<td>10</td>
+<td>B</td>
+<td>盘盈冲减管理费用</td>
+<td>在产品盘盈→冲减管理费用。盘亏管理原因的→增加管理费用</td>
+<td>盘盈贷记管理费用（减少），和现金盘盈记营业外收入不一样</td>
+</tr>
+</tbody>
+</table>
+<h3>计算题答案</h3>
+<p><strong>题1</strong>：
+- 材料约当产量 = 200（一次投料→100%）；材料总约当 = 800+200 = 1,000
+- 加工约当产量 = 200×50% = 100；加工总约当 = 800+100 = 900
+- 材料分配率 = 96,000÷1,000 = 96；人工分配率 = 24,000÷900 ≈ 26.67；制造费分配率 = 12,000÷900 ≈ 13.33
+- 完工成本 = 800×(96+26.67+13.33) = <strong>108,800元</strong>
+- 在产品成本 = (200×96)+(100×40) = 19,200+4,000 = <strong>23,200元</strong></p>
+<p><strong>题2</strong>：
+- 加工程度：第一道=(30×50%)/60=25%；第二道=(30+20×50%)/60≈66.67%；第三道=(30+20+10×50%)/60≈91.67%
+- 约当产量 = 50×25%+80×66.67%+40×91.67% = 12.5+53.33+36.67 = 102.5
+- 分配率 = 38,500÷(500+102.5) = 63.90元/件
+- 完工 = 500×63.90 = <strong>31,950元</strong>；在产品 = 102.5×63.90 = <strong>6,550元</strong></p>
+<p><strong>题3（定额成本法）</strong>：
+- 在产品定额成本 = 材料100×100 + 加工(30+20)×100×60% = 10,000 + 3,000 = <strong>13,000元</strong>
+- 完工成本 = (55,000+18,000+10,000) - 13,000 = 83,000 - 13,000 = <strong>70,000元</strong>
+- 坑：材料一次投料→在产品材料按100%算定额；加工费按加工程度60%</p>
+<p><strong>题4（定额比例法）</strong>：
+- 材料：完工定额=400×100=40,000, 在产品定额=100×100=10,000
+- 材料分配率 = 55,000÷50,000 = 1.10
+- 完工材料 = 40,000×1.10 = 44,000；在产品材料 = 10,000×1.10 = 11,000
+- 加工费：完工定额工时=400×(30+20)=20,000, 在产品定额工时=100×60%×50=3,000
+- 加工分配率 = 28,000÷23,000 ≈ 1.2174
+- 完工加工 = 20,000×1.2174=24,348；在产品加工=3,000×1.2174=3,652
+- 完工总成本 = 44,000+24,348 = <strong>68,348元</strong>；在产品总成本 = 11,000+3,652 = <strong>14,652元</strong>
+- 对比题3：定额成本法完工70,000 &gt; 定额比例法68,348 → 因为定额成本法把有利差异全给了完工</p>
+<p><strong>题5</strong>：❌ 错误。
+正确公式：某道工序加工程度 = （<strong>前面各工序工时定额之和</strong> + 本工序工时定额×50%）/ 产品工时定额。
+错误在于把"前面全額"和"本工序×50%"的位置写反了。</p>
+<hr />
+<h2>八、防坑预警——约当产量法四大致命陷阱</h2>
+<table>
+<thead>
+<tr>
+<th>❌ 学生常犯</th>
+<th>✅ 正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>陷阱1</strong>：材料约当产量=加工约当产量</td>
+<td>分别计算！投料方式决定材料约当产量，加工程度决定加工约当产量</td>
+</tr>
+<tr>
+<td><strong>陷阱2</strong>：加工程度公式=本工序全額+前面×50%</td>
+<td><strong>前面全額+本工序×50%</strong>，因为前面已完成、本道进行中</td>
+</tr>
+<tr>
+<td><strong>陷阱3</strong>：定额成本法适用于在产品变化大的情况</td>
+<td>变化大→完工成本可能为负→必须改用<strong>定额比例法</strong></td>
+</tr>
+<tr>
+<td><strong>陷阱4</strong>：一次投料→投料程度按加工程度算</td>
+<td>一次投料→投料程度=<strong>100%</strong>，不用约当，直接用实际数量</td>
+</tr>
+<tr>
+<td><strong>陷阱5</strong>：分工序一次投料，投料程度用"前面累计×50%"</td>
+<td>每道工序<strong>开始时</strong>一次投入→进入该工序时材料已全额投入→投料程度=到本工序为止的累计定额/总定额，本工序不乘50%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>九、评分线</h2>
+<table>
+<thead>
+<tr>
+<th>选择≤2错+计算对3题</th>
+<th>选择3-5错或计算对2题</th>
+<th>更差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 约当产量法已掌握，可进入品种法</td>
+<td>⚠️ 重做计算题1和2，背加工程度公式</td>
+<td>🔴 约当产量法是成本会计核心，必须搞懂才能往下学分步法</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

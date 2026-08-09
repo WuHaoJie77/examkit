@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>大学物理 第3章 刚体力学基础 浓缩速记卡 · 小番茄题库</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8;color:#555}
+a{color:#1a5276}strong{color:#1a5276}
+hr{border:none;border-top:1px solid #e0e0e0;margin:30px 0}
+</style><script>MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]]}};</script><script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script></head><body><a class="back-link" href="index.html">← 返回物理章节列表</a><h1>大学物理 第3章 刚体力学基础 浓缩速记卡</h1><div class="card"><blockquote>
+<p>课后原题：35题（8选择 + 12填空 + 15解答） | 预计用时：40分钟</p>
+</blockquote>
+<hr />
+<h2>一、转动惯量——"旋转的质量"</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：推旋转门——推把手（离轴远）比推门轴省力。同样质量，分布离轴越远，越难转。$J$ 就是"旋转世界的质量"。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>常见刚体</th>
+<th>轴位置</th>
+<th>转动惯量 $J$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>细杆</td>
+<td>过中心⊥杆</td>
+<td>$\dfrac{1}{12}mL^2$</td>
+</tr>
+<tr>
+<td>细杆</td>
+<td>过端点⊥杆</td>
+<td>$\dfrac{1}{3}mL^2$</td>
+</tr>
+<tr>
+<td>圆盘/圆柱</td>
+<td>过中心⊥盘面</td>
+<td>$\dfrac{1}{2}mR^2$</td>
+</tr>
+<tr>
+<td>圆环</td>
+<td>过中心⊥环面</td>
+<td>$mR^2$</td>
+</tr>
+<tr>
+<td>球体</td>
+<td>过球心</td>
+<td>$\dfrac{2}{5}mR^2$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「绕某轴的刚体，查 $J$」→ 先判断轴位置（中心还是端点），再套上表。</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>同一根杆，轴过中心和过端点 $J$ 差4倍！</strong> $\dfrac{1}{3}mL^2$ vs $\dfrac{1}{12}mL^2$。质量全在远端→$J$ 大。</p>
+<hr />
+<h2>二、转动定律 $M=J\alpha$</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：$F=ma$ 的旋转版——力→力矩，质量→转动惯量，加速度→角加速度。滑轮题里绳张力对滑轮产生力矩。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>直线</th>
+<th>转动</th>
+<th>桥接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$F=ma$</td>
+<td>$M=J\alpha$</td>
+<td>$M=rF$（力⊥半径时）</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>$a_\tau=r\alpha$（绳不滑动）</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「滑轮有质量，绳挂重物」：</p>
+<blockquote>
+<p>① 对重物：$mg-T=ma$
+② 对滑轮：$TR=J\alpha$，$J=\dfrac{1}{2}MR^2$（圆盘）
+③ 约束：$a=R\alpha$
+④ 联立消 $T$，解 $a$</p>
+</blockquote>
+<h3>📝 例题3-A：滑轮+重物</h3>
+<p><strong>题目</strong>：匀质圆盘 $M=4$kg，$R=0.2$m 绕中心轴，边缘绕绳挂 $m=2$kg。求加速度和张力。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> 重物：$mg-T=ma$
+<strong>②</strong> 滑轮：$TR=\dfrac{1}{2}MR^2\cdot\dfrac{a}{R}=\dfrac{1}{2}MRa$ → $T=\dfrac{1}{2}Ma$
+<em>（$J=\frac{1}{2}MR^2$ 是圆盘，$a=R\alpha$ 是绳不滑动的条件）</em></p>
+<p><strong>③</strong> 代入：$mg-\dfrac{1}{2}Ma=ma$ → $2\times9.8-2a=2a$ → $a=4.9$ m/s²
+<strong>④</strong> $T=\dfrac{1}{2}\times4\times4.9=9.8$ N</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>绳张力 $T\neq mg$！</strong> 重物在加速下落→$T=m(g-a)&lt;mg$。把重物直接换成等大的力拉绳→$T$ 变大→$\alpha$ 变大。</p>
+<hr />
+<h2>三、转动动能与机械能守恒</h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>转动动能</td>
+<td>$E_k=\dfrac{1}{2}J\omega^2$</td>
+</tr>
+<tr>
+<td>力矩做功</td>
+<td>$W=\int M d\theta$（恒力矩 $W=M\Delta\theta$）</td>
+</tr>
+<tr>
+<td>含刚体的机械能守恒</td>
+<td>$\dfrac{1}{2}mv^2+\dfrac{1}{2}J\omega^2+mgh_{cm}=$ 常数</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「杆从水平释放，求转到某位置的 $\omega$」：</p>
+<blockquote>
+<p>① 取初态（水平）和末态（某角度）
+② 势能减少 = 动能增加：$mg\Delta h_{cm}=\dfrac{1}{2}J\omega^2$
+③ 解 $\omega$</p>
+</blockquote>
+<h3>📝 例题3-B：杆从水平释放</h3>
+<p><strong>题目</strong>：细杆 $L=1$m，$m=2$kg，绕一端O在竖直面内转动。从水平释放。求初始 $\alpha$ 和竖直时的 $\omega$。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $J=\dfrac{1}{3}mL^2=\dfrac{2}{3}\approx0.667$ kg·m²
+<em>（轴在端点→用 $\frac{1}{3}mL^2$）</em></p>
+<p><strong>②</strong> 水平时 $M=mg\cdot\dfrac{L}{2}=9.8$ N·m → $\alpha=\dfrac{M}{J}=14.7$ rad/s²</p>
+<p><strong>③</strong> 转到竖直：质心下降 $\dfrac{L}{2}=0.5$m。$mg\cdot0.5=\dfrac{1}{2}J\omega^2$ → $\omega=5.42$ rad/s</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>不要把 $h_{cm}$ 当成端点位移！</strong> 重力势能用<strong>质心</strong>高度算，不是端点。杆绕端点转90°，端点位移 $\frac{\pi L}{2}$，但质心只下降了 $\frac{L}{2}$。</p>
+<hr />
+<h2>四、角动量守恒 ⭐</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：溜冰收臂→$J$ 变小，$L=J\omega$ 守恒→$\omega$ 猛增。子弹打杆→碰撞瞬间轴的反力过轴→力矩为零→角动量守恒。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>关键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$L=J\omega$（刚体）或 $L=mvr_\perp$（质点）</td>
+</tr>
+<tr>
+<td>角动量守恒条件：合外力矩 $M_{\text{外}}=0$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「子弹射入杆/盘并嵌入」：</p>
+<blockquote>
+<p>① 碰前角动量：$L_0=m_0v_0r_\perp$（子弹对转轴）
+② 碰后 $J_{\text{总}}=J_{\text{杆}}+m_0r_\perp^2$
+③ $L_0=J_{\text{总}}\omega$ → $\omega=\dfrac{L_0}{J_{\text{总}}}$</p>
+</blockquote>
+<p>看到「人走转台」：</p>
+<blockquote>
+<p>① $L_0=J_0\omega_0$
+② 人到 $r$ 处：$J=J_0+mr^2$
+③ $\omega=\dfrac{J_0\omega_0}{J_0+mr^2}$</p>
+</blockquote>
+<h3>📝 例题3-C：子弹打入悬挂杆</h3>
+<p><strong>题目</strong>：$m_0=10$g 以 $v_0=200$ m/s 射入杆下端嵌入。杆 $m=1$kg，$L=0.5$m，上端悬于光滑轴O。求碰后 $\omega$。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $L_0=m_0v_0L=0.01\times200\times0.5=1$ kg·m²/s</p>
+<p><strong>②</strong> $J_{\text{总}}=\dfrac{1}{3}mL^2+m_0L^2=0.0833+0.0025=0.0858$ kg·m²</p>
+<p><strong>③</strong> $\omega=\dfrac{1}{0.0858}=11.66$ rad/s</p>
+<h3>📝 例题3-D：人走转台</h3>
+<p><strong>题目</strong>：$J_0=100$，$\omega_0=2$。$m=60$kg 人从中心走到 $r=2$m。求 $\omega$。</p>
+<p><strong>解</strong>：$L_0=200$ → $J=100+60\times4=340$ → $\omega=\dfrac{200}{340}=0.588$ rad/s
+<em>（人往外走→$J$ 变大→$\omega$ 变小）</em></p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>碰撞过程中动量一般不守恒（轴有反力），但角动量守恒（轴力过轴→力矩为零）。</strong> 这是子弹打杆类题最重要的判断。</p>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>合力为零→合力矩为零？</td>
+<td>错。力偶：等大反向平行力，合力=0，力矩≠0</td>
+</tr>
+<tr>
+<td>合力矩为零→合力为零？</td>
+<td>错。匀速转动 $M=0$，但有向心力</td>
+</tr>
+<tr>
+<td>转动惯量只取决于质量？</td>
+<td>错。取决于质量+分布+轴位置</td>
+</tr>
+<tr>
+<td>物体换力拉滑轮 $\alpha$ 不变？</td>
+<td>错。直接拉→$T=F&gt;mg-ma$→$\alpha$ 更大</td>
+</tr>
+<tr>
+<td>碰撞中动量守恒？</td>
+<td>子弹打悬挂杆：动量不守恒（轴反力），角动量守恒</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测15题</h2>
+<h3>选择题（10题）</h3>
+<p><strong>1.</strong> 两个力大小相等、方向相反、作用在同一直线上，则（ ）
+(A) 合力为零，合力矩也为零  (B) 合力为零，合力矩不一定为零
+(C) 合力不为零  (D) 合力矩不为零</p>
+<p><strong>2.</strong> 匀质圆盘和圆环，质量半径相同。对过中心⊥盘面的轴，$J$ 关系（ ）
+(A) $J_{\text{盘}}&gt;J_{\text{环}}$  (B) $J_{\text{盘}}=J_{\text{环}}$  (C) $J_{\text{盘}}&lt;J_{\text{环}}$  (D) 无法比较</p>
+<p><strong>3.</strong> 花样滑冰收臂转速变快，因为（ ）
+(A) 转动动能守恒  (B) 角动量守恒，$J$ 减小  (C) 外力矩增大  (D) 机械能增大</p>
+<p><strong>4.</strong> 飞轮 $\omega_0$ 匀减速到零转过 $\theta$。$2\omega_0$ 匀减速到零转过（ ）
+(A) $\dfrac{\theta}{2}$  (B) $\theta$  (C) $2\theta$  (D) $4\theta$</p>
+<p><strong>5.</strong> 细杆长L、质量m，绕通过一端⊥杆的轴，$J$ 为（ ）
+(A) $\dfrac{mL^2}{12}$  (B) $\dfrac{mL^2}{3}$  (C) $\dfrac{mL^2}{2}$  (D) $mL^2$</p>
+<p><strong>6.</strong> 滑轮绕绳挂重物P，改为以同大小的力P直接拉绳，$\alpha$（ ）
+(A) 不变  (B) 变大  (C) 变小  (D) 无法确定</p>
+<p><strong>7.</strong> 子弹射入悬挂细杆下端木块。碰中子弹+木块+杆系统（ ）
+(A) 动量守恒，角动量守恒  (B) 动量不守恒，角动量守恒
+(C) 动量守恒，角动量不守恒  (D) 都不守恒</p>
+<p><strong>8.</strong> 圆盘绕中心轴转动。两等质量子弹等速反向沿同一直线射入边缘。$\omega$（ ）
+(A) 增大  (B) 不变  (C) 减小  (D) 无法确定</p>
+<p><strong>9.</strong> 匀质圆盘匀角加速转动，边缘点 $a_\tau$、$a_n$（ ）
+(A) $a_\tau$变，$a_n$不变  (B) $a_\tau$不变，$a_n$变  (C) 均不变  (D) 均变</p>
+<p><strong>10.</strong> 人站在转台中心，$\omega_0$，沿半径走到边缘时 $\omega$（ ）
+(A) 不变  (B) 增大  (C) 减小  (D) 先增后减</p>
+<h3>计算题（5题）</h3>
+<p><strong>11.</strong> 细杆 $L=1$m，$m=2$kg，绕一端O在竖直面内。从水平释放。求：(1) 初始 $\alpha$；(2) 竖直时 $\omega$。</p>
+<p><strong>12.</strong> 圆盘 $M=4$kg，$R=0.2$m，边缘绕绳挂 $m=2$kg。求：(1) $a$；(2) $T$。</p>
+<p><strong>13.</strong> 子弹 $m_0=10$g 以 $v_0=200$ m/s 射入杆下端嵌入。杆 $m=1$kg，$L=0.5$m，上端悬于轴O。求碰后 $\omega$。</p>
+<p><strong>14.</strong> 转台 $J_0=100$，$\omega_0=2$，$m=60$kg 人从中心走到 $r=2$m。求 $\omega$。</p>
+<p><strong>15.</strong> 飞轮 $J=5$，$\omega_0=10$，$M=-8$。求：(1) $\alpha$；(2) 停止前圈数。</p>
+<hr />
+<h2>答案与详细解析</h2>
+<h3>选择题详细解析</h3>
+<hr />
+<p><strong>1.</strong> 答案：<strong>A</strong></p>
+<p><strong>思路</strong>：等大反向且作用在同一直线上→力线重合→对任意轴的力臂都相同且方向相反→合力矩为零。合力自然也为零。</p>
+<blockquote>
+<p><strong>坑</strong>：B说"不一定"——如果两个力不在同一直线上（力偶），确实合力为零但力矩不为零。但题目明确说了"在同一直线上"。</p>
+</blockquote>
+<hr />
+<p><strong>2.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：圆环质量全在 $r=R$ 处→$J=mR^2$。圆盘质量均匀分布，内圈质量离轴近→$J=\frac{1}{2}mR^2&lt;mR^2$。$J_{\text{盘}}&lt;J_{\text{环}}$。</p>
+<blockquote>
+<p><strong>坑</strong>：A说盘&gt;环——颠倒了。同样质量，分布离轴越远 $J$ 越大。</p>
+</blockquote>
+<hr />
+<p><strong>3.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：收臂过程中，冰面对人的力矩为零（冰面光滑，支撑力过转轴）→角动量守恒。收臂→质量向轴靠拢→$J$ 减小→$\omega=\dfrac{L}{J}$ 增大。</p>
+<blockquote>
+<p><strong>坑</strong>：A说"转动动能守恒"——错，动能反而增大了（$E_k=L^2/2J$，$J$↓→$E_k$↑）。多出的能量来自肌肉做功。</p>
+</blockquote>
+<hr />
+<p><strong>4.</strong> 答案：<strong>D</strong></p>
+<p><strong>思路</strong>：匀减速转动：$\omega^2-\omega_0^2=2\alpha\theta$。停止时 $\omega=0$→$-\omega_0^2=2\alpha\theta$→$\theta=\dfrac{\omega_0^2}{-2\alpha}$。</p>
+<p>$\theta\propto\omega_0^2$。$\omega_0$ 变2倍→$\theta$ 变4倍。</p>
+<hr />
+<p><strong>5.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：细杆绕端点：$J=\dfrac{1}{3}mL^2$。绕中心：$J=\dfrac{1}{12}mL^2$。差4倍。</p>
+<blockquote>
+<p><strong>坑</strong>：A是绕中心的值。端点轴把质量推到远端→$J$ 更大。</p>
+</blockquote>
+<hr />
+<p><strong>6.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：挂重物时，重物加速下落→$T=m(g-a)&lt;mg=P$。改为直接用力 $P$ 拉→$T=P$。力矩更大→$\alpha$ 更大。</p>
+<blockquote>
+<p><strong>坑</strong>：A说不变——直觉以为"同样的力效果一样"，但挂重物时张力被加速度"吃掉"了一部分。</p>
+</blockquote>
+<hr />
+<p><strong>7.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：碰撞瞬间，轴对杆有水平反力（阻止杆被撞飞）→系统受外力→动量不守恒。但这个反力通过转轴→力臂为零→对轴的力矩为零→对轴的角动量守恒。</p>
+<blockquote>
+<p><strong>坑</strong>：A说"动量也守恒"——杆上端被轴固定，轴给了系统外力。</p>
+</blockquote>
+<hr />
+<p><strong>8.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：两子弹等速反向沿同一直线射入→对轴的角动量：$L_1=mvr$（+方向），$L_2=mv(-r)$（−方向，因为位置矢量方向相反）→$L_1+L_2=0$。碰前总角动量为零→碰后总角动量仍为零→圆盘角速度不变。</p>
+<hr />
+<p><strong>9.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：匀角加速→$\alpha$ 恒定→$a_\tau=r\alpha$ 不变。$a_n=r\omega^2$，$\omega$ 随时间增大→$a_n$ 随时间变化。</p>
+<blockquote>
+<p><strong>坑</strong>：C说"均不变"——$a_n$ 含 $\omega^2$，$\omega$ 在变所以 $a_n$ 也在变。</p>
+</blockquote>
+<hr />
+<p><strong>10.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：转轴光滑→合外力矩为零→角动量守恒。$J_0\omega_0=(J_0+mr^2)\omega$。人到边缘→$J$ 增加→$\omega&lt;\omega_0$。</p>
+<blockquote>
+<p><strong>坑</strong>：B说增大——和溜冰收臂相反。收臂是 $J$↓→$\omega$↑；往外走是 $J$↑→$\omega$↓。</p>
+</blockquote>
+<hr />
+<h3>计算题详细解析</h3>
+<hr />
+<p><strong>11.</strong> 杆从水平释放</p>
+<p><strong>(1)</strong> $J=\frac{1}{3}mL^2=\frac{1}{3}\times2\times1=0.667$ kg·m²。水平时重力矩 $M=mg\cdot\frac{L}{2}=9.8$ N·m。$\alpha=\dfrac{M}{J}=14.7$ rad/s²。</p>
+<p><strong>(2)</strong> 机械能守恒（只有重力做功）：$mg\cdot\frac{L}{2}=\frac{1}{2}J\omega^2$→$\omega^2=29.4$→$\omega=5.42$ rad/s。</p>
+<blockquote>
+<p><strong>坑</strong>：$h_{cm}=\frac{L}{2}$ 是质心下降的高度，不是端点。</p>
+</blockquote>
+<hr />
+<p><strong>12.</strong> 滑轮+重物</p>
+<p><strong>(1)</strong> $mg-T=ma$，$TR=J\alpha=\frac{1}{2}MR^2\cdot\frac{a}{R}=\frac{1}{2}MRa$→$T=\frac{1}{2}Ma$。代入：$mg-\frac{1}{2}Ma=ma$→$2\times9.8-2a=2a$→$a=4.9$ m/s²。</p>
+<p><strong>(2)</strong> $T=\frac{1}{2}Ma=9.8$ N。</p>
+<blockquote>
+<p><strong>坑</strong>：$J=\frac{1}{2}MR^2$ 是圆盘的转动惯量，别用错。</p>
+</blockquote>
+<hr />
+<p><strong>13.</strong> 子弹打入悬挂杆</p>
+<p>$L_0=m_0v_0L=1$ kg·m²/s。$J_{\text{总}}=\frac{1}{3}mL^2+m_0L^2=0.0858$ kg·m²。$\omega=\dfrac{L_0}{J_{\text{总}}}=11.66$ rad/s。</p>
+<blockquote>
+<p><strong>坑</strong>：碰后 $J$ 要加子弹的贡献 $m_0L^2$，不能只算杆的 $J$。</p>
+</blockquote>
+<hr />
+<p><strong>14.</strong> 人走转台</p>
+<p>$L_0=J_0\omega_0=200$ kg·m²/s。人到边缘：$J=J_0+mr^2=340$。$\omega=\dfrac{200}{340}=0.588$ rad/s。</p>
+<hr />
+<p><strong>15.</strong> 飞轮制动</p>
+<p>$\alpha=\dfrac{M}{J}=-\dfrac{8}{5}=-1.6$ rad/s²。</p>
+<p>$0^2-10^2=2\times(-1.6)\times\theta$→$\theta=31.25$ rad。圈数 $=\dfrac{31.25}{2\pi}\approx4.97$ 圈。</p></div><div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p><p>小番茄题库 · 助力财大学子</p></div></body></html>

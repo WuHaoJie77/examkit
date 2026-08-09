@@ -48,6 +48,22 @@ strong{color:#1a5276}
 .qr-modal .box h3{margin-bottom:10px;color:#1a5276}
 .qr-modal .box p{color:#999;font-size:0.8em;margin-top:12px}
 .qr-modal .close{position:absolute;top:15px;right:20px;font-size:28px;cursor:pointer;color:#fff}
+/* Comment */
+.comment-section{max-width:900px;margin:40px auto;background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.comment-section h3{margin-bottom:15px;color:#1a5276}
+.comment-input{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;min-height:80px;resize:vertical;margin-bottom:10px;font-family:inherit;box-sizing:border-box}
+.comment-name{width:200px;padding:8px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;margin-bottom:10px}
+.comment-password{width:200px;padding:8px 12px;border:1px solid #e74c3c;border-radius:8px;font-size:14px;margin-bottom:10px;display:none}
+.comment-password.visible{display:inline-block}
+.comment-submit{background:#1a5276;color:#fff;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:14px}
+.comment-submit:hover{background:#0d3b54}
+.comment-item{background:#f8f9fa;border-radius:8px;padding:15px;margin:10px 0}
+.comment-item .author{font-weight:600;margin-right:10px}
+.comment-item .author.admin{color:#e74c3c}
+.comment-item .time{color:#999;font-size:0.85em}
+.comment-item .text{margin-top:8px;line-height:1.6}
+.comment-status{margin-top:8px;font-size:13px;color:#e74c3c;display:none}
+.comment-status.show{display:block}
 </style>
 </head><body>
 <h1>📚 小番茄题库浓缩版</h1>
@@ -63,17 +79,58 @@ strong{color:#1a5276}
   <h2>计算机科学概论</h2>
   <p>8章速记卡 · 绪论→体系结构→硬件→算法→语言→OS→网络</p>
 </a>
+<a class="subject-card" href="python/programming/">
+  <div class="subject-icon">🖥️</div>
+  <h2>Python程序题专练</h2>
+  <p>13章65道经典程序题 · 分支/循环/列表 · 附参考答案</p>
+</a>
+<a class="subject-card" href="physics/">
+  <div class="subject-icon">⚛️</div>
+  <h2>大学物理简明教程</h2>
+  <p>12章速记卡 · 赵近芳版 · 力学→热学→电磁学→光学→近代物理</p>
+</a>
+<a class="subject-card" href="cost-accounting/">
+  <div class="subject-icon">🧮</div>
+  <h2>成本会计</h2>
+  <p>7章速记卡 · 费用归集→分配→品种/分批/分步法</p>
+</a>
+<a class="subject-card" href="management-accounting/">
+  <div class="subject-icon">📊</div>
+  <h2>管理会计</h2>
+  <p>9章速记卡 · 变动成本法→本量利→经营决策→预算控制</p>
+</a>
 </div>
 <div class="notice">
 <h3>👋 新入站小伙伴看过来</h3>
-<p>本站由 <span class="highlight">番茄</span> 免费开源建立，因为云服务器配置不高，一次性太多人同时用会导致崩掉 😅</p>
-<p>👉 知道 <b>GitHub</b> 的同学可以直接去仓库看源码、提建议，顺手点个 ⭐ 就是最大的支持！</p>
-<p>👉 不知道 GitHub 的同学，可以在本站直接下载 <b>PDF 版本</b>，存到本地随时学，不依赖服务器。</p>
-<p>谢谢大家的支持！想了解更多可以加 <span class="highlight">交流群</span> 一起讨论～</p>
+<p>本站由 <span class="highlight">番茄</span> 免费开源建立，65道程序题 + 13章浓缩笔记，全部免费使用！静态页面加载超快，放心刷 📚</p>
+<p>👉 觉得有用的话，去 <b>GitHub</b> 仓库点个 ⭐ 就是最大的支持！想看源码、提建议也欢迎～</p>
+<p>👉 也可以下载 <b>PDF 版本</b> 存到本地，随时随地学，不依赖服务器。</p>
+<p>想了解更多可以加 <span class="highlight">交流群</span> 一起讨论，谢谢大家！</p>
 <div class="btn-row">
 <a class="btn btn-primary" href="https://github.com/WuHaoJie77/examkit" target="_blank">🔗 GitHub 仓库</a>
 <a class="btn btn-outline" href="javascript:void(0)" onclick="document.getElementById('qrModal').classList.add('show')">💬 加交流群</a>
 </div>
+</div>
+<div style="background:#fff;border-radius:12px;padding:25px 30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06);text-align:center">
+<h3 style="color:#1a5276;margin-bottom:8px">🙏 致谢</h3>
+<p style="color:#aaa;font-size:0.8em;margin-bottom:12px">（以下不分贡献大小排序）</p>
+<p style="font-size:1.1em;line-height:2.4;color:#555">
+Yplanet · 卷毛 · 嗡嗡 · Lotous · 苹果大王 · 清 · Lishine
+</p>
+<p style="color:#999;font-size:0.85em;margin-top:10px">感谢以上同学对本站做出的贡献！</p>
+<p style="color:#888;font-size:0.82em;margin-top:4px">不管是反馈 bug 还是提供题库，都可以上贡献者名单，欢迎大家来交流～</p>
+</div>
+<div class="comment-section">
+<h3>💬 评论区</h3>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+<input class="comment-name" id="commentName" placeholder="昵称（选填）" maxlength="20" oninput="checkName()">
+<input class="comment-password" id="commentPassword" type="password" placeholder="🔒 站长密码" onkeydown="if(event.key==='Enter')postComment()">
+</div>
+<textarea class="comment-input" id="commentContent" placeholder="写下你的疑问或心得..." maxlength="500"></textarea>
+<button class="comment-submit" onclick="postComment()">发布评论</button>
+<span class="comment-status" id="commentStatus"></span>
+<div id="commentList" style="margin-top:20px"></div>
+<div style="text-align:center;margin-top:15px"><button onclick="loadComments(1)" style="background:none;border:1px solid #ddd;padding:8px 20px;border-radius:6px;cursor:pointer;color:#666">刷新评论</button></div>
 </div>
 <div class="qr-modal" id="qrModal" onclick="if(event.target===this)this.classList.remove('show')">
 <span class="close" onclick="document.getElementById('qrModal').classList.remove('show')">&times;</span>
@@ -81,11 +138,19 @@ strong{color:#1a5276}
 <h3>🍅 西红柿番茄 交流群</h3>
 <img src="/qrcode.png" alt="微信群二维码">
 <p>微信扫码加入 · 7天内有效</p>
-<p style="margin-top:8px;color:#555">QQ群：<b>949808620</b></p>
+<p style="margin-top:8px;color:#555">QQ群：<b>2522173992</b></p>
 </div>
 </div>
 <div class="footer">
-<p>📧 微信 OceanOfInfinity ｜ QQ 949808620</p>
+<p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p>
 <p>致力于帮助财大学子节省复习时间！</p>
 </div>
+<script>
+let cP=1;
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function checkName(){var n=document.getElementById("commentName").value.trim();var p=document.getElementById("commentPassword");if(n==="番茄大王"){p.style.display="inline-block";p.focus()}else{p.style.display="none";p.value=""}}
+async function loadComments(p){cP=p;try{var r=await fetch("/api/comments?page="+p+"&size=10");var d=await r.json();var h=d.comments.map(function(c){return '<div class="comment-item"><span class="author'+(c.name==="番茄大王"?" admin":"")+'">'+esc(c.name)+'</span><span class="time">'+esc(c.created_at)+'</span><div class="text">'+esc(c.content)+'</div></div>'}).join("");document.getElementById("commentList").innerHTML=h+(d.total>p*10?'<p style="color:#999;text-align:center;cursor:pointer;margin-top:10px" onclick="loadComments('+(p+1)+')">— 点击加载更多 —</p>':'<p style="color:#999;text-align:center">— 已加载全部评论 —</p>')}catch(e){}}
+async function postComment(){var c=document.getElementById("commentContent").value.trim();if(!c)return;var n=document.getElementById("commentName").value.trim()||"匿名";var pw=document.getElementById("commentPassword").value;var s=document.getElementById("commentStatus");try{var r=await fetch("/api/comment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content:c,name:n,password:pw})});if(r.ok){document.getElementById("commentContent").value="";loadComments(1);s.style.display="none";s.className="comment-status"}else{var e=await r.json();s.textContent=e.detail;s.style.display="block";s.className="comment-status show"}}catch(e){s.textContent="发送失败，请重试";s.style.display="block";s.className="comment-status show"}}
+loadComments(1);
+</script>
 </body></html>

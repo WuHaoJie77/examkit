@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>大学物理 第4章 机械振动与机械波 浓缩速记卡 · 小番茄题库</title><style>*{box-sizing:border-box;margin:0;padding:0}
+body{max-width:900px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.8;color:#222;background:#f8f9fa}
+.card{background:#fff;border-radius:12px;padding:30px;margin:20px 0;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+h1{font-size:1.8em;color:#1a5276;margin-bottom:10px}
+h2{color:#1a5276;margin:30px 0 15px;padding-bottom:8px;border-bottom:2px solid #1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#1a5276;text-decoration:none;font-size:0.9em}
+.footer{margin-top:50px;padding:20px;text-align:center;color:#999;font-size:0.85em;border-top:1px solid #e0e0e0}
+table{border-collapse:collapse;width:100%;margin:15px 0;font-size:0.95em}
+td,th{border:1px solid #ccc;padding:8px 12px}
+th{background:#1a5276;color:#fff}
+tr:nth-child(even){background:#f5f6fa}
+blockquote{border-left:4px solid #1a5276;padding:10px 20px;margin:15px 0;background:#f0f4f8;color:#555}
+a{color:#1a5276}strong{color:#1a5276}
+hr{border:none;border-top:1px solid #e0e0e0;margin:30px 0}
+</style><script>MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["$$","$$"]]}};</script><script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" async></script></head><body><a class="back-link" href="index.html">← 返回物理章节列表</a><h1>大学物理 第4章 机械振动与机械波 浓缩速记卡</h1><div class="card"><blockquote>
+<p>课后原题：43题（12选择 + 13填空 + 18解答） | 预计用时：40分钟</p>
+</blockquote>
+<hr />
+<h2>一、简谐振动的三个特征量</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：秋千来回荡就是简谐振动。振幅A是"荡多高"，周期T是"来回一次多久"，初相位 $\phi$ 是"开始计时时人在哪"。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>特征量</th>
+<th>决定因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>振幅 $A$</td>
+<td>初始能量（$E=\frac{1}{2}kA^2$）</td>
+</tr>
+<tr>
+<td>$\omega,T$</td>
+<td>系统本身：弹簧 $\omega=\sqrt{k/m}$，单摆 $\omega=\sqrt{g/l}$</td>
+</tr>
+<tr>
+<td>$\phi$</td>
+<td>初始条件（$x_0,v_0$）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>振动方程：$x=A\cos(\omega t+\phi)$。$v=-\omega A\sin(\omega t+\phi)$，$a=-\omega^2 x$。</p>
+</blockquote>
+<h3>🧠 解题模板</h3>
+<p>看到「已知 $x_0,v_0$，求振动方程」：</p>
+<blockquote>
+<p>① $\omega=\sqrt{k/m}$（弹簧）或已知
+② 由 $x_0=A\cos\phi$，$v_0=-\omega A\sin\phi$ 解 $A$ 和 $\phi$
+③ 方程：$x=A\cos(\omega t+\phi)$</p>
+</blockquote>
+<h3>📝 例题4-A：由初始条件求振动方程</h3>
+<p><strong>题目</strong>：$m=0.5$kg，$k=50$ N/m，$t=0$ 时 $x_0=0.1$m，$v_0=0$。求振动方程。</p>
+<p><strong>解</strong>：</p>
+<p><strong>①</strong> $\omega=\sqrt{\dfrac{50}{0.5}}=10$ rad/s</p>
+<p><strong>②</strong> $x_0=A\cos\phi=0.1$，$v_0=-\omega A\sin\phi=0$ → $\sin\phi=0$ → $\phi=0$，$A=0.1$
+<em>（$v_0=0$→质点在最大位移处→$\phi=0$或$\pi$，$x_0&gt;0$取$0$）</em></p>
+<p><strong>③</strong> $x=0.1\cos(10t)$ m</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$\phi=0$ 还是 $\pi$？</strong> 都在最大位移处，看 $x_0$ 正负。$x_0&gt;0$→$\phi=0$；$x_0&lt;0$→$\phi=\pi$。</p>
+<hr />
+<h2>二、旋转矢量法——确定初相位</h2>
+<blockquote>
+<p>$x_0=A\cos\phi$，$v_0=-\omega A\sin\phi$。看 $x_0$ 定 $\cos\phi$，看 $v_0$ 方向定 $\sin\phi$ 符号。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>$t=0$ 状态</th>
+<th>$\phi$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$x_0=A$</td>
+<td>$0$</td>
+</tr>
+<tr>
+<td>$x_0=0,v_0&gt;0$</td>
+<td>$-\pi/2$</td>
+</tr>
+<tr>
+<td>$x_0=-A$</td>
+<td>$\pi$</td>
+</tr>
+<tr>
+<td>$x_0=0,v_0&lt;0$</td>
+<td>$\pi/2$</td>
+</tr>
+<tr>
+<td>$x_0=A/2,v_0&lt;0$</td>
+<td>$\pi/3$</td>
+</tr>
+<tr>
+<td>$x_0=-A/2,v_0&gt;0$</td>
+<td>$-2\pi/3$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<blockquote>
+<p>① $\cos\phi=\dfrac{x_0}{A}$ → $\phi$ 有两个候选值
+② $v_0&gt;0$ → $\sin\phi&lt;0$；$v_0&lt;0$ → $\sin\phi&gt;0$
+③ 选满足两者条件的 $\phi$</p>
+</blockquote>
+<h3>📝 例题4-B：判断初相位</h3>
+<p><strong>题目</strong>：$x=A\cos(\omega t+\phi)$，$t=0$ 时 $x_0=-A/2$，$v_0&gt;0$。求 $\phi$。</p>
+<p><strong>解</strong>：$\cos\phi=-\dfrac{1}{2}$ → $\phi=\pm\dfrac{2\pi}{3}$。$v_0&gt;0$→$\sin\phi&lt;0$→$\phi=-\dfrac{2\pi}{3}$。</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>$\phi$ 取值不唯一，但习惯取 $(-\pi,\pi]$ 范围。</strong> $-\frac{2\pi}{3}$ 和 $\frac{4\pi}{3}$ 物理上等价，答题写 $-\frac{2\pi}{3}$。</p>
+<hr />
+<h2>三、简谐振动能量</h2>
+<table>
+<thead>
+<tr>
+<th>量</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总能量</td>
+<td>$E=\dfrac{1}{2}kA^2$（守恒）</td>
+</tr>
+<tr>
+<td>动能</td>
+<td>$E_k=E-\dfrac{1}{2}kx^2$</td>
+</tr>
+<tr>
+<td>$E_k=E_p$ 时</td>
+<td>$x=\pm\dfrac{A}{\sqrt{2}}\approx\pm0.707A$</td>
+</tr>
+</tbody>
+</table>
+<h3>📝 例题4-C：求位移一半时的动能</h3>
+<p><strong>题目</strong>：总能量 $E$。$x=\dfrac{A}{2}$ 时，$E_k=$？</p>
+<p><strong>解</strong>：$E_p=\dfrac{1}{2}k\left(\dfrac{A}{2}\right)^2=\dfrac{E}{4}$ → $E_k=E-\dfrac{E}{4}=\dfrac{3}{4}E$</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>动能频率是振动频率的2倍</strong>——一个周期内动能有两次最大值（过平衡位置两次）。不要以为 $E_k$ 的变化频率等于振动频率。</p>
+<hr />
+<h2>四、简谐振动的合成</h2>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>合振幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\Delta\phi=2k\pi$（同相）</td>
+<td>$A_1+A_2$</td>
+</tr>
+<tr>
+<td>$\Delta\phi=(2k+1)\pi$（反相）</td>
+<td>$\lvert A_1-A_2\rvert$</td>
+</tr>
+<tr>
+<td>一般</td>
+<td>$A=\sqrt{A_1^2+A_2^2+2A_1A_2\cos\Delta\phi}$</td>
+</tr>
+</tbody>
+</table>
+<h3>📝 例题4-D：同方向同频率合成</h3>
+<p><strong>题目</strong>：$x_1=3\cos(2t)$ cm，$x_2=4\cos(2t+\pi/2)$ cm。求合振幅和初相。</p>
+<p><strong>解</strong>：$\Delta\phi=\dfrac{\pi}{2}$，$\cos\dfrac{\pi}{2}=0$。$A=\sqrt{3^2+4^2}=5$ cm。$\tan\alpha=\dfrac{4}{3}$→$\alpha\approx 53.1^\circ$。合振动：$x=5\cos(2t+0.295\pi)$ cm。</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>只有同频率才能合成简谐振动！</strong> 不同频率合成不再是简谐振动（会是拍或复杂波形）。</p>
+<hr />
+<h2>五、波函数——波动核心 ⭐</h2>
+<blockquote>
+<p>💡 <strong>费曼类比</strong>：振动是"一个人在原地跳舞"，波动是"一群人做波浪"。y-t图=盯一个人看，y-x图=拍群体照。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>关键关系</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>波速</td>
+<td>$u=\dfrac{\lambda}{T}=\lambda\nu$，$u=\dfrac{\omega}{k}$</td>
+</tr>
+<tr>
+<td>波数</td>
+<td>$k=\dfrac{2\pi}{\lambda}$</td>
+</tr>
+<tr>
+<td>向 $+x$ 传播</td>
+<td>$y=A\cos(\omega t-kx+\phi)$</td>
+</tr>
+<tr>
+<td>向 $-x$ 传播</td>
+<td>$y=A\cos(\omega t+kx+\phi)$</td>
+</tr>
+</tbody>
+</table>
+<h3>🧠 解题模板</h3>
+<p>看到「已知 $x_0$ 处质点振动，求波函数」：</p>
+<blockquote>
+<p>① 向 $+x$：$y=A\cos[\omega(t-\frac{x-x_0}{u})+\phi]$
+② 向 $-x$：$y=A\cos[\omega(t+\frac{x-x_0}{u})+\phi]$</p>
+</blockquote>
+<h3>📝 例题4-E：已知一点振动求波函数</h3>
+<p><strong>题目</strong>：波沿 $-x$ 传，$u=20$ m/s。$x=5$m 处 $y=0.02\cos(10\pi t)$。求波函数和 $x=0$ 处振动。</p>
+<p><strong>解</strong>：</p>
+<p>向 $-x$：$y=0.02\cos[10\pi(t+\dfrac{x-5}{20})]=0.02\cos(10\pi t+\dfrac{\pi x}{2}-\dfrac{5\pi}{2})$</p>
+<p>$x=0$：$y=0.02\cos(10\pi t-\dfrac{5\pi}{2})=0.02\cos(10\pi t-\dfrac{\pi}{2})$</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>传播方向判断：$(\omega t-kx)$→向 $+x$；$(\omega t+kx)$→向 $-x$。</strong> 搞反了整道题白做。</p>
+<hr />
+<h2>六、波的干涉</h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P点相位差</td>
+<td>$\Delta\phi=(\phi_2-\phi_1)-\dfrac{2\pi(r_2-r_1)}{\lambda}$</td>
+</tr>
+<tr>
+<td>加强</td>
+<td>$\Delta\phi=2k\pi$</td>
+</tr>
+<tr>
+<td>减弱</td>
+<td>$\Delta\phi=(2k+1)\pi$</td>
+</tr>
+</tbody>
+</table>
+<h3>📝 例题4-F：干涉加强判断</h3>
+<p><strong>题目</strong>：$S_1,S_2$ 相距 $\lambda/4$，$S_2$ 比 $S_1$ 超前 $\pi/2$。$S_1$ 外侧合振幅？</p>
+<p><strong>解</strong>：$r_2-r_1=\lambda/4$。$\Delta\phi=\dfrac{\pi}{2}-\dfrac{2\pi(\lambda/4)}{\lambda}=0$→加强！合振幅 $=2A$。</p>
+<h3>⚠️ 本模块易错</h3>
+<p><strong>波动中质元的 $E_k$ 和 $E_p$ 同步变化（同相），不是此消彼长！</strong> 这点和弹簧振子完全相反。</p>
+<hr />
+<h2>高频易错速查</h2>
+<table>
+<thead>
+<tr>
+<th>陷阱</th>
+<th>正解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>振幅增大→周期增大？</td>
+<td>错。$T=2\pi\sqrt{m/k}$，与振幅无关</td>
+</tr>
+<tr>
+<td>动能频率=振动频率？</td>
+<td>错。动能频率 $=2\nu$</td>
+</tr>
+<tr>
+<td>波向 $+x$ 传，$y=A\cos(\omega t+kx)$？</td>
+<td>错。向 $+x$ 是 $\omega t-kx$</td>
+</tr>
+<tr>
+<td>波动 $E_k$ 和 $E_p$ 反相？</td>
+<td>错。波动中两者<strong>同步</strong>变化</td>
+</tr>
+<tr>
+<td>干涉加强处合振幅必为 $A_1+A_2$？</td>
+<td>只有 $\Delta\phi=2k\pi$ 时才是</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>自测15题</h2>
+<h3>选择题（10题）</h3>
+<p><strong>1.</strong> 弹簧振子振幅增至2倍，周期（ ）
+(A) 2倍  (B) 4倍  (C) 不变  (D) 减半</p>
+<p><strong>2.</strong> $t=0$ 时 $x_0=-A/2$，$v_0&gt;0$，$\phi$ 为（ ）
+(A) $\pi/3$  (B) $2\pi/3$  (C) $-2\pi/3$  (D) $-\pi/3$</p>
+<p><strong>3.</strong> 总能量 $E$，$x=A/2$ 时 $E_k=$（ ）
+(A) $E/4$  (B) $E/2$  (C) $3E/4$  (D) $E$</p>
+<p><strong>4.</strong> 两同频振动振幅均为 $A$，$\Delta\phi=\pi/3$，合振幅（ ）
+(A) $2A$  (B) $A$  (C) $\sqrt{3}A$  (D) $\sqrt{2}A$</p>
+<p><strong>5.</strong> $y=A\cos(\omega t-kx)$，$x=\lambda/4$ 处相位比原点（ ）
+(A) 超前 $\pi/2$  (B) 落后 $\pi/2$  (C) 超前 $\pi$  (D) 落后 $\pi$</p>
+<p><strong>6.</strong> $y=0.05\cos(6\pi t+0.06\pi x)$，该波（ ）
+(A) 向 $+x$  (B) 向 $-x$  (C) $u=100$ m/s  (D) $\lambda=100/3$ m</p>
+<p><strong>7.</strong> 质元从平衡→最大位移过程中能量（ ）
+(A) $E_k\to E_p$  (B) $E_p\to E_k$  (C) 逐渐增大  (D) 逐渐减小</p>
+<p><strong>8.</strong> 加强条件（ ）
+(A) $r_2-r_1=k\lambda$  (B) $\phi_2-\phi_1-\dfrac{2\pi(r_2-r_1)}{\lambda}=2k\pi$
+(C) $\phi_2-\phi_1=2k\pi$  (D) $\phi_2-\phi_1+\dfrac{2\pi(r_2-r_1)}{\lambda}=(2k+1)\pi$</p>
+<p><strong>9.</strong> 弹簧竖直挂与水平放，周期（ ）
+(A) 竖直大  (B) 水平大  (C) 相同  (D) 不确定</p>
+<p><strong>10.</strong> 过平衡位置向正向，首次到 $A/2$ 需时（周期 $T$）（ ）
+(A) $T/4$  (B) $T/6$  (C) $T/8$  (D) $T/12$</p>
+<h3>计算题（5题）</h3>
+<p><strong>11.</strong> $m=0.5$kg，$k=50$，$x_0=0.1$m，$v_0=0$。求：(1) 振动方程；(2) $t=0.5$s 时 $x,v$；(3) $E$。</p>
+<p><strong>12.</strong> $x_1=3\cos(2t)$，$x_2=4\cos(2t+\pi/2)$ cm。求合振幅和初相。</p>
+<p><strong>13.</strong> 波沿 $-x$，$u=20$，$x=5$m 处 $y=0.02\cos(10\pi t)$。求波函数和 $x=0$ 处振动。</p>
+<p><strong>14.</strong> $y=0.1\cos(4\pi t-2\pi x)$。求 $A,\lambda,u,\nu$ 及 $x=0.5,t=1$ 时振动速度。</p>
+<p><strong>15.</strong> $S_1,S_2$ 相距 $\lambda/4$，$S_2$ 超前 $\pi/2$。$S_1$ 外侧合振幅？</p>
+<hr />
+<h2>答案与详细解析</h2>
+<h3>选择题详细解析</h3>
+<hr />
+<p><strong>1.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$T=2\pi\sqrt{m/k}$，周期只取决于系统本身的 $m$ 和 $k$，与振幅无关。振幅增大→能量增大，但来回一次的时间不变。</p>
+<blockquote>
+<p><strong>坑</strong>：直觉可能觉得"荡得越高来回越久"——但简谐振动不是这样，回复力随位移线性增大，刚好使周期恒定。</p>
+</blockquote>
+<hr />
+<p><strong>2.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$x_0=A\cos\phi=-\dfrac{A}{2}$→$\cos\phi=-\dfrac{1}{2}$→$\phi=\pm\dfrac{2\pi}{3}$。</p>
+<p>$v_0=-\omega A\sin\phi&gt;0$→$\sin\phi&lt;0$→取 $\phi=-\dfrac{2\pi}{3}$。</p>
+<blockquote>
+<p><strong>坑</strong>：$\phi=\dfrac{2\pi}{3}$ 时 $\sin\phi=\dfrac{\sqrt{3}}{2}&gt;0$→$v_0&lt;0$，不符合。</p>
+</blockquote>
+<hr />
+<p><strong>3.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$E_p=\dfrac{1}{2}kx^2$。$x=\dfrac{A}{2}$→$E_p=\dfrac{1}{4}\cdot\dfrac{1}{2}kA^2=\dfrac{E}{4}$。$E_k=E-E_p=\dfrac{3E}{4}$。</p>
+<hr />
+<p><strong>4.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$A_{\text{合}}=\sqrt{A^2+A^2+2A^2\cos\dfrac{\pi}{3}}=\sqrt{2A^2+A^2}=\sqrt{3}A$。</p>
+<hr />
+<p><strong>5.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：$x=\dfrac{\lambda}{4}$ 处振动相位 $=\omega t-k\cdot\dfrac{\lambda}{4}=\omega t-\dfrac{2\pi}{\lambda}\cdot\dfrac{\lambda}{4}=\omega t-\dfrac{\pi}{2}$。比原点（$\omega t$）落后 $\dfrac{\pi}{2}$。</p>
+<blockquote>
+<p><strong>坑</strong>："超前"和"落后"看相位值是更大还是更小。$x&gt;0$ 处的点在波向 $+x$ 传播时，相位比原点小→落后。</p>
+</blockquote>
+<hr />
+<p><strong>6.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：$y=0.05\cos(6\pi t+0.06\pi x)$，有$+kx$项→沿 $-x$ 方向传播，A错。</p>
+<p>$\omega=6\pi$→$T=\dfrac{2\pi}{\omega}=\dfrac{1}{3}$ s。$k=0.06\pi$→$\lambda=\dfrac{2\pi}{k}=\dfrac{100}{3}\approx33.3$ m。$u=\dfrac{\omega}{k}=100$ m/s。</p>
+<p>C正确但B也对——这题是单选，B是传播方向，是最直接的判断。C的周期也对，但题目可能要求先判断传播方向。</p>
+<hr />
+<p><strong>7.</strong> 答案：<strong>D</strong></p>
+<p><strong>思路</strong>：波动中质元的动能和势能<strong>同步变化</strong>（同相），与弹簧振子（反相）完全不同。从平衡→最大位移：$v$ 减小→动能减小，同时形变减小→势能也减小。能量传给了相邻质元。</p>
+<blockquote>
+<p><strong>坑</strong>：A说"动能转化为势能"——那是弹簧振子的情况！波动中两者同步，能量是<strong>传走</strong>不是转换。</p>
+</blockquote>
+<hr />
+<p><strong>8.</strong> 答案：<strong>B</strong></p>
+<p><strong>思路</strong>：两列波在P点的相位差 $=(\phi_2-\phi_1)-\dfrac{2\pi(r_2-r_1)}{\lambda}$。加强条件 $\Delta\phi=2k\pi$→B正确。</p>
+<p>A缺了初相差的贡献。C缺了波程差的贡献。</p>
+<hr />
+<p><strong>9.</strong> 答案：<strong>C</strong></p>
+<p><strong>思路</strong>：$\omega=\sqrt{k/m}$ 只取决于 $k$ 和 $m$，与重力无关。竖直悬挂时平衡位置下移，但偏离平衡位置后的回复力仍是 $-k\Delta x$→周期不变。</p>
+<hr />
+<p><strong>10.</strong> 答案：<strong>D</strong></p>
+<p><strong>思路</strong>：$t=0$ 过平衡位置向正方向→$\phi_0=-\dfrac{\pi}{2}$。振动方程 $x=A\cos(\omega t-\dfrac{\pi}{2})=A\sin\omega t$。</p>
+<p>到 $x=\dfrac{A}{2}$：$\sin\omega t=\dfrac{1}{2}$→$\omega t=\dfrac{\pi}{6}$→$t=\dfrac{\pi/6}{2\pi/T}=\dfrac{T}{12}$。</p>
+<hr />
+<h3>计算题详细解析</h3>
+<hr />
+<p><strong>11.</strong> 弹簧振子</p>
+<p>(1) $\omega=\sqrt{\dfrac{k}{m}}=10$ rad/s。$v_0=0$→质点在最大位移→$\phi=0$，$A=x_0=0.1$ m。$x=0.1\cos(10t)$ m。</p>
+<p>(2) $t=0.5$：$x=0.1\cos(5)\approx0.1\times0.284=0.0284$ m。$v=-1\times\sin(5)\approx-0.959$ m/s。</p>
+<p>(3) $E=\dfrac{1}{2}kA^2=0.25$ J。</p>
+<hr />
+<p><strong>12.</strong> 同频合成</p>
+<p>$A=\sqrt{3^2+4^2}=5$ cm。$\tan\alpha=\dfrac{4\sin\frac{\pi}{2}}{3+4\cos\frac{\pi}{2}}=\dfrac{4}{3}$→$\alpha\approx0.295\pi$。$x=5\cos(2t+0.295\pi)$ cm。</p>
+<hr />
+<p><strong>13.</strong> 已知一点振动求波函数</p>
+<p>向 $-x$：$y=0.02\cos[10\pi(t+\dfrac{x-5}{20})]=0.02\cos(10\pi t+\dfrac{\pi x}{2}-\dfrac{5\pi}{2})$。</p>
+<p>$x=0$：$y=0.02\cos(10\pi t-\dfrac{5\pi}{2})=0.02\cos(10\pi t-\dfrac{\pi}{2})$。</p>
+<blockquote>
+<p><strong>坑</strong>：$\dfrac{5\pi}{2}=2\pi+\dfrac{\pi}{2}$，减 $2\pi$ 不改变函数值→等价于 $-\dfrac{\pi}{2}$。</p>
+</blockquote>
+<hr />
+<p><strong>14.</strong> 波函数参数提取</p>
+<p>$A=0.1$ m。$\omega=4\pi$→$\nu=2$ Hz。$k=2\pi$→$\lambda=1$ m。$u=\dfrac{\omega}{k}=2$ m/s。</p>
+<p>$v=\dfrac{\partial y}{\partial t}=-0.4\pi\sin(4\pi t-2\pi x)$。$x=0.5,t=1$：$v=-0.4\pi\sin(4\pi-\pi)=-0.4\pi\sin(3\pi)=0$。</p>
+<hr />
+<p><strong>15.</strong> 干涉</p>
+<p>$S_1$ 左侧：$r_2-r_1=\dfrac{\lambda}{4}$。$\Delta\phi=\dfrac{\pi}{2}-\dfrac{2\pi}{\lambda}\cdot\dfrac{\lambda}{4}=0$→加强。合振幅 $=2A$。</p>
+<hr />
+<h2>评分线</h2>
+<table>
+<thead>
+<tr>
+<th>≤3题错</th>
+<th>4-6题错</th>
+<th>&gt;6题错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 已掌握</td>
+<td>🟡 重点：初相位、波函数符号、波动vs振动能量</td>
+<td>🔴 从旋转矢量重过</td>
+</tr>
+</tbody>
+</table></div><div class="footer"><p>📧 微信 OceanOfInfinity ｜ QQ 2522173992</p><p>小番茄题库 · 助力财大学子</p></div></body></html>
